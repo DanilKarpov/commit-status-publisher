@@ -99,6 +99,12 @@ public class Constants {
    */
   public static final String CHECK_TEST_RETRIES_SUPPORT_TOGGLE = "teamcity.commitStatusPublisher.checkTestRetriesSupport";
 
+  /**
+   * Allows overriding the TeamCity server URL used in commit status links.
+   * Useful when TeamCity is behind a proxy or has a different public URL.
+   */
+  public static final String OVERRIDE_SERVER_URL_PROPERTY = "teamcity.commitStatusPublisher.overrideServerUrl";
+
   @NotNull
   public String getVcsRootIdParam() {
     return VCS_ROOT_ID_PARAM;

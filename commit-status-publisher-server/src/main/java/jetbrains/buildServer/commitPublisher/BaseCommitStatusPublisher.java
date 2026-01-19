@@ -18,6 +18,8 @@
 
 package jetbrains.buildServer.commitPublisher;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
@@ -171,18 +173,73 @@ public abstract class BaseCommitStatusPublisher implements CommitStatusPublisher
   protected String getViewUrl(@NotNull BuildPromotion buildPromotion) {
     SBuild build = buildPromotion.getAssociatedBuild();
     if (build != null) {
-      return getLinks().getViewResultsUrl(build);
+      return applyServerUrlOverride(getLinks().getViewResultsUrl(build));
     }
     SQueuedBuild queuedBuild = buildPromotion.getQueuedBuild();
     if (queuedBuild != null) {
-      return getLinks().getQueuedBuildUrl(queuedBuild);
+      return applyServerUrlOverride(getLinks().getQueuedBuildUrl(queuedBuild));
     }
-    return buildPromotion.getBuildType() != null ? getLinks().getConfigurationHomePageUrl(buildPromotion.getBuildType()) : null;
+    return buildPromotion.getBuildType() != null ? applyServerUrlOverride(getLinks().getConfigurationHomePageUrl(buildPromotion.getBuildType())) : null;
   }
 
   @NotNull
   protected String getViewUrl(@NotNull SBuild build) {
-    return getLinks().getViewResultsUrl(build);
+    return applyServerUrlOverride(getLinks().getViewResultsUrl(build));
+  }
+
+  /**
+   * Applies the server URL override if configured via internal property.
+   * This allows replacing the default TeamCity server URL with a custom one
+   * (e.g., when TeamCity is behind a proxy or has a different public URL).
+   *
+   * @param originalUrl the original URL from WebLinks
+   * @return the URL with server part replaced if override is configured, otherwise the original URL
+   */
+  @Nullable
+  protected String applyServerUrlOverride(@Nullable String originalUrl) {
+    if (originalUrl == null) {
+      return null;
+    }
+
+    String overrideServerUrl = TeamCityProperties.getPropertyOrNull(Constants.OVERRIDE_SERVER_URL_PROPERTY);
+    if (StringUtil.isEmptyOrSpaces(overrideServerUrl)) {
+      return originalUrl;
+    }
+
+    try {
+      URL original = new URL(originalUrl);
+      URL override = new URL(overrideServerUrl);
+
+      // Build new URL with override host/port/protocol but original path and query
+      StringBuilder newUrl = new StringBuilder();
+      newUrl.append(override.getProtocol()).append("://").append(override.getHost());
+      if (override.getPort() != -1 && override.getPort() != override.getDefaultPort()) {
+        newUrl.append(":").append(override.getPort());
+      }
+      // Add override path prefix if present (e.g., /teamcity)
+      String overridePath = override.getPath();
+      if (!StringUtil.isEmptyOrSpaces(overridePath) && !"/".equals(overridePath)) {
+        newUrl.append(overridePath);
+      }
+      // Add original path
+      String originalPath = original.getPath();
+      if (!StringUtil.isEmptyOrSpaces(originalPath)) {
+        if (!originalPath.startsWith("/")) {
+          newUrl.append("/");
+        }
+        newUrl.append(originalPath);
+      }
+      // Add original query if present
+      if (original.getQuery() != null) {
+        newUrl.append("?").append(original.getQuery());
+      }
+
+      LOG.debug("Applied server URL override: " + originalUrl + " -> " + newUrl);
+      return newUrl.toString();
+    } catch (MalformedURLException e) {
+      LOG.warnAndDebugDetails("Failed to apply server URL override. Original URL: " + originalUrl + ", Override: " + overrideServerUrl, e);
+      return originalUrl;
+    }
   }
 
   protected Long getBuildIdFromViewUrl(@Nullable String url) {
