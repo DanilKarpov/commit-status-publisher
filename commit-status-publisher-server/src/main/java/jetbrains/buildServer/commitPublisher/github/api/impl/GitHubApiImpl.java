@@ -195,6 +195,34 @@ public abstract class GitHubApiImpl implements GitHubApi {
         url, authenticationCredentials(), defaultHeaders(),
         entity, ContentType.APPLICATION_JSON.getMimeType(), ContentType.APPLICATION_JSON.getCharset(),
         response -> {
+          try {
+            String json = response.getBodyAsString();
+            if (StringUtil.isEmptyOrSpaces(json)) {
+              exceptionRef.set(new PublisherException("GitHub returned empty response while setting commit status").setShouldRetry());
+              return;
+            }
+
+            CommitStatus responseStatus = myGson.fromJson(json, CommitStatus.class);
+            if (responseStatus == null || responseStatus.state == null) {
+              exceptionRef.set(new PublisherException("GitHub returned invalid response structure while setting commit status").setShouldRetry());
+              return;
+            }
+
+            if (!status.getState().equals(responseStatus.state)) {
+              PublisherException ex = new PublisherException(String.format(
+                "GitHub status mismatch: requested '%s', but GitHub returned '%s'",
+                status.getState(), responseStatus.state));
+              ex.setShouldRetry();
+              exceptionRef.set(ex);
+              return;
+            }
+
+            LOG.debug("Successfully verified GitHub status: " + responseStatus.state + " for hash " + hash);
+          } catch (IOException e) {
+            exceptionRef.set(new PublisherException("Failed to read GitHub response: " + e.getMessage(), e));
+          } catch (JsonSyntaxException e) {
+            exceptionRef.set(new PublisherException("GitHub returned malformed JSON response: " + e.getMessage(), e));
+          }
         },
         response -> {
           String responseBody = logFailedResponse(method, url, entity, response);

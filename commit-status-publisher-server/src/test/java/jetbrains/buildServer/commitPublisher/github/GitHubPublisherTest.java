@@ -218,6 +218,9 @@ public class GitHubPublisherTest extends HttpPublisherTest {
     if (revision != null) {
       CommitStatus status = gson.fromJson(requestData, CommitStatus.class);
       myRevisionToCommitStatus.computeIfAbsent(revision, k -> new ArrayList<>()).add(status);
+      // Return the created status in the response body (GitHub API behavior)
+      String jsonResponse = gson.toJson(status);
+      httpResponse.setEntity(new StringEntity(jsonResponse, StandardCharsets.UTF_8));
     }
     return isUrlExpected(url, httpResponse);
   }
