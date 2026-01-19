@@ -1,0 +1,276 @@
+#projectsFilter {
+  float: left;
+  padding-right: 15px;
+}
+
+#userIdSelector {
+  width: 12em;
+  margin-right: 15px;
+}
+
+#updatableChangesContainer {
+  margin-top: 10px;
+}
+
+#updatableChangesContainer,
+#moreChangesContainer {
+  clear: both;
+}
+
+#loadingProgress {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+}
+
+
+/*---------------- joinedChangeTable styles ------------------*/
+.joinedChange {
+  position: relative;
+}
+
+.joinedChangeTable {
+  width: 100%;
+  table-layout: fixed; /* For IE8 to handle expand/collapse on My Changes page correctly */
+}
+
+.joinedChangeTable > tbody > tr > td {
+  padding: 10px 0 9px 0;       /* 9px because of 1px border at the top */
+  vertical-align: top;
+}
+
+.joinedChangeTable td.handleContainer {
+  width: 25px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.joinedChangeTable td.commitText {
+  padding-left: 5px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.joinedChangeTable span.shortText {
+  overflow: hidden;
+  float: left;
+  /*this is for span with ... text*/
+  max-width: 93%;
+  height: 1.3em;
+  padding-right: 5px;
+}
+
+.joinedChangeTable span.fullText {
+  padding-right: 5px;
+}
+
+.joinedChangeTable td.commitText i.pretestedStatus {
+  padding-right: 5px;
+  font-size: 85%;
+}
+
+.joinedChangeTable td.commitText .branch {
+  position: relative;
+  top: -1px;
+}
+
+.joinedChangeTable td.commitText .branch.default .branchName {
+  padding: 2px 4px;
+  border: none;
+}
+
+.joinedChangeTable td.date,
+.joinedChangeTable td.revision,
+.joinedChangeTable td.userName {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.joinedChangeTable td.date {
+  width: 8em;
+}
+
+.joinedChangeTable td.userName {
+  width: max(12em, 15vw);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.joinedChangeTable td.revision {
+  width: 8em;
+  overflow: hidden;
+}
+
+.joinedChangeTable td.carpet {
+  width: 20px;
+  height: 26px; /* To avoid jumping when status carpet is drawn */
+  padding: 10px 10px 5px 10px;
+  cursor: pointer;
+}
+
+.statusDiagram__placeholder {
+  color: #d0d0d0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #d0d0d0;
+  border-radius: 50%;
+
+  text-align: center;
+}
+
+.changeFailuresLink {
+  /* To avoid jumping when change tag appears */
+  display: inline-block;
+  font-size: var(--ring-font-size, 14px);
+  white-space: nowrap;
+  padding: 1px 0;
+  border-bottom: 1px solid transparent;
+}
+
+.changeFailuresLink:hover {
+  text-decoration: none;
+  border-bottom: 1px dotted #3773C9;
+}
+
+.dimmed {
+  opacity: 0.5;
+}
+
+/*---------------- pieChartPopup styles ------------------*/
+.pieChartPopupContainer {
+  padding: 0 3px;
+}
+
+.pieChartPopup {
+  padding: 10px;
+}
+
+.pieChartHelp {
+  margin-bottom: 10px;
+  border: none;
+  border-collapse: collapse;
+}
+
+.pieChartHelp tr {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.pieChartHelp tr:only-child {
+  border-bottom: none;
+}
+
+.pieChartHelp td {
+  padding: 3px 1em 3px 0;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.pieChartHelp td.colored {
+  width: 3px;
+  padding: 0;
+}
+
+.pieChartHelp td.count {
+  padding-left: 1em;
+  text-align: right;
+}
+
+.badBuild {
+  font-size: 90%;
+  padding-left: 5px;
+}
+
+/*---------------- end joinedChangeTable styles ------------------*/
+
+/*---------------- Border styles in table start ------------------*/
+.joinedChangeTable > tbody > tr > td {
+  border-top: 1px solid #dbdbdb;
+}
+
+.joinedChangeTable tr td.expanded_view_container {
+  border: none;
+}
+
+/*---------------- Border styles in table end ------------------*/
+
+/* Selection in tree: */
+tr.expandedBlock > td,
+.expanded_view_container {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+tr.selectedTreeNode > td,
+tr.selectedTreeNode .expanded_view_container
+{
+  background-color: var(--ring-hover-background-color);
+}
+
+tr.selectedTreeNode td.expanded_view_container .tabs .first-letter {
+  text-decoration: underline;
+}
+
+/* End Selection in tree. */
+
+#showMoreChanges {
+  position: relative;
+  width: 30%;
+  margin: 10px auto;
+}
+
+.showMoreChangesLink {
+  display: block;
+  text-align: center;
+}
+
+.showMoreChangesProgress.showMoreChangesProgress {
+  position: absolute;
+  top: 21%;
+  right: 10px;
+}
+
+/*---------------- expanded view related styles ---------------- */
+.expandedChange {
+  background-color: var(--ring-content-background-color, #fff);
+  margin: 0 25px 15px;
+  padding: 10px;
+}
+
+.joinedChangeTable > tbody > tr > td.expanded_view_container {
+  padding-top: 0;
+}
+
+.sectionTitle {
+  margin-left: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.sectionContent {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.moreBlock {
+  margin-top: 5px;
+}
+
+table.testList td,
+table.changedFiles td {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+
+.selectedTreeNode tr.highlightRow:hover {
+  background-color: #fafafa;
+}
+
+tr.buildTypeProblem.highlightRow td {
+  padding-right: 15px;
+}
+
+tr.buildTypeProblem.highlightRow td.name {
+  padding-left: 15px;
+}
+
+/*---------------- end expanded view related styles ------------ */

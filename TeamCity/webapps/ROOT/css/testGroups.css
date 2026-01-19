@@ -1,0 +1,378 @@
+/* Test grouping */
+
+.tests-group {
+  /* For absolute checkboxes positioning */
+  position: relative;
+}
+
+.tests-group .multi-select {
+  vertical-align: middle;
+}
+
+.tests-group input.checkbox,
+.tests-group .custom-checkbox {
+  margin-right: 10px;
+}
+
+.group-div table.testList {
+  width: 100%;
+}
+
+.expanded_view_container .group-div table.testList {
+  table-layout: fixed;
+}
+
+.group-div table.testList td.testNamePart,
+.group-div table.testList tr.testDetailsRow > td {
+  padding-left: 27px;
+  padding-right: 0;
+}
+
+.allFailedInOtherConfigs {
+  font-style: italic;
+  padding-left: 10px;
+}
+
+.subgroups {
+  padding-left: 22px;
+}
+
+/* This is checkbox replacement, to avoid shift to the left: */
+.subgroups span.chkboxPlace,
+table.testList span.chkboxPlace {
+  display: inline-block;
+  width: 27px;
+  flex-shrink: 0;
+}
+
+/* Place checkboxes to the left column: */
+.tests-group table.testList input.checkbox,
+.tests-group table.testList .custom-checkbox,
+.tests-group .subgroups input.checkbox,
+.tests-group .subgroups .custom-checkbox {
+  position: absolute;
+  left: 0;
+  margin-top: 2px;
+}
+
+.tests-group span.handle {
+  position: relative;
+  margin-right: 0.3em;
+}
+
+
+.tests-group .marker {
+  width: 2px;
+  border: 1px solid #CCCCCC;
+  border-right: none;
+}
+
+.tests-group .action-bar,
+.expand_collapse.action-bar {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  margin-bottom: 5px;
+  margin-left: 0;
+  padding: 0.5em 8px;
+  line-height: 2em;
+}
+
+.tests-group .action-bar .group-by-section {
+  margin-left: 1em;
+  margin-right: 0;
+}
+
+.tests-group .action-bar > span.select a {
+  margin-left: 4px;
+}
+
+.tests-group .group-name {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin-top: 5px;
+  border-top: 1px dotted #DEDEDE;
+  margin-bottom: 3px;
+  padding-top: 3px;
+}
+
+.tests-group .group-name:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.tests-group .group-name-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tests-group table.bulk-toolbar {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+.tests-group table.bulk-toolbar td.testNamePart {
+  padding-left: 0;
+}
+
+.by-bt span.title {
+  font-weight: normal;
+}
+
+.tests-group .testCount {
+  color: #737577;
+  font-weight: normal;
+}
+
+.failedInPopup {
+  white-space: nowrap;
+}
+
+.tests-group .select-all {
+  margin-top: 5px;
+}
+
+.tests-group .select-all input.checkbox,
+.tests-group .select-all .custom-checkbox {
+  position: relative;
+  left: 0;
+}
+
+.tests-group .select-all .custom-checkbox {
+  margin-right: 10px;
+}
+
+.tests-group .by-nothing {
+  margin-top: 5px;
+}
+
+#failedTestsDl .tests-group span.pc.testNamePopup {
+  font-weight: normal;
+}
+
+.tests-group td.testNamePart {
+  padding: 0;
+  white-space: nowrap;
+}
+
+.tests-group td.autoSize {
+  max-width: 0;
+}
+
+.tests-group .testNameWrapper {
+  display: flex;
+  align-items: baseline;
+}
+
+.tests-group .testNamePopup {
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.tests-group .testNamePopup .pc__label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: -22px;
+  padding-left: 22px;
+}
+
+.tests-group img.icon + .title {
+  margin-left: 5px;
+}
+
+/** Styles for test details mode, when clicking on test name in test list */
+/**=======================================================================*/
+/**=======================================================================*/
+.testDetailsShown {
+  background-color: var(--ring-secondary-background-color, #f7f9fa) !important;
+}
+
+.testDetailsShown span.pc,
+#failedTestsDl .tests-group .testDetailsShown span.pc.testNamePopup {
+  font-weight: bold;
+}
+
+.testDetailsInline {
+  margin-bottom: 0.5em;
+  margin-left: 22px;
+  overflow: visible;
+}
+
+.tests-group.with-actions .subgroups .testDetailsInline {
+  margin-left: 50px;
+}
+
+.group-div.by-nothing .testDetailsInline, .group-div.by-package .testDetailsInline {
+  margin-left: 50px;
+}
+
+.group-div.by-package.no-actions .testDetailsInline {
+  margin-left: 22px;
+}
+
+.testDetailsInline .simpleTabs {
+  margin-bottom: 5px;
+}
+
+.testDetailsInline .fullStacktrace {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.fullStacktrace,
+dd.full {
+  padding: 3px 3px 0 3px;
+  font: 12px/1.2em Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+  color: darkred;
+}
+
+.testDetailsInline .hideStacktrace {
+  padding-top: .5em;
+  margin-right: 1em;
+  display: inline-block;
+}
+
+.testDetailsInline .testBlock {
+  position: relative;
+  width: 100%;
+}
+
+.testDetailsInline .rightBlock {
+  float: right;
+
+  background-color: rgba(245, 245, 245, 0.81);
+  border-left: 5px solid var(--ring-content-background-color, #fff);
+  border-bottom: 5px solid var(--ring-content-background-color, #fff);
+}
+
+.testListSelected .testDetailsInline .rightBlock {
+  background-color: var(--ring-content-background-color, #fff);
+  border-left-color: var(--ring-secondary-background-color, #f7f9fa);
+  border-bottom-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.testDetailsInline .collapser {
+  float: right;
+  height: 2em;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.testDetailsInline .collapsedDetails {
+  line-height: 2em;
+  padding-left: 6px;
+}
+
+.testDetailsInline .collapsedDetails .collapser {
+  padding: 0 5px;
+  line-height: 2em;
+}
+
+.testDetailsInline .relatedBuildsWrapper {
+  border-right: solid white 3px;
+  float: right;
+}
+
+.testListSelected .testDetailsInline .relatedBuildsWrapper {
+  border-right-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.testDetailsInline .testRelatedBuilds {
+  width: auto;
+  margin: 5px;
+}
+
+.testDetailsInline .branchName,
+.testDetailsBranchName {
+  margin-left: 5px;
+  position: relative;
+  top: -1px;
+}
+
+.testDetailsBranchName {
+  max-width: 104px;
+}
+
+.testRelatedBuilds td {
+  padding: 2px 5px;
+  white-space: nowrap;
+}
+
+.testDetailsInline .testRunsNote {
+  display: inline-block;
+  color: #737577;
+  padding: 5px 0;
+}
+
+.testDetailsInline .otherBuilds {
+  border-left: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 10px;
+}
+
+.testStatus.successful{
+  color: darkgreen;
+}
+.testStatus.ignored, .testStatus.muted, .testStatus.unknown {
+  color: #737577;
+}
+
+/** Stack trace switcher: */
+.testRelatedBuilds .selector {
+  padding-left: 2px;
+  padding-right: 0;
+
+  text-align: right;
+}
+
+/** Clickable cells for FFI: */
+.testRelatedBuilds .clickable .selector,
+.testRelatedBuilds .clickable .header {
+  color: var(--ring-text-color, #1f2326);
+  cursor: pointer;
+}
+
+/** Non-clickable cells for current row: */
+.testRelatedBuilds .clickable.selectedBuild .selector,
+.testRelatedBuilds .clickable.selectedBuild .header {
+  cursor: default;
+}
+
+.testRelatedBuilds .buildNumber,
+.testRelatedBuilds .changes,
+.testRelatedBuilds .date,
+.testRelatedBuilds .agent {
+  min-width: 8em;
+}
+
+.testRelatedBuilds .changes {
+  white-space: normal;
+}
+
+.testDetailsRow .testLoading {
+  margin-left: 27px;
+}
+
+.testIcons {
+  min-width: 45px;
+  display: inline-block;
+  margin-left: -22px;
+}
+
+.testIcons > :only-child {
+  margin-left: 24px;
+}
+
+.testIcons:empty {
+  display: none;
+}
+
+.viewAllUrl {
+  padding-top: 10px;
+}

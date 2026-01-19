@@ -1,0 +1,89 @@
+/*------------ history list table ----------*/
+table.historyList {
+  margin-bottom: 10px;
+}
+
+table.historyList th {
+  padding-left: 2px;
+}
+
+table.historyList th.branch {
+  padding-left: 0;
+}
+
+table.historyList th.autopin {
+  width: 2em;
+}
+
+table.historyList th:last-child {
+  width: 4em;
+}
+
+table.historyList td.branch {
+  padding: 0;
+  width: 0;
+}
+
+table.historyList td.branch.hasBranch,
+table.historyList td.branch.default {
+  width: 8.5em;
+  padding: 0.3em 1em 0.3em 0;
+}
+
+table.historyList th.branch.hasBranch,
+table.historyList th.branch.default {
+  padding-left: 1em;
+}
+
+table.historyList th.buildNumber,
+table.historyList td.buildNumber {
+  width: auto !important;
+}
+
+table.historyList td {
+  padding: 0.3em 6px 0.3em 2px;
+  vertical-align: top;
+}
+
+table.historyList td.cell-icon {
+  padding-bottom: 0;
+}
+
+table.historyList .unpinLink {
+  font-size: 80%;
+  color: #0f5b99;
+}
+
+table.historyList td.detachedChanges {
+  color: #737577;
+  font-style: italic;
+}
+
+table.historyList td.pin>.wrapper{
+  position: relative;
+  padding-right: 2px;
+}
+
+table.historyList td.pin .unpinLink {
+  visibility: hidden;
+  padding-right: 2px;
+  font-size: 100%;
+}
+
+table.historyList td.pin:hover .unpinLink {
+  visibility: visible;
+}
+
+.pinComment {
+  width: 200px;
+}
+
+.historyList tr.highlight > td {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+}
+
+.buildDuration {
+  display: inline-block;
+  min-width: 54px;
+  text-align: right;
+}

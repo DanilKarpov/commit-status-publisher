@@ -1,0 +1,32 @@
+<bs:trimWhitespace>
+  <authz:authorize allPermissions="CHANGE_OWN_PROFILE">
+    <jsp:attribute name="ifAccessGranted">
+      <!-- See ProjectController -->
+      <c:if test="${hasFilteredConfigurations and empty projectBranch}">
+        <div id="showFilter">
+          <c:set var="onclick" value="BS.VisibleBuildTypesDialog.showForProject('${project.externalId}'); return false;"/>
+          <c:set var="configureVisibility"><a href="#" onclick="${onclick}">Configure visibility</a></c:set>
+
+          <c:set var="showAllSetting" value="shows_all_build_types_${project.projectId}"/>
+          <c:choose>
+            <c:when test="${ufn:booleanPropertyValue(currentUser, showAllSetting)}">
+              All ${ufn:booleanPropertyValue(currentUser, 'overview.hideSuccessful') ? "suspicious" : ""}
+              build configurations are shown.
+              <c:set var="onclick" value="BS.User.setBooleanProperty('${showAllSetting}', '', {afterComplete: BS.reload.curry(true)}); return false;"/>
+              <span class="separator"></span>
+              <a href="#" onclick="${onclick}">Show as filtered on the Projects dashboard</a> <span class="separator">|</span> ${configureVisibility}
+            </c:when>
+            <c:otherwise>
+              Build configurations hidden from the Projects dashboard are not shown.
+              <c:set var="onclick"
+                     value="BS.User.setBooleanProperty('overview.hideSuccessful', false); BS.User.setBooleanProperty('${showAllSetting}', 'true', {afterComplete: BS.reload.curry(true)}); return false;"/>
+              <span class="separator"></span>
+              <a href="#" onclick="${onclick}">Show all</a> <span class="separator">|</span> ${configureVisibility}
+            </c:otherwise>
+          </c:choose>
+        </div>
+      </c:if>
+    </jsp:attribute>
+    <jsp:attribute name="ifAccessDenied"></jsp:attribute>
+  </authz:authorize>
+</bs:trimWhitespace>

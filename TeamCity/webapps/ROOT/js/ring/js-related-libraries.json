@@ -1,0 +1,2081 @@
+[
+  {
+    "name": "@babel/runtime",
+    "version": "7.27.6",
+    "url": "https://www.npmjs.com/package/@babel/runtime",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@codemirror/autocomplete",
+    "version": "6.18.6",
+    "url": "https://www.npmjs.com/package/@codemirror/autocomplete",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@codemirror/commands",
+    "version": "6.2.4",
+    "url": "https://www.npmjs.com/package/@codemirror/commands",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@codemirror/lang-xml",
+    "version": "6.1.0",
+    "url": "https://www.npmjs.com/package/@codemirror/lang-xml",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@codemirror/language",
+    "version": "6.11.1",
+    "url": "https://www.npmjs.com/package/@codemirror/language",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@codemirror/lint",
+    "version": "6.8.5",
+    "url": "https://www.npmjs.com/package/@codemirror/lint",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@codemirror/search",
+    "version": "6.5.0",
+    "url": "https://www.npmjs.com/package/@codemirror/search",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@codemirror/state",
+    "version": "6.5.2",
+    "url": "https://www.npmjs.com/package/@codemirror/state",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@codemirror/theme-one-dark",
+    "version": "6.1.2",
+    "url": "https://www.npmjs.com/package/@codemirror/theme-one-dark",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@codemirror/view",
+    "version": "6.37.2",
+    "url": "https://www.npmjs.com/package/@codemirror/view",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@inline-svg-unique-id/react",
+    "version": "1.2.3",
+    "url": "https://www.npmjs.com/package/@inline-svg-unique-id/react",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@jetbrains/icons",
+    "version": "5.10.0",
+    "url": "https://www.npmjs.com/package/@jetbrains/icons",
+    "license": "Apache-2.0",
+    "licenseUrl": "http://opensource.org/licenses/Apache-2.0"
+  },
+  {
+    "name": "@jetbrains/ring-ui-built",
+    "version": "7.0.52",
+    "url": "https://www.npmjs.com/package/@jetbrains/ring-ui-built",
+    "license": "Apache-2.0",
+    "licenseUrl": "http://opensource.org/licenses/Apache-2.0"
+  },
+  {
+    "name": "@jetbrains/teamcity-ui",
+    "version": "1.0.0-alpha.9",
+    "url": "https://www.npmjs.com/package/@jetbrains/teamcity-ui",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@jsonforms/core",
+    "version": "3.6.0",
+    "url": "https://www.npmjs.com/package/@jsonforms/core",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@jsonforms/react",
+    "version": "3.6.0",
+    "url": "https://www.npmjs.com/package/@jsonforms/react",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@lezer/common",
+    "version": "1.2.3",
+    "url": "https://www.npmjs.com/package/@lezer/common",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@lezer/highlight",
+    "version": "1.2.1",
+    "url": "https://www.npmjs.com/package/@lezer/highlight",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@lezer/lr",
+    "version": "1.4.0",
+    "url": "https://www.npmjs.com/package/@lezer/lr",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@lezer/xml",
+    "version": "1.0.6",
+    "url": "https://www.npmjs.com/package/@lezer/xml",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@lezer/yaml",
+    "version": "1.0.3",
+    "url": "https://www.npmjs.com/package/@lezer/yaml",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@marijn/find-cluster-break",
+    "version": "1.0.2",
+    "url": "https://www.npmjs.com/package/@marijn/find-cluster-break",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@reach/skip-nav",
+    "version": "0.18.0",
+    "url": "https://www.npmjs.com/package/@reach/skip-nav",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@react-dnd/asap",
+    "version": "5.0.2",
+    "url": "https://www.npmjs.com/package/@react-dnd/asap",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@react-dnd/invariant",
+    "version": "4.0.2",
+    "url": "https://www.npmjs.com/package/@react-dnd/invariant",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@react-dnd/shallowequal",
+    "version": "4.0.2",
+    "url": "https://www.npmjs.com/package/@react-dnd/shallowequal",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@reduxjs/toolkit",
+    "version": "2.8.2",
+    "url": "https://www.npmjs.com/package/@reduxjs/toolkit",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@replit/codemirror-indentation-markers",
+    "version": "6.5.3",
+    "url": "https://www.npmjs.com/package/@replit/codemirror-indentation-markers",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@standard-schema/utils",
+    "version": "0.3.0",
+    "url": "https://www.npmjs.com/package/@standard-schema/utils",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@uiw/codemirror-extensions-basic-setup",
+    "version": "4.23.13",
+    "url": "https://www.npmjs.com/package/@uiw/codemirror-extensions-basic-setup",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@uiw/react-codemirror",
+    "version": "4.23.13",
+    "url": "https://www.npmjs.com/package/@uiw/react-codemirror",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "@ungap/structured-clone",
+    "version": "1.3.0",
+    "url": "https://www.npmjs.com/package/@ungap/structured-clone",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "ajv",
+    "version": "8.12.0",
+    "url": "https://www.npmjs.com/package/ajv",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "ajv-formats",
+    "version": "2.1.1",
+    "url": "https://www.npmjs.com/package/ajv-formats",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "anser",
+    "version": "2.3.2",
+    "url": "https://www.npmjs.com/package/anser",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "bail",
+    "version": "2.0.2",
+    "url": "https://www.npmjs.com/package/bail",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "batch-processor",
+    "version": "1.0.0",
+    "url": "https://www.npmjs.com/package/batch-processor",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "binary-search-bounds",
+    "version": "2.0.5",
+    "url": "https://www.npmjs.com/package/binary-search-bounds",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "boolbase",
+    "version": "1.0.0",
+    "url": "https://www.npmjs.com/package/boolbase",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "call-bind-apply-helpers",
+    "version": "1.0.2",
+    "url": "https://www.npmjs.com/package/call-bind-apply-helpers",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "call-bound",
+    "version": "1.0.4",
+    "url": "https://www.npmjs.com/package/call-bound",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "callbag-create",
+    "version": "2.1.3",
+    "url": "https://www.npmjs.com/package/callbag-create",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "callbag-debounce",
+    "version": "4.0.0",
+    "url": "https://www.npmjs.com/package/callbag-debounce",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "callbag-interval",
+    "version": "1.2.0",
+    "url": "https://www.npmjs.com/package/callbag-interval",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "callbag-map",
+    "version": "1.1.0",
+    "url": "https://www.npmjs.com/package/callbag-map",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "callbag-pipe",
+    "version": "1.2.0",
+    "url": "https://www.npmjs.com/package/callbag-pipe",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "callbag-remember",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/callbag-remember",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "callbag-share",
+    "version": "1.3.0",
+    "url": "https://www.npmjs.com/package/callbag-share",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "callbag-subject",
+    "version": "2.1.0",
+    "url": "https://www.npmjs.com/package/callbag-subject",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "callbag-subscribe",
+    "version": "1.5.1",
+    "url": "https://www.npmjs.com/package/callbag-subscribe",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "callbag-tap-up",
+    "version": "1.0.1",
+    "url": "https://www.npmjs.com/package/callbag-tap-up",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "camel-case",
+    "version": "4.1.2",
+    "url": "https://www.npmjs.com/package/camel-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "capital-case",
+    "version": "1.0.4",
+    "url": "https://www.npmjs.com/package/capital-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "change-case",
+    "version": "4.1.2",
+    "url": "https://www.npmjs.com/package/change-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "change-emitter",
+    "version": "0.1.6",
+    "url": "https://www.npmjs.com/package/change-emitter",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "cheerio",
+    "version": "1.1.0",
+    "url": "https://www.npmjs.com/package/cheerio",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "cheerio-select",
+    "version": "2.1.0",
+    "url": "https://www.npmjs.com/package/cheerio-select",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "classnames",
+    "version": "2.5.1",
+    "url": "https://www.npmjs.com/package/classnames",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "clsx",
+    "version": "1.2.1",
+    "url": "https://www.npmjs.com/package/clsx",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "color-hash",
+    "version": "2.0.2",
+    "url": "https://www.npmjs.com/package/color-hash",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "combokeys",
+    "version": "3.0.1",
+    "url": "https://www.npmjs.com/package/combokeys",
+    "license": "Apache-2.0",
+    "licenseUrl": "http://opensource.org/licenses/Apache-2.0"
+  },
+  {
+    "name": "comma-separated-tokens",
+    "version": "2.0.3",
+    "url": "https://www.npmjs.com/package/comma-separated-tokens",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "common-prefix",
+    "version": "1.1.0",
+    "url": "https://www.npmjs.com/package/common-prefix",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "constant-case",
+    "version": "3.0.4",
+    "url": "https://www.npmjs.com/package/constant-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "cookie",
+    "version": "0.4.2",
+    "url": "https://www.npmjs.com/package/cookie",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "core-js",
+    "version": "3.43.0",
+    "url": "https://www.npmjs.com/package/core-js",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "crelt",
+    "version": "1.0.6",
+    "url": "https://www.npmjs.com/package/crelt",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "css-select",
+    "version": "5.1.0",
+    "url": "https://www.npmjs.com/package/css-select",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "css-what",
+    "version": "6.1.0",
+    "url": "https://www.npmjs.com/package/css-what",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "d3-array",
+    "version": "3.2.4",
+    "url": "https://www.npmjs.com/package/d3-array",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "d3-color",
+    "version": "3.1.0",
+    "url": "https://www.npmjs.com/package/d3-color",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "d3-dag",
+    "version": "1.1.0",
+    "url": "https://www.npmjs.com/package/d3-dag",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "d3-ease",
+    "version": "3.0.1",
+    "url": "https://www.npmjs.com/package/d3-ease",
+    "license": "BSD-3-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-3-Clause"
+  },
+  {
+    "name": "d3-format",
+    "version": "3.1.0",
+    "url": "https://www.npmjs.com/package/d3-format",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "d3-interpolate",
+    "version": "3.0.1",
+    "url": "https://www.npmjs.com/package/d3-interpolate",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "d3-path",
+    "version": "3.1.0",
+    "url": "https://www.npmjs.com/package/d3-path",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "d3-scale",
+    "version": "4.0.2",
+    "url": "https://www.npmjs.com/package/d3-scale",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "d3-shape",
+    "version": "3.2.0",
+    "url": "https://www.npmjs.com/package/d3-shape",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "d3-time",
+    "version": "3.1.0",
+    "url": "https://www.npmjs.com/package/d3-time",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "d3-time-format",
+    "version": "4.1.0",
+    "url": "https://www.npmjs.com/package/d3-time-format",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "d3-timer",
+    "version": "3.0.1",
+    "url": "https://www.npmjs.com/package/d3-timer",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "d3-voronoi",
+    "version": "1.1.4",
+    "url": "https://www.npmjs.com/package/d3-voronoi",
+    "license": "BSD-3-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-3-Clause"
+  },
+  {
+    "name": "date-fns",
+    "version": "4.1.0",
+    "url": "https://www.npmjs.com/package/date-fns",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "decode-named-character-reference",
+    "version": "1.0.2",
+    "url": "https://www.npmjs.com/package/decode-named-character-reference",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "delaunator",
+    "version": "4.0.1",
+    "url": "https://www.npmjs.com/package/delaunator",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "delaunay-find",
+    "version": "0.0.6",
+    "url": "https://www.npmjs.com/package/delaunay-find",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "dequal",
+    "version": "2.0.3",
+    "url": "https://www.npmjs.com/package/dequal",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "devlop",
+    "version": "1.1.0",
+    "url": "https://www.npmjs.com/package/devlop",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "dnd-core",
+    "version": "16.0.1",
+    "url": "https://www.npmjs.com/package/dnd-core",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "dom-helpers",
+    "version": "5.2.1",
+    "url": "https://www.npmjs.com/package/dom-helpers",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "dom-serializer",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/dom-serializer",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "domelementtype",
+    "version": "2.3.0",
+    "url": "https://www.npmjs.com/package/domelementtype",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "domhandler",
+    "version": "5.0.3",
+    "url": "https://www.npmjs.com/package/domhandler",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "domutils",
+    "version": "3.2.2",
+    "url": "https://www.npmjs.com/package/domutils",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "dot-case",
+    "version": "3.0.4",
+    "url": "https://www.npmjs.com/package/dot-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "dunder-proto",
+    "version": "1.0.1",
+    "url": "https://www.npmjs.com/package/dunder-proto",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "element-resize-detector",
+    "version": "1.2.4",
+    "url": "https://www.npmjs.com/package/element-resize-detector",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "entities",
+    "version": "4.5.0",
+    "url": "https://www.npmjs.com/package/entities",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "es-define-property",
+    "version": "1.0.1",
+    "url": "https://www.npmjs.com/package/es-define-property",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "es-errors",
+    "version": "1.3.0",
+    "url": "https://www.npmjs.com/package/es-errors",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "es-object-atoms",
+    "version": "1.1.1",
+    "url": "https://www.npmjs.com/package/es-object-atoms",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "escape-string-regexp",
+    "version": "1.0.5",
+    "url": "https://www.npmjs.com/package/escape-string-regexp",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "estree-util-is-identifier-name",
+    "version": "3.0.0",
+    "url": "https://www.npmjs.com/package/estree-util-is-identifier-name",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "extend",
+    "version": "3.0.2",
+    "url": "https://www.npmjs.com/package/extend",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "fast-deep-equal",
+    "version": "2.0.1",
+    "url": "https://www.npmjs.com/package/fast-deep-equal",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "fastdom",
+    "version": "1.0.12",
+    "url": "https://www.npmjs.com/package/fastdom",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "fbjs",
+    "version": "3.0.5",
+    "url": "https://www.npmjs.com/package/fbjs",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "filesize",
+    "version": "8.0.7",
+    "url": "https://www.npmjs.com/package/filesize",
+    "license": "BSD-3-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-3-Clause"
+  },
+  {
+    "name": "function-bind",
+    "version": "1.1.2",
+    "url": "https://www.npmjs.com/package/function-bind",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "get-intrinsic",
+    "version": "1.3.0",
+    "url": "https://www.npmjs.com/package/get-intrinsic",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "get-proto",
+    "version": "1.0.1",
+    "url": "https://www.npmjs.com/package/get-proto",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "gopd",
+    "version": "1.2.0",
+    "url": "https://www.npmjs.com/package/gopd",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "graphql",
+    "version": "16.11.0",
+    "url": "https://www.npmjs.com/package/graphql",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "has-symbols",
+    "version": "1.1.0",
+    "url": "https://www.npmjs.com/package/has-symbols",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "hasown",
+    "version": "2.0.2",
+    "url": "https://www.npmjs.com/package/hasown",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "hast-util-from-parse5",
+    "version": "8.0.3",
+    "url": "https://www.npmjs.com/package/hast-util-from-parse5",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "hast-util-parse-selector",
+    "version": "4.0.0",
+    "url": "https://www.npmjs.com/package/hast-util-parse-selector",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "hast-util-raw",
+    "version": "9.1.0",
+    "url": "https://www.npmjs.com/package/hast-util-raw",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "hast-util-sanitize",
+    "version": "5.0.2",
+    "url": "https://www.npmjs.com/package/hast-util-sanitize",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "hast-util-to-jsx-runtime",
+    "version": "2.3.0",
+    "url": "https://www.npmjs.com/package/hast-util-to-jsx-runtime",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "hast-util-to-parse5",
+    "version": "8.0.0",
+    "url": "https://www.npmjs.com/package/hast-util-to-parse5",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "hast-util-whitespace",
+    "version": "3.0.0",
+    "url": "https://www.npmjs.com/package/hast-util-whitespace",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "hastscript",
+    "version": "9.0.1",
+    "url": "https://www.npmjs.com/package/hastscript",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "he",
+    "version": "1.2.0",
+    "url": "https://www.npmjs.com/package/he",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "header-case",
+    "version": "2.0.4",
+    "url": "https://www.npmjs.com/package/header-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "highlight.js",
+    "version": "10.7.3",
+    "url": "https://www.npmjs.com/package/highlight.js",
+    "license": "BSD-3-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-3-Clause"
+  },
+  {
+    "name": "history",
+    "version": "5.3.0",
+    "url": "https://www.npmjs.com/package/history",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "hoist-non-react-statics",
+    "version": "2.5.5",
+    "url": "https://www.npmjs.com/package/hoist-non-react-statics",
+    "license": "BSD-3-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-3-Clause"
+  },
+  {
+    "name": "html-url-attributes",
+    "version": "3.0.0",
+    "url": "https://www.npmjs.com/package/html-url-attributes",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "html-void-elements",
+    "version": "3.0.0",
+    "url": "https://www.npmjs.com/package/html-void-elements",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "htmlparser2",
+    "version": "10.0.0",
+    "url": "https://www.npmjs.com/package/htmlparser2",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "iframe-resizer",
+    "version": "4.4.5",
+    "url": "https://www.npmjs.com/package/iframe-resizer",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "immer",
+    "version": "10.1.1",
+    "url": "https://www.npmjs.com/package/immer",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "inline-style-parser",
+    "version": "0.2.2",
+    "url": "https://www.npmjs.com/package/inline-style-parser",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "internmap",
+    "version": "2.0.3",
+    "url": "https://www.npmjs.com/package/internmap",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "invariant",
+    "version": "2.2.4",
+    "url": "https://www.npmjs.com/package/invariant",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "irregular-plurals",
+    "version": "3.5.0",
+    "url": "https://www.npmjs.com/package/irregular-plurals",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "is-plain-obj",
+    "version": "2.1.0",
+    "url": "https://www.npmjs.com/package/is-plain-obj",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "js-yaml",
+    "version": "4.1.0",
+    "url": "https://www.npmjs.com/package/js-yaml",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "json-schema-traverse",
+    "version": "1.0.0",
+    "url": "https://www.npmjs.com/package/json-schema-traverse",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "json-stringify-safe",
+    "version": "5.0.1",
+    "url": "https://www.npmjs.com/package/json-stringify-safe",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "jsonschema",
+    "version": "1.4.1",
+    "url": "https://www.npmjs.com/package/jsonschema",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "just-debounce-it",
+    "version": "3.2.0",
+    "url": "https://www.npmjs.com/package/just-debounce-it",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "lodash",
+    "version": "4.17.21",
+    "url": "https://www.npmjs.com/package/lodash",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "lower-case",
+    "version": "2.0.2",
+    "url": "https://www.npmjs.com/package/lower-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "math-intrinsics",
+    "version": "1.1.0",
+    "url": "https://www.npmjs.com/package/math-intrinsics",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "mdast-util-from-markdown",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/mdast-util-from-markdown",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "mdast-util-to-hast",
+    "version": "13.0.2",
+    "url": "https://www.npmjs.com/package/mdast-util-to-hast",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "mdast-util-to-string",
+    "version": "4.0.0",
+    "url": "https://www.npmjs.com/package/mdast-util-to-string",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "memoize-one",
+    "version": "6.0.0",
+    "url": "https://www.npmjs.com/package/memoize-one",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark",
+    "version": "4.0.0",
+    "url": "https://www.npmjs.com/package/micromark",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-core-commonmark",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-core-commonmark",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-factory-destination",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-factory-destination",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-factory-label",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-factory-label",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-factory-space",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-factory-space",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-factory-title",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-factory-title",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-factory-whitespace",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-factory-whitespace",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-character",
+    "version": "2.0.1",
+    "url": "https://www.npmjs.com/package/micromark-util-character",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-chunked",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-util-chunked",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-classify-character",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-util-classify-character",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-combine-extensions",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-util-combine-extensions",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-decode-numeric-character-reference",
+    "version": "2.0.1",
+    "url": "https://www.npmjs.com/package/micromark-util-decode-numeric-character-reference",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-decode-string",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-util-decode-string",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-encode",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-util-encode",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-html-tag-name",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-util-html-tag-name",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-normalize-identifier",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-util-normalize-identifier",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-resolve-all",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-util-resolve-all",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-sanitize-uri",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-util-sanitize-uri",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "micromark-util-subtokenize",
+    "version": "2.0.0",
+    "url": "https://www.npmjs.com/package/micromark-util-subtokenize",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "mobx",
+    "version": "6.13.7",
+    "url": "https://www.npmjs.com/package/mobx",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "mobx-react",
+    "version": "9.2.0",
+    "url": "https://www.npmjs.com/package/mobx-react",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "mobx-react-lite",
+    "version": "4.1.0",
+    "url": "https://www.npmjs.com/package/mobx-react-lite",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "moment",
+    "version": "2.30.1",
+    "url": "https://www.npmjs.com/package/moment",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "natural-orderby",
+    "version": "5.0.0",
+    "url": "https://www.npmjs.com/package/natural-orderby",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "no-case",
+    "version": "3.0.4",
+    "url": "https://www.npmjs.com/package/no-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "normalizr",
+    "version": "3.6.2",
+    "url": "https://www.npmjs.com/package/normalizr",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "nth-check",
+    "version": "2.1.1",
+    "url": "https://www.npmjs.com/package/nth-check",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "object-inspect",
+    "version": "1.13.4",
+    "url": "https://www.npmjs.com/package/object-inspect",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "oboe",
+    "version": "2.1.7",
+    "url": "https://www.npmjs.com/package/oboe",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "ordinal",
+    "version": "1.0.3",
+    "url": "https://www.npmjs.com/package/ordinal",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "param-case",
+    "version": "3.0.4",
+    "url": "https://www.npmjs.com/package/param-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "parse5",
+    "version": "7.3.0",
+    "url": "https://www.npmjs.com/package/parse5",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "parse5-htmlparser2-tree-adapter",
+    "version": "7.1.0",
+    "url": "https://www.npmjs.com/package/parse5-htmlparser2-tree-adapter",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "pascal-case",
+    "version": "3.1.2",
+    "url": "https://www.npmjs.com/package/pascal-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "path-case",
+    "version": "3.0.4",
+    "url": "https://www.npmjs.com/package/path-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "plur",
+    "version": "5.1.0",
+    "url": "https://www.npmjs.com/package/plur",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "prop-types",
+    "version": "15.8.1",
+    "url": "https://www.npmjs.com/package/prop-types",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "property-information",
+    "version": "6.4.0",
+    "url": "https://www.npmjs.com/package/property-information",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "punycode",
+    "version": "1.4.1",
+    "url": "https://www.npmjs.com/package/punycode",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "qr.js",
+    "version": "0.0.0",
+    "url": "https://www.npmjs.com/package/qr.js",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "qs",
+    "version": "6.13.0",
+    "url": "https://www.npmjs.com/package/qs",
+    "license": "BSD-3-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-3-Clause"
+  },
+  {
+    "name": "re-resizable",
+    "version": "6.11.2",
+    "url": "https://www.npmjs.com/package/re-resizable",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react",
+    "version": "18.3.1",
+    "url": "https://www.npmjs.com/package/react",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-dnd",
+    "version": "16.0.1",
+    "url": "https://www.npmjs.com/package/react-dnd",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-dnd-html5-backend",
+    "version": "16.0.1",
+    "url": "https://www.npmjs.com/package/react-dnd-html5-backend",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-dom",
+    "version": "18.3.1",
+    "url": "https://www.npmjs.com/package/react-dom",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-error-boundary",
+    "version": "6.0.0",
+    "url": "https://www.npmjs.com/package/react-error-boundary",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-fast-compare",
+    "version": "3.2.2",
+    "url": "https://www.npmjs.com/package/react-fast-compare",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-image-crop",
+    "version": "11.0.10",
+    "url": "https://www.npmjs.com/package/react-image-crop",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "react-infinite-scroll-component",
+    "version": "6.1.0",
+    "url": "https://www.npmjs.com/package/react-infinite-scroll-component",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-is",
+    "version": "16.13.1",
+    "url": "https://www.npmjs.com/package/react-is",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-lifecycles-compat",
+    "version": "3.0.4",
+    "url": "https://www.npmjs.com/package/react-lifecycles-compat",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-loading-skeleton",
+    "version": "3.5.0",
+    "url": "https://www.npmjs.com/package/react-loading-skeleton",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-markdown",
+    "version": "10.1.0",
+    "url": "https://www.npmjs.com/package/react-markdown",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-measure",
+    "version": "2.5.2",
+    "url": "https://www.npmjs.com/package/react-measure",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-merge-refs",
+    "version": "3.0.2",
+    "url": "https://www.npmjs.com/package/react-merge-refs",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-movable",
+    "version": "3.4.1",
+    "url": "https://www.npmjs.com/package/react-movable",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-qr-code",
+    "version": "2.0.16",
+    "url": "https://www.npmjs.com/package/react-qr-code",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-redux",
+    "version": "9.2.0",
+    "url": "https://www.npmjs.com/package/react-redux",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-relay",
+    "version": "20.0.0",
+    "url": "https://www.npmjs.com/package/react-relay",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-router",
+    "version": "7.6.2",
+    "url": "https://www.npmjs.com/package/react-router",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "react-transition-group",
+    "version": "4.4.5",
+    "url": "https://www.npmjs.com/package/react-transition-group",
+    "license": "BSD-3-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-3-Clause"
+  },
+  {
+    "name": "react-virtualized",
+    "version": "9.22.6",
+    "url": "https://www.npmjs.com/package/react-virtualized",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "redux",
+    "version": "4.2.1",
+    "url": "https://www.npmjs.com/package/redux",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "redux-thunk",
+    "version": "3.1.0",
+    "url": "https://www.npmjs.com/package/redux-thunk",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "rehype-raw",
+    "version": "7.0.0",
+    "url": "https://www.npmjs.com/package/rehype-raw",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "rehype-sanitize",
+    "version": "6.0.0",
+    "url": "https://www.npmjs.com/package/rehype-sanitize",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "relay-runtime",
+    "version": "20.0.0",
+    "url": "https://www.npmjs.com/package/relay-runtime",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "relay-test-utils",
+    "version": "20.0.0",
+    "url": "https://www.npmjs.com/package/relay-test-utils",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "remark-parse",
+    "version": "11.0.0",
+    "url": "https://www.npmjs.com/package/remark-parse",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "remark-rehype",
+    "version": "11.0.0",
+    "url": "https://www.npmjs.com/package/remark-rehype",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "reselect",
+    "version": "5.1.1",
+    "url": "https://www.npmjs.com/package/reselect",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "resize-observer-polyfill",
+    "version": "1.5.1",
+    "url": "https://www.npmjs.com/package/resize-observer-polyfill",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "rich-textarea",
+    "version": "0.26.5",
+    "url": "https://www.npmjs.com/package/rich-textarea",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "scheduler",
+    "version": "0.23.2",
+    "url": "https://www.npmjs.com/package/scheduler",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "scrollbar-width",
+    "version": "3.1.1",
+    "url": "https://www.npmjs.com/package/scrollbar-width",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "sentence-case",
+    "version": "3.0.4",
+    "url": "https://www.npmjs.com/package/sentence-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "set-cookie-parser",
+    "version": "2.7.1",
+    "url": "https://www.npmjs.com/package/set-cookie-parser",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "shallowequal",
+    "version": "1.1.0",
+    "url": "https://www.npmjs.com/package/shallowequal",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "side-channel",
+    "version": "1.1.0",
+    "url": "https://www.npmjs.com/package/side-channel",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "side-channel-list",
+    "version": "1.0.0",
+    "url": "https://www.npmjs.com/package/side-channel-list",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "side-channel-map",
+    "version": "1.0.1",
+    "url": "https://www.npmjs.com/package/side-channel-map",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "side-channel-weakmap",
+    "version": "1.0.2",
+    "url": "https://www.npmjs.com/package/side-channel-weakmap",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "simplify-js",
+    "version": "1.2.4",
+    "url": "https://www.npmjs.com/package/simplify-js",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "simply-uuid",
+    "version": "1.0.1",
+    "url": "https://www.npmjs.com/package/simply-uuid",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "snake-case",
+    "version": "3.0.4",
+    "url": "https://www.npmjs.com/package/snake-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "sniffr",
+    "version": "1.3.2",
+    "url": "https://www.npmjs.com/package/sniffr",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "space-separated-tokens",
+    "version": "2.0.2",
+    "url": "https://www.npmjs.com/package/space-separated-tokens",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "style-mod",
+    "version": "4.1.0",
+    "url": "https://www.npmjs.com/package/style-mod",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "style-to-object",
+    "version": "1.0.5",
+    "url": "https://www.npmjs.com/package/style-to-object",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "symbol-observable",
+    "version": "1.2.0",
+    "url": "https://www.npmjs.com/package/symbol-observable",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "trim-lines",
+    "version": "3.0.1",
+    "url": "https://www.npmjs.com/package/trim-lines",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "trough",
+    "version": "2.1.0",
+    "url": "https://www.npmjs.com/package/trough",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "tslib",
+    "version": "2.8.1",
+    "url": "https://www.npmjs.com/package/tslib",
+    "license": "0BSD",
+    "licenseUrl": "http://opensource.org/licenses/0BSD"
+  },
+  {
+    "name": "unified",
+    "version": "11.0.4",
+    "url": "https://www.npmjs.com/package/unified",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "unist-util-is",
+    "version": "6.0.0",
+    "url": "https://www.npmjs.com/package/unist-util-is",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "unist-util-position",
+    "version": "5.0.0",
+    "url": "https://www.npmjs.com/package/unist-util-position",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "unist-util-stringify-position",
+    "version": "4.0.0",
+    "url": "https://www.npmjs.com/package/unist-util-stringify-position",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "unist-util-visit",
+    "version": "5.0.0",
+    "url": "https://www.npmjs.com/package/unist-util-visit",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "unist-util-visit-parents",
+    "version": "6.0.1",
+    "url": "https://www.npmjs.com/package/unist-util-visit-parents",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "upper-case",
+    "version": "2.0.2",
+    "url": "https://www.npmjs.com/package/upper-case",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "upper-case-first",
+    "version": "2.0.2",
+    "url": "https://www.npmjs.com/package/upper-case-first",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "uri-js",
+    "version": "4.4.1",
+    "url": "https://www.npmjs.com/package/uri-js",
+    "license": "BSD-2-Clause",
+    "licenseUrl": "http://opensource.org/licenses/BSD-2-Clause"
+  },
+  {
+    "name": "url",
+    "version": "0.11.4",
+    "url": "https://www.npmjs.com/package/url",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "use-sync-external-store",
+    "version": "1.4.0",
+    "url": "https://www.npmjs.com/package/use-sync-external-store",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "util-deprecate",
+    "version": "1.0.2",
+    "url": "https://www.npmjs.com/package/util-deprecate",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "uuid",
+    "version": "9.0.1",
+    "url": "https://www.npmjs.com/package/uuid",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "vfile",
+    "version": "6.0.1",
+    "url": "https://www.npmjs.com/package/vfile",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "vfile-location",
+    "version": "5.0.3",
+    "url": "https://www.npmjs.com/package/vfile-location",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "vfile-message",
+    "version": "4.0.2",
+    "url": "https://www.npmjs.com/package/vfile-message",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-area",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-area",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-axis",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-axis",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-bar",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-bar",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-box-plot",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-box-plot",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-brush-container",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-brush-container",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-brush-line",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-brush-line",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-candlestick",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-candlestick",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-canvas",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-canvas",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-chart",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-chart",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-core",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-core",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-create-container",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-create-container",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-cursor-container",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-cursor-container",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-errorbar",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-errorbar",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-group",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-group",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-histogram",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-histogram",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-legend",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-legend",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-line",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-line",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-pie",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-pie",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-polar-axis",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-polar-axis",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-scatter",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-scatter",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-selection-container",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-selection-container",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-shared-events",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-shared-events",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-stack",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-stack",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-tooltip",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-tooltip",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-vendor",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-vendor",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-voronoi",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-voronoi",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-voronoi-container",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-voronoi-container",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "victory-zoom-container",
+    "version": "37.3.6",
+    "url": "https://www.npmjs.com/package/victory-zoom-container",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "w3c-keyname",
+    "version": "2.2.7",
+    "url": "https://www.npmjs.com/package/w3c-keyname",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "web-namespaces",
+    "version": "2.0.1",
+    "url": "https://www.npmjs.com/package/web-namespaces",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "web-vitals",
+    "version": "5.0.3",
+    "url": "https://www.npmjs.com/package/web-vitals",
+    "license": "Apache-2.0",
+    "licenseUrl": "http://opensource.org/licenses/Apache-2.0"
+  },
+  {
+    "name": "whatwg-fetch",
+    "version": "3.6.20",
+    "url": "https://www.npmjs.com/package/whatwg-fetch",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "workbox-window",
+    "version": "7.3.0",
+    "url": "https://www.npmjs.com/package/workbox-window",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "yaml",
+    "version": "2.8.0",
+    "url": "https://www.npmjs.com/package/yaml",
+    "license": "ISC",
+    "licenseUrl": "http://opensource.org/licenses/ISC"
+  },
+  {
+    "name": "yet-another-react-lightbox",
+    "version": "3.23.3",
+    "url": "https://www.npmjs.com/package/yet-another-react-lightbox",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  },
+  {
+    "name": "zwitch",
+    "version": "2.0.4",
+    "url": "https://www.npmjs.com/package/zwitch",
+    "license": "MIT",
+    "licenseUrl": "http://opensource.org/licenses/MIT"
+  }
+]

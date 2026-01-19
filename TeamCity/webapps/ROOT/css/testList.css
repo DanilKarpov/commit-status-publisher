@@ -1,0 +1,75 @@
+table.testList {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.testList > td {
+  padding-top: .3em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  vertical-align: top;
+}
+
+.testNamePart.more {
+  font-style: italic;
+}
+
+#muted-problems .action-bar {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#muted-problems table.bulk-toolbar td {
+  margin: 0;
+  padding: 0 6px;
+  text-align: left;
+}
+
+#muted-problems table.bulk-toolbar td.testNamePart {
+  padding-left: 10px;
+}
+
+#muted-problems table.bulk-toolbar td.mute-scope {
+  padding-left: 1.6em;
+}
+
+#muted-problems table.bulk-toolbar td.mute-time {
+  padding-left: 2.2em;
+}
+
+#muted-problems .testNamePart {
+  width: 62%;
+}
+
+#muted-problems .mute-scope {
+  width: 22%;
+}
+
+#muted-problems .mute-time {
+  width: 16%;
+}
+
+.testFailedInPart {
+  width: 15%;
+  padding-right: 1em;
+  vertical-align: top;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.testFailedInPart span.highlightChanges {
+  left: 0;
+}
+
+.testFailedInPart,
+.testFailedInPart a {
+  color: #737577;
+}
+
+.testFailedInPart a {
+  text-decoration-line: underline;
+}
+
+.testFailedInPart em {
+  padding-right: 23px; /* To align text with cases when there is popup arrow */
+}

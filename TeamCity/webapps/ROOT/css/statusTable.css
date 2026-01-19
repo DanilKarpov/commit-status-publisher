@@ -1,0 +1,58 @@
+.statusBlockContainer {
+  left: 0 !important;
+  min-width: 990px;
+  padding: 3px;
+}
+
+table.statusTable {
+  table-layout: fixed;
+  width: 100%;
+  padding: .35em 0;
+}
+
+.statusTable td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.statusTable .takeResponsibility {
+  position: relative;
+  left: -3px;
+}
+
+.statusTable .responsible span.responsibilityMessage {
+  padding: 0 4px;
+  margin-bottom: 5px;
+}
+
+.customizationInfo {
+  display: block;
+}
+.customizationInfo svg {
+  fill: #ccc;
+  position: relative;
+  top: 2px;
+}
+.customizationInfo__text {
+  padding-left: 5px;
+}
+
+.failureStatusBlock {
+  background-color: #fef7f7;
+  border: var(--ring-error-color) solid 1px;
+}
+
+.successStatusBlock {
+  background-color: #f5fbf7;
+  border: #4da400 solid 1px;
+}
+
+.unknownStatusBlock {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  border: var(--ring-line-color, #dfe5eb) solid 1px;
+}
+
+.queuedStatusBlock {
+  background-color: #f1f4f7;
+  border: var(--ring-line-color, #dfe5eb) solid 1px;
+}

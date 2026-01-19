@@ -1,0 +1,95 @@
+.projectHierarchy {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.projectHierarchy span.handle {
+  vertical-align: text-bottom;
+}
+
+.projectHierarchy .sub_project_table {
+  border: none;
+  padding: 0;
+}
+
+.projectHierarchy .project .archived_project{
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 200;
+  color: #737577;
+  margin-left: 0.5em;
+}
+
+.projectHierarchy .project .counter {
+  color: #737577;
+}
+
+.projectHierarchy .build_type .no_build_types {
+  font-style: italic;
+  color: #737577;
+}
+
+.projectHierarchy td {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.projectHierarchy table.project_content_holder {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.projectHierarchy td.project_content_holder {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-collapse: collapse;
+}
+
+.projectHierarchy tr.project {
+  background: none;
+}
+
+.projectHierarchy tr.project:hover,
+.projectHierarchy tr.vcsRoot:hover,
+.projectHierarchy tr.template:hover,
+.projectHierarchy tr.build_type:hover {
+  background-color: var(--ring-hover-background-color); /* Highlight for better visibility, the row is not clickable */
+}
+
+.projectHierarchy.modificationBuilds tr:hover,
+.projectHierarchy.buildTypesRespTable tr:hover {
+  background-color: inherit;
+}
+
+.projectHierarchy .project_description {
+  padding-left: 5px;
+  color: #737577;
+}
+
+.projectHierarchy .build_type_description {
+  padding-left: 5px;
+  color: #737577;
+}
+
+.projectHierarchy tr.project {
+  font-weight: normal;
+}
+
+.projectHierarchy .depth-0 {padding-left: 2px; }
+.projectHierarchy .depth-1 {padding-left: 20px; }
+.projectHierarchy .depth-2 {padding-left: 40px; }
+.projectHierarchy .depth-3 {padding-left: 60px; }
+.projectHierarchy .depth-4 {padding-left: 80px; }
+.projectHierarchy .depth-5 {padding-left: 100px; }
+.projectHierarchy .depth-6 {padding-left: 120px; }
+.projectHierarchy .depth-7 {padding-left: 140px; }
+.projectHierarchy .depth-8 {padding-left: 160px; }
+.projectHierarchy .depth-9 {padding-left: 180px; }
+
+.projectHierarchy td.details {
+  width: 80%;
+}

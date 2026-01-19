@@ -1,0 +1,7 @@
+div.errorMessage {
+  margin: 0.5em auto;
+  padding: 5px;
+  color: var(--ring-error-color);
+  font-weight: bold;
+  border: 1px solid var(--ring-error-color);
+}

@@ -1,0 +1,2 @@
+<%@ include file="/include-internal.jsp" %>
+TeamCity servers with active HTTPS cannot use HTTP URLs for artifacts' domain isolation. Go to <a href="<c:url value="/admin/admin.html?item=serverConfigGeneral"/>">server settings</a> and provide a secure HTTPS artifacts' URL instead.

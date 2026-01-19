@@ -1,0 +1,85 @@
+img.projectIcon {
+  visibility: hidden;
+  padding: 3px 2px 0 3px;
+}
+
+td.buildNumber {
+  width: 5em;
+}
+
+.build .build {
+  margin-left: 2.2em;
+}
+
+/* Hide link from the overview page */
+a.noCompatibleAgentsLink {
+  display: none;
+}
+
+.configure-visible-message {
+  margin-left: 5px;
+}
+
+.idented-paragraph {
+  margin: 2em 0 0;
+}
+
+ul.startPage {
+  margin: 0;
+  padding: 0;
+}
+
+ul.startPage li {
+  list-style-type: circle;
+  margin: 0 0 0 2em;
+  padding: 5px 0 0;
+}
+
+.addMessage:not(:empty) {
+  margin-right: .5em;
+  color: #737577;
+}
+
+/* New projects bar */
+#toolbar {
+  text-align: center;
+}
+
+#new-projects,
+#overview-projects {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 2px 1.5em;
+  background: var(--tc-classic-highlight-color, #ffc);
+  text-align: center;
+}
+
+#new-projects .middle-link {
+  margin: 0 1.5em;
+}
+
+#new-projects-list {
+  min-width: 25em;
+}
+
+#new-projects-list td {
+  text-align: right;
+}
+
+#new-projects-list .project-link {
+  text-align: left;
+  color: #737577;
+}
+
+#new-projects-list .project-link a {
+  font-weight: bold;
+}
+
+#overview-projects .dismiss-link {
+  margin-left: 1.5em;
+}
+
+.projectHeaderTable .search-panel{
+  font-size: var(--ring-font-size, 14px);
+}
+

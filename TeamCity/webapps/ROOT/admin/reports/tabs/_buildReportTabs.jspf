@@ -1,0 +1,64 @@
+<%--@elvariable id="project" type="jetbrains.buildServer.serverSide.SProject"--%>
+<c:set var="canEdit" value="${afn:permissionGrantedForProject(project, 'EDIT_PROJECT')}"/>
+<div>
+  <h2 class="noBorder" >Build Report Tabs</h2>
+  <bs:smallNote>Here you can define artifact-based tabs<bs:help file="Including+Third-Party+Reports+in+the+Build+Results"/> for build results.</bs:smallNote>
+  <c:if test="${not empty reportTabs}">
+    <c:set var="tabType" value="BUILD_REPORT_TAB"/>
+    <l:tableWithHighlighting className="parametersTable" highlightImmediately="true">
+      <tr>
+        <th>Tab Title</th>
+        <th colspan="${project.readOnly or not canEdit ? 1 : 3}" style="width:40%">Start Page</th>
+      </tr>
+      <c:forEach var="reportTab" items="${reportTabs}">
+        <c:set var="inherited" value="${not(project.externalId eq reportTab.project.externalId)}"/>
+        <c:choose>
+          <c:when test="${inherited}">
+            <c:set var="editTab"/>
+            <c:set var="highlight"/>
+          </c:when>
+          <c:otherwise>
+            <c:set var="editTab">
+              <c:if test="${project.readOnly or not canEdit}">return false;</c:if>
+              var target = Event.element(event);
+              if (target.tagName == 'A' && target.innerHTML != 'Edit') { return true; }
+              BS.BuildReportTabDialog.show('${reportTab.id}', '<bs:escapeForJs text="${reportTab.title}" forHTMLAttribute="true"/>', '<bs:escapeForJs text="${reportTab.startPage}" forHTMLAttribute="true"/>');
+            </c:set>
+            <c:set var="highlight" value="highlight"/>
+          </c:otherwise>
+        </c:choose>
+        <tr>
+          <td class="${highlight}" onclick="${editTab}">
+            <bs:out value="${reportTab.title}"/>
+            <c:if test="${inherited}">
+              <c:set var="projectLink">
+                <authz:authorize allPermissions="EDIT_PROJECT">
+                <jsp:attribute name="ifAccessGranted">
+                  <c:url var="editUrl" value="/admin/editProject.html?projectId=${reportTab.project.externalId}&tab=reportTabs"/>
+                  <a href="${editUrl}"><c:out value="${reportTab.project.extendedFullName}"/></a>
+                </jsp:attribute>
+                <jsp:attribute name="ifAccessDenied">
+                  <bs:projectLink project="${reportTab.project}"><bs:out value="${reportTab.project.extendedFullName}"/></bs:projectLink>
+                </jsp:attribute>
+                </authz:authorize>
+              </c:set>
+              <span class="inheritedParam"> (inherited from project "${projectLink}")</span>
+            </c:if>
+          </td>
+          <td class="${highlight} beforeActions" onclick="${editTab}"><bs:out value="${reportTab.startPage}"/></td>
+          <c:if test="${not project.readOnly and canEdit}">
+          <c:choose>
+            <c:when test="${inherited}">
+              <td class="edit" colspan="2"></td>
+            </c:when>
+            <c:otherwise>
+              <td class="edit ${highlight}" onclick="${editTab}"><a href="#" onclick="${editTab}; Event.stop(event)">Edit</a></td>
+              <td class="edit ${highlight}"><a href="#" onclick="BS.ReportTabsForm.deleteTab('${tabType}', '${reportTab.id}', '<bs:escapeForJs text="${project.externalId}"/>'); return false">Delete</a></td>
+            </c:otherwise>
+          </c:choose>
+          </c:if>
+        </tr>
+      </c:forEach>
+    </l:tableWithHighlighting>
+  </c:if>
+</div>

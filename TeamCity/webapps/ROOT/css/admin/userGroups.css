@@ -1,0 +1,327 @@
+#addGroup label {
+  width: 10em;
+}
+
+#addGroup .error {
+  margin-left: 10em;
+}
+
+table.groupListHeader {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+table.groupListHeader td {
+  vertical-align: top;
+}
+
+table.groupListHeader td.groupStats {
+  width: 50%;
+}
+
+.groupTreeContainer {
+  margin: 0 0 1em .5em;
+}
+
+.groupTreeTitle {
+  margin-bottom: 0.4em;
+  font-weight: bold;
+}
+
+.groupsTable {
+  width: 100%;
+  margin: 0 0 1em 0;
+  padding: 0;
+  border-bottom: solid 2px var(--ring-line-color, #dfe5eb);
+  border-collapse: collapse;
+}
+
+.groupsTable th {
+  text-align: left;
+}
+
+.groupsTable td.last {
+  border-left: solid 1px var(--ring-line-color, #dfe5eb);
+}
+
+.groupsTable th.groupCode {
+  width: 30%;
+}
+
+.groupsTable td.groupCode {
+  white-space: nowrap;
+}
+
+.groupsTable th.groupRoles,
+.groupsTable th.parentGroups {
+  width: 12%;
+}
+
+.groupsTable th.groupUsers {
+  width: 20%;
+}
+
+.groupsTable th.actions {
+  width: 3%;
+}
+
+.groupsTable td.edit {
+  white-space: nowrap;
+  font-size: 90%;
+  text-align: center;
+}
+
+.groupsTable td.groupParents {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+
+.attachToGroupsContainer {
+  overflow: auto;
+  width: 100%;
+  max-height: 20em;
+  padding: 2px 0 2px 4px;
+}
+
+.settingsBlockContent .attachToGroupsContainer {
+  min-width: 45em;
+}
+
+ul.availableGroupsList {
+  margin: 0.5em 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.availableGroupsList li {
+  padding: 4px 0;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.treeTable td.move {
+  width: 5%;
+  font-size: 90%;
+}
+
+div.topLevel {
+  margin: 1em 0;
+}
+
+.treeTable {
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-collapse: collapse;
+}
+
+.treeTable td {
+  margin: 0;
+  padding: 2px;
+  border: none;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.treeTable td input {
+  margin: 0;
+  padding: 0;
+}
+
+.treeTable td.checkbox {
+  width: 1%;
+}
+
+.treeTable td span:before {
+  content: '';
+  display: inline-block;
+  background-color: transparent;
+  background-image: url(../../webComponents/teamcity-elements/icons/teamcity-sprite.png?v=197325);
+  background-repeat: no-repeat;
+  background-size: 240px 634px;
+  background-position: -20px -340px;
+  width: 16px;
+  height: 16px;
+
+  outline: none;
+  vertical-align: text-bottom;
+  margin-right: 2px;
+}
+
+.treeTable td span.current:before {
+  background-position: 0px -340px;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 200 / 100),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+
+  .treeTable td span:before {
+    background-image: url(../../webComponents/teamcity-elements/icons/teamcity-sprite@2x.png?v=197325);
+  }
+}
+
+.treeTable td span.current {
+  color: #aaa;
+}
+
+.treeTable td span.subgroup {
+  color: #aaa;
+}
+
+.treeTable .level1 {
+  margin-left: 1em;
+}
+
+.treeTable .level2 {
+  margin-left: 2em;
+}
+
+.treeTable .level3 {
+  margin-left: 3em;
+}
+
+.treeTable .level4 {
+  margin-left: 4em;
+}
+
+.treeTable .level5 {
+  margin-left: 5em;
+}
+
+.treeTable .level6 {
+  margin-left: 6em;
+}
+
+.treeTable .level7 {
+  margin-left: 7em;
+}
+
+.treeTable .level8 {
+  margin-left: 8em;
+}
+
+#editGroup {
+  width: 80%;
+}
+
+#editGroup .attachToNote {
+  margin-top: 1em;
+}
+
+#groupUsersContainer {
+  width: 70%;
+}
+
+#groupUsersContainer table.groupUsersTable {
+  width: 100%;
+}
+
+#groupUsersContainer table.groupUsersTable th {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding: 2px 2px 2px 4px;
+  text-align: left;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+#groupUsersContainer table.groupUsersTable th.sortable {
+  font-weight: normal;
+}
+
+#groupUsersContainer table.groupUsersTable td {
+  padding: 1px 1px 1px 4px;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+#groupUsersContainer table.groupUsersTable th.username,
+table.groupUsersTable th.email {
+  width: 25%;
+}
+
+#groupUsersContainer table.groupUsersTable .unassign {
+  width: 10%;
+  padding: 0;
+  text-align: center;
+}
+
+#attachUsersToGroup table.userList {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#attachUsersToGroup table.userList th {
+  background-color: #909090;
+  padding: 2px;
+  color: var(--ring-content-background-color, #fff);
+  text-align: left;
+}
+
+#attachUsersToGroup table.userList th.username,
+#attachUsersToGroup table.userList th.email {
+  width: 25%;
+}
+
+#attachUsersToGroup table.userList th.checkbox {
+  width: 4%;
+}
+
+.userListContainer {
+  overflow: auto;
+  height: auto;
+  min-height: 5em;
+  max-height: 20em;
+}
+
+#attachUsersToGroup table.userList td {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  padding: 0 2px 0 2px;
+  text-align: left;
+}
+
+#attachUsersToGroup table.userList .checkbox {
+  text-align: center;
+}
+
+table.userListFilter {
+  width: 100%;
+}
+
+table.userListFilter td.label {
+  width: 10%;
+}
+
+table.userListFilter td.button {
+  width: 20%;
+  white-space: nowrap;
+}
+
+table.userListFilter td.keywordField {
+  width: 70%;
+}
+
+table.userListFilter td.keywordField input {
+  width: 80%;
+}
+
+#groupUsersPopup {
+  width: 25em;
+}
+
+#groupUsersPopup table.groupUsersTable {
+  border: none;
+  border-collapse: collapse;
+}
+
+#groupUsersPopup table.groupUsersTable td {
+  padding: 1px;
+  border-style: none;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+

@@ -1,0 +1,118 @@
+.assignRoleBtn {
+  margin-bottom: 1em;
+}
+
+table.userRolesTable {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+table.userRolesTable th,
+table.userRolesTable td {
+  text-align: left;
+  padding-left: 1em;
+}
+
+.userRolesTable th.roleName {
+  width: 40%;
+}
+
+.userRolesTable td.roleName {
+  vertical-align: top;
+}
+
+.userRolesTable td.roleProjects {
+  width: 48%;
+  vertical-align: top;
+}
+
+.userRolesTable th.unassign,
+.userRolesTable td.unassign {
+  width: 1%;
+  padding: 0 .5em;
+  text-align: center;
+}
+
+#roleTitle {
+  border-bottom: #dbdbdb 1px solid;
+  font-weight: bold;
+}
+
+#rolePermissions {
+  background-color: var(--ring-line-color, #dfe5eb);
+  overflow: auto;
+  width: 19em;
+  height: 9em;
+  margin-top: 0.3em;
+  padding: 3px;
+}
+
+#rolePermissions ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#rolePermissions ul li {
+  font-size: 85%;
+  white-space: nowrap;
+}
+
+.assignRoleDialogTable td {
+  padding: 3px;
+}
+
+.groupHeader .note {
+  width: 80%;
+  float: left;
+}
+
+.groupHeader .noteText {
+  margin: 0;
+  padding: 0;
+}
+
+.groupHeader .saveButtonsBlock {
+  margin: 0;
+  padding: 0;
+}
+
+/*  user roles popup styles */
+#authorityRolesPopup {
+  width: 40em;
+}
+
+.authorityRolesPopup table {
+  clear: both;
+}
+
+.authorityRolesPopup table.settings {
+  border: none;
+}
+
+.authorityRolesPopup table.settings td {
+  padding: 2px;
+  border: none;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.authorityRolesPopup table.settings td {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.authorityRolesPopup .groupHeader {
+  margin-top: 1.3em;
+  margin-bottom: 0.3em;
+}
+
+.assignUnassignRoleDialogTable label {
+  white-space: nowrap;
+}
+
+.assignUnassignRoleDialogTable td.header {
+  width: 8em;
+}
+
+.assignUnassignRoleDialogTable .globalText {
+  margin-bottom: 1em;
+}

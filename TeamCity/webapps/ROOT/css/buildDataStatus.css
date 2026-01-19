@@ -1,0 +1,125 @@
+dl#buildDataStatus {
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 13px;
+  font-size: 90%;
+}
+
+dl#buildDataStatus dd {
+  margin: 0 0 0 7.1em;
+  padding: 3px 0;
+}
+
+dl#buildDataStatus dt {
+  float: left;
+  width: 8em;
+  padding: 2px 0 0 0;
+}
+
+.cancelledInfo {
+  padding-top: 0;
+  padding-left: 0;
+}
+
+table.statusTable td.st {
+  /* we use additional class here because we have to avoid restyling of nested table */
+  padding: 3px 0 3px 20px;
+  vertical-align: top;
+}
+
+table.statusTable td.fixed {
+  width: 25%;
+  padding-right: 5px;
+}
+
+table.statusTable td.labels {
+  width: 136px;
+  white-space: nowrap;
+}
+
+table.statusTable .duration{
+  white-space: nowrap;
+}
+
+table.statusTable div.duration{
+  white-space: nowrap;
+  display: inline-block;
+  width: 50%;
+}
+
+table.statusTable div.stopLink {
+  position: relative;
+  margin-left: 1.5em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+table.statusTable .agentDetails{
+  white-space: normal;
+  min-width: 8em;
+}
+
+#userBuildDetails {
+  margin-top: 0.6em;
+  line-height: 1.6em;
+}
+
+.buildArtifacts #userBuildDetails {
+  margin: 0 0 0.5em 0;
+}
+
+#userBuildDetails img,
+#userBuildDetails .icon16,
+#userBuildDetails .icon-asterisk,
+#userBuildDetails .svg-icon {
+  margin-right: .4em;
+}
+
+#userBuildDetails .favoriteBuild,
+#userBuildDetails .commentLongIcon {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 21px;
+  text-align: left;
+  padding-left: 2px;
+}
+
+#userBuildDetails .buildProblemIcon_asterisk {
+  width: 14px;
+  padding-left: 3px;
+}
+
+#userBuildDetails .personalIconWrapper,
+#userBuildDetails .pinImg {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 17px;
+  padding-left: 3px;
+}
+
+#userBuildDetails .pinImg {
+  padding-left: 1px;
+}
+
+#userBuildDetails .tags .btn_mini {
+  vertical-align: text-top;
+}
+
+#userBuildDetails .unselectedTag {
+  background-color: var(--ring-content-background-color, #fff);
+  border-color: var(--ring-line-color, #dfe5eb);
+}
+
+#userBuildDetails .unselectedTag:hover {
+  background-color: var(--ring-line-color, #dfe5eb);
+}
+
+#userBuildDetails .tagIcon {
+  padding: 0 1px;
+  margin-right: 2px;
+}
+
+/** agent status style: */
+.unregistered {
+  color: var(--ring-error-color);
+}

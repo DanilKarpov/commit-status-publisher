@@ -1,0 +1,225 @@
+/*------------- Change log page styles*/
+
+.logTable .actionBar {
+  margin-top: 10px;
+}
+
+.captionRow {
+  background-color: #eef4fa;
+  padding: 2px 0 3px 8px;
+  font-size: 100%;
+}
+
+.captionRow td.branch .branchName {
+  background-color: #DBEBF5;
+}
+
+.captionRow td.branch.default .branchName {
+  background-color: #9DCBFA;
+}
+
+.logTable .captionRow .changeLogBuildRow {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.logTable .captionRow td {
+  padding: 0;
+  border: none!important;
+}
+
+.logTable .captionRow td.bt {
+  width: 30em;
+}
+
+.logTable .captionRow td.branch {
+  width: 0;
+  padding-right: 0;
+}
+
+.logTable .captionRow td.buildNumber {
+  width: 2.8em !important;
+  padding-right: 24px;
+}
+
+.status {
+  white-space: nowrap;
+}
+
+.logTable .captionRow td.pinStatus {
+  width: 1.5em;
+  padding-left: 5px;
+}
+
+.logTable .captionRow td.tags {
+  width: 10em;
+}
+
+.logTable .captionRow td.startDate {
+  width: 7em;
+  text-align: right;
+  padding-right: 8px;
+}
+
+.logTable .captionRow td.status .outofseq {
+  font-style: italic;
+}
+
+.changeLogTableInner {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.changeLogTableInner .graphTd,
+.changeLogTableInner .changeLogTd {
+  vertical-align: top;
+}
+
+.changeLogTableInner .graphTd {
+  width: 1%;
+}
+
+.changeLogToggle {
+  margin-right: 1em;
+}
+
+.changeLogPermalink {
+  float: right;
+}
+
+.resultsTitle {
+  margin: 1em 0;
+}
+
+#changeLogTable {
+  margin-top: 10px;
+}
+
+#changeLogTable table.overviewTypeTable {
+  table-layout: auto;
+  width: 100%;
+  margin-bottom: 3px;
+}
+
+#changeLogTable table.overviewTypeTable .modification-row td {
+  padding: 0.3em 5px;
+}
+
+#changeLogTable table.overviewTypeTable td.line .hr {
+  background-color: #bfcfe2;
+  overflow: hidden;
+  height: 1px;
+  margin: 0 10px 0 10px;
+  padding: 0;
+  font-size: 0;
+  border-top: none;
+}
+
+#changeLogTable table.overviewTypeTable td.changeDescription {
+  overflow: hidden;
+  width: 50%;
+  max-width: 50vw;
+  padding-left: 8px;
+  font-weight: 600;
+  line-height: 1.4em;
+  text-overflow: ellipsis;
+  word-break: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#changeLogTable table.overviewTypeTable td.artifactDescriptionCaption {
+  font-weight: bold;
+  padding-left: 25px;
+  cursor: pointer;
+  border-right: none;
+  background-color: var(--ring-content-background-color, #fff);
+  background-position: 5px 4px;
+}
+
+#changeLogTable table.overviewTypeTable td.artifactDescription {
+  overflow: hidden;
+  padding-left: 20px;
+  line-height: 1.4em;
+  text-overflow: ellipsis;
+}
+
+.artifactDescriptionTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.artifactDescriptionTable td {
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+.artifactDescriptionTable .artifactDescriptionBuildType,
+.artifactDescriptionTable .status {
+  width: 20em;
+}
+
+#changeLogTable table.overviewTypeTable td.changedFiles {
+  width: 9em;
+  padding-right: 2em;
+  text-align: right;
+}
+
+#changeLogTable table.overviewTypeTable td.changedFiles span.highlightChanges {
+  left: 0;
+}
+
+#changeLogTable table.overviewTypeTable td.vcsChange {
+  white-space: nowrap;
+}
+
+#changeLogTable table.overviewTypeTable td.vcsChange a:hover {
+  text-decoration: none;
+}
+
+#changeLogTable table.overviewTypeTable td.vcsChange .vcsChangeType {
+  text-transform: capitalize;
+}
+
+#changeLogTable table.overviewTypeTable td.vcsChange .vcsChangeNum {
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+}
+
+#changeLogTable table.overviewTypeTable td.vcsChangeDetails {
+  text-align: right;
+  white-space: nowrap;
+  width: 80px;
+}
+
+#changeLogTable table.overviewTypeTable td.vcsChangeDetails .icon,
+#changeLogTable table.overviewTypeTable td.vcsChangeDetails .icon16 {
+  vertical-align: middle;
+}
+
+#changeLogTable table.overviewTypeTable td.date {
+  width: 8em;
+}
+
+#changeLogTable table.overviewTypeTable td.chainChangesIcon {
+  width: 1.5em;
+  text-align: right;
+}
+
+#changeLogTable tr.selectedCommitRow {
+  background-color: #fafafa;
+}
+
+#changeLogTable .files-row-inner {
+  padding-bottom: .6em;
+}
+
+#changeLogTable .files-row-inner table.changedFiles {
+  margin-left: 40px;
+}
+
+.changeLogBuildRow .branch .branchName {
+  padding: 2px 4px;
+  border: none;
+}
+
+

@@ -1,0 +1,90 @@
+#userList {
+  margin: 0.2em;
+}
+
+#userList .pager-top {
+  margin: 0 0 .7em;
+}
+
+table.userList {
+  width: 100%;
+  margin: 0 0 1em;
+  padding: 0;
+  border-bottom: solid 2px var(--ring-line-color, #dfe5eb);
+  border-collapse: collapse;
+}
+
+table.userList th.selectAll {
+  width: 2em;
+  padding-left: 8px;
+}
+
+table.userList td.selectUser {
+  width: 2em;
+  padding-left: 8px;
+}
+
+table.userList td.username {
+  width: 14em;
+}
+
+table.userList td.fullname {
+  width: 18em;
+}
+
+table.userList td.email {
+  width: 18em;
+}
+
+table.userList td.groups,
+table.userList td.roles {
+  width: 6em;
+}
+
+table.userList td.date {
+  width: 9.5em;
+  text-align: left;
+}
+
+.selectAllNoneLinks {
+  margin: 0;
+  padding: 0;
+  font-size: 80%;
+  font-weight: normal;
+}
+
+.selectAllNoneLinks .selectAll {
+  float: none;
+  color: var(--ring-content-background-color, #fff);
+  text-decoration: underline;
+}
+
+.selectAllNoneLinks .unselectAll {
+  float: none;
+  padding-right: 0;
+  color: var(--ring-content-background-color, #fff);
+  text-decoration: underline;
+}
+
+a.selectAll:hover,
+a.unselectAll:hover {
+  color: var(--ring-content-background-color, #fff);
+}
+
+table.usersActions {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.usersActions td {
+  padding: 0.4em 0;
+}
+
+table.usersActions .pagerDesc {
+  width: 70%;
+  padding-left: 1em;
+}
+
+table.usersActions .buttons {
+  white-space: nowrap;
+}

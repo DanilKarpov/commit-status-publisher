@@ -1,0 +1,535 @@
+<jsp:useBean id="projectPath" scope="request" type="java.util.List<jetbrains.buildServer.web.util.ProjectHierarchyBean >"/>
+
+<table class="runnerFormTable">
+
+  <tr id="${idEmbeddedHeader}" class="${classNewTokenFormRow}" style="display: none;">
+    <th colspan="2"><h3>Generate New Token</h3></th>
+  </tr>
+
+  <tr id="${idFirstNewTokenFormRow}" class="settingsRow ${classNewTokenFormRow}">
+    <th>
+      <label for="${idTokenNameInput}">Token Name:<l:star/></label>
+      <c:set var="nameHint">
+        The name may consist of ASCII characters, digits, underscores and hyphens.<br/>
+        It may not contain spaces.<br/>
+        The maximum allowed length is 30.
+      </c:set>
+      <bs:helpIcon iconTitle="${nameHint}"/>
+    </th>
+    <td>
+      <forms:textField name="${idTokenNameInput}" className="mediumField tokenFormInput" maxlength="30"/>
+      <forms:saving id="${idTokenNameValidationWaiter}" style="float: none;"/>
+      <span class="error" id="error_${idTokenNameInput}"></span>
+    </td>
+  </tr>
+
+  <tr class="settingsRow ${classNewTokenFormRow}">
+    <th>
+      <label for="${idTokenConnectionInput}">Connection:</label>
+    </th>
+    <td>
+      <forms:select name="${idTokenConnectionInput}" className="mediumField tokenFormInput" onchange="BS.NewTokenForm.handleConnectionChange(this);"/>
+      <forms:saving id="${idTokenConnectionWaiter}" style="float: none;"/>
+      <span class="error" id="error_${idTokenConnectionInput}"></span>
+    </td>
+  </tr>
+
+  <tr class="settingsRow ${classNewTokenFormRow} ${classTokenIntentSection}" style="display: none;">
+    <th>
+      <label for="${idTokenIntentRadioGroup}">Permissions:</label>
+      <bs:helpIcon iconTitle="Access that will be granted by VCS"/>
+    </th>
+    <td>
+      <div>
+        <forms:radioButton name="${idTokenIntentRadioGroup}" id="${idTokenIntentRadioFullAccess}" value="${intentRepoFull}"/>
+        <label for="${idTokenIntentRadioFullAccess}">Full access to repository</label>
+      </div>
+      <div>
+        <forms:radioButton name="${idTokenIntentRadioGroup}" id="${idTokenIntentRadioGroupReadAccess}" value="${intentRepoGroupsRead}"/>
+        <label for="${idTokenIntentRadioGroupReadAccess}">Read access to repository groups</label>
+      </div>
+      <div>
+        <forms:radioButton name="${idTokenIntentRadioGroup}" id="${idTokenIntentRadioWriteStatus}" value="${intentPublishStatus}"/>
+        <label for="${idTokenIntentRadioWriteStatus}">Write access to commit statuses</label>
+      </div>
+    </td>
+  </tr>
+
+  <tr class="settingsRow ${classNewTokenFormRow} ${classAccessibleEntitiesSection}" style="display: none;">
+    <th>
+      <label for="${idAccessibleEntitiesInput}">Accessible <span id="${idAccessibleEntitiesLabel}" class="capitalize">entities</span>:</label>
+      <span id="${idAccessibleEntitiesHint}"><bs:helpIcon /></span>
+    </th>
+    <td>
+      <textarea id="${idAccessibleEntitiesInput}" class="mediumField tokenFormInput"></textarea>
+    </td>
+  </tr>
+
+  <tr class="settingsRow ${classNewTokenFormRow}">
+    <th>
+      <label for="${idTokenProjectScopeSelect}">Project scope:</label>
+    </th>
+    <td>
+      <bs:projectsFilter id="${idTokenProjectScopeSelect}"
+                         name="${idTokenProjectScopeSelect}"
+                         projectBeans="${projectPath}"
+                         selectedProjectExternalId="${project.externalId}"/>
+      <div class="smallNote tokenControlsSmallNote">
+        The token can be accessed by all configurations of this subproject.
+      </div>
+    </td>
+  </tr>
+
+  <tr class="settingsRow ${classNewTokenFormRow} ${classFormErrorRow}" style="display: none;">
+    <td colspan="2">
+      <span id="${idFormWarningIcon}"><bs:svgIcon name="warning-empty"/></span>
+      <span id="${idFormErrorMessage}" class="tokenControlError"></span>
+    </td>
+  </tr>
+
+  <tr class="settingsRow ${classNewTokenFormRow}" style="display: none;">
+    <td id="${idEmbeddedButtonCell}" colspan="2"></td>
+  </tr>
+  <tr class="settingsRow ${classEmbeddedSpacer}" style="display:none;">
+    <td colspan="2">&nbsp;</td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  BS.NewTokenForm = {
+    _connectionsById: new Map(),
+    _connectionsToAllowedEntities: new Map(),
+    _providerToEntitySettings: new Map(),
+
+    updateConnections() {
+      $('${idTokenConnectionWaiter}').show();
+      $('${idTokenConnectionInput}').disabled = true;
+      const that = this;
+      BS.TokenManagementRestService.fetchConnectionsForAcquiring('${project.externalId}', BS.TokenControlParams.providerTypes)
+      .then((connections) => {
+        if (BS.TokenControlParams.filterConnectionsBy) {
+          return Promise.all(connections.each((connection) => {
+            return that.initConnectionFilter(connection);
+          }));
+        }
+        return connections;
+      }).then((connections) => {
+        const providers = new Map();
+        connections.each((connection) => {
+          const provider = connection.provider;
+          if (provider.supportsAccessibleEntities) {
+            providers.set(provider.type, provider);
+          }
+        });
+        const promises = [];
+        providers.forEach((provider, type) => {
+          const promise = BS.TokenManagementRestService.fetchAccessibleEntitiesSettings(provider).then((settings) => {
+            that._providerToEntitySettings.set(type, settings);
+          });
+          promises.push(promise);
+        });
+        return Promise.all(promises).then(() => connections);
+      }).then((connections) => {
+        that.populateConnectionOptions(connections);
+        return connections;
+      }).catch((error) => {
+        TeamCityAPI.Services.AlertService.addAlert(error, "error");
+      }).finally(() => {
+        $('${idTokenConnectionWaiter}').hide();
+        $('${idTokenConnectionInput}').disabled = false;
+      });
+    },
+
+    initConnectionFilter(connection) {
+      const provider = connection.provider;
+      if (!provider.supportsAccessibleEntities) {
+        return connection;
+      }
+
+      const that = this;
+      return BS.TokenManagementRestService.fetchAllowedEntities(connection).then((entities) => {
+        if (!entities) {
+          return connection;
+        }
+
+        const allowedEntities = new Set();
+        entities.forEach((entity) => {
+          allowedEntities.add(entity.toLowerCase());
+        });
+        that._connectionsToAllowedEntities.set(connection.id, allowedEntities);
+        return connection;
+      })
+    },
+
+    populateConnectionOptions(connections) {
+      if (!connections) {
+        return;
+      }
+
+      if (connections.length === 0) {
+        this.setConnectionError("${messageNoConnections}");
+      }
+
+      const selection = $('${idTokenConnectionInput}');
+      selection.options.length = 0;
+      this._connectionsById.clear();
+
+      const property = this.getPropertyForFiltering();
+
+      connections.forEach((connection) => {
+        const option = new Option(connection.name, connection.id);
+        if (!this.isConnectionAllowed(connection, property)) {
+          option.disabled = true;
+        }
+        selection.append(option);
+        this._connectionsById.set(connection.id, connection);
+      });
+
+      this.handleConnectionChange(selection);
+    },
+
+    applyConnectionFilter() {
+      const property = this.getPropertyForFiltering();
+
+      const toDisable = new Set();
+      for (const [connectionId, connection] of this._connectionsById.entries()) {
+        if (!this.isConnectionAllowed(connection, property)) {
+          toDisable.add(connectionId);
+        }
+      }
+
+      let fallback = null;
+      const selection = $('${idTokenConnectionInput}');
+      for (let i = 0; i < selection.options.length; i++) {
+        const option = selection.options[i];
+        option.disabled = !!toDisable.has(option.value);
+        if (!fallback && !option.disabled) {
+          fallback = option;
+        }
+      }
+      if (toDisable.has(selection.value)) {
+        if (fallback) {
+          selection.value = fallback.value;
+        } else {
+          selection.value = null;
+        }
+      }
+    },
+
+    isConnectionAllowed(connection, property) {
+      if (!property) {
+        return true;
+      }
+
+      const allowedEntities = this._connectionsToAllowedEntities.get(connection.id);
+      if (!allowedEntities) {
+        return true;
+      }
+
+      return allowedEntities.has(property.toLowerCase());
+    },
+
+    getPropertyForFiltering() {
+      return BS.TokenControlParams.filterConnectionsBy ? BS.TokenControlParams.filterConnectionsBy() : null;
+    },
+
+    preselectTokenIntent() {
+      const preselected = BS.TokenControlParams.tokenIntent;
+      if (!preselected) {
+        console.error("BS.TokenControlParams.tokenIntent was not set!");
+        return;
+      }
+      this.selectTokenIntent(preselected);
+    },
+
+    selectTokenIntent(intent) {
+      this.getTokenIntentRadio(intent).checked = true;
+    },
+
+    disableTokenIntents() {
+      $j('input:radio[name=${idTokenIntentRadioGroup}]').attr('disabled', 'disabled');
+    },
+
+    enableTokenIntents() {
+      $j('input:radio[name=${idTokenIntentRadioGroup}]').removeAttr('disabled');
+    },
+
+    enableTokenIntent(intent) {
+      this.getTokenIntentRadio(intent).disabled = false;
+    },
+
+    getTokenIntentRadio(intent) {
+      return $j('input:radio[name=${idTokenIntentRadioGroup}][value=' + intent + ']')[0];
+    },
+
+    handleConnectionChange(element) {
+      const connectionId = element.value;
+      if (!connectionId) {
+        this.preselectTokenIntent();
+        this.disableTokenIntents();
+        this.hideTokenIntent();
+        this.hideAccessibleEntities();
+        return;
+      }
+
+      const connection = this._connectionsById.get(connectionId);
+      if (!connection) {
+        console.error('Connection with ID ' + connectionId + ' unknown!');
+        return;
+      }
+
+      this.preselectTokenIntent();
+      this.disableTokenIntents();
+      const supportedIntents = connection.provider.supportedTokenIntentTypes;
+      if (!BS.TokenControlParams.supportTokenPermissions || supportedIntents.length <= 1) { // if we have no real choice, don't even show the radios
+        this.hideTokenIntent();
+      } else {
+        this.showTokenIntent();
+        supportedIntents.forEach((intent) => {
+          this.enableTokenIntent(intent);
+        });
+      }
+
+      if (connection.provider.supportsAccessibleEntities) {
+        this.showAccessibleEntities(connection.provider);
+      } else {
+        this.clearAccessibleEntities();
+        this.hideAccessibleEntities();
+      }
+    },
+
+    hideTokenIntent() {
+      $j('.${classTokenIntentSection}').hide();
+    },
+
+    showTokenIntent() {
+      $j('.${classTokenIntentSection}').show();
+    },
+
+    hideAccessibleEntities() {
+      $j('.${classAccessibleEntitiesSection}').hide();
+    },
+
+    clearAccessibleEntities() {
+      $('${idAccessibleEntitiesInput}').value = null;
+    },
+
+    hideGenericError() {
+      this.setGenericError('');
+      $j('.${classFormErrorRow}').hide();
+    },
+
+    showGenericError(error) {
+      this.setGenericError(error);
+      $j('.${classFormErrorRow}').show();
+    },
+
+    showAccessibleEntities(provider) {
+      const settings = this._providerToEntitySettings.get(provider.type);
+      if (!settings) {
+        console.error('No accessible entities settings for provider type ' + provider.type);
+        this.hideAccessibleEntities();
+        return;
+      }
+
+      if (settings.entityNamePlural) {
+        const label = $('${idAccessibleEntitiesLabel}');
+        label.innerText = settings.entityNamePlural;
+      }
+
+      const input = $('${idAccessibleEntitiesInput}');
+      input.placeholder = settings.placeholderValue;
+
+      const helpIconWrapper = $('${idAccessibleEntitiesHint}');
+      helpIconWrapper.onmouseover = () => {
+        BS.Tooltip.showMessage(helpIconWrapper, {shift:{x:10, y:18}, hideDelay: 300}, settings.descriptionText, false);
+      };
+      helpIconWrapper.onmouseout = () => {
+        BS.Tooltip.hidePopup();
+      };
+
+      this.initAccessibleEntities(provider).then(() => {
+        $j('.${classAccessibleEntitiesSection}').show();
+      });
+    },
+
+    initAccessibleEntities(provider) {
+      const repositoryUrl = window.getRepositoryUrl && window.getRepositoryUrl();
+      if (repositoryUrl) {
+        return BS.TokenManagementRestService.createEntityName(provider, repositoryUrl, 'PRESELECTED_REPOSITORY_URL').then((entityName) => {
+          if (entityName) {
+            $('${idAccessibleEntitiesInput}').value = entityName.name;
+          }
+        });
+      }
+
+      return Promise.resolve();
+    },
+
+    handleAccessibleEntitiesChange(event) {
+      if ((event.key.trim() === '' && event.key.length > 0) || event.key === 'Enter') {
+        return; // whitespace change
+      }
+
+      const provider = this.getProvider();
+      if (!provider) {
+        return;
+      }
+
+      const values = this.getAccessibleEntities();
+      if (!values) {
+        return;
+      }
+
+      const that = this;
+      Promise.all(values.map((value) => BS.TokenManagementRestService.createEntityName(provider, value, 'USER_INPUT'))).then((entityNames) => {
+        that.setAccessibleEntities(entityNames);
+      })
+    },
+
+    validate() {
+      return this.validateName().then(() => this.validateConnectionSelected());
+    },
+
+    validateName() {
+      const waiter = $('${idTokenNameValidationWaiter}');
+      waiter.show();
+      this.setTokenNameError('');
+
+      return this.validateNameNotEmpty().then((val) => BS.TokenManagementRestService.validateTokenName(val)).catch((error) => {
+        this.setTokenNameError(error.message);
+        throw error;
+      }).finally(() => {
+        waiter.hide();
+      });
+    },
+
+    validateNameNotEmpty() {
+      const elem = $('${idTokenNameInput}');
+      const val = elem.value;
+      if (!val) {
+        return Promise.reject(new Error('${messageTokenNameRequired}'));
+      } else {
+        return Promise.resolve(val);
+      }
+    },
+
+    validateConnectionSelected() {
+      this.setConnectionError('');
+
+      const elem = $('${idTokenConnectionInput}');
+      const val = elem.value;
+      if (!val) {
+        const errorMessage = '${messageConnectionRequired}';
+        this.setConnectionError(errorMessage);
+        throw new Error(errorMessage);
+      }
+    },
+
+    setTokenNameError(error) {
+      $('error_${idTokenNameInput}').innerText = error;
+    },
+
+    setConnectionError(error) {
+      $('error_${idTokenConnectionInput}').innerText = error;
+    },
+
+    clearTokenName() {
+      $('${idTokenNameInput}').value = '';
+    },
+
+    setGenericError(error) {
+      $('${idFormErrorMessage}').innerText = error;
+    },
+
+    adjustInputClasses() {
+      if (BS.TokenControlParams.inputClassName) {
+        $j('#${idTokenNameInput}').addClass(BS.TokenControlParams.inputClassName);
+        $j('#${idTokenNameInput}').removeClass('mediumField');
+        $j('#${idTokenConnectionInput}').addClass(BS.TokenControlParams.inputClassName);
+        $j('#${idTokenConnectionInput}').removeClass('mediumField');
+        $j('#${idAccessibleEntitiesInput}').addClass(BS.TokenControlParams.inputClassName);
+        $j('#${idAccessibleEntitiesInput}').addClass('mediumField');
+      }
+    },
+
+    disable() {
+      $('${idTokenNameInput}').disabled = true;
+      $('${idTokenConnectionInput}').disabled = true;
+    },
+
+    enable() {
+      $('${idTokenNameInput}').disabled = false;
+      $('${idTokenConnectionInput}').disabled = false;
+    },
+
+    getValues() {
+      return {
+        tokenName: $('${idTokenNameInput}').value,
+        connection: this.getConnection(),
+        tokenIntentType: $j('input:radio[name=${idTokenIntentRadioGroup}]:checked').val(),
+        projectScope: [$('${idTokenProjectScopeSelect}').value],
+        accessibleEntities: this.getAccessibleEntities()
+      }
+    },
+
+    getAccessibleEntities() {
+      return $('${idAccessibleEntitiesInput}').value?.split(/\s+/).filter((entity) => entity.trim() !== '');
+    },
+
+    setAccessibleEntities(accessibleEntities) {
+      if (accessibleEntities) {
+        $('${idAccessibleEntitiesInput}').value = accessibleEntities.filter((name) => name !== null).map((name) => name.name).join("\n");
+      }
+    },
+
+    getProvider() {
+      return this.getConnection()?.provider;
+    },
+
+    getConnection() {
+      return this._connectionsById.get($('${idTokenConnectionInput}').value);
+    },
+
+    hide() {
+      $j('.${classNewTokenFormRow}').hide();
+    },
+
+    showEmbedded() {
+      if (BS.TokenControlParams.embedAfterRowElementId) {
+        const predecessor = $j('#' + BS.TokenControlParams.embedAfterRowElementId);
+        predecessor.find('th, td').addClass('${classNoBorder}');
+        predecessor.after($j('.${classNewTokenFormRow}'), $j('.${classEmbeddedSpacer}'));
+      }
+      $j('.${classNewTokenFormRow}').addClass('${classEmbeddedRow}').not('.${classFormErrorRow}').show();
+      $j('.${classEmbeddedSpacer}').show();
+    },
+
+    hideEmbedded() {
+      if (BS.TokenControlParams.embedAfterRowElementId) {
+        const predecessor = $j('#' + BS.TokenControlParams.embedAfterRowElementId);
+        predecessor.find('th, td').removeClass('${classNoBorder}');
+      }
+      $j('.${classNewTokenFormRow}').removeClass('${classEmbeddedRow}').hide();
+      $j('.${classEmbeddedSpacer}').hide();
+    },
+
+    focusInput() {
+      $('${idTokenNameInput}').focus();
+    },
+
+    registerEventHandlers() {
+      $('${idAccessibleEntitiesInput}').addEventListener('keyup', _.debounce(this.handleAccessibleEntitiesChange.bind(this), 500));
+    },
+
+    init() {
+      this.updateConnections();
+      this.setTokenNameError('');
+      this.hideGenericError();
+      this.clearTokenName();
+      this.adjustInputClasses();
+      this.registerEventHandlers();
+      this.enable();
+    }
+  };
+</script>

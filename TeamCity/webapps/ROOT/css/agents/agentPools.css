@@ -1,0 +1,374 @@
+#content {
+  margin-top: 1em;
+}
+
+form label {
+  cursor: pointer;
+}
+
+.fantom,
+tr.hidden {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.pool-width {
+  width: 90%;
+  min-width: 850px;
+}
+
+.pool-box {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.pool-box > .head-row {
+  background-color: #F2F3F5;
+  margin: 0;
+  padding: 5px;
+}
+
+.pool-box .head-row p {
+  margin: 0;
+}
+
+.pool-name {
+  padding-left: 2px;
+  font-weight: bold;
+}
+
+.pool-numbers {
+  padding-right: 1em;
+  padding-left: 1em;
+  font-weight: normal;
+}
+
+.pool-layout-table, .pool-layout-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.pool-layout-table th,
+.pool-layout-table td {
+  padding: 0 5px 0 0;
+  vertical-align: top;
+}
+
+.pool-layout-content {
+  width: 50%;
+}
+
+.pool-layout-content.agents {
+  width: 48%;
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.pool-layout-content.projects {
+  width: 52%;
+  padding-left: 20px;
+}
+
+.pool-layout-header {
+  padding: 2px;
+  text-align: left;
+}
+
+.pool-header-element{
+  display: inline-block;
+  padding-right: 20px;
+}
+
+div.head-row {
+  min-height: 24px;
+  padding-bottom: 5px;
+}
+
+ul.pool-projects {
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 0 0;
+}
+
+tr.agt-row > td, li.project-row > div {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  border-top: 1px solid var(--ring-content-background-color, #fff);
+  vertical-align: bottom;
+  padding-bottom: 0.3em;
+  height: 2em;
+}
+
+tr.agt-row > td.remove-cell {
+  border-bottom: none;
+  border-top: none;
+  width: 20px;
+  text-align: right;
+  padding-bottom: 3px;
+}
+
+tr.agt-row:hover > td.remove-cell, li.project-row:hover > div.remove-cell {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+div.project-link {
+  display: inline-block;
+  width: 97%;
+}
+
+div.remove-cell {
+  border-bottom: none;
+  border-top: none;
+  display: inline-block;
+  width: 2%;
+  text-align: right;
+  padding-bottom: 3px;
+}
+
+.remove-cell a {
+  color: #DADADA;
+  text-decoration: none;
+  font-size: 120%;
+  font-weight: bolder;
+}
+
+.remove-cell a:hover, tr.agt-row:hover > td.remove-cell a, li.project-row:hover > div.remove-cell a {
+  color: #B2B2B2;
+}
+
+tr.agt-row:hover > td.remove-cell, li.project-row:hover > div.remove-cell {
+  background-color: #F2F3F5;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+tr.agt-row:hover, li.project-row:hover {
+  background-color: #F2F3F5;
+}
+
+.agents-list tr:last-child > td, .projects-list tr:last-child > td{
+  border-bottom: 1px solid var(--ring-content-background-color, #fff);
+}
+
+.agents-list tr:hover > td, .projects-list tr:hover > td{
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+tr.agt-row td.agentNameRow {
+  width: 20%;
+  white-space: nowrap;
+}
+
+tr.agt-row > td img {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+tr.agt-row span.agent-name {
+  font-weight: bold;
+}
+
+div.item-rect {
+  display: inline-block;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+div.item-rect.filtered-out {
+  display: none;
+}
+
+div.agt.item-rect {
+  overflow: hidden;
+  width: 120px;
+  height: 7ex;
+  border: solid #CECECE 1pt;
+  border-radius: 5px;
+  cursor: pointer;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+div.agt.item-rect.existent {
+  background: #FAFAFA;
+}
+
+div.agt.item-rect.selected {
+  background: #99BFFF;
+}
+
+div.agt.item-rect p {
+  height: 100%;
+  margin: 2px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.agt.item-rect.vacant-place {
+  border-style: dashed;
+}
+
+div.agt.item-rect.vacant-place.disabled {
+  cursor: default;
+}
+
+div.pro.item-rect {
+  padding-right: 0;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pro.item .bracket,
+.disabled {
+  color: gray;
+}
+
+.moved-here p {
+  color: #1564C2;
+  font-weight: bold;
+}
+
+.removed p {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.dissociated span {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.deleted-pool a,
+.disabled a {
+  color: gray;
+  text-decoration: none;
+  cursor: default;
+}
+
+.pool-projects-dialog {
+  width: 48em;
+}
+
+.dissociate-from-other-pools {
+  float: left;
+  margin-left: 9px;
+}
+
+#dissociateFromOtherPoolsLabel {
+  cursor: pointer;
+}
+
+.pool-rename {
+  padding-left: 4px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.pool-rename a {
+  text-decoration: none;
+}
+
+.pool-delete {
+  float: right;
+  padding: 0 5px 0 7px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.pool-noEdit {
+  float: right;
+  font-weight: normal;
+  cursor: pointer;
+  vertical-align: middle;
+  padding-top: 2px;
+}
+
+.project-row .project-name {
+  white-space: nowrap;
+}
+
+.project-row:hover {
+  background-color: var(--ring-content-background-color, #fff);
+}
+
+.project-row .another-pools-span,
+.project-row .another-pools-span a,
+.project-row .another-pools-span a:hover {
+  color: #737577;
+}
+
+.project-row.associated .project-name {
+  color: #1564C2;
+}
+
+.project-row.not-associated .project-name,
+.project-row.not-associated .project-name a,
+.project-row.not-associated .project-name a:hover {
+  color: #ccc;
+}
+
+.project-row.archived .project-name,
+.project-row.archived .project-name a,
+.project-row.archived .project-name a:hover {
+  color: #737577;
+  font-style: italic;
+}
+
+.agentPoolsList .blockHeader.selected {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+}
+
+.agentPoolsList .blockHeader.selected.fade {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  -webkit-transition: background-color 500ms;
+  transition: background-color 500ms;
+}
+
+.icon-link.connected {
+  color: darkgreen;
+}
+
+.icon-link.not-connected {
+  visibility: hidden;
+}
+
+.archived_project {
+  font-style: italic;
+  color: #737577;
+  margin-left: 0.5em;
+}
+
+.agentPoolsList .disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.agentPoolsList .info {
+  color: gray;
+  font-style: italic;
+}
+
+.agentPoolsList .attentionIcon {
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+.agent-note {
+  padding-left: 5px;
+  white-space: nowrap;
+}
+
+.blockHeader{
+  margin-top: 10px;
+}
+
+li.invisible{
+  display: none;
+}
+

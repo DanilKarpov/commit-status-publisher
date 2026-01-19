@@ -1,0 +1,144 @@
+span.selectedTag,
+.unselectedTag {
+  margin-right: 2px;
+  padding: 1px 5px 2px;
+  border-radius: 3px;
+
+  font-size: 11px;
+  font-weight: bold;
+}
+
+span.selectedTag {
+  background-color: #1564c2;
+  color: var(--ring-content-background-color, #fff);
+  border: 1px solid #1564c2;
+}
+
+.unselectedTag {
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.editTagsDialog .unselectedTag,
+.historyList .unselectedTag,
+.tagsPopup .unselectedTag {
+  display: inline-block;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+  line-height: 12px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.unselectedTag:hover {
+  background-color: var(--ring-line-color, #dfe5eb);
+  text-decoration: none;
+
+  -webkit-transition: background-color 0.1s linear;
+  transition: background-color 0.1s linear;
+}
+
+.historyList .tags {
+  max-width: 500px;
+}
+
+.tagsPopup {
+  max-width: 1000px;
+}
+
+.more-tags-separator {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.all-tags-switch {
+  visibility: hidden;
+  position: absolute;
+}
+
+.all-tags-switch ~ .unselectedTag,
+.all-tags-switch:checked ~ .unselectedTag.more-tags-separator,
+.editTagsDialog .all-tags-switch:checked ~ .unselectedTag.more-tags-separator {
+  display: none;
+}
+
+.all-tags-switch:checked ~ .unselectedTag,
+.all-tags-switch ~ .unselectedTag.more-tags-separator {
+  display: inline;
+}
+
+.editTagsDialog .all-tags-switch:checked ~ .unselectedTag,
+.editTagsDialog .all-tags-switch ~ .unselectedTag.more-tags-separator {
+  display: inline-block;
+}
+
+.tagsApplyAll {
+  margin-top: 1em;
+}
+
+.editTagsDialog .textLabel {
+  line-height: 2;
+  font-weight: bolder;
+}
+
+.editTagsDialog .note {
+  color: #737577;
+}
+
+.favoriteBuild {
+  color: #4d93c1;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.favoriteBuildDescription{
+  margin-bottom: 1em;
+}
+
+.favoriteBuildsTable tr{
+  vertical-align: top;
+}
+
+.favoriteBuildsTable tr td{
+  font-size: 90%;  /*this table is similar to presentation we have on running builds agents page, let's copy font size from that page*/
+}
+
+.favoriteBuildsTable .buildNumber{
+  min-width: 10em;
+}
+
+.favoriteBuildsTable .pin{
+  min-width: 5em;
+  text-align: right;
+}
+
+.favoriteBuildsTable .duration{
+  min-width: 8em;
+  max-width: 11em;
+  white-space: nowrap;
+}
+
+
+.loadMoreContainer{
+  padding: 1em;
+  width: 100%;
+  text-align: center;
+}
+
+.loadMoreBtn{
+  width: 30%;
+  text-align: center;
+}
+
+.showMoreFavoriteBuildsProgress {
+  margin-left: -25px;
+}
+.recent{
+  background-color: var(--tc-classic-highlight-color, #ffc);
+}
+
+.available-tags-container {
+  max-height: 350px;
+  overflow-y: auto;
+}

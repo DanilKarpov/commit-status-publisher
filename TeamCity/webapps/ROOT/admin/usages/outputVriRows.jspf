@@ -1,0 +1,17 @@
+<c:if test="${not empty lastVri}">
+<tr>
+  ${firstTd}
+
+  <td rowspan="${rowCount}">
+    ${lastVri.pollingMode ? "inactive" : "active"}
+  </td>
+  <td rowspan="${rowCount}">
+    <bs:date value="${lastVri.lastFinishChangesCollectingTime}" smart="2"/>
+  </td>
+  <td rowspan="${rowCount}">
+    <bs:printTime time="${lastVri.effectiveModificationCheckInterval}"/>
+  </td>
+
+</tr>
+${otherRows}
+</c:if>

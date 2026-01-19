@@ -1,0 +1,24 @@
+.updateOptionsContainer {
+  width: 100%;
+}
+
+.icon-ok {
+  color: #4da400;
+}
+
+.securityPatches {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.availableUpdatesContainer, .securityPatchesContainer {
+  margin-top: 16px;
+}
+
+.securityPatchesContainer .runnerFormTable {
+  margin-top: 16px;
+}
+
+.registryWarn {
+  padding-top: 8px;
+}

@@ -1,0 +1,60 @@
+.react-pager{
+  margin-top: 8px;
+}
+
+.pager {
+  margin: 1em 0 0;
+}
+
+.pager-top {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.pager-bottom {
+  margin: 1.5em 0 2em;
+  text-align: center;
+}
+
+.pager-title {
+  margin: 1em 0;
+  color: #737577;
+}
+
+.pager .forward {
+  margin-left: 0.7em;
+}
+
+.pager .back {
+  margin-right: 0.7em;
+}
+
+.pager .forward-disabled,
+.pager .back-disabled {
+  color: var(--ring-line-color, #dfe5eb);
+}
+
+.pager-top .pages {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.pager-bottom .pages {
+  margin-bottom: .5em;
+}
+
+.pager .pages .page {
+  display: inline-block;
+  min-width: 15px;
+  padding: .3em .4em;
+}
+
+.pager .pages a.page {
+  background-color: #E7F0F9;
+}
+
+.pager .pages span.page {
+  background-color: var(--ring-line-color, #dfe5eb);
+  color: #666;
+  font-weight: bold;
+}

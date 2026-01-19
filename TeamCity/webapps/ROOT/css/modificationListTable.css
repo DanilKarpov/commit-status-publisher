@@ -1,0 +1,72 @@
+#buildChangesDiv {
+  padding-top: 0;
+}
+
+.changelist {
+  clear: both;
+  width: auto;
+  margin-bottom: 0.8em;
+}
+
+.changelist p span.revision {
+  float: right;
+  padding-right: 5px;
+}
+
+.changelist .changeBlockMargin {
+  margin-bottom: 2em;
+}
+
+.changelist .collapsable {
+  display: none;
+}
+
+.changelist .comment {
+  padding-top: .5em;
+}
+
+.changelist .details {
+  padding: .5em 25px 0;
+  font-size: 90%;
+}
+
+.changelist .details em {
+  font-style: normal;
+}
+
+.changelist p {
+  margin-top: 1em;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+.changelist .user {
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+/*--------------- First DL ---*/
+.changelist dl {
+  padding: 0 25px;
+  font-size: 95%;
+}
+
+.changelist .changeExtensions {
+  margin: 0;
+  padding: 0;
+}
+
+.changeExtensions dt {
+  margin: 0 0.5em 0.3em 0;
+}
+
+.changeExtensions dd {
+  display: none;
+}
+
+/*--------------- DL for changelist ---*/
+
+.changelist table.changedFiles {
+  margin-left: 20px;
+  font-size: 95%;
+}

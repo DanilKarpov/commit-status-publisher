@@ -1,0 +1,15 @@
+<c:set var="trigger" value="${healthStatusItem.additionalData['trigger']}"/>
+<c:set var="buildType" value="${healthStatusItem.additionalData['buildType']}"/>
+<c:set var="invalidVcsRoots" value="${healthStatusItem.additionalData['invalidVcsRoots']}"/>
+Trigger rules in <admin:editBuildTypeLinkFull buildType="${buildType}" cameFromUrl="${cameFromUrl}"/> <c:out value="${trigger.buildTriggerService.displayName}"/>
+reference <c:if test="${fn:length(invalidVcsRoots) == 1}">a</c:if> VCS root<bs:s val="${fn:length(invalidVcsRoots)}"/> which <bs:are_is val="${fn:length(invalidVcsRoots)}"/> not attached to the build configuration:
+<ul style="margin-top: 2px; margin-bottom: 2px;">
+  <c:forEach items="${invalidVcsRoots}" var="vcsRootId">
+    <li><c:out value="${vcsRootId}"/></li>
+  </c:forEach>
+</ul>
+<c:if test="${not buildType.readOnly}">
+  <admin:editBuildTypeTriggerLink buildType="${buildType}" triggerId="${trigger.id}">
+    <div style="margin-left: 20px">Edit <c:out value="${trigger.buildTriggerService.displayName}"/> &raquo;</div>
+  </admin:editBuildTypeTriggerLink>
+</c:if>

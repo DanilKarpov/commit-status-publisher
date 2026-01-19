@@ -1,0 +1,7 @@
+<ul>
+  <li><a href="<c:url value='/update/agentInstaller.exe'/>">Windows installer</a></li>
+  <li><a href="https://hub.docker.com/r/jetbrains/teamcity-agent/">Docker agent image</a></li>
+  <li><a href="<c:url value='/update/buildAgent.zip'/>">Minimal zip file distribution</a></li>
+  <li><a href="<c:url value='/update/buildAgentFull.zip'/>">Full zip file distribution</a></li>
+</ul>
+<p>See our <a target="_blank" rel="noreferrer" href="<bs:helpUrlPrefix/>Setting+up+and+Running+Additional+Build+Agents#SettingupandRunningAdditionalBuildAgents-InstallingAdditionalBuildAgents">documentation</a> for details.</p>

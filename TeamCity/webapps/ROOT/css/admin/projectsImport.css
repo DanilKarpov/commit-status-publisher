@@ -1,0 +1,80 @@
+.report {
+  width: 99%;
+  margin-top: 1em;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding: 1em 0 1em 1em;
+}
+
+.activeStep {
+  font-weight: bold;
+}
+
+.projectTree {
+  max-height: 30em;
+  min-height: 10em;
+  margin: 1em 0 1em 0;
+}
+
+#arhivesDirectoryNote {
+  margin-top: 1em;
+}
+
+#uploadArchiveButton {
+  margin-top: 1em;
+}
+
+span.status_warn, div.status_warn {
+  color: var(--ring-warning-color);
+}
+
+span.status_err, div.status_err {
+  color: var(--ring-error-color);
+}
+
+#importProjects h2 {
+  margin-bottom: 0.5em;
+}
+
+table.runnerFormTable td, table.runnerFormTable th {
+  padding-left: 0;
+}
+
+table.runnerFormTable th {
+  width: 15em;
+}
+
+div.importScope div {
+  margin-bottom: 0.3em;
+}
+
+div.importScope div.nested {
+  margin-left: 1.5em;
+}
+
+.conflictsDialog {
+  width: 60em;
+}
+
+.conflictsList {
+  max-height: 20em;
+  overflow-y: auto;
+}
+
+.conflictingUsersTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.conflictingUsersTable td, .conflictingUsersTable th {
+  width: 19em;
+}
+
+.conflictingUsersTable td:first-child, .conflictingUsersTable th:first-child {
+  width: 15em;
+}
+
+.conflictingUsersTable td:last-child, .conflictingUsersTable th:last-child {
+  width: auto;
+}
+

@@ -1,0 +1,15 @@
+<c:set var="startDate"><bs:date value="${buildInfo.startDate}" pattern="dd MMM yy HH:mm" no_span="true"/></c:set
+><c:set var="buildTags" value="${buildInfo.tags}"
+/><c:set var="buildPinned" value="${buildInfo.pinned}"
+/><c:set var="tagPinInfo" value=""
+/><c:set var="branchName" value="${buildInfo.branchDisplayName}"
+/><c:if test="${buildPinned}"><c:set var="tagPinInfo" value="pinned"/></c:if
+><c:if test="${fn:length(buildTags) > 0}"
+><c:if test="${buildPinned}"><c:set var="tagPinInfo" value="pinned: "/></c:if
+><c:if test="${not buildPinned}"><c:set var="tagPinInfo" value="tags: "/></c:if
+><c:forEach var="tag" items="${buildTags}"
+><c:set var="tagPinInfo" value="${tagPinInfo} ${tag}"
+/></c:forEach
+></c:if
+><c:if test="${not empty tagPinInfo}"><c:set var="tagPinInfo" value="(${tagPinInfo})"/></c:if
+><c:out value="${buildInfo.buildNumber}"/> <c:out value="${branchName}"/> <c:if test="${buildInfo.personal}">(personal)</c:if> (${startDate}) ${buildInfo.statusDescription} <c:out value="${tagPinInfo}"/>

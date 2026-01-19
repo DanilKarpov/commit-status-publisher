@@ -1,0 +1,2 @@
+(self.webpackChunk=self.webpackChunk||[]).push([["highlight-node-repl-js"],{68806:function(e){e.exports=function(e){return{name:"Node REPL",contains:[{className:"meta",starts:{end:/ |$/,starts:{end:"$",subLanguage:"javascript"}},variants:[{begin:/^>(?=[ ]|$)/},{begin:/^\.\.\.(?=[ ]|$)/}]}]}}}}]);
+//# sourceMappingURL=highlight-node-repl-js.63a34e04b9c2c3dfdc82.js.map

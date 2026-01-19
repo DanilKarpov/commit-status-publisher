@@ -1,0 +1,25 @@
+
+/**  Test duration popup styles */
+#testDuration, #testMetadataPopup {
+  position: static;
+  display: block;
+  width: 800px;
+}
+
+#testsDurationGraph, #testMetadataGraph {
+  padding: 0;
+  overflow: visible;
+}
+
+#rangeFilterTestDuration {
+  display: none;
+}
+
+#agentsFilterTestDuration {
+  width: 240px;
+}
+
+#agentsFilterTestDuration .agentsFilterTable {
+  border-collapse: collapse;
+}
+

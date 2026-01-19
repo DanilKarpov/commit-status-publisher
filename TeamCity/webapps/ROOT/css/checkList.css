@@ -1,0 +1,51 @@
+.checkList {
+  margin: 7px 5px 5px;
+}
+
+.filterTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.filterTable td {
+  padding: 0;
+}
+
+.filterTable input {
+  width: 100%;
+}
+
+.filterTable .filterInputTd {
+  position: relative;
+}
+
+.filterTable .iconPlace {
+  width: 16px;
+  padding: 0 0 0 5px;
+  vertical-align: bottom;
+}
+
+.filterTable .iconProgressRing {
+  position: absolute;
+  right: 2px;
+  top: 3px;
+}
+
+.verticalStrut {
+  height: 5px;
+}
+
+.checkListItems {
+  max-height: 15em;
+  overflow-y: auto;
+}
+
+.checkListItemNote {
+  font-style: italic;
+  color: #737577;
+}
+
+.validationStatus {
+  height: 21px;
+  vertical-align: top;
+}

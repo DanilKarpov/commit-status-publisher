@@ -1,0 +1,17 @@
+#agentInfoPopup .compatible {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 90%;
+}
+
+#agentInfoPopup .compatibleList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#agentInfoPopup .compatibleList li {
+  margin: 0;
+  padding: 0 0 3px 10px;
+  white-space: nowrap;
+}

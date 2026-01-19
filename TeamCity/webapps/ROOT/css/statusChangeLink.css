@@ -1,0 +1,36 @@
+/*
+   Used for change responsibility links
+*/
+button.statusChangeLink {
+  margin-top: -2px;
+  margin-bottom: -3px;
+  margin-left: 8px;
+}
+button.statusChangeLink-first {
+  margin-left: 0;
+}
+.statusChangeLink:after {
+  content: "...";
+}
+
+.changeBuildStatus-errorText {
+  color: var(--ring-error-color);
+}
+
+.changeBuildStatus-warningText {
+  color: var(--ring-warning-color);
+}
+
+.changeBuildStatus-notificationNote {
+  color: #737577;
+  font-style: italic;
+}
+
+.changeBuildStatus-why {
+  display: none;
+}
+
+.changeBuildStatus-reason {
+  line-height: 2;
+  font-weight: bolder;
+}

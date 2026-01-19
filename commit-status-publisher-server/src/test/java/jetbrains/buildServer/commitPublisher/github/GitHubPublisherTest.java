@@ -56,6 +56,9 @@ public class GitHubPublisherTest extends HttpPublisherTest {
   private ChangeStatusUpdater myChangeStatusUpdater;
   private Map<String, List<CommitStatus>> myRevisionToCommitStatus = new HashMap<>();
   private GitHubBuildContextProvider myBuildNameProvider = new GitHubBuildContextProvider();
+  private String myStatusMismatchState = null;
+  private boolean myReturnEmptyResponse = false;
+  private boolean myReturnInvalidJson = false;
 
   public GitHubPublisherTest() {
     myExpectedRegExps.put(EventToTest.QUEUED, String.format(".*/repos/owner/project/statuses/%s.*ENTITY:.*pending.*description\":\"%s\".*", REVISION, DefaultStatusMessages.BUILD_QUEUED));
@@ -148,6 +151,45 @@ public class GitHubPublisherTest extends HttpPublisherTest {
     assertFalse(publisher.getRevisionStatus(removedBuild, new CommitStatus(GitHubChangeState.Pending.getState(), "http://localhost:8111/viewQueued.html?itemId=321", DefaultStatusMessages.BUILD_QUEUED, "custom context")).isEventAllowed(CommitStatusPublisher.Event.REMOVED_FROM_QUEUE, Long.MAX_VALUE));
   }
 
+  public void should_fail_when_github_returns_mismatched_status() throws Exception {
+    myStatusMismatchState = GitHubChangeState.Success.getState(); // GitHub returns success instead of failure
+    try {
+      myPublisher.buildFinished(myFixture.createBuild(myBuildType, Status.FAILURE), myRevision);
+      fail("PublisherException expected due to status mismatch");
+    } catch (PublisherException ex) {
+      then(ex.getMessage()).contains("status mismatch");
+      then(ex.shouldRetry()).isTrue();
+    } finally {
+      myStatusMismatchState = null;
+    }
+  }
+
+  public void should_fail_when_github_returns_empty_response() throws Exception {
+    myReturnEmptyResponse = true;
+    try {
+      myPublisher.buildFinished(myFixture.createBuild(myBuildType, Status.NORMAL), myRevision);
+      fail("PublisherException expected due to empty response");
+    } catch (PublisherException ex) {
+      then(ex.getMessage()).contains("empty response");
+      then(ex.shouldRetry()).isTrue();
+    } finally {
+      myReturnEmptyResponse = false;
+    }
+  }
+
+  public void should_fail_when_github_returns_invalid_json() throws Exception {
+    myReturnInvalidJson = true;
+    try {
+      myPublisher.buildFinished(myFixture.createBuild(myBuildType, Status.NORMAL), myRevision);
+      fail("PublisherException expected due to invalid JSON");
+    } catch (PublisherException ex) {
+      then(ex.getMessage()).contains("invalid JSON");
+      then(ex.shouldRetry()).isTrue();
+    } finally {
+      myReturnInvalidJson = false;
+    }
+  }
+
   @Override
   protected boolean isStatusCacheNotImplemented() {
     return false;
@@ -218,6 +260,22 @@ public class GitHubPublisherTest extends HttpPublisherTest {
     if (revision != null) {
       CommitStatus status = gson.fromJson(requestData, CommitStatus.class);
       myRevisionToCommitStatus.computeIfAbsent(revision, k -> new ArrayList<>()).add(status);
+
+      // Simulate various GitHub response scenarios for testing
+      if (myReturnEmptyResponse) {
+        httpResponse.setEntity(new StringEntity("", StandardCharsets.UTF_8));
+      } else if (myReturnInvalidJson) {
+        httpResponse.setEntity(new StringEntity("not a valid json {{{", StandardCharsets.UTF_8));
+      } else if (myStatusMismatchState != null) {
+        // Simulate GitHub returning a different status than what was sent
+        CommitStatus mismatchedStatus = new CommitStatus(myStatusMismatchState, status.target_url, status.description, status.context);
+        String jsonResponse = gson.toJson(mismatchedStatus);
+        httpResponse.setEntity(new StringEntity(jsonResponse, StandardCharsets.UTF_8));
+      } else {
+        // Return the created status as response body (GitHub API behavior)
+        String jsonResponse = gson.toJson(status);
+        httpResponse.setEntity(new StringEntity(jsonResponse, StandardCharsets.UTF_8));
+      }
     }
     return isUrlExpected(url, httpResponse);
   }

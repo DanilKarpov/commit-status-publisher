@@ -1,0 +1,57 @@
+#buildRunners {
+  max-height: 50em;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.buildRunnerRow {
+  background-color: #f1f4f7;
+  width: 100%;
+  margin: 0 0 3px;
+  padding: 2px 0;
+  border: 2px solid var(--ring-line-color, #dfe5eb);
+  cursor: move;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.buildRunnerRow .name {
+  padding: 0 0 0 30px;
+  overflow: hidden;
+}
+
+.buildRunnerRow .stepName {
+  line-height: 24px;
+}
+
+.draggable.tc-icon_draggable {
+  background-color: #f1f4f7;
+}
+
+.draggable.tc-icon_draggable:before {
+  position: absolute;
+  top: 8px;
+  margin-left: 4px;
+}
+
+.inherited {
+  background-color: var(--ring-content-background-color, #fff);
+  cursor: auto;
+}
+
+.messagesHolder {
+  padding-top: 0;
+  margin-top: -0.5em;
+}
+
+.buildRunners_hidden-descr .stepDescription {
+  display: none;
+}
+
+.toggle-build-details {
+  float: right;
+}
+
+.dnd-hint {
+  margin-bottom: 1em;
+}

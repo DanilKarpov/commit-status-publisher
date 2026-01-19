@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([["BuildArtifactsTab"],{9356:function(e,r,u){u.r(r);var o=u(63696),s=u(12673),t=u(62540);function a({queries:e,props:r}){return(0,t.jsx)(s.A,{urlSync:!0,showToggleHidden:!0,showDownloadLink:!0,showStorageInfo:!0,storageFeatureIdQueryRef:e.storageFeatureIdQuery,canSelectDirs:!0,buildId:r.buildId,compact:!1})}r.default=(0,o.memo)(a)}}]);
+//# sourceMappingURL=BuildArtifactsTab.dcbf4ed887be31eb4a6b.js.map

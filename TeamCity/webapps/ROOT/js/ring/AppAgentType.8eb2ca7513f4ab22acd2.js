@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([["AppAgentType"],{5056:function(n,e,t){t.r(e),t.d(e,{default:function(){return i}});var r=t(92516),o=t(62540);function i({entryPoints:n}){const{pipeline:e,common:t}=n;return e?(0,o.jsx)(r.EntryPointContainer,{entryPointReference:e,props:{}}):t?(0,o.jsx)(r.EntryPointContainer,{entryPointReference:t,props:{}}):null}}}]);
+//# sourceMappingURL=AppAgentType.8eb2ca7513f4ab22acd2.js.map

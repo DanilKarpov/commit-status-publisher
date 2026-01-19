@@ -1,0 +1,4 @@
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<tt:_testGroupForChange testList="${changeDetailsBean.test.newFailedTests}" defaultOption="bt" withoutActions="true"
+                        maxCount="15" id="changeProblems_${modification.id}"/>

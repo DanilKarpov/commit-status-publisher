@@ -1,0 +1,243 @@
+<%--@elvariable id="availableChildren" type="java.util.List<jetbrains.buildServer.serverSide.SProject>"--%>
+<c:set var="isCreateProject" value="${showMode == 'createProjectMenu'}"/>
+<c:set var="templateAppCreatedGrantRights" value="<%=SpaceConstants.MESSAGE_TEMPLATE_APP_CREATED_GRANT_RIGHTS%>"/>
+<c:set var="pseudoValueNewProject" value="__ALL__"/>
+<c:set var="selectedTargetProject" value="${isCreateProject ?  pseudoValueNewProject : project.externalId}"/>
+<c:set var="fallbackTargetProject" value="${project.externalId}"/>
+<%@include file="_spaceProjectApplicationCreator.jspf"%>
+
+<script type="text/javascript">
+  BS.SpaceAddProjectConnectionDialog = OO.extend(BS.AbstractModalDialog, {
+
+    completeCallback: null,
+    successCallback: null,
+    failureCallback: null,
+    createInfo: null,
+
+    show: function (params) {
+      this.suppressSubmit();
+      this.setCallbacks(params);
+      this.setProjectInfo(params.project);
+      this.hideCreateInfo();
+      this.showSettings();
+      this.showProceed();
+      this.enableProceed();
+      this.showCancel();
+      this.showCentered();
+      this.renderTargetProjectChooser();
+    },
+
+    proceed: function () {
+      this.disableProced();
+      this.hideCancel();
+      this.showLoading();
+      this.createConnectionAndApp();
+    },
+
+    confirm: function () {
+      this.completeCallback();
+      if (this['successCallback']) {
+        this.successCallback(this.createInfo);
+      }
+      this.close();
+    },
+
+    cancel: function () {
+      this.completeCallback.call();
+      if (this['onSuccess']) {
+        this.onSuccess.call();
+      }
+      this.close();
+    },
+
+    createConnectionAndApp: function () {
+      const that = this;
+      const projectKey = this.project.key;
+      const displayName = 'Project ' + projectKey;
+      const selectedProject = $('addSpaceProjectConnectionDialogTargetProject').value;
+      const newProject = selectedProject === '${pseudoValueNewProject}';
+      const targetProject = newProject ? '${fallbackTargetProject}' : selectedProject;
+      const sameProject = '${project.externalId}' === targetProject;
+      BS.SpaceProjectApplicationCreator.doCreate(projectKey, targetProject, '<bs:forJs>${oauthProvider.id}</bs:forJs>', displayName, newProject,
+        function (info) {
+          info.targetProject = targetProject;
+          info.sameProject = sameProject;
+          info.newProject = newProject;
+          that.hideLoading();
+          that.impersonateConfirmDialog(info);
+        },
+        function (message) {
+          if (that['failureCallback']) {
+            that.failureCallback(message);
+          }
+          that.cancel();
+        });
+    },
+
+    impersonateConfirmDialog: function (info) {
+      const text = '${templateAppCreatedGrantRights}'.replaceAll('{0}', info['grantUrl']);
+      this.createInfo = info;
+      this.hideSettings();
+      this.hideProceed();
+      this.showCreateInfo(text);
+      this.showOk();
+    },
+
+    getContainer: function () {
+      return $('addSpaceProjectConnectionFormDialog');
+    },
+
+    getFormElement: function () {
+      return $('addSpaceProjectConnectionForm');
+    },
+
+    suppressSubmit: function () {
+      this.getFormElement().onsubmit = () => false;
+    },
+
+    setProjectInfo: function (project) {
+      $j('#addSpaceProjectConnectionDialogSpaceProject').html(project.name);
+      this.project = project;
+    },
+
+    setCallbacks: function (params) {
+      this.completeCallback = params['onComplete'];
+      this.successCallback = params['onSuccess'];
+      this.failureCallback = params['onFailure'];
+    },
+
+    showProceed: function () {
+      $('addSpaceProjectConnectionDialogProceed').show();
+    },
+
+    hideProceed: function () {
+      $('addSpaceProjectConnectionDialogProceed').hide();
+    },
+
+    enableProceed: function () {
+      $('addSpaceProjectConnectionDialogProceed').enable();
+    },
+
+    disableProced: function () {
+      $('addSpaceProjectConnectionDialogProceed').disable();
+    },
+
+    showOk: function () {
+      $('addSpaceProjectConnectionDialogOk').show();
+    },
+
+    hideOk: function () {
+      $('addSpaceProjectConnectionDialogOk').hide();
+    },
+
+    showCancel: function() {
+      $('addSpaceProjectConnectionDialogCancel').show();
+    },
+
+    hideCancel: function() {
+      $('addSpaceProjectConnectionDialogCancel').hide();
+    },
+
+    showCreateInfo: function (text) {
+      $j('#addSpaceProjectConnectionDialogInfoMessage').html(text).show();
+      $j('#addSpaceProjectConnectionDialogOk').show();
+    },
+
+    hideCreateInfo: function () {
+      $j('#addSpaceProjectConnectionDialogInfoMessage').hide();
+      $j('#addSpaceProjectConnectionDialogOk').hide();
+    },
+
+    showSettings: function () {
+      $j('#addSpaceProjectConnectionDialogWarning').show();
+      $j('.settingsRow').show();
+      $j('#addSpaceProjectConnectionDialogProceed').show();
+    },
+
+    hideSettings: function () {
+      $j('#addSpaceProjectConnectionDialogWarning').hide();
+      $j('.settingsRow').hide();
+      $j('#addSpaceProjectConnectionDialogProceed').show();
+    },
+
+    showLoading: function () {
+      $('addSpaceProjectConnectionDialogSaving').show();
+    },
+
+    hideLoading: function () {
+      $('addSpaceProjectConnectionDialogSaving').hide();
+    },
+
+    renderTargetProjectChooser: function () {
+      const availableChildren = [
+        <c:forEach var="child" items="${availableChildren}" varStatus="status">
+        '<bs:forJs>${child.externalId}</bs:forJs>'<c:if test="${not status.last}">,</c:if>
+        </c:forEach>
+      ];
+      const selected = '${selectedTargetProject}';
+      ReactUI.renderConnected(document.getElementById('targetProjectName'), ReactUI.ProjectBuildTypeSelect, {
+        expandAll: true,
+        buildTypesSelectable: false,
+        projectsSelectable: true,
+        allItemSelectable: ${isCreateProject ? true : false},
+        allItemName: '<New Project>',
+        includeRoot: availableChildren.includes('_Root'),
+        includedProjects: availableChildren,
+        selected: selected === '__ALL__' ? {nodeType: 'all'} : selected ? {nodeType: 'project', id: selected} : null,
+        onSelect(item) {
+          const target = document.getElementById('addSpaceProjectConnectionDialogTargetProject');
+          if (item.nodeType === 'all') {
+            target.value = '${pseudoValueNewProject}';
+          } else {
+            target.value = item.id;
+          }
+        }
+      });
+    }
+  });
+</script>
+
+<bs:modalDialog formId="addSpaceProjectConnectionForm"
+                title="Connect to Space Project"
+                saveCommand="BS.SpaceAddProjectConnectionDialog.proceed(); return false;"
+                closeCommand="BS.SpaceAddProjectConnectionDialog.cancel()"
+                action="#">
+
+  <div>
+    <div id="addSpaceProjectConnectionDialogWarning" class="attentionComment">A new project connection and dedicated Space application will be created.</div>
+
+    <table class="runnerFormTable">
+      <tr class="settingsRow">
+        <th><label for="targetProjectName">TeamCity project:<l:star/></label></th>
+        <td>
+          <input type="hidden" id="addSpaceProjectConnectionDialogTargetProject" value="${selectedTargetProject}"/>
+          <c:choose>
+            <c:when test="${isPopup}">
+              <c:out value="${project.name}"/>
+            </c:when>
+            <c:otherwise>
+              <div id="targetProjectName"></div>
+              <span class="error" id="error_addSpaceProjectConnectionDialogTargetProject"></span>
+            </c:otherwise>
+          </c:choose>
+        </td>
+      </tr>
+      <tr class="settingsRow">
+        <th>Space project:</th>
+        <td>
+          <div id="addSpaceProjectConnectionDialogSpaceProject"></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="addSpaceProjectConnectionDialogInfoMessage" class="confirmDialog__content"></div>
+
+  <div id="addSpaceProjectConnectionDialogButtons" class="popupSaveButtonsBlock">
+    <forms:submit id="addSpaceProjectConnectionDialogProceed" label="Proceed" onclick="BS.SpaceAddProjectConnectionDialog.proceed(); return false;"/>
+    <forms:submit id="addSpaceProjectConnectionDialogOk" label="Ok" onclick="BS.SpaceAddProjectConnectionDialog.confirm(); return false;"/>
+    <forms:cancel id="addSpaceProjectConnectionDialogCancel" onclick="BS.SpaceAddProjectConnectionDialog.cancel();"/>
+    <forms:saving id="addSpaceProjectConnectionDialogSaving"/>
+  </div>
+
+</bs:modalDialog>

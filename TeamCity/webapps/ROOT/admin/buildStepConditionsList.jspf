@@ -1,0 +1,67 @@
+<div id="buildStepConditionRowTemplate" style="display: none">
+  <div class="buildStepCondition" onclick="${buildForm.readOnly ? '' : 'BS.BuildStepConditionsList.editConditionRow(this);'} return false;">
+    <input type="hidden" name="condition[]" class="buildStepCondition__input">
+
+    <span class="buildStepCondition__description"></span>
+
+    <c:if test="${not buildForm.readOnly}">
+        <a class="buildStepCondition__edit" href="#" onclick="BS.BuildStepConditionsList.editConditionRow(this);return false;"
+        >Edit</a>
+        <a class="buildStepCondition__delete" href="#" onclick="BS.BuildStepConditionsList.deleteConditionRow(this);window.event.stopPropagation();return false;"
+        >Delete</a>
+    </c:if>
+
+  </div>
+</div>
+
+<c:if test="${not buildForm.readOnly}">
+
+  <span class="addParameterCondition buildStepConditionUI">
+    <bs:actionsPopup controlId="addStepConditions">
+      <jsp:attribute name="content">
+        <div id="addConditionDetails">
+          <ul class="menuList">
+            <l:li>
+            <a href="#" onclick="BS.BuildStepConditionsList.addOnlyDefaultBranch();return false;">
+              Run step only in default branch</a>
+            </l:li>
+            <l:li>
+            <a href="#" onclick="BS.BuildStepConditionsList.addSpecificBranch();return false;">
+              Run step only in "release" branch</a>
+            </l:li>
+            <l:li>
+            <a href="#" onclick="BS.BuildStepConditionsList.addSkipIfPersonal();return false;">
+              Skip step in personal builds</a>
+            </l:li>
+            <l:li>
+            <a href="#" onclick="BS.EditBuildStepConditionDialog.showDialog('', '', '', 'equals'); return false;">
+              Other condition...</a>
+            </l:li>
+          </ul>
+        </div>
+    </jsp:attribute>
+      <jsp:body>Add condition</jsp:body>
+    </bs:actionsPopup>
+  </span>
+
+  <bs:help file="Build+Step+Execution+Conditions"/>
+
+</c:if>
+
+<div class="buildStepConditions buildStepConditionUI" style="display: none">
+  <strong>Parameter-based execution conditions</strong>:
+  <div class="buildStepConditionsList"></div>
+</div>
+
+<script>
+  <c:forEach items="${buildForm.buildRunnerBean.propertiesBean.requirements}" var="condition">
+  BS.BuildStepConditionsList.addConditionRow(
+    '${util:forJS(condition.propertyName, true, false)}',
+    '${util:forJS(condition.type.name, true, false)}',
+    '${util:forJS(condition.propertyValue, true, false)}',
+    '${util:forJS(condition.userDescription, true, false)}'
+  );
+  </c:forEach>
+
+  BS.install_simple_popup('sp_span_addStepConditions', {shift: {x: -20, y: 20}, width: '10em', className: 'quickLinksMenuPopup buildStepConditionsPopup'});
+</script>

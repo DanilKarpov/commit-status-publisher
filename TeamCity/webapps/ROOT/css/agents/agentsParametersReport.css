@@ -1,0 +1,43 @@
+.actionBar {
+  margin: 1em 0 0 0;
+}
+
+.actionBar .actionInput {
+  width: 20em;
+}
+
+#queryResult {
+  font-size: 100%;
+}
+
+table.agentParametersReport {
+  width: 100%;
+  margin: 0.3em 0.3em 0 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+table.agentParametersReport th,
+table.agentParametersReport td {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.agentParametersReport .paramsReportHeader0 {
+  padding: 0.2em;
+}
+
+table.agentParametersReport td.paramsReportHeader1 {
+  padding: 0.2em 0.2em 0.2em 0.5em;
+}
+
+table.agentParametersReport td.paramsReportHeader2 {
+  padding: 0.2em 0.2em 0.2em 6em;
+}
+
+table.agentParametersReport td.paramsReportValue {
+  padding: 0.2em 0.2em 0.2em 10em;
+}
+
+.parameterUndefined {
+  font-weight: bold;
+}

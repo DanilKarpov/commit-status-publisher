@@ -1,0 +1,140 @@
+div.smallNote.tokenControlsSmallNote {
+  margin: 0;
+}
+
+.tokenActionButton {
+  margin-left: 4px;
+}
+
+.tokenActionButton .actionIcon {
+  color: var(--ring-main-color);
+}
+
+.tokenActionButton.actionIconWrapper:hover .actionIcon,
+.tokenActionButton .actionIconWrapper:hover .actionIcon {
+  color: var(--ring-main-hover-color);
+}
+
+.tokenActionButton.tokenActionCloseButton .actionIcon {
+  color: var(--ring-secondary-color);
+}
+
+.actionWithCaption,
+.actionWithCaption span.actionIcon {
+  color: var(--ring-main-color);
+  transition: color 0.3s ease-out;
+}
+
+.actionWithCaption:hover,
+.actionWithCaption:focus,
+.actionWithCaption:hover span.actionIcon,
+.actionWithCaption:focus span.actionIcon {
+  color: var(--ring-main-hover-color);
+  transition: none;
+}
+
+#infoTokenError span {
+  display: inline;
+}
+
+#tokenControlsWarningIcon,
+#tokenFormWarningIcon {
+  color: var(--ring-error-color);
+}
+
+.tokenControlsWarningText {
+  color: var(--ring-warning-color);
+}
+
+.disable-click {
+  pointer-events: none;
+}
+
+.embeddedRow {
+  background-color: var(--ring-secondary-background-color);
+}
+
+.embeddedRow th,
+.embeddedRow td,
+table.editProviderTable tr.embeddedRow th,
+table.editProviderTable tr.embeddedRow td {
+  border: none;
+}
+
+.embeddedRow th,
+table.editProviderTable tr.embeddedRow th,
+.embeddedRow.newTokenFormErrorRow td {
+  padding-left: 16px;
+}
+
+.embeddedRow td,
+table.editProviderTable tr.embeddedRow td {
+  padding-right: 16px;
+}
+
+.embeddedRow th h3 {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-weight: bold;
+}
+
+tr#embeddedHeader th {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+tr.settingsRow.newTokenFormRow.embeddedRow td#embeddedButtonCell {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+tr.embeddedSpacer td {
+  padding: 0;
+  border: none;
+}
+
+tr#firstNewTokenFormRow th, tr#firstNewTokenFormRow td {
+  border-top: none;
+}
+
+table.editProviderTable tr th.tokenControlsNoBorder,
+table.editProviderTable tr td.tokenControlsNoBorder {
+  border: none;
+}
+
+table.editProviderTable tr#ghaIssueTokenControls input.ghaTokenInput,
+table.editProviderTable tr.newTokenFormRow.embeddedRow input.ghaTokenInput,
+table.editProviderTable tr.newTokenFormRow.embeddedRow select#tokenConnectionInput.ghaTokenInput,
+table.editProviderTable tr.newTokenFormRow.embeddedRow textarea#accessibleEntitiesInput.ghaTokenInput {
+  width: 22em;
+}
+
+select#tokenConnectionInput.longField {
+  width: 28em;
+}
+
+select#tokenConnectionInput.mediumField {
+  width: 20em;
+}
+
+div.tokenGenerateWrapper {
+  margin-top: 5px;
+}
+
+input.tokenFormInput,
+select.tokenFormInput {
+  height: 24px;
+}
+
+span.tokenControlError {
+  color: #a90f1a;
+}
+
+span.capitalize {
+  text-transform: capitalize;
+}

@@ -1,0 +1,87 @@
+.diskUsageToolbar {
+  margin-bottom: .5em;
+}
+
+.diskUsageOverview {
+  margin-bottom: 1em;
+}
+
+.diskUsageFooterToolbar {
+  margin-top: 2em;
+}
+
+.diskUsageToolbar .refreshBtn {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.diskUsageToolbar .collapseExpandBlock,
+.diskUsageToolbar .checkboxHide {
+  margin-right: 1em;
+}
+
+table.diskUsageTable td {
+  padding: 4px 6px;
+}
+
+.diskUsageTable .size {
+  text-align: right;
+  width: 160px;
+}
+
+.diskUsageTable.grouped td.subtotal {
+  font-weight: bold;
+}
+
+.diskUsageTable .iconcell {
+  width: 20px;
+  padding: 0 0 0 4px;
+}
+
+.diskUsageTable .percent {
+  width: 160px;
+  text-align: right;
+}
+
+.diskUsageTable .total td {
+  font-weight: bold;
+}
+
+.diskUsageTable .nodata {
+  color: var(--ring-disabled-color, #999);
+}
+
+.buildSizePopup {
+  padding: .5em;
+}
+
+.buildSizePopup h3 {
+  margin-top: 0;
+}
+
+.buildSizePopup .cleanupTable,
+.buildSizePopup .cleanupLink {
+  padding-top: .5em;
+}
+
+.buildSizePopup ul {
+  padding-left: 25px;
+}
+
+.diskUsageFiltersResult {
+  margin: 1em 0;
+}
+
+.ajax_update_progress {
+  float: right;
+  position: relative;
+  top: 3px;
+}
+
+.update_configuration {
+  float: right;
+}
+
+.update_configuration:hover {
+  text-decoration: none;
+}

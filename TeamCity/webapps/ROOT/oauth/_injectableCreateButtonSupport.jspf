@@ -1,0 +1,40 @@
+<script type="text/javascript">
+  BS.InjectableCreateButtonSupport = {
+    injectCreateButton: function (id) {
+      const createButton = $(id);
+      const saveButton = $j('#OAuthConnectionDialog .popupSaveButtonsBlock :submit');
+      createButton.show();
+      saveButton.before(createButton);
+      saveButton.hide();
+    },
+
+    hideCreateButtons: function (id) {
+      $j('.createButton').hide();
+    },
+
+    restoreSaveButton: function () {
+      $j('#OAuthConnectionDialog .popupSaveButtonsBlock :submit').show()
+    },
+
+    cleanupForm: function () {
+      this.hideCreateButtons();
+      this.restoreSaveButton();
+    },
+  };
+
+  $j('#destructionDetector').on('remove', function () {
+    BS.InjectableCreateButtonSupport.cleanupForm();
+  });
+
+  $j(document).ready(function () {
+    const afterClose = BS.OAuthConnectionDialog.afterClose;
+    BS.OAuthConnectionDialog.afterClose = function () {
+      if (BS.InjectableCreateButtonSupport.cleanupForm) {
+        BS.InjectableCreateButtonSupport.cleanupForm();
+      }
+      afterClose();
+    };
+  });
+</script>
+
+<div id="destructionDetector"/>

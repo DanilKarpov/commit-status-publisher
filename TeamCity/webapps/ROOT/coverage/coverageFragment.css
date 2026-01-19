@@ -1,0 +1,75 @@
+.coverageStats .fullReportLink {
+  margin-top: 1em;
+}
+
+.coverageStats span.red {
+  color: #a90f1a;
+}
+
+.coverageStats span.green {
+  color: #0c7523;
+}
+
+td.coverageStats {
+  vertical-align: top;
+}
+
+td.coverageStats table.coverageStatsTable, td.coverageStats table.coverageStatsTable td {
+  margin: 0;
+}
+
+td.coverageStats .barBorder {
+  width: 3.5em;
+}
+
+.coverageStatsTable {
+  border-collapse: collapse;
+  margin-top: .5em;
+}
+
+.coverageStatsTable td span {
+  display: inline-block;
+}
+
+.coverageStatsTable td {
+  padding: 3px 2em 0 0;
+}
+
+.coverageStatsTable td.label {
+  padding-right: 1em;
+  color: inherit;
+}
+
+.coverageStatsTable .barBorder, .coverageStatsTable .barBorder span  {
+  font-size: 1em;
+  line-height: 1.3;
+}
+
+.coverageStatsTable .barBorder {
+  box-sizing: border-box;
+  position: relative;
+  width: 6em;
+  margin: 0;
+  border: 1px solid #7acc8b;
+  padding-left: 3px;
+}
+
+.coverageStatsTable .barBorderInner {
+  background-color: #7acc8b;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.coverageStatsTable .barBorderInnerText {
+  padding: 0 0 0 3px;
+  text-align: left;
+  color: var(--ring-line-color, #dfe5eb);
+}
+
+div.coverageStats {
+  padding-left: 18px;
+}

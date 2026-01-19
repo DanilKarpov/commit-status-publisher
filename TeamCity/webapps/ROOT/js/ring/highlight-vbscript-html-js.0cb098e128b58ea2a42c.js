@@ -1,0 +1,2 @@
+(self.webpackChunk=self.webpackChunk||[]).push([["highlight-vbscript-html-js"],{20779:function(n){n.exports=function(n){return{name:"VBScript in HTML",subLanguage:"xml",contains:[{begin:"<%",end:"%>",subLanguage:"vbscript"}]}}}}]);
+//# sourceMappingURL=highlight-vbscript-html-js.0cb098e128b58ea2a42c.js.map

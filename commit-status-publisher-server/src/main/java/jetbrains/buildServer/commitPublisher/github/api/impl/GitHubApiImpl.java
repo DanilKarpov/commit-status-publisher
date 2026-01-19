@@ -224,7 +224,8 @@ public abstract class GitHubApiImpl implements GitHubApi {
                               @Nullable final String context) throws PublisherException, IOException {
 
     final String url = myUrls.getStatusUrl(repoOwner, repoName, hash);
-    final String entity = myGson.toJson(new CommitStatus(status.getState(), targetUrl, description, context));
+    final String expectedState = status.getState();
+    final String entity = myGson.toJson(new CommitStatus(expectedState, targetUrl, description, context));
 
     final HttpMethod method = HttpMethod.POST;
     LoggerUtil.logRequest(Constants.GITHUB_PUBLISHER_ID, method, url, entity);
@@ -235,6 +236,40 @@ public abstract class GitHubApiImpl implements GitHubApi {
         url, authenticationCredentials(), defaultHeaders(),
         entity, ContentType.APPLICATION_JSON.getMimeType(), ContentType.APPLICATION_JSON.getCharset(),
         response -> {
+          String json = response.getBodyAsString();
+          if (StringUtil.isEmptyOrSpaces(json)) {
+            LOG.warn("GitHub returned empty response body when setting commit status to '" + expectedState +
+                     "' for " + repoOwner + "/" + repoName + "@" + hash);
+            exceptionRef.set(new PublisherException("GitHub returned empty response when setting commit status. " +
+                             "Expected status: " + expectedState).setShouldRetry());
+            return;
+          }
+
+          CommitStatus responseStatus;
+          try {
+            responseStatus = myGson.fromJson(json, CommitStatus.class);
+          } catch (JsonSyntaxException e) {
+            LOG.warn("GitHub returned invalid JSON response when setting commit status: " + json, e);
+            exceptionRef.set(new PublisherException("GitHub returned invalid JSON response when setting commit status", e).setShouldRetry());
+            return;
+          }
+
+          if (responseStatus == null || responseStatus.state == null) {
+            LOG.warn("GitHub response does not contain status state. Response: " + json);
+            exceptionRef.set(new PublisherException("GitHub response does not contain status state. " +
+                             "Expected: " + expectedState).setShouldRetry());
+            return;
+          }
+
+          if (!expectedState.equals(responseStatus.state)) {
+            LOG.warn("GitHub status mismatch! Sent: '" + expectedState + "', but GitHub returned: '" + responseStatus.state +
+                     "' for " + repoOwner + "/" + repoName + "@" + hash + ". Full response: " + json);
+            exceptionRef.set(new PublisherException("GitHub status mismatch: sent '" + expectedState +
+                             "' but GitHub returned '" + responseStatus.state + "'. This may indicate a problem with GitHub.").setShouldRetry());
+            return;
+          }
+
+          LOG.debug("Successfully set GitHub status '" + expectedState + "' for " + repoOwner + "/" + repoName + "@" + hash);
         },
         response -> {
           String responseBody = logFailedResponse(method, url, entity, response);

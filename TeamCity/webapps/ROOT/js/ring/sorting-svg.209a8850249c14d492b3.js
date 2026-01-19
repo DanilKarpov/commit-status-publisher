@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([["sorting-svg"],{99083:function(e,t,n){n.r(t);var s=n(63696),r=n(62540);t.default=s.memo((function(e){return(0,r.jsx)("svg",{xmlns:"http://www.w3.org/2000/svg",width:12,height:12,fill:"none",viewBox:"0 0 12 12",role:"presentation",...e,children:(0,r.jsx)("path",{stroke:"#999",strokeLinecap:"round",strokeWidth:1.25,d:"m3 7.5 3 3 3-3M9 4.5l-3-3-3 3"})})}))}}]);
+//# sourceMappingURL=sorting-svg.209a8850249c14d492b3.js.map

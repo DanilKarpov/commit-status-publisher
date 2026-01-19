@@ -1,0 +1,30 @@
+table.applicationUrls {
+  padding: 4px;
+}
+
+table.applicationUrls td {
+  padding: 8px 0 2px 0;
+}
+
+table.applicationUrls td.applicationUrlCaption {
+  padding: 8px 4px 2px 0;
+}
+
+input[readonly].redirectUrl {
+  color: var(--ring-secondary-color);
+  border-color: var(--ring-border-disabled-color);
+  background-color: var(--ring-disabled-background-color);
+}
+
+table.applicationUrls input[type='text'].redirectUrl {
+  width: 25em;
+}
+
+div.inFormRedirectUrl input[type='text'].redirectUrl {
+  width: 25em;
+}
+
+span.tc-icon_copy.url-copy-btn {
+  margin-left: 8px;
+  vertical-align: text-top;
+}

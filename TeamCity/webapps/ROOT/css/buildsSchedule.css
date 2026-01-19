@@ -1,0 +1,37 @@
+#filterProjectId {
+  width: 300px;
+  margin-right: 1em;
+}
+
+#scheduleDate {
+  margin-right: 1em;
+}
+
+#advanced-fields {
+  margin-top: 5px;
+}
+
+.buildsSchedulePermalink {
+  float: right;
+  margin-right: 5px;
+}
+
+.buildsScheduleTable .server-time {
+  width: 120px;
+}
+
+.buildsScheduleTable .trigger {
+  width: 45%;
+}
+
+.buildsScheduleTable .pastEvent {
+  color: gray;
+}
+
+.buildsScheduleTable .disabled {
+  font-style: italic;
+}
+
+.buildsScheduleTable .noEdit {
+  white-space: nowrap;
+}

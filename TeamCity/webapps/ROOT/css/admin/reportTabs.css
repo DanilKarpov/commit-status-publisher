@@ -1,0 +1,38 @@
+table.parametersTable td.edit {
+  text-align: center;
+  font-size: 90%;
+}
+
+table.editTabSettingsTable {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+table.editTabSettingsTable td {
+  margin: 0;
+  padding: 8px;
+  vertical-align: top;
+}
+
+table.editTabSettingsTable div.smallNote,
+span.error {
+  margin: 0;
+  padding: 0;
+}
+
+table.editTabSettingsTable th {
+  width: 20%;
+  padding-top: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.editTabSettingsTable th label {
+  white-space: nowrap;
+}
+
+table.editTabSettingsTable .buildNumberPattern {
+  margin-top: 0.2em;
+}

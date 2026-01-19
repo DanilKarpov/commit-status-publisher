@@ -1,0 +1,14 @@
+body {
+  background: var(--ring-content-background-color, #fff);
+  padding: 2em;
+  text-align: left;
+}
+
+h1.errorTitle {
+  font-size: 150%;
+  color: var(--ring-error-color);
+}
+
+p.errorDetails {
+  font-size: 100%;
+}

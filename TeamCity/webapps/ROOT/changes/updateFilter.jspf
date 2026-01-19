@@ -1,0 +1,18 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+BS.ChangePageFilter.useFilter = !${ufn:booleanPropertyValue(currentUser, "myChanges_withoutFilter")};
+
+BS.ChangePageFilter.changesOwnerId = '';
+BS.ChangePageFilter.currentUserId = '${currentUser.id}';
+<c:if test="${not empty param.changesOwnerId}">
+  BS.ChangePageFilter.changesOwnerId = '<c:out value="${param.changesOwnerId}"/>';
+</c:if>
+
+BS.ChangePageFilter.projectId = '';
+BS.ChangePageFilter.projectExternalId = '';
+<c:if test="${not empty param.projectId}">
+  BS.ChangePageFilter.setProjectId('<c:out value="${param.projectId}"/>');
+</c:if>
+
+if (document.location.hash.length > 1) {
+  BS.ChangePageFilter.setProjectId(document.location.hash.substring(1));
+}

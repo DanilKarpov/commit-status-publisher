@@ -1,0 +1,274 @@
+#responsibilitiesTable .project-icon:before {
+  margin-bottom: -1px;
+}
+
+.mutedInfo{
+  font-style: italic;
+  color:#a7a7a7;
+}
+
+ul.compiler-errors {
+  list-style: none;
+}
+
+.compiler-errors {
+  margin: 0;
+  padding: 0;
+}
+
+.compiler-error {
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+  color: #C00;
+}
+
+.compiler-errors-actions {
+  float: right;
+  margin-top: -0.3px;
+}
+
+.problemGroupHeader {
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+.problemGroupHeader .problemCount {
+  color: #737577;
+  font-weight: normal;
+}
+
+.bpl .handle_expanded:before,
+.bpl .handle_collapsed:before {
+  margin-right: 4px;
+}
+
+.bpl .group {
+  padding-left: 22px;
+}
+
+.tcRow{
+  width: 100%;
+  white-space: nowrap;
+  padding: 0;
+  margin-bottom: 0.25em;
+}
+
+.tcRow .clear {
+  clear: both;
+  height: 0;
+}
+
+.tcRow .tcCell{
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.tcRow .tcCell.rightSideActions {
+  float: right;
+}
+
+.bpl .tcRow .tcCell.rightSideActions {
+  float: none;
+  order: 1;
+  margin-left: auto;
+}
+
+.bpl .icons {
+  white-space: nowrap;
+  height: 20px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: -1px;
+}
+
+.bpl .description .pc__toggle-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.bpl .description .ellipsis-expander {
+  right: 2px;
+}
+
+.bpl .icons .icon {
+  margin-right: 4px;
+}
+
+.bpType {
+  width: 100%;
+  white-space: nowrap;
+
+}
+
+.bpl .tcCell.details{
+  margin-top: .5em;
+  width: 97%;
+  margin-left: 15px;
+}
+
+.bpl .description{
+  padding: 0;
+}
+
+.bpl .descriptionContainer{
+  font-weight: normal;
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+.bpl .hasDetails, .inplaceLink{
+  cursor: pointer;
+  color: #3773C9;
+}
+
+.bpl .hasDetails.descriptionContainer{
+  border-bottom: 1px dotted #3773C9;
+}
+
+.descriptionContainer__ellipsis {
+  cursor: pointer;
+}
+
+.bpl .tcCell .hasDetails:hover, .inplaceLink:hover{
+  border-bottom: 1px dotted #3773C9;
+  text-decoration:none;
+}
+
+.inplaceLinkSymbol{
+  color: #3773C9;
+}
+
+.bpl .muteOrResponsibilityInline{
+  color: #737577;
+  float: right;
+  width: 100%;
+}
+
+.group.inner{
+  border-bottom: 1px dotted lightgray;
+  margin-bottom: 0.35em;
+}
+
+.bpl .noDependencyBuildInfo{
+  font-style: italic;
+  color: #737577;
+}
+
+.bpl .tcRow{
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.bpl > .tcRow{
+  margin-top: 0.5em;
+}
+
+.bpl .section{
+  margin-bottom: 1em;
+}
+
+.bpl .tcRow.problemToHighlight.highlighted,
+.bpl .tcRow.problemToHighlight.stickyHighlighted  {
+  background-color: var(--tc-classic-highlight-color, #ffc) !important;
+}
+
+.bpl .tcRow.problemToHighlight.highlighted .testFailedInPart,
+.bpl .tcRow.problemToHighlight.stickyHighlighted .testFailedInPart {
+  color: var(--ring-text-color, #1f2326);
+}
+
+.bpl .tcRow.problemToHighlight.highlighted .testFailedInPart a,
+.bpl .tcRow.problemToHighlight.stickyHighlighted .testFailedInPart a {
+  color: #1564c2;
+}
+
+.bpl .code{
+  color: darkred;
+  white-space: pre;
+}
+
+.sdProblem{
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: inline-table;
+}
+.sdProblem tr td{
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+.sdProblem td.status{
+  padding-left: 1em;
+}
+
+.bpl.heavy .tcRow .tcCell.details{
+  border-left: none;
+}
+
+.bpl.heavy .tcRow.hasDetails {
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 5px 5px;
+  cursor: pointer;
+}
+
+.bpl.heavy .hideDetailsLink {
+  padding-top: .5em;
+}
+
+.problemGroupHeader {
+  cursor: pointer;
+}
+
+.bpl .handle {
+  position: relative;
+  margin-right: 0.3em;
+}
+
+.dependentBuildResult{
+  white-space: nowrap;
+}
+
+.tcTable{
+  margin-bottom: 5px;
+}
+
+.expandCollapseContainer,
+.buildResultsSummaryTable .bpl{
+  margin-left: 2px;
+}
+
+#buildResultsInner .blockHeader.expanded:before,
+#buildResultsInner .blockHeader.collapsed:before {
+  width: 22px;
+}
+
+.commentWrapper {
+  display: inline-flex;
+}
+
+.muteComment{
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.tooltipContent{
+  display: none;
+}
+
+.bpl .detailsWrapper{
+  display: none;
+}
+
+.bpl .detailsWrapper.expanded{
+  display: flex;
+}

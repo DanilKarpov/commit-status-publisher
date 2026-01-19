@@ -1,0 +1,62 @@
+<%--@elvariable id="redirectUrl" type="java.lang.String"--%>
+<tr class="spaceNote" id="${idManualHint}" style="display: none">
+  <td colspan="2">
+    <div class="attentionComment">
+      Please manually create a dedicated application in JetBrains Space with the following parameters:<br/><br/>
+      <table class="applicationUrls">
+        <tr>
+          <td>Requested rights for specific features:</td>
+          <td>
+            <details>
+              <summary><strong>Authenticating in TeamCity via Space</strong></summary>
+              Members | View member profile<br/>
+            </details>
+            <c:set var="mergeRequestsEnabled" value="${spaceFeatures.mergeRequestsEnabled()}"/>
+            <c:if test="${mergeRequestsEnabled}">
+              <details>
+                <summary><strong>Merge Requests Integration</strong></summary>
+                Members | View member profile<br/>
+                Project | View project data<br/>
+                Git Repositories | Read<br/>
+                Code Review | View code reviews
+              </details>
+            </c:if>
+            <c:set var="commitStatusPublisherEnabled" value="${spaceFeatures.commitStatusEnabled()}"></c:set>
+            <c:if test="${commitStatusPublisherEnabled}">
+              <details>
+                <summary><strong>Commit Status Publisher</strong></summary>
+                Git Repositories | Report external check status
+              </details>
+            </c:if>
+            <c:if test="${spaceFeatures.projectLevelConnectionEnabled()}">
+              <details>
+                <summary><strong>Create Project Connections</strong></summary>
+                Applications | Create
+              </details>
+            </c:if>
+          </td>
+        </tr>
+        <tr>
+          <td>Authentication:</td>
+          <td>
+            <strong>Authorization Code Flow</strong>,
+            <strong>Client Credentials Flow</strong>
+          </td>
+        </tr>
+      </table>
+      <br/>
+      In Authorization tab you need to authorize rights for the necessary projects<br/><br/>
+      In the "Code Flow redirect URIs" field, enter the following redirect URLs:<br/>
+      <oauth:urlTable>
+        <tr>
+          <td>
+            <oauth:redirectUrl id="firstSpaceRootUrl" value="${redirectUrl}" style="width:35em;"/>
+          </td>
+        </tr>
+      </oauth:urlTable>
+      <br/>
+      Once created, enter the <strong>Space server URL</strong> and the app's <strong>Client ID</strong> | <strong>Secret</strong> in the form below.
+      <bs:help file="Connect+to+JetBrains+Space"/><br/><br/>
+    </div>
+  </td>
+</tr>

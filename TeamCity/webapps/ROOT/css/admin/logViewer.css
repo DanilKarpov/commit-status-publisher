@@ -1,0 +1,4 @@
+.clippedMessage {
+  padding: 0.8em 0 0.4em 0;
+  color: var(--ring-warning-color);
+}

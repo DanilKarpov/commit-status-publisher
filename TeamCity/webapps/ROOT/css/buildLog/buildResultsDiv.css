@@ -1,0 +1,241 @@
+td.detailsPart {
+  /* Disallow floating First Failed In block to flow far right for wide stacktraces in expanded state: */
+  max-width: 1000px;
+  overflow: visible;
+
+  padding-left: 4.3em;
+}
+
+td.detailsPart .stamp {
+  float: right;
+}
+
+p.blockHeader {
+  font-size: 100%;
+  font-weight: bold;
+}
+
+p.blockHeader,
+p.passedTestsBlock {
+  margin-bottom: 0;
+}
+
+p.passedTestsBlock {
+  padding-left: 22px;
+}
+
+#failedTestsDl span.pc.testNamePopup {
+  font-weight: bold;
+}
+
+#depsData {
+  padding-top: 10px;
+  padding-left: 40px;
+}
+
+#depsData table {
+  width: 100%;
+}
+
+#depsData td {
+  padding: 2px 5px;
+}
+
+#depsData td.buildNumber {
+  white-space: nowrap;
+  text-align: right;
+}
+
+#depsData tr.failedConfig td {
+  border-top: 1px var(--ring-line-color, #dfe5eb) solid;
+  border-bottom: .5em white solid;
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.failedTestsCaption {
+  background-color: var(--ring-line-color, #dfe5eb);
+  padding-left: 5px;
+}
+
+.package {
+  color: #737577;
+  font-weight: normal;
+  font-family: arial, sans-serif;
+}
+
+#mutedTestsDl div {
+  margin: 0.3em 0 0.3em 13px;
+}
+
+#mutedTestsDl dd {
+  min-height: 1em;
+  margin-bottom: 0.6em;
+}
+
+.fullView {
+  display: none;
+  height: auto;
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+  color: darkred;
+}
+
+.fullView .hideStacktrace {
+  display: block;
+  padding: 3px;
+}
+
+/* Hide first link "hide details" on the grouped test view */
+.testList .fullView a.hideStacktrace:first-child {
+  display: none;
+}
+
+dd.full input {
+  display: block;
+  margin: 0.7em 0;
+}
+
+div.firstFailedWhenFixed {
+  font-size: 80%;
+}
+
+span.showTrace {
+  padding-left: 10px;
+  border-left: 1px solid var(--ring-line-color, #dfe5eb);
+  font-weight: normal;
+}
+
+/* Artifact dependencies table */
+
+table.artifactsList {
+  width: 60%;
+  margin: 0 0 .8em 1em;
+  border-bottom: solid 1px var(--ring-line-color, #dfe5eb);
+}
+
+table.artifactsList td {
+  margin: 0;
+  padding: 0 2px;
+  text-align: left;
+}
+
+table.artifactsList td.right {
+  text-align: right;
+}
+
+table.artifactsList .second_line {
+  font-size: 85%;
+  vertical-align: top;
+}
+
+table.artifactsList .second_line td {
+  padding-bottom: .3em;
+}
+
+#dependencies p {
+  margin-bottom: .5em;
+  margin-left: 10px;
+}
+
+/* Styles for VCS revisions and labels section */
+table.plain {
+  width: 80%;
+  margin: 10px 0 5px 10px;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  border-left: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.plain th {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+table.plain td,
+table.plain th {
+  padding: .2em .5em;
+  text-align: left;
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+#vcsInformation p.blockHeader {
+  margin-top: 0;
+}
+
+table.changeRevisionsTable {
+  width: 100%;
+  margin-left: 0;
+}
+
+.changeRevisionsTable td {
+  vertical-align: top;
+}
+
+.changeRevisionsTable tr:not(:last-child) td {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.changeRevisionsTable .vcsRoot {
+  width: 50%;
+  white-space: nowrap;
+}
+
+.changeRevisionsTable .label {
+  width: 15%;
+}
+
+.noteOnVcsRootInBuild {
+  display: inline-block;
+  margin-left: 1em;
+  font-style: italic;
+  color: #737577;
+}
+
+.changeRevisionsActions {
+  margin-bottom: 2em;
+}
+
+.changeRevisionsActions .right {
+  float: right;
+}
+
+#buildResults .attentionComment {
+  margin-top: 0.5em;
+}
+
+.testListSelected td,
+.testRowSelected td {
+  background-color: var(--ring-secondary-background-color, #f7f9fa)
+}
+
+.testListSelected .testRelatedBuilds td {
+  background-color: var(--ring-content-background-color, #fff);
+}
+
+.artifactsNote {
+  margin-top: .5em;
+  margin-left: 7px;
+}
+
+.build_type_description {
+  color: #737577;
+}
+
+#deploymentStatus table.modificationBuilds tr td.build_type_name, #deploymentStatus table.modificationBuilds tr td.buildTypeName {
+  width: 30%;
+}
+
+#deploymentStatus table.modificationBuilds td.branch {
+  padding-left: 1em;
+}
+
+#deploymentStatus table.modificationBuilds div.runButton {
+  float: right;
+  padding-left: 2em;
+}
+
+#deploymentStatus table.modificationBuilds tr td.status {
+  width: 26%
+}
+
+#deploymentStatus table.modificationBuilds tr td.estimate {
+  width: 58%
+}

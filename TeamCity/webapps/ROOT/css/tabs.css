@@ -1,0 +1,461 @@
+/* Agent busyness indicator */
+.mug {
+  float: left;
+  position: relative;
+  width: 12px;
+  height: 16px;
+  margin: 4px 10px 0 0;
+  padding: 0;
+
+  border: 1px solid #0062c5;
+  border-radius: 3px;
+
+  font-size: 0;
+  line-height: 0;
+
+  background-color: var(--ring-content-background-color, #fff);
+}
+
+.mugStuff {
+  background-color: #0062c5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+
+div.mug + p {
+  display: none; /* Fix strange bug in IE and Chrome when additional paragraph appears in the top */
+}
+
+/* Right-hand side links */
+.quickLinks {
+  clear: right;
+  float: right;
+  white-space: nowrap;
+  min-height: 1em;
+}
+
+.quickLinksItem {
+  margin-left: 1.5em;
+}
+
+.quickLinksControlLink {
+  margin-left: 1.5em;
+}
+
+#usernamePopupContent {
+  padding: 0.2em;
+  border: 1px solid #D6D6D6;
+}
+
+#usernamePopupContent div {
+  padding: 0.2em 0.6em;
+}
+
+#usernamePopupContent div.settings {
+  border-bottom: 1px solid #D6D6D6;
+}
+
+#usernamePopupContent div:hover,
+#usernamePopupContent div:hover a {
+  background-color: #3773C9;
+  color: var(--ring-content-background-color, #fff);
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+/*----------- Navigation for 3rd, 4th level ---*/
+
+.simpleTabs .tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.simpleTabs .tabs li {
+  float: left;
+  margin: 4px 0 0;
+  padding: 0 2px 0 0;
+  cursor: pointer;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+.simpleTabs .tabs li #restBranchSelector{
+  cursor: auto;
+}
+
+.simpleTabsWithSelector .tabs li { height: 2.1em }
+
+.simpleTabs .tabs li.last {
+  padding: 0 4px 0 0;
+}
+
+.simpleTabs .tabs li p {
+  margin: 0;
+  padding: 5px 10px 3px;
+}
+
+.simpleTabs .tabs li.selected {
+  margin: 4px 0 0;
+  padding: 0;
+
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+}
+
+.simpleTabs .tabs li.selected a {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  color: var(--ring-text-color, #1f2326);
+  text-decoration: none;
+}
+
+.simpleTabs .tabs li.selected a:link,
+.simpleTabs .tabs li.selected a:hover {
+  padding-bottom: 2px;
+  color: var(--ring-text-color, #1f2326);
+  text-decoration: none;
+}
+
+.simpleTabs .tabs li span.mandatoryAsterix {
+  font-size: 100%;
+}
+
+.simpleTabs .tabs li p.branchNameSelector {
+  padding-left: 0;
+}
+
+.tabs .branchNameSelector.rest {
+  margin-top: -5px;
+}
+
+.simpleTabs .tabs li p.branchNameSelector #branchNameSelector,
+.simpleTabs .tabs li p.branchNameSelector > span.ufd {
+  position: relative;
+  top: -5px;
+  width: 15em;
+}
+
+.-ufd-teamcity-ui-branchNameSelector{
+  width: 15px !important;
+}
+
+.simpleTabs .tabs li p.branchNameSelector #branchNameSelector input{
+  width: 174px !important;
+}
+
+/*---- table for showing content beside the tabs */
+.tabsTable {
+  width: 100%;
+  margin: 0 0 -2px 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.tabCounter {
+  display: inline-block;
+  float: right;
+  padding-left: 4px;
+  font-weight: normal;
+
+  color: var(--ring-secondary-color, #6C707E);
+}
+
+.tabCounter:empty {
+  visibility: hidden;
+}
+
+.simpleTabs .tabs li.selected .tabCounter {
+  position: relative;
+  left: -1px;
+  top: -1px;
+}
+
+/* For when one level of tabs is not enough (Build Log, Dependencies) */
+.subTabs {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.subTabs:empty {
+  margin: 0;
+}
+
+.subTabs .subTabsRight {
+  float: right;
+  border-collapse: collapse;
+}
+
+
+#restBreadcrumbs{
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0 calc(var(--tc-page-padding-inline, 24px) * -1) 16px;
+  box-sizing: border-box;
+  padding: 8px var(--tc-page-padding-inline, 24px);
+  min-height: 40px;
+  box-shadow: inset 0 -1px var(--ring-line-color, #dfe1e5), 0 -1px var(--ring-line-color, #dfe1e5);
+}
+
+#restNavigation, #restPageTitle, #restPageDescription{
+  display: none;
+  margin: 0;
+}
+
+#restPageTitle{
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 24px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+#restPageTitle .selected{
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+#restPageTitle .selected.buildType,
+#restPageTitle .selected.buildTypeTemplate,
+#restPageTitle .selected.project {
+  white-space: normal;
+  max-width: 70vw;
+  word-break: break-word;
+}
+
+#restPageTitle a:not(.error-url) {
+  color: inherit;
+}
+
+#restPageDescription{
+  color: #737577;
+  margin-top: 5px;
+}
+
+#restBreadcrumbs ul{
+  padding-left: 0;
+}
+
+#restNavigation {
+  padding: 2px 0;
+}
+
+#restNavigation li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+#restNavigation li,
+#restNavigation li a {
+  color: var(--ring-secondary-color, #6C707E);
+}
+#restNavigation li a:hover {
+  color: var(--ring-link-hover-color, #223C72);
+  text-decoration: none;
+}
+#restNavigation li.selected,
+#restNavigation li.selected a {
+  color: var(--ring-text-color, #1f2326);
+  cursor: default;
+}
+
+#restBreadcrumbs .tc-icon_breadcrumb_slash:after {
+  content: '/';
+  margin: 0 8px;
+
+  color: var(--ring-borders-color, #d3d5db);
+
+  font-size: 16px;
+  line-height: 16px;
+}
+
+#restBreadcrumbs .contentWrapper {
+  display: inline-block;
+  padding: 0;
+  border-radius: 3px;
+}
+
+#restPageTitle .selected .contentWrapper{
+  color: var(--ring-text-color, #1f2326);
+  font-weight: bold;
+  display: flex;
+}
+
+#restPageTitle .selected{
+  display: inline-block;
+}
+
+li.main-navigation_branch-name-selector.rest p{
+  padding: 0;
+  width: 220px;
+}
+
+.prefix{
+  color: #737577;
+  padding-right: 10px;
+}
+
+#restBreadcrumbs .leftIcon {
+  margin-right: 2px;
+  color: var(--ring-icon-color, #818594)
+}
+
+#restBreadcrumbs .buildDataIcon {
+  display: none;
+}
+
+#restBreadcrumbs .contentWrapper i{
+  margin: 0;
+  padding: 0;
+}
+
+#restBreadcrumbs .contentWrapper .iWrapper{
+  height: 16px;
+  margin-left: 2px;
+  padding: 0;
+  border: none;
+  background: none;
+
+  vertical-align: -1px;
+
+  line-height: 16px;
+  border-radius: 3px;
+  color: var(--ring-icon-color, #818594);
+}
+
+#restBreadcrumbs .contentWrapper .iWrapper:hover{
+  color: var(--ring-icon-hover-color, #5a5d6b);
+  background-color: var(--ring-tag-background-color, #EBECF0);
+}
+
+#restBreadcrumbs .contentWrapper .iWrapper:active{
+  color: var(--ring-main-color, #3574f0);
+  background-color: var(--ring-selected-background-color, #D4E2FF);
+}
+
+#restPageTitle i.itemSeverity.tc-icon {
+  width: 15px;
+  height: 15px;
+}
+
+#restPageTitle .healthItemIndicator{
+  height: 15px;
+  vertical-align: middle;
+}
+
+#restPageTitle .healthItemIndicator i.itemSeverity {
+  vertical-align: baseline;
+  font-size: var(--ring-font-size, 14px);
+  line-height: 13px;
+  width: 0.8em;
+}
+
+.branchNameSelector_placeholder {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  border: 1px solid lightgray;
+  padding: 0;
+  border-radius: 3px;
+}
+
+.branchNameSelector_placeholder.minimalistic{
+  background-color: #d4edff;
+  border: none;
+  width: 99%;
+  height: 1.8em;
+  font-size: var(--ring-font-size, 14px);
+  padding-top: 1px;
+  box-sizing: border-box;
+}
+
+.branchNameSelector_placeholder input{
+  border: none;
+  background-color: transparent;
+  width: 83%;
+  padding-left: 4px;
+}
+
+.branchNameSelector_placeholder.minimalistic .branch{
+  top: -2.5px;
+  left: 7px;
+}
+
+.branchNameSelector_placeholder.minimalistic .branch.loading{
+  left: 2.5px;
+  top: -1.5px;
+}
+
+#restBranchSelector .minimalistic {
+  display: inline-block;
+  width: 100%;
+  vertical-align: -7px;
+}
+
+#restBranchSelector .minimalistic input{
+  vertical-align: top;
+  background-color: #d4edff;
+  border: none;
+  border-radius: 3px;
+  padding-left: 24px;
+  height: 1.8em;
+  line-height: 1.8em;
+}
+
+#restBranchSelector .minimalistic  search-input.search-panel {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#restBranchSelector .minimalistic  .it.branch {
+  top: 4px;
+}
+
+#restBranchSelector .minimalistic  .it.itr {
+  top: 3px;
+  right: 2px;
+}
+
+#restBranchSelector .minimalistic .dropdown-content{
+  font-size: var(--ring-font-size, 14px);
+  padding: 0 0 0 10px;
+  border: 1px solid lightgray;
+  margin-top: -3px;
+}
+
+#restBranchSelector .minimalistic .node.helper{
+  margin-left: -8px;
+}
+
+.branchSearchWrapper{
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 4px;
+}
+
+ul.tabs i.tc-icon_attention,
+.simpleTabs .warningIcon {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.experimental-ui-toggle {
+  float: left;
+  margin-right: 16px;
+}
+
+.usernamePopup .pc__label {
+  margin-left: 4px;
+}

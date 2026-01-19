@@ -1,0 +1,45 @@
+p.blockHeader {
+  margin: 0.5em 0 0;
+  font-weight: bold;
+}
+
+p.blockHeader + div {
+  margin-bottom: 1.5em;
+}
+
+.actionBar {
+  margin-bottom: 1em;
+}
+
+.actionBar > table {
+  border: 0;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.actionBar > table tr,
+.actionBar > table td,
+.actionBar > table tbody {
+  margin: 0;
+  padding: 0;
+}
+
+.actionBar select {
+  width: 24em;
+}
+
+.muted-tests {
+  margin: 0.5em 0.5em 1.2em;
+}
+
+.muted-tests > div {
+  margin-left: 0.3em;
+}
+
+#currentFailingBuildTypesDl {
+  margin-bottom: 1em;
+}
+
+.noProblems {
+  margin-top: 0.5em;
+}

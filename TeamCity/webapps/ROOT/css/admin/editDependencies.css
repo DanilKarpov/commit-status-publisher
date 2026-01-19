@@ -1,0 +1,140 @@
+table.parametersTable .checkbox {
+  width: 30px;
+  padding: 5px 0;
+  text-align: center;
+}
+table.parametersTable .checkbox input {
+  margin: 0;
+}
+
+table.parametersTable th.sourceBuildType,
+table.parametersTable th.artifactsSource {
+  width: 35%;
+}
+
+table.parametersTable td.destPath {
+  width: 18%;
+}
+
+ul.artifactsPaths {
+  margin: 0;
+  padding: 0;
+  overflow-wrap: break-word;
+}
+
+ul.artifactsPaths li {
+  list-style: none;
+}
+
+#artifactDependencyForm {
+  margin: 0;
+}
+
+#artifactDependencyForm div.formContainer {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  width: 650px;
+  margin: 2em 0 0 0;
+  padding: 1em;
+  border-top: 3px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.artifactDependencyFormTable {
+  width: 99%;
+}
+
+table.artifactDependencyFormTable td.header {
+  width: 9em;
+}
+
+table.artifactDependencyFormTable td.header label {
+  width: 9em;
+}
+
+table.artifactDependencyFormTable td {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  vertical-align: baseline;
+}
+
+div.buildNumberPattern {
+  margin-top: 1.1em;
+}
+
+#artifactDependencyForm ul.artifactsPaths li {
+  list-style: none;
+  padding-bottom: 0.3em;
+}
+
+#dependencyResolverMessages {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.dependencyResolverMessagesLog {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  margin-top: 1em;
+  font-size: 11px;
+}
+
+.dependencyResolverMessagesLog .errorMessage,
+.downloadStats .errorMessage {
+  color: var(--ring-error-color);
+}
+
+.dependencyResolverMessagesLog .warnMessage {
+  color: var(--ring-warning-color);
+}
+
+.downloadStats {
+  margin-top: .5em;
+}
+
+#enterCredentialsDialog table {
+  width: 100%;
+  margin-top: 0.5em;
+}
+
+#enterCredentialsDialog table input {
+  width: 100%;
+}
+
+.sourceDependenciesDialog table {
+  width: 100%;
+  padding: 3px;
+}
+
+.sourceDependenciesDialog table th {
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+}
+
+.sourceDependenciesDialog table td {
+  vertical-align: baseline;
+}
+
+.sourceDependenciesDialog table td #srcDependOn {
+  width: 400px;
+}
+
+table.dependencyActions td {
+  padding: 0.4em 0 0.4em 0;
+}
+
+div.failedDependencyOption {
+  padding-top: 0.5em;
+}
+
+div.failedDependencyOption label {
+  width: 14em;
+  display: inline-block;
+}
+
+div.failedDependencyOption select {
+  width: 15em;
+  vertical-align: top;
+}
+
+td.optionsCell, th.optionsCell {
+  padding-top: 1em;
+}

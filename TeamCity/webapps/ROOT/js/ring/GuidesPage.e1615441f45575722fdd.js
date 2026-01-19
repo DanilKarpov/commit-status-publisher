@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([["GuidesPage"],{28794:function(e,t,n){n.r(t);var u=n(74028),c=n(74862),r=n(44185),i=n(62540);t.default=function(){return(0,c.A)("Learning Center — TeamCity"),(0,i.jsx)(r.A,{placeId:u.XJ.SAKURA_GUIDES_OVERVIEW})}},74862:function(e,t,n){var u=n(63696);t.A=e=>{(0,u.useEffect)((()=>{if(null==e)return;const t=document.title;return document.title=e,()=>{document.title=t}}),[e])}}}]);
+//# sourceMappingURL=GuidesPage.e1615441f45575722fdd.js.map

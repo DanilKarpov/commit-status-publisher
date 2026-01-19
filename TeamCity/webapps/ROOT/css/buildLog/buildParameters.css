@@ -1,0 +1,99 @@
+.buildParameters {
+  width: 80%;
+  margin-top: 1em;
+}
+
+.buildParameters__onlyModified {
+  margin: 1em 0;
+  display: block;
+}
+
+.buildParameters h2 {
+  margin: 0 0 .2em 0;
+}
+
+.buildParameters .statisticsTable td.cbColumn,
+.buildParameters .statisticsTable th.cbColumn {
+  width: 22px;
+  text-align: right;
+}
+
+.buildParameters .statisticsTable .chartSelector {
+  padding-left: 1em;
+}
+
+.buildParameters .addToChartToggle {
+  float: right;
+}
+
+.buildParameters .statisticsTable .xmlEditCell {
+  border: none;
+}
+
+.buildParameters .successMessage {
+  border: none;
+}
+
+.addToChartDialog .smallNote {
+  margin-left: 0;
+}
+
+.addToChartDialog {
+  width: 800px;
+}
+
+.buildParameters .runnerFormTable {
+  width: 40em;
+  margin-bottom: 2em;
+}
+
+.buildParameters .runnerFormTable td,
+.buildParameters .runnerFormTable th {
+  padding: 2px 8px;
+  border-right: none;
+}
+
+.buildParameters .runnerFormTable tr:hover td {
+  background-color: #F9F9F9
+}
+
+.buildParameters .runnerFormTable .paramName {
+  max-width: 70em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: 120px;
+}
+
+.buildParameters .runnerFormTable th.paramValue {
+  width: 100%;
+}
+
+#chartDialogPopup {
+  overflow: visible;
+  padding: 0;
+}
+
+.editChartDialog .projectChooser .smallNote {
+  margin: 0;
+}
+
+.buildParameters_chartPopup {
+  width: auto;
+  display: block;
+  position: static;
+}
+
+.buildParameters_chartPopup .chartHolder {
+  width: 400px;
+  height: 150px;
+}
+
+.undefinedParam {
+  color: var(--ring-error-color);
+}
+
+#chooseProjectSelect {
+  display: inline-block;
+  max-width: 240px;
+}

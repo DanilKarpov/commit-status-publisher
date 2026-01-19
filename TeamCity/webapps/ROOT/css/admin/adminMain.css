@@ -1,0 +1,622 @@
+@import url("../settingsTable.css");
+@import url("../vcsTable.css");
+
+.admin-ui #bodyWrapper:before {
+  background: none;
+}
+
+.admin-ui #mainContent {
+  padding-left: 0;
+  padding-right: 0;
+}
+.admin-ui #content {
+  margin-top: 0;
+}
+
+.admin-ui #topWrapper.with-border {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+.admin-ui #globalWarningsWrapper .tabsTable td {
+  padding: 0;
+}
+
+.admin-ui #globalWarningsWrapper .attentionComment:first-of-type,
+.admin-ui #globalWarningsWrapper .attentionRed:first-of-type {
+  margin-top: 0;
+}
+
+.admin-ui #globalWarningsWrapper.globalWarningsWrapper-sakura .attentionComment:last-of-type,
+.admin-ui #globalWarningsWrapper.globalWarningsWrapper-sakura .attentionRed:last-of-type {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.admin-ui #globalWarningsWrapper .attentionComment:last-of-type,
+.admin-ui #globalWarningsWrapper .attentionRed:last-of-type {
+  margin-bottom: 10px;
+}
+
+.admin-ui .admin-content #restBreadcrumbs {
+  margin-top: -24px;
+}
+
+.admin-ui .admin-content #restPageTitle {
+  margin-top: 0;
+}
+
+.admin-ui .admin-content #restBreadcrumbs {
+  margin-bottom: 12px;
+}
+
+.admin-ui .admin-content .quickLinks {
+  margin: 0;
+}
+
+.admin-ui #topWrapper #breadcrumbsWrapper {
+  padding: 0 var(--tc-page-padding-inline, 24px) 16px;
+}
+
+.admin-ui #adminBreadcrumbsWrapper .fixedWidth {
+  padding: 0;
+  min-width: 644px;  /* 960px - widthOfLeftPanel(252) - paddingsOfContentBox(64px) */
+}
+
+.admin-ui #adminBreadcrumbsWrapper #breadcrumbsWrapper{
+  padding-bottom: 12px;
+}
+
+.admin-ui .modificationInfoInline {
+  display: flex;
+  column-gap: 8px;
+
+  color: var(--ring-secondary-color);
+
+  font-size: var(--ring-font-size-smaller);
+  line-height: var(--ring-line-height-lowest);
+}
+
+#react-tabs-container {
+  height: 30px;
+  margin-top: -8px;
+}
+
+#all-projects {
+  margin-top: 1em;
+}
+
+#all-projects .expand_collapse {
+  margin-bottom: 1em;
+}
+
+.admin-container h2 {
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 0;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.admin-container h2.noBorder {
+  padding-top: 0;
+  border: none;
+}
+
+p.sectionDescription {
+  margin: 0 0 1em;
+  padding: 0;
+
+  font-style: italic;
+}
+
+#content {
+  margin-top: 1em;
+}
+
+td.copy,
+td.move {
+  width: 5%;
+  text-align: center;
+  font-size: 70%;
+  border-left: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+p.createProject {
+  margin-top: 0;
+}
+
+tr.buildConfigurationRow td.addBuildConfiguration {
+  border-right: none;
+}
+
+table.settings td {
+  padding-left: 1em;
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.settings td.edit {
+  padding-left: .5em;
+}
+
+table.settings th.name,
+table.settings th.runner {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  width: auto;
+  padding-left: 1em;
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+  text-align: left;
+  font-size: 90%;
+}
+
+table.settings th.usedIn {
+  width: 25%;
+}
+
+table.settings th.vcsRootScope {
+  width: 15%;
+}
+
+/* Project hierarchy tree-table */
+.projectHierarchy .hl {
+  color: var(--tc-highlight-color);
+}
+
+.configurationSection #subprojects,
+.configurationSection #configurations,
+.configurationSection #templates {
+  margin-top: 10px;
+}
+
+.vcsRootsSection,
+.errorSection,
+.templatesSection {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  margin-top: 0.5em;
+  padding: 3px;
+}
+
+.vcsRootsSection .attentionComment,
+.templatesSection .attentionComment {
+  background-color: #ffffcc;
+  border: none;
+}
+
+.vcsRootsSection ul,
+.templatesSection ul {
+  margin: 0;
+  padding: 0 0 0 0.5em;
+  list-style: none;
+}
+
+#copyProjectFormDialog.wide,
+#regenerateFormDialog {
+  width: 55em;
+}
+
+#copyBuildTypeFormDialog label, #copyTemplateFormDialog label {
+  width: 8.5em;
+  padding-right: 2em;
+}
+
+#generateTokenFormDialog {
+  width: 45em;
+}
+
+#generateTokenFormDialog label {
+  width: 8em;
+}
+
+#generateTokenFormDialog .mono {
+  margin-left: .5em;
+  margin-top: .5em;
+}
+
+#moveProjectFormDialog label {
+  display: inline-block;
+  width: 9em;
+  line-height: 2em;
+  white-space: nowrap;
+}
+
+#moveProjectFormDialog table {
+  width: 100%;
+}
+
+span.templateUsage {
+  max-width: 60%;
+  float: right;
+  text-align: right;
+}
+
+/* sidebar */
+
+#admin-container {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.admin-sidebar,
+.admin-content {
+  vertical-align: top;
+}
+
+.admin-ui .admin-content {
+  padding: 24px var(--tc-page-padding-inline, 24px) 24px;
+}
+
+.admin-sidebar {
+  min-width: 16%;
+  width: 204px;
+  padding: 0 20px 10px 0;
+  box-sizing: content-box;
+}
+
+.admin-ui .admin-sidebar {
+  min-width: 16%;
+  width: 252px;
+  position: relative;
+  background: var(--ring-sidebar-background-color, #f7f9fa);
+  padding: 0 0 16px;
+}
+
+.admin-ui .admin-sidebar.compact {
+  padding: 24px 0;
+  width: 220px;
+}
+.admin-ui .user-profile.admin-sidebar.compact {
+  padding-left: 0;
+}
+
+.admin-ui .admin-sidebar .usefulLinks {
+  margin-left: 32px;
+  max-width: 220px;
+}
+.admin-menu-title {
+  display: flex;
+  padding: 12px 36px 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.admin-ui .admin-menu__bg {
+  background: var(--ring-sidebar-background-color, #f7f9fa);
+  width: 100vw;
+  min-height: 50vh;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  top: 0;
+  box-shadow: 0 50vh var(--ring-sidebar-background-color, #f7f9fa);
+}
+
+.admin-ui .admin-menu__bg:after {
+  content: '';
+  display: block;
+  position: absolute;
+  min-height: 50vh;
+  height: 100%;
+  border-right: none;
+  box-shadow: 0px 50vh 0px 0px var(--ring-line-color, #dfe5eb);
+  background: var(--ring-line-color, #dfe5eb);
+  right: -1px;
+  width: 1px;
+}
+
+.admin-sidebar .item,
+.admin-sidebar .category {
+  padding: 0.2em 0;
+}
+
+.admin-sidebar .category:first-child {
+  padding-top: 0;
+}
+
+.admin-sidebar .item {
+  max-width: 240px;
+  padding-left: 4px;
+  white-space: nowrap;
+  width: calc(100% - 24px);
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.admin-sidebar .item.active {
+  background: var(--ring-selected-background-color);
+}
+
+.admin-sidebar .item:hover {
+  background: var(--ring-tag-background-color);
+}
+
+.admin-ui .admin-sidebar {
+  background: none;
+}
+
+.admin-sidebar .item a {
+  display: block;
+  color: var(--ring-text-color);
+  padding-right: 6px;
+  padding-left: 8px;
+}
+
+.admin-sidebar .item a:hover {
+  text-decoration: none;
+}
+
+.admin-ui .admin-sidebar .category {
+  margin-top: 16px;
+}
+
+
+.admin-ui.admin-ui .admin-sidebar .category {
+  padding-left: 14px;
+  font-weight: 600;
+}
+
+.admin-ui .admin-sidebar .tabs li p {
+  display: inline-flex;
+  align-items: baseline;
+  width: 100%;
+  max-width: 100%;
+}
+
+.admin-ui .admin-sidebar .tabs li p > i {
+  align-self: center;
+}
+
+.admin-ui .admin-sidebar .tabs li p a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-sidebar .stepLink {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 1px;
+}
+
+.admin-sidebar .item + .category {
+  margin-top: 10px;
+}
+
+.admin-sidebar .usefulLinks {
+  max-width: 240px;
+}
+
+.admin-sidebar .usefulLinks .pc {
+  display: inline-block;
+}
+
+.admin-sidebar .usefulLinks .pc .pc__label {
+  white-space: normal;
+}
+
+.admin-sidebar #projectTabsContainer ul.tabs, .admin-sidebar #buildTypeTabsContainer ul.tabs {
+  margin-bottom: 40px;
+}
+
+/* copy project */
+
+table.copyProject {
+  width: 100%;
+}
+
+.copyProject th {
+  width: 8em;
+  text-align: left;
+  font-weight: normal;
+}
+
+.copyProject .subprojects th {
+  vertical-align: top;
+}
+
+.copyProject .subprojects textarea {
+  width: 100%;
+  height: 8em;
+}
+.copyProject .subprojects textarea.gt-5 {
+  height: 12em;
+}
+.copyProject .subprojects textarea.gt-10 {
+  height: 16em;
+}
+.copyProject .subprojects textarea.gt-15 {
+  height: 20em;
+}
+
+.copyProject label {
+  float: none;
+  width: auto;
+  white-space: nowrap;
+}
+
+.copyProject input {
+  width: 100%;
+}
+
+.copyProject .error {
+  margin: 0;
+}
+
+
+.configurationSection .shift {
+  margin-left: 1em;
+}
+
+.configurationSection .runner {
+  vertical-align: top;
+}
+
+.configurationSection div.shift {
+  display: inline-block;
+}
+
+a.regenerate {
+  margin-left: 0.5em;
+}
+
+.copyProject a.regenerate {
+  float: right;
+}
+
+/* Regenerate dialog */
+
+table.regenerate th {
+  width: 6em;
+}
+
+.regenerate input {
+  width: 21em;
+}
+
+/* Common style for E-mail header in tables with users */
+.allEmails {
+  float: left;
+  margin-top: 3px;
+  margin-right: 3px;
+
+}
+
+div.nextStepHint {
+  padding: 1em;
+  background-color: var(--ring-hover-background-color);
+}
+
+.nextStepHint p.sectionDescription {
+  font-style: normal;
+}
+
+/* Parameters table */
+
+table.parametersTable {
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-collapse: collapse;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.parametersTable th {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  text-align: left;
+  font-weight: normal;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.parametersTable th,
+table.parametersTable td {
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+  padding: .3em 0 .3em 0.3em;
+  vertical-align: top;
+}
+
+table.parametersTable td.edit {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: none;
+  width: 4%;
+}
+
+table.settings td.beforeActions, table.parametersTable td.beforeActions {
+  border-right: none;
+  word-break: break-word;
+}
+
+table.parametersTable tr td.contentDisabled {
+  color: var(--ring-disabled-color, #999);
+}
+
+table.parametersTable tr td.contentDisabled * {
+  color: var(--ring-disabled-color, #999);
+}
+
+.admin-content .section {
+  clear: both;
+  margin-top: 40px;
+}
+.admin-content .section.noMargin {
+  margin-top: 0;
+}
+.admin-content .section.smallMargin {
+  margin-top: 2em;
+}
+.admin-content .section .grayNote {
+  margin-bottom: 10px;
+}
+.admin-content .section.noCaption {
+  margin-top: 12px;
+}
+
+.buildTypeContent .parametersTable td,
+.buildTypeContent .parametersTable th,
+.projectContent .parametersTable td,
+.projectContent .parametersTable th {
+  padding: 5px 10px;
+}
+
+.buildTypeSubTabs {
+  padding: 5px 0 0 0;
+}
+
+.insert-artifacts {
+  position: absolute;
+  right: -4px;
+  top: 1px;
+  cursor: pointer;
+}
+
+textarea#artifactPaths {
+  white-space: pre;
+  overflow: auto;
+  word-wrap: normal;
+  overflow-wrap: normal;
+}
+
+.admin-sidebar.compact .item {
+  max-width: 240px;
+}
+
+.admin-sidebar.compact .category:first-child{
+  display: none;
+}
+
+.admin-sidebar.compact #buildTypeTabsContainer .tabs li {
+  padding-left: 5px;
+  margin-left: -5px;
+}
+
+.admin-ui #editProjectForm .runnerFormTable tr:first-child th,
+.admin-ui #editProjectForm .runnerFormTable tr:first-child td {
+  padding: 0 8px 0 8px;
+}
+
+.admin-ui .headerNote {
+  margin-top: -10px;
+}
+
+.artifactsTreePopup {
+  padding: 16px 16px 24px;
+}
+
+.artifactsTreeWrapper {
+  margin-top: 8px;
+}
+
+.projectsPopupConfig .smallNote {
+  margin-bottom: 8px;
+}
+
+input.hostnameConfirmation {
+  display: block;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.userRoleScopeSelect {
+  max-height: 200px;
+}

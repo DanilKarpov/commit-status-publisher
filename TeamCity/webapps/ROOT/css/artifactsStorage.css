@@ -1,0 +1,17 @@
+#settingsUsagesBuilds tr td {
+    vertical-align: top;
+    padding-bottom: 0;
+}
+
+#showSettingsUsages {
+    width: 84em;
+}
+
+#showSettingsUsages table, #showSettingsUsages td {
+    width: 100%;
+    line-height: normal;
+}
+
+#settingsUsagesBuilds {
+    margin-left: 1.5em;
+}

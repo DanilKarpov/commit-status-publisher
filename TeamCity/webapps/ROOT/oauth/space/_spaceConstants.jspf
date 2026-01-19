@@ -1,0 +1,12 @@
+<%@ page import="jetbrains.buildServer.serverSide.oauth.space.SpaceConstants" %>
+<%@ page import="jetbrains.buildServer.serverSide.oauth.space.SpaceProjectDeducer" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:set var="paramPreSelectConnectionId" value="<%=SpaceConstants.PARAM_PRE_SELECT_CONNECTION_ID%>"/>
+<c:set var="paramSpaceOrganizationUrl" value="<%=SpaceConstants.PARAM_SPACE_ORGANIZATION_URL%>"/>
+<c:set var="paramBuildSuggestion" value="<%=SpaceConstants.PARAM_BUILD_SUGGESTION%>"/>
+<c:set var="paramProjectKey" value="<%=SpaceConstants.PARAM_SPACE_PROJECT_KEY%>"/>
+<c:set var="paramRepositoryName" value="<%=SpaceConstants.PARAM_SPACE_REPO_NAME%>"/>
+
+<c:set var="buildSuggestionOnDemand" value="<%=SpaceProjectDeducer.DeductionType.SUGGEST_CREATE_ON_DEMAND.name()%>"/>
+<c:set var="buildSuggestionCreateProjectConnection" value="<%=SpaceProjectDeducer.DeductionType.SUGGEST_CREATE_PROJECT_CONNECTION.name()%>"/>

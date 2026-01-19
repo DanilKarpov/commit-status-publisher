@@ -1,0 +1,221 @@
+/*---------------- Project popups */
+#allProjectsPopup,
+#siblingsTreePopup {
+  background-color: var(--ring-content-background-color, #fff);
+  position: absolute;
+  display: none;
+  min-width: 25em;
+  max-width: 40em;
+  padding: 0;
+  text-align: left;
+  overflow-y: auto;
+  z-index: 1000 !important;
+}
+
+div.archivedPopup {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  font-size: 90%;
+  padding: 5px 4px 4px 4px;
+}
+
+#archivedProjectsContent {
+  min-width: 200px;
+  max-width: 450px;
+  z-index: 1001 !important;
+}
+
+/*---------------- All projects popup */
+
+#allProjectsPopupTable .projectLink {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#allProjectsPopupTable .projectLink:before {
+  margin-bottom: -1px;
+}
+
+.projectsContainer {
+  margin: 0;
+  padding: 10px;
+}
+
+.projectsContainer .inplaceFilterProjects {
+  margin-bottom: 5px;
+}
+
+.projectsContainer .inplaceFilterProjects input {
+  min-width: 240px;
+}
+
+.projectsContainer .projectLink,
+#archivedProjectsContent .projectLink {
+  overflow: hidden;
+  display: block;
+  max-width: 440px;
+  vertical-align: middle;
+  outline: none;
+}
+
+#archivedProjectsContent .projectLink {
+  display: inline-block;
+}
+
+.pinLink .icon16_watched_no {
+  opacity: 0.6;
+
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+
+.pinLink:hover .icon16_watched_no {
+  opacity: 0.99;
+}
+
+.projectsContainer .visibleProject .projectLink,
+.buildTypesPopup li.visible {
+  font-weight: bold;
+}
+
+.projectsContainer .btCount {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.projectsContainer .btCountHighlighted {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+}
+
+.projectsPopupTable {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.projectsPopupTable td {
+  padding: 3px;
+  border-bottom: 1px solid #E7E7E7;
+}
+
+.projectsPopupTable td.pin {
+  text-align: right;
+  width: 1em;
+  padding-right: 0;
+}
+
+.projectsPopupTable td.bt {
+  text-align: right;
+  font-size: 90%;
+  width: 5em;
+  padding-left: 0;
+}
+
+.projectsPopupTable tr.marked {
+  /*background: rgb(248, 248, 248);*/
+  /*background-color: var(--tc-classic-highlight-color, #ffc);*/
+}
+
+.projectsPopupTable tr.marked a {
+  font-weight: bold;
+}
+
+.projectsPopupTable tr.selected {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+}
+
+.projectName.depth-1 { padding-left:  20px; }
+.projectName.depth-2 { padding-left:  40px; }
+.projectName.depth-3 { padding-left:  60px; }
+.projectName.depth-4 { padding-left:  80px; }
+.projectName.depth-5 { padding-left: 100px; }
+.projectName.depth-6 { padding-left: 120px; }
+.projectName.depth-7 { padding-left: 140px; }
+.projectName.depth-8 { padding-left: 160px; }
+.projectName.depth-9 { padding-left: 180px; }
+.projectName.depth-10 { padding-left: 200px; }
+
+.filtered .projectName {
+  padding-left: 0 !important;
+}
+
+.projectsPopupTable .projectLink img {
+  vertical-align: middle;
+}
+
+/*---------------- Build types popup */
+
+.buildTypesPopup {
+  z-index: 1001 !important;
+}
+
+.buildTypesPopup .menuItem.selected {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+}
+
+.buildTypesPopup .menuItem.current,
+.buildTypesPopup .menuItem.current a {
+  font-weight: bold;
+  color: var(--ring-text-color, #1f2326);
+}
+
+.buildTypesPopup .menuItem.menuItemSelected.current a,
+.buildTypesPopup .menuItem.current a:hover {
+  color: var(--ring-content-background-color, #fff);
+}
+
+.buildTypesPopup .buildType-icon:before {
+  margin-right: 4px;
+}
+
+/*---------------- Quick navigation */
+
+#quickNav {
+  min-width: 400px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#quickNav .inplaceFilterDiv {
+  border: none;
+}
+
+.all-filtered > div {
+  display: none;
+  padding: 0.3em 0;
+  border-bottom: 1px dotted #dedede;
+}
+
+.all-filtered > div.match {
+  display: block;
+}
+
+.all-filtered .hl {
+  background: yellow;
+}
+
+.all-filtered .path,
+.all-filtered .path a {
+  color: #737577;
+}
+
+#quickNav #no-results {
+  display: none;
+  color: #737577;
+  border: none;
+}
+
+#not-all-results {
+  text-align: center;
+  margin-top: 5px;
+  display: none;
+  border: none;
+}
+
+#quickNav .divider {
+  margin: 0;
+  padding: 0;
+  color: #737577;
+  border: none;
+  text-align: right;
+  font-size: 10px;
+}

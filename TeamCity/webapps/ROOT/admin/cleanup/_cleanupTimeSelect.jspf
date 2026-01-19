@@ -1,0 +1,106 @@
+<%@ page import="jetbrains.buildServer.buildTriggers.scheduler.CronField" %>
+
+<authz:authorize allPermissions="CONFIGURE_SERVER_DATA_CLEANUP">
+  <jsp:attribute name="ifAccessGranted">
+    <table>
+      <tr>
+        <td style="padding-left: 0;">
+          <table>
+            <tr>
+              <td style="padding-left: 0;">
+                <select id="cleanupPolicy" onchange="BS.CleanupSettings.onPolicyChange();">
+                  <option value="daily" <c:if test="${cleanupPoliciesForm.mode == 'Daily'}">selected</c:if>>daily</option>
+                  <option value="cron" <c:if test="${cleanupPoliciesForm.mode == 'Cron'}">selected</c:if>>advanced (cron expression)</option>
+                </select>
+              </td>
+              <td id="cronHelp">
+                <bs:help file="cron-expressions-in-teamcity"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td id="dailyPolicy" style="${cleanupPoliciesForm.mode == 'Daily' ? '' : 'display: none;'} padding-left: 0;">
+          <admin:hourSelect name="hour" style="width: 45px;" selectedValue="${cleanupPoliciesForm.currentHour}"/> h
+          <admin:minuteSelect name="minute" style="width: 45px;" selectedValue="${cleanupPoliciesForm.currentMinute}"/> min &nbsp;&nbsp;
+        </td>
+        <td id="cronPolicy" style="${cleanupPoliciesForm.mode == 'Cron' ? '' : 'display: none;'} padding-left: 0;">
+          <table>
+            <tr>
+              <td colspan="5" style="padding-left: 0;">
+                <bs:smallNote>Use custom clean-up settings with caution. Too frequent clean-ups might extensively load the CPU,</bs:smallNote>
+                <bs:smallNote>too rare take more time and might lead to garbage accumulation.</bs:smallNote>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 0; vertical-align: top;">
+                <forms:textField name="cronMinutes" style="width: 5.5em;" value="${cleanupPoliciesForm.currentCronMinutes}"/>
+                <span class="error" id="cron_error_minutes"></span>
+                <bs:smallNote><c:out value="${CronField.MIN.caption}"/><br/><c:out value="${CronField.MIN.descr}"/></bs:smallNote>
+              </td>
+              <td style="vertical-align: top;">
+                <forms:textField name="cronHours" style="width: 5.5em;" value="${cleanupPoliciesForm.currentCronHours}"/>
+                <span class="error" id="cron_error_hours"></span>
+                <bs:smallNote><c:out value="${CronField.HOUR.caption}"/><br/><c:out value="${CronField.HOUR.descr}"/></bs:smallNote>
+              </td>
+              <td style="vertical-align: top;">
+                <forms:textField name="cronDayOfMonth" style="width: 5.5em;" value="${cleanupPoliciesForm.currentCronDayOfMonth}"/>
+                <span class="error" id="cron_error_dayOfMonth"></span>
+                <bs:smallNote><c:out value="${CronField.DM.caption}"/><br/><c:out value="${CronField.DM.descr}"/></bs:smallNote>
+              </td>
+              <td style="vertical-align: top;">
+                <forms:textField name="cronMonth" style="width: 5.5em;" value="${cleanupPoliciesForm.currentCronMonth}"/>
+                <span class="error" id="cron_error_month"></span>
+                <bs:smallNote><c:out value="${CronField.MONTH.caption}"/><br/><c:out value="${CronField.MONTH.descr}"/></bs:smallNote>
+              </td>
+              <td style="padding-right: 0; vertical-align: top;">
+                <forms:textField name="cronDayOfWeek" style="width: 5.5em;" value="${cleanupPoliciesForm.currentCronDayOfWeek}"/>
+                <span class="error" id="cron_error_dayOfWeek"></span>
+                <bs:smallNote><c:out value="${CronField.DW.caption}"/><br/><c:out value="${CronField.DW.descr}"/></bs:smallNote>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="error" id="cron_error_common"></span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </jsp:attribute>
+  <jsp:attribute name="ifAccessDenied">
+    <c:if test="${cleanupPoliciesForm.mode == 'Daily'}">
+      <c:set var="hour" value="${cleanupPoliciesForm.currentHour}"/>
+      <c:set var="minute" value="${cleanupPoliciesForm.currentMinute}"/>
+      <c:if test="${hour < 10}">0</c:if>${hour}:<c:if test="${minute < 10}">0</c:if>${minute}
+    </c:if>
+    <c:if test="${cleanupPoliciesForm.mode == 'Cron'}">
+      <table>
+        <tr>
+          <td style="padding-left: 0;">
+            <forms:textField name="cronMinutes" style="width: 5.5em;" value="${cleanupPoliciesForm.currentCronMinutes}" readonly="true"/>
+            <bs:smallNote><c:out value="${CronField.MIN.caption}"/><br/><c:out value="${CronField.MIN.descr}"/></bs:smallNote>
+          </td>
+          <td>
+            <forms:textField name="cronHours" style="width: 5.5em;" value="${cleanupPoliciesForm.currentCronHours}" readonly="true"/>
+            <bs:smallNote><c:out value="${CronField.HOUR.caption}"/><br/><c:out value="${CronField.HOUR.descr}"/></bs:smallNote>
+          </td>
+          <td>
+            <forms:textField name="cronDayOfMonth" style="width: 5.5em;" value="${cleanupPoliciesForm.currentCronDayOfMonth}" readonly="true"/>
+            <bs:smallNote><c:out value="${CronField.DM.caption}"/><br/><c:out value="${CronField.DM.descr}"/></bs:smallNote>
+          </td>
+          <td>
+            <forms:textField name="cronMonth" style="width: 5.5em;" value="${cleanupPoliciesForm.currentCronMonth}" readonly="true"/>
+            <bs:smallNote><c:out value="${CronField.MONTH.caption}"/><br/><c:out value="${CronField.MONTH.descr}"/></bs:smallNote>
+          </td>
+          <td style="padding-right: 0;">
+            <forms:textField name="cronDayOfWeek" style="width: 5.5em;" value="${cleanupPoliciesForm.currentCronDayOfWeek}" readonly="true"/>
+            <bs:smallNote><c:out value="${CronField.DW.caption}"/><br/><c:out value="${CronField.DW.descr}"/></bs:smallNote>
+          </td>
+        </tr>
+      </table>
+    </c:if>
+  </jsp:attribute>
+</authz:authorize>

@@ -1,0 +1,30 @@
+div.parameter {
+  width: 100%;
+  font-size: 90%;
+}
+
+div.paramName {
+  float: left;
+  width: 35%;
+}
+
+div.paramValue {
+  float: left;
+}
+
+div.editLink {
+  float: right;
+  width: 5%;
+  margin-right: 2em;
+}
+
+div.deleteLink {
+  float: right;
+  width: 5%;
+}
+
+.allowsRedefinition {
+  float: right;
+  color: #aaa;
+  font-style: italic;
+}

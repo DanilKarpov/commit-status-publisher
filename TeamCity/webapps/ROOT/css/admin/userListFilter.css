@@ -1,0 +1,9 @@
+.actionBar label.first {
+  width: 5em;
+}
+
+.actionBar select {
+  width: 260px;
+  margin-top: 2px;
+  margin-left: 1px;
+}

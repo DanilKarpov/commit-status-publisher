@@ -1,0 +1,149 @@
+/*
+ * CSS for Standard tree layout
+ * Copyright (C) 2005 SilverStripe Limited
+ * Feel free to use this on your websites, but please leave this message in the fies
+ * http://www.silverstripe.com/blog
+ */
+
+.tree {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.tree,
+.tree ul {
+  padding-left: 0;
+}
+
+.tree ul {
+  margin-left: 16px;
+}
+
+.tree li.closed ul {
+  display: none;
+}
+
+.tree li {
+  display: block;
+  width: auto;
+  list-style: none;
+}
+
+.tree li.last {
+  background-image: none;
+  list-style: none;
+}
+
+.tree span.a {
+  display: block;
+}
+
+/* Span-B: Plus/Minus icon */
+.tree span.b {
+}
+
+.tree span.a.children span.b {
+  display: inline-block;
+  background: url(../../img/tree/minus.gif?v=197325) 0 50% no-repeat;
+  cursor: pointer;
+}
+
+.tree li.closed span.a.children span.b {
+  background-image: url(../../img/tree/plus.gif?v=197325);
+}
+
+/* Span-C: Spacing and extending tree line below the icon */
+.tree span.c {
+  margin-left: 16px;
+}
+
+.tree span.a.spanClosed span.c {
+  background-image: none;
+}
+
+/* Anchor tag: Page icon */
+.tree a {
+  white-space: nowrap;
+  overflow: hidden;
+
+  padding: 0 0 0 18px;
+
+  background: url(../../img/tree/page-file.png?v=197325) 0 50% no-repeat;
+  background-size: 16px;
+}
+
+.tree span.a.children a {
+  background-image: url(../../img/tree/page-openfoldericon.png?v=197325);
+}
+
+.tree span.a.children.spanClosed a {
+  background-image: url(../../img/tree/page-foldericon.png?v=197325);
+}
+
+/* Unformatted tree */
+.tree.unformatted li {
+  background-image: none;
+  padding-left: 16px;
+}
+
+.tree.unformatted li li {
+  background-image: none;
+  padding-left: 0;
+}
+
+/*
+ * Divs, by default store vertically aligned data
+ */
+
+.tree li div {
+  float: right;
+  clear: right;
+  height: 1em;
+  margin-top: -26px;
+}
+
+/* As inside DIVs should be treated normally */
+.tree div a {
+  padding: 0;
+  background-image: none;
+  height: auto;
+}
+
+.tree li A:link,
+.tree li A:hover,
+.tree li A:visited {
+  color: var(--ring-text-color, #1f2326);
+}
+
+.tree li .over {
+  background-color: pink;
+}
+
+.filesize {
+  margin-left: 1em;
+}
+
+.treeTotals {
+  margin: 4px 0 0 32px;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 200 / 100),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .tree a {
+    background-image: url(../../img/tree/page-file@2x.png?v=197325);
+  }
+
+  .tree span.a.children a {
+    background-image: url(../../img/tree/page-openfoldericon@2x.png?v=197325);
+  }
+
+  .tree span.a.children.spanClosed a {
+    background-image: url(../../img/tree/page-foldericon@2x.png?v=197325);
+  }
+}

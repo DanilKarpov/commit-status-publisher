@@ -1,0 +1,88 @@
+.layeredGraphContainer {
+  outline: none;
+  display: inline-block;
+  padding-right: 8px;
+}
+
+.layeredGraphContainer_pannable {
+  cursor: grab;
+}
+
+.layeredGraphContainer_pannable.layeredGraphContainer_panning {
+  cursor: grabbing;
+}
+
+#bodyWrapper .layeredGraphContainer {
+  display: block;
+  margin: 0 calc(var(--tc-page-padding-inline, 24px) * -1);
+  padding-left: 8px;
+  text-align: center;
+}
+
+.layeredGraphContainerInner {
+  position: relative;
+  left: -2px;
+}
+
+#bodyWrapper .layeredGraphContainerInner {
+  text-align: left;
+  display: inline-block;
+  min-width: calc(100vw - calc(var(--tc-page-padding-inline, 24px) * 2));
+}
+
+@media (max-width: 960px) {
+  #bodyWrapper .layeredGraphContainerInner {
+    min-width: calc(960px - 64px);
+  }
+}
+
+.layeredGraph {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.layeredGraph .depNode,
+.layeredGraph .fakeNode {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.layeredGraph .depNode {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 3px 2px 3px 7px;
+  margin: 0 0 5px 0;
+  width: 240px;
+  font-size: 90%;
+  cursor: pointer;
+}
+
+.layeredGraph .fakeNode {
+  height: 1px;
+  width: 0;
+}
+
+.layeredGraph .buildConf {
+  padding-right: 16px;
+}
+
+.layeredGraph .buildConf_withOutPadding {
+  padding-right: 0;
+}
+
+.layeredGraph .buildConfLink {
+  display: block;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding-right: 4px;
+}
+
+.layeredGraph .buildConfRun {
+  overflow: hidden;
+}
+
+.invisible {
+  visibility: hidden;
+}

@@ -1,0 +1,37 @@
+<script type="text/javascript">
+  BS.SpaceProjectApplicationCreator = {
+    doCreate: function(projectKey, targetProject, parentConnectionId, displayName, temporaryConnection, onSuccess, onError) {
+      const that = this;
+      this.startWaiting();
+      BS.ajaxRequest(window['base_uri'] + '${currentSpaceApplicationUrl}', {
+        method: 'post',
+        parameters: {
+          '${SpaceConstants.PARAM_ACTION}': '${SpaceConstants.ACTION_CREATE_PROJECT_APP}',
+          '${SpaceConstants.PARAM_PROJECT_ID}': targetProject,
+          '${SpaceConstants.PARAM_PARENT_CONNECTION_ID}': parentConnectionId,
+          '${SpaceConstants.PARAM_SPACE_PROJECT_KEY}': projectKey,
+          '${SpaceConstants.PARAM_CONNECTION_DISPLAY_NAME}': displayName,
+          '${SpaceConstants.PARAM_TEMPORARY_CONNECTION}': temporaryConnection
+        },
+        onComplete: function (response) {
+          const json = response.responseJSON;
+          if (json.applicationCreated) {
+            onSuccess(json.info);
+          } else if (json.message) {
+            onError(json.message);
+          }
+
+          that.stopWaiting();
+        }
+      });
+    },
+
+    startWaiting: function () {
+
+    },
+
+    stopWaiting: function () {
+
+    }
+  };
+</script>

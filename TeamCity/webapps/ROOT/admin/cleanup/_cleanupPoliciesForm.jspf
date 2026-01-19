@@ -1,0 +1,233 @@
+<form id="cleanupTimeForm" action="<c:url value='/admin/cleanupPolicies.html'/>" method="post"
+      onsubmit="return BS.CleanupPoliciesForm.submitCleanupStartTime()">
+  <input type="hidden" name="cleanupPageAction" id="cleanupPageAction0"/>
+
+  <bs:messages key="cleanupProcessSettingsUpdated"/>
+
+  <script type="text/javascript">
+    BS.CleanupSettings = {};
+    BS.CleanupSettings.onPolicyChange = function () {
+      var idx = $('cleanupPolicy').selectedIndex;
+      if (idx === 0) {
+        $('dailyPolicy').style.display = '';
+        $('cronPolicy').style.display = 'none';
+        $('mode').setValue('Daily');
+        $('cronHelp').style.display = 'none';
+      } else if (idx === 1) {
+        $('dailyPolicy').style.display = 'none';
+        $('cronPolicy').style.display = '';
+        $('mode').setValue('Cron');
+        $('cronHelp').style.display = '';
+      }
+      BS.MultilineProperties.updateVisible();
+    }
+  </script>
+
+  <table class="runnerFormTable">
+    <input type="hidden" id="mode" name="mode"/>
+    <tr>
+      <th>Start time:</th>
+      <td>
+        <%@ include file="_cleanupTimeSelect.jspf" %>
+        <span class="smallNote">Next scheduled time:
+          <c:choose>
+            <c:when test="${not cleanupPoliciesForm.cleanupEnabled}">never</c:when>
+            <c:otherwise><bs:date value="${cleanupPoliciesForm.nextCleanupDateTime}" pattern="dd MMM yy HH:mm 'GMT' Z"/></c:otherwise>
+          </c:choose>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <th>Stop clean-up if it takes longer than:</th>
+      <td>
+        <authz:authorize allPermissions="CONFIGURE_SERVER_DATA_CLEANUP">
+          <jsp:attribute name="ifAccessGranted">
+            <forms:textField disabled="${not cleanupPoliciesForm.cleanupEnabled}" name="maxCleanupDurationMins"
+                             value="${cleanupPoliciesForm.currentMaxCleanupDurationMins <= 0 ? '' : cleanupPoliciesForm.currentMaxCleanupDurationMins}" style="width: 5.5em;"/> minutes
+            <span class="smallNote">Leave blank if there is no limit for clean-up duration</span>
+          </jsp:attribute>
+          <jsp:attribute name="ifAccessDenied">
+            <c:if test="${cleanupPoliciesForm.currentMaxCleanupDurationMins > 0}">${cleanupPoliciesForm.currentMaxCleanupDurationMins} min</c:if>
+            <c:if test="${cleanupPoliciesForm.currentMaxCleanupDurationMins <= 0}">unlimited</c:if>
+          </jsp:attribute>
+        </authz:authorize>
+      </td>
+    </tr>
+    <authz:authorize allPermissions="CONFIGURE_SERVER_DATA_CLEANUP">
+      <jsp:attribute name="ifAccessGranted">
+        <tr>
+          <td class="noBorder"></td>
+          <td class="noBorder" style="padding-top: 0;">
+            <input class="btn btn_mini" <c:if test="${not cleanupPoliciesForm.cleanupEnabled}">disabled="disabled"</c:if> type="submit" id="saveButton" value="Save settings"/>&nbsp;
+            <forms:saving id="savingSettings" className="progressRingInline"/>
+          </td>
+        </tr>
+      </jsp:attribute>
+    </authz:authorize>
+  </table>
+
+  <%--@elvariable id="previousCleanupRecord" type="jetbrains.buildServer.serverSide.cleanup.history.CleanupHistoryRecord"--%>
+  <c:set var="cleanupDetails" value="${cleanupPoliciesForm.serverCleanupDetails}"/>
+  <c:set var="currentData" value="${cleanupDetails.elapsedTime > 0}"/>
+
+  <h2 class="cleanUp">Previous clean-up</h2>
+  <table class="runnerFormTable">
+    <tr>
+      <th>Last time clean-up took:</th>
+      <td>
+        <c:if test="${not empty previousCleanupRecord}">
+          <bs:printTime time="${(previousCleanupRecord.finishTime.time - previousCleanupRecord.startTime.time) / 1000}" showIfNotPositiveTime="&lt; 1s"/>
+          <c:if test="${empty previousCleanupRecord.interruptReason}">(finished at</c:if>
+          <c:if test="${not empty previousCleanupRecord.interruptReason}">(interrupted at</c:if>
+          <bs:date value="${previousCleanupRecord.finishTime}" pattern="dd MMM yy HH:mm 'GMT' Z"/>)
+        </c:if>
+        <c:if test="${empty previousCleanupRecord}">
+          <em>no data</em>
+        </c:if>
+      </td>
+    </tr>
+    <authz:authorize allPermissions="CONFIGURE_SERVER_DATA_CLEANUP">
+      <c:choose>
+        <c:when test="${cleanupPoliciesForm.cleanupCanBeStarted and not cleanupDetails.inProgress}">
+          <tr>
+            <td class="noBorder"></td>
+            <td class="noBorder" style="padding-top: 0; ">
+              <input class="btn btn_mini" type="button" id="startCleanupButton" value="Start clean-up now" onclick="BS.CleanupPoliciesForm.submitStartCleanup()"/>&nbsp;
+              <forms:saving id="startingCleanup" className="progressRingInline"/>
+            </td>
+          </tr>
+        </c:when>
+        <c:otherwise>
+          <c:set var="processInfo" value="${cleanupPoliciesForm.maintenanceProcessInfo}"/>
+          <c:if test="${not empty processInfo}">
+            <tr>
+              <td class="noBorder"></td>
+              <td class="noBorder" style="padding-top: 0; ">
+                <input class="btn btn_mini" type="button" id="startCleanupButton" value="Start clean-up now" onclick="BS.CleanupPoliciesForm.submitStartCleanup()" disabled="disabled"/>&nbsp;
+                <br/>
+                Cannot start clean-up right now: <c:out value="${processInfo}"/>
+              </td>
+            </tr>
+          </c:if>
+        </c:otherwise>
+      </c:choose>
+    </authz:authorize>
+  </table>
+  <c:choose>
+    <c:when test="${not cleanupDetails.inProgress and cleanupDetails.interrupted}">
+      <c:set var="interruptReason" value="${cleanupDetails.interruptReason}"/>
+      <c:set var="interruptUser" value="${cleanupDetails.interruptUser}"/>
+      <c:set var="additionalInfo">
+        <c:if test="${cleanupDetails.processedBuilds > 0}">
+          Processed <span title="${cleanupDetails.processedBuilds} builds out of ${cleanupDetails.buildsToProcess} total scheduled">
+          <strong><bs:percent value="${cleanupDetails.processedBuilds}" total="${cleanupDetails.buildsToProcess}" fractionDigits="1"/></strong></span> of builds scheduled for cleanup.
+        </c:if>
+      </c:set>
+      <%@ include file="_cleanupInterruptDetails.jspf" %>
+    </c:when>
+    <c:when test="${not empty previousCleanupRecord and not empty previousCleanupRecord.interruptReason}">
+      <c:set var="interruptReason" value="${previousCleanupRecord.interruptReason}"/>
+      <%--@elvariable id="cleanupInterruptUser" type="jetbrains.buildServer.users.SUser"--%>
+      <c:set var="interruptUser" value="${cleanupInterruptUser}"/>
+      <c:set var="additionalInfo" value="${null}"/>
+      <%@ include file="_cleanupInterruptDetails.jspf" %>
+    </c:when>
+  </c:choose>
+
+  <c:if test="${cleanupDetails.inProgress}">
+    <h2 class="cleanUp">Current clean-up</h2>
+    <table class="runnerFormTable">
+      <tr>
+        <th><bs:buildStatusIcon type="running-green"/>Clean-up is running for:</th>
+        <td>
+          <span id="elapsedTime"><bs:printTime time="${cleanupDetails.elapsedTime / 1000}" showIfNotPositiveTime="&lt; 1s"/></span>
+          <span id="percentBuildsProcessed" style="${cleanupDetails.processedBuilds > 0 ? '' : 'display: none;'}">
+            (
+              <c:if test="${cleanupDetails.processedBuilds == 0}">0%</c:if>
+              <c:if test="${cleanupDetails.processedBuilds > 0}"><bs:percent value="${cleanupDetails.processedBuilds}" total="${cleanupDetails.buildsToProcess}" fractionDigits="1"/></c:if>
+            builds processed)
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <th>Current stage:</th>
+        <td>
+          <span id="currentStage"><c:out value="${cleanupDetails.currentStage}"/></span>
+          <c:if test="${afn:permissionGrantedGlobally('CONFIGURE_SERVER_DATA_CLEANUP') and not cleanupDetails.interrupted}">
+            <input class="btn btn_mini" type="button" value="Stop clean-up" onclick="BS.CleanupPoliciesForm.submitStopCleanup()"/>
+          </c:if>
+        </td>
+      </tr>
+    </table>
+    <c:if test="${cleanupDetails.interrupted}">
+      <div class="attentionComment"><bs:buildStatusIcon type="red-sign" className="warningIcon"/>Clean-up process is stopping, please wait till clean-up finishes current tasks.</div>
+    </c:if>
+  </c:if>
+</form>
+
+<script type="text/javascript">
+  <c:if test="${cleanupDetails.inProgress}">
+
+  (function cleanupProgressUpdate() {
+    var timeRefresher = null;
+    var refreshTimeBetweenServerUpdates = function () {
+      var timeText = $j('#elapsedTime').text();
+      if (timeText.indexOf('h') > 0) {
+        // Do not update seconds if > 1h of cleanup has passed
+        return;
+      }
+
+      timeText = timeText.replace(/(\d+m)?:?(\d+s)?/, function (match, min, secs) {
+        secs = parseInt(secs) || 0;
+        if (secs < 59) {
+          // Increase secs:
+          secs = parseInt(secs) + 1;
+          min = min ? min + ":" : '';
+          return min + ((secs < 10 && min != '') ? '0' + secs : secs) + 's';
+        }
+
+        // Increase the minute:
+        min = (parseInt(min) || 0) + 1;
+        return min + 'm';
+      });
+      $j('#elapsedTime').text(timeText);
+    };
+
+    var processXmlProgress = function (doc) {
+      var inProgress = 'true' == doc.getAttribute('inProgress');
+      var elapsedTime = doc.getAttribute('elapsedTime');
+      var currentStatusText = doc.getAttribute('currentStatusText');
+
+      var processedBuilds = doc.getAttribute('processedBuilds');
+      var buildsToProcess = doc.getAttribute('buildsToProcess');
+      var completed = 1000 * processedBuilds / buildsToProcess;
+      completed = completed > 0 ? Math.round(completed) / 10.0 : 0;
+
+      $j('#currentStage').text(currentStatusText);
+      $j('#elapsedTime').text(elapsedTime);
+      if (completed > 0) {
+        $('percentBuildsProcessed').style.display = '';
+        $j('#percentBuildsProcessed').text("(" + completed + "% builds processed)");
+      }
+
+      if (!inProgress) {
+        document.location.reload();
+      } else {
+        clearInterval(timeRefresher);
+        timeRefresher = setInterval(refreshTimeBetweenServerUpdates, 1000);
+      }
+    };
+
+    new BS.PeriodicalUpdater(null, window['base_uri'] + '/ajax.html?cleanupNotificatorProgress=true', {
+      evalScripts: false,
+      frequency: BS.internalProperty('teamcity.ui.cleanupNotificatorProgress.pollInterval'),
+      onSuccess: function (transport) {
+        if (transport.responseText.trim().length !== 0) { //server can respond with empty body if no event was published.
+          processXmlProgress($j.parseXML(transport.responseText).documentElement);
+        }
+      }
+    });
+
+  })();
+  </c:if>
+</script>

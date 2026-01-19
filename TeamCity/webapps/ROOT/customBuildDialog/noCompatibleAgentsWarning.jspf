@@ -1,0 +1,33 @@
+<c:if test="${not runBuildBean.hasCompatibleAgents}">
+  <div class="attentionComment attentionComment--flex">
+    <bs:buildStatusIcon type="red-sign" className="warningIcon"/>
+
+    <span>
+            <c:choose>
+              <c:when test="${not empty runBuildBean.buildType.canRunAndCompatibleAgentTypes}">
+                If you use cloud agents, please give TeamCity a couple of minutes to start an instance after the run.<br>
+                Otherwise, register a build agent or
+              </c:when>
+              <c:otherwise>
+                No enabled compatible agents for this build configuration.
+                Please register a build agent or
+              </c:otherwise>
+            </c:choose>
+
+            <c:choose>
+              <c:when test="${afn:permissionGrantedForBuildType(runBuildBean.buildType, 'EDIT_PROJECT')}">
+                <admin:editBuildTypeLink buildTypeId="${runBuildBean.buildType.externalId}"
+                                         step="requirements" >tweak the build configuration requirements</admin:editBuildTypeLink>.
+              </c:when>
+              <c:when test="${afn:permissionGrantedForBuildType(runBuildBean.buildType, 'VIEW_BUILD_CONFIGURATION_SETTINGS')}">
+                ask admin to tweak the build configuration <bs:buildTypeTabLink buildType="${runBuildBean.buildType}"
+                                                                                title="Click to view compatible agents of build configuration"
+                                                                                tab="compatibilityList">requirements</bs:buildTypeTabLink>.
+              </c:when>
+              <c:otherwise>
+                ask admin to tweak the build configuration requirements.
+              </c:otherwise>
+            </c:choose>
+          </span>
+  </div>
+</c:if>

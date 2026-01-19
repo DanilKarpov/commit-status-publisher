@@ -1,0 +1,51 @@
+/* Main page */
+
+#authModules h3 {
+  margin: 0.3em;
+}
+
+#authModules .parametersTable td,
+#authModules .parametersTable th {
+  padding: 0.6em 1em;
+}
+
+#authModules .parametersTable .edit {
+  vertical-align: top;
+  width: 6%;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  white-space: nowrap;
+}
+
+#authModules a.btn, #authModulesGeneralButtons .btn {
+  margin-right: 2em;
+}
+
+#authModules .buttons {
+  margin-top: 2em;
+}
+
+#generalSettings {
+  margin-top: 3em;
+}
+
+#generalSettings .runnerFormTable th {
+  width: 20%;
+  font-weight: normal;
+  padding-left: 0.3em;
+}
+
+#authModules .attentionComment {
+  margin-bottom: 1em;
+}
+
+/* Dialogs */
+
+#presetDescription {
+  margin-top: 1em;
+}
+
+#authPresetsForm label,
+#addAuthModule label {
+  margin-right: 0.5em;
+}

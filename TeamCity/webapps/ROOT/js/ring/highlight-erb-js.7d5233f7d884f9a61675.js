@@ -1,0 +1,2 @@
+(self.webpackChunk=self.webpackChunk||[]).push([["highlight-erb-js"],{42227:function(e){e.exports=function(e){return{name:"ERB",subLanguage:"xml",contains:[e.COMMENT("<%#","%>"),{begin:"<%[%=-]?",end:"[%-]?%>",subLanguage:"ruby",excludeBegin:!0,excludeEnd:!0}]}}}}]);
+//# sourceMappingURL=highlight-erb-js.7d5233f7d884f9a61675.js.map

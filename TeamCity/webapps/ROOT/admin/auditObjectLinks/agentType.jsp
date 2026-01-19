@@ -1,0 +1,2 @@
+<%@ taglib prefix="bs" tagdir="/WEB-INF/tags"
+%><bs:agentDetailsFullLink agentType="${_object}" doNotShowOutdated="${true}" useDisplayName="true" doNotShowOSIcon="${true}" doNotShowPoolInfo="${true}"/>

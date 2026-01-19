@@ -1,0 +1,76 @@
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="util" uri="/WEB-INF/functions/util" %>
+<c:set var="modification" value="${changeStatus.change}"/>
+<c:set var="toggleJsNode">BS.changeTree.getNode('ct_node_<bs:_csId changeStatus="${changeStatus}"/>')</c:set>
+
+<td class="handleContainer" onclick="${toggleJsNode}.toggle();" title="Expand">
+  <span class="icon icon16 handle handle_collapsed"></span>
+</td>
+<td class="carpet" id="carpet_<bs:_csId changeStatus="${changeStatus}"/>">
+  <!-- Here goes pieChart -->
+</td>
+<td class="commitText">
+  <c:set var="icon">
+    <c:if test="${modification.personal}">
+      <bs:personalChangesIcon1 mod="${modification}"/>
+    </c:if>
+    <bs:subrepoIcon modification="${modification}"/>
+  </c:set>
+  <c:choose>
+    <c:when test="${empty modification.description}"><span class="fullText">${icon} No comment</span></c:when>
+    <c:otherwise><span class="shortText"
+        >${icon} <bs:out value="${fn:trim(util:firstLine(modification.description))}" resolverContext="${modification}"/></span><span class="fullText" style="display: none;"
+        >${icon} <bs:out value="${fn:trim(modification.description)}" resolverContext="${modification}"/></span></c:otherwise>
+  </c:choose>
+  <span style="display: none;" class="textExpandArrow">&middot;&middot;&middot;</span>
+  <c:if test="${modification.personal && modification.personalChangeInfo.commitType.commit}">
+    <i class="pretestedStatus">Commit decision: ${modification.personalChangeInfo.commitStatusText}</i>
+  </c:if>
+  <span class="js_branches"></span>
+  <a href="#" class="changeFailuresLink" onclick="${toggleJsNode}.showDetailsTab('problems'); return false">
+    ${jc.oneChangeStatus.statusText}
+  </a>
+</td>
+
+
+<c:if test="${showUsername}">
+  <td class="userName">
+    <bs:changeCommitters modification="${modification}"/>
+  </td>
+</c:if>
+
+
+<%--<td>--%>
+  <%--<bs:changedFilesLink modification="${modification}"/>--%>
+<%--</td>--%>
+
+<td class="revision">
+
+  <c:set var="vcsFullNames"><c:forEach var="root" items="${changeStatus.mergedVcsModificationInfo.vcsRoots}"
+      ><div style="white-space: nowrap;">VCS root: <c:out value="${root.name}"/></div>
+  </c:forEach></c:set>
+
+  <c:choose>
+  <c:when test="${modification.personal}">
+      <span <bs:tooltipAttrs text="${modification.versionControlName}<br>${vcsFullNames}<i>Click to view change details page</i>" deltaX="-150"/> style="text-transform: lowercase">
+        <bs:modificationLink modification="${modification}" tab="vcsModificationFiles" title="none">
+          ${modification.versionControlName} file<bs:s val="${modification.changeCount}"/>
+        </bs:modificationLink>
+      </span>
+  </c:when>
+
+  <c:otherwise>
+
+    <span class="revisionNum" <bs:tooltipAttrs text="Revision: ${modification.displayVersion}<br>${vcsFullNames}<i>Click to view change details page</i>" deltaX="-150"/>>
+      <bs:modificationLink modification="${modification}" tab="vcsModificationFiles" title="none">
+        <bs:shortRevision change="${modification}"/>
+      </bs:modificationLink>
+    </span>
+
+  </c:otherwise>
+</c:choose>
+</td>
+
+<td class="date">
+  <bs:date value="${modification.vcsDate}" />
+</td>

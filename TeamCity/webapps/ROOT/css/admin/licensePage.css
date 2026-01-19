@@ -1,0 +1,140 @@
+div.licensesPage {
+  background-color: var(--ring-content-background-color, #fff);
+  margin: 0;
+}
+
+div.licensesPage h5 {
+  font-size: 100%;
+}
+/*-------------- borders for adding new licenses area */
+.newLicense {
+  margin-top: 25px;
+}
+
+span.expired,
+span.maximumReached {
+  color: var(--ring-error-color);
+}
+
+#verificationStatus {
+  margin-top: 0;
+}
+
+div.error {
+  margin-top: 0.5em;
+  margin-left: 0;
+}
+
+.verificationResults {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-size: 90%;
+}
+
+.invalidKey {
+  color: var(--ring-error-color);
+}
+
+.inUseKey,
+.validKey {
+  color: #4da400;
+}
+
+#saving {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 90%;
+}
+
+.licenseAgreement {
+  background-color: var(--ring-content-background-color, #fff);
+  overflow: auto;
+  width: 100%;
+  height: 560px;
+  margin: 2em 0 2.5em;
+  padding: 5px 5px 5px 5px;
+}
+
+table.licensesTable {
+  width: 100%;
+}
+
+table.licensesTable th,
+table.licensesTable td {
+  white-space: nowrap;
+  vertical-align: top;
+  font-size: 90%;
+}
+
+table.licensesTable th.name {
+  padding-left: .5em;
+}
+
+table.licensesTable th.name.edit {
+  text-align: center;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: .5em;
+  width: 5%;
+}
+
+.licensesActions {
+  overflow: hidden;
+  margin: 5px 0 2em 0;
+}
+
+.licensesActions .remove {
+  float: right;
+}
+
+.inactiveLicensesContainer {
+  width: 100%;
+}
+
+.inactiveLicenses {
+  color: darkgray;
+}
+
+.inactiveLicenses h3 {
+  color: darkgray;
+}
+
+table.inactiveLicensesTable {
+  margin-top: 1em;
+}
+
+table.inactiveLicensesTable th.description {
+  width: 75%;
+}
+
+table.licensesTable td.licenseType {
+  width: 15%;
+}
+
+table.licensesTable td.licenseKey {
+  width: 20%;
+}
+
+table.licensesTable th.generationDate,
+table.licensesTable td.generationDate {
+  width: 12%;
+}
+
+table.licensesTable th.subscriptionDate,
+table.licensesTable td.subscriptionDate {
+  width: 12%;
+}
+
+table.licensesTable th.expirationDate,
+table.licensesTable td.expirationDate {
+  width: 12%;
+}
+
+.notCompatibleModeSelectors {
+  margin-top: 1em;
+}
+
+.notCompatibleModeSelectors span {
+  margin-right: 1em;
+}

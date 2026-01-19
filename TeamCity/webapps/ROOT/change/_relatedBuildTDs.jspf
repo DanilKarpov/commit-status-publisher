@@ -1,0 +1,7 @@
+<%--@elvariable id="_currBuild" type="jetbrains.buildServer.serverSide.SBuild"--%>
+<bs:_branchTd branch="${_currBuild.branch}"/>
+<td class="buildNumber"><bs:buildDataIcon buildData="${_currBuild}"/><bs:resultsLink build="${_currBuild}" skipChangesArtifacts="true"><bs:buildNumber buildData="${_currBuild}"/></bs:resultsLink>
+  <bs:buildCommentIcon build="${_currBuild}"/></td>
+<td class="changes"><bs:changesLinkFull build="${_currBuild}" noUsername="false"/></td>
+<td class="date"><bs:date value="${_currBuild.startDate}"/></td>
+<%--<td class="agent"><bs:agentDetailsFullLink agent="${_currBuild.agent}"/></td>--%>

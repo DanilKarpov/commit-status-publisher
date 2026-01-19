@@ -1,0 +1,47 @@
+<%--@elvariable id="types" type="java.util.Map<java.lang.String, jetbrains.buildServer.issueTracker.IssueProviderType>"--%>
+<%--@elvariable id="entry" type="java.util.Map.Entry<java.lang.String, jetbrains.buildServer.issueTracker.IssueProviderEx"--%>
+<c:set var="provider" value="${entry.value}"/>
+<c:set var="type" value="${provider.type}"/>
+<c:set var="typeName">
+  <c:choose>
+    <c:when test="${empty types[type]}">
+      ${type}
+    </c:when>
+    <c:otherwise>
+      ${types[type].displayName}
+    </c:otherwise>
+  </c:choose>
+</c:set>
+<c:set var="providerName" value="${provider.name}"/>
+<c:set var="onclickEdit" value="BS.EditIssueProviderForm.show('${type}', '${provider.id}', '${currentProject.externalId}', ${editable}); Event.stop(event);"/>
+<c:choose>
+  <c:when test="${editable}">
+    <c:set var="onclickDelete" value="BS.AdminActions.deleteIssueProvider('${provider.id}', '${currentProject.externalId}'); return false;"/>
+  </c:when>
+  <c:otherwise>
+    <c:set var="onclickDelete" value=""/>
+  </c:otherwise>
+</c:choose>
+<tr>
+  <td class="highlight beforeActions" onclick="${onclickEdit}">
+    <em>${typeName}: </em><c:out value='${providerName}'/>
+    <c:if test="${not empty provider.configurationSummary}">
+      <span class="providerSummary">(<c:out value='${provider.configurationSummary}'/>)</span>
+    </c:if>
+  </td>
+  <c:choose>
+    <c:when test="${editable}">
+      <td class="highlight edit" onclick="${onclickEdit}">
+        <a href="#" onclick="${onclickEdit}">Edit</a>
+      </td>
+      <td class="edit highlight">
+        <a href="#" onclick="${onclickDelete}">Delete</a>
+      </td>
+    </c:when>
+    <c:otherwise>
+      <td class="highlight edit" onclick="${onclickEdit}">
+        <a href="#" onclick="${onclickEdit}">View</a>
+      </td>
+    </c:otherwise>
+  </c:choose>
+</tr>

@@ -1,0 +1,53 @@
+<%--@elvariable id="project" type="jetbrains.buildServer.serverSide.SProject"--%>
+<%--@elvariable id="oauthProvider" type="jetbrains.buildServer.serverSide.oauth.OAuthConnectionDescriptor"--%>
+<%--@elvariable id="showMode" type="java.lang.String"--%>
+<%--@elvariable id="authorizationsUrl" type="java.lang.String"--%>
+
+<style type="text/css">
+  .pendingConnectionInfo {
+    display: inline-block;
+  }
+</style>
+
+<script type="text/javascript">
+  BS.SpacePendingConnection = {
+    refreshPendingConnectionInfo: function () {
+      $j('#refreshCapabilityAction').hide();
+      $j('#refreshCapabilityWaiter').show();
+
+      BS.SpaceConnectionsService.evictApplicationInfo({
+        projectId: '${project.projectId}',
+        connectionId: '${oauthProvider.id}',
+        onSuccess: function () {
+          <c:choose>
+            <c:when test="${showMode ne 'popup'}">
+              if (refreshCurrentContainer) {
+                refreshCurrentContainer();
+              }
+            </c:when>
+            <c:otherwise>
+              if (window.SpaceRepositoriesContentUpdater) {
+                window.SpaceRepositoriesContentUpdater();
+              }
+            </c:otherwise>
+          </c:choose>
+        },
+        onFailure: function () {
+          TeamCityAPI.Services.AlertService.addAlert("Refresh failed", "error");
+        }
+      });
+    }
+  };
+</script>
+
+<div class="attentionComment pendingConnectionInfo">
+  <bs:buildStatusIcon type="red-sign" className="warningIcon"/>
+  The connection is waiting for its permissions to be <a href="<c:out value="${authorizationsUrl}"/>" rel="noopener noreferrer" target="_blank">granted at Space</a>.
+</div>
+<div class="refreshControls pendingConnectionInfo">
+  <forms:saving id="refreshCapabilityWaiter" style="float: none;"/>
+  <bs:actionIcon id="refreshCapabilityAction"
+                 name="update"
+                 onclick="BS.SpacePendingConnection.refreshPendingConnectionInfo(); return false;"
+                 title="Refresh connection information"/>
+</div>

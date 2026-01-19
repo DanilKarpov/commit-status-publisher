@@ -1,0 +1,57 @@
+<c:set var="preSelectedConnectionIds" value="${paramValues[paramPreSelectConnectionId]}"/>
+<c:set var="preSelectedOrganizationUrl" value="${param[paramSpaceOrganizationUrl]}"/>
+<c:set var="preSelectedProjectKey" value="${param[paramProjectKey]}"/>
+<c:set var="preSelectedRepositoryName" value="${param[paramRepositoryName]}"/>
+<c:set var="buildSuggestion" value="${param[paramBuildSuggestion]}"/>
+
+<script type="application/javascript">
+  if (!BS.SpacePreSelection) {
+    BS.SpacePreSelection = {
+      preSelectedConnectionIds: new Set(),
+      preSelectedOrganizationUrl: null,
+      preSelectedProjectKey: null,
+      preSelectedRepositoryName: null,
+      buildSuggestion: null,
+
+      addConnectionId(connectionId) {
+        this.preSelectedConnectionIds.add(connectionId);
+      },
+
+      isConnectionPreSelected(connectionId) {
+        return this.preSelectedConnectionIds.has(connectionId);
+      },
+
+      isAnythingPreSelected() {
+        return this.preSelectedConnectionIds.size > 0;
+      },
+
+      isOrganizationPreSelected() {
+        return (this.buildSuggestion === '${buildSuggestionOnDemand}' && this.preSelectedOrganizationUrl);
+      },
+
+      cleanUrl(url) {
+        url.searchParams.delete('${paramPreSelectConnectionId}');
+        url.searchParams.delete('${paramSpaceOrganizationUrl}');
+        url.searchParams.delete('${paramProjectKey}');
+        url.searchParams.delete('${paramRepositoryName}');
+        url.searchParams.delete('${paramBuildSuggestion}');
+      }
+    };
+  }
+
+  <c:forEach items="${preSelectedConnectionIds}" var="preSelectedConnectionId">
+    BS.SpacePreSelection.addConnectionId('<bs:forJs>${preSelectedConnectionId}</bs:forJs>');
+  </c:forEach>
+  <c:if test="${not empty preSelectedOrganizationUrl}">
+    BS.SpacePreSelection.preSelectedOrganizationUrl = '<bs:forJs>${preSelectedOrganizationUrl}</bs:forJs>';
+  </c:if>
+  <c:if test="${not empty preSelectedProjectKey}">
+    BS.SpacePreSelection.preSelectedProjectKey = '<bs:forJs>${preSelectedProjectKey}</bs:forJs>';
+  </c:if>
+  <c:if test="${not empty preSelectedRepositoryName}">
+    BS.SpacePreSelection.preSelectedRepositoryName = '<bs:forJs>${preSelectedRepositoryName}</bs:forJs>';
+  </c:if>
+  <c:if test="${not empty buildSuggestion}">
+    BS.SpacePreSelection.buildSuggestion = '<bs:forJs>${buildSuggestion}</bs:forJs>';
+  </c:if>
+</script>

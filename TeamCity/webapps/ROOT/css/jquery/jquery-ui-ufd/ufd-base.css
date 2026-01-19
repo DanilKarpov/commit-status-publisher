@@ -1,0 +1,104 @@
+/**
+	ufd @VERSION: http://code.google.com/p/ufd/
+
+	This is only the structural base CSS, include 1+ skin CSS files also.
+*/
+
+/* master wrapper; emulate select positioning */
+.ufd {
+	display: -moz-inline-stack;
+	display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: top;    /* PATCHED BY MAXIM PODKOLZINE */
+}
+
+.ufd,
+.ufd input,
+.ufd input[type='text'],
+.ufd button,
+#ufd-container div.list-scroll,
+#ufd-container div.list-wrapper,
+#ufd-container ul,
+#ufd-container li  {
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+}
+
+.ufd,
+.ufd button,
+#ufd-container div.list-scroll,
+#ufd-container div.list-wrapper,
+#ufd-container ul,
+#ufd-container li {
+    overflow: hidden;
+}
+
+.ufd select,
+#ufd-container .invisible,
+.ufd.invisible {
+	display: none;
+}
+
+.ufd input,
+.ufd button {
+	position: relative;
+	float: left;
+
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.ufd button.disabled {
+	cursor: default;
+}
+
+.ufd input.disabled {
+    color: graytext;
+}
+
+#ufd-container div.list-wrapper {
+    position: absolute;
+}
+
+#ufd-container ul {
+    list-style-type: none;
+}
+
+#ufd-container li {
+    cursor: pointer;
+    height: 20px;
+    display: block;
+    white-space: nowrap;
+}
+
+#ufd-container li.option {
+  padding-left: 15px;
+}
+
+#ufd-container li[data-disabled=true] {
+  color: var(--ring-disabled-color, #999);
+  cursor: auto;
+}
+/*
+#ufd-container li[data-disabled=true].active {
+  background-color: #fff !important;
+  color: var(--ring-disabled-color, #999) !important;
+}
+*/
+
+#ufd-container li.user-delete {
+  display: none;
+}
+
+#ufd-container li.nothing {
+  color: var(--ring-disabled-color, #999);
+  cursor: auto;
+  font-style: italic;
+}
+
+#ufd-container li.nothing.hidden {
+  display: none;
+}

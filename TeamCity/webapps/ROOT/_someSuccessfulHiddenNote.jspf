@@ -1,0 +1,2 @@
+Some successful build configurations are hidden
+(<a href="#" onclick="BS.User.setBooleanProperty('overview.hideSuccessful', false, { afterComplete: BS.reload.curry(true)}); return false">show</a>)

@@ -1,0 +1,15 @@
+.accessErrorPage {
+  text-align: center;
+  padding-top: 32px;
+}
+
+.accessErrorHeading {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 12px 0 8px;
+}
+
+.accessErrorNote {
+  color: var(--ring-secondary-color);
+  margin: 0 0 16px;
+}

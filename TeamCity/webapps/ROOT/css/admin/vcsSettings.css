@@ -1,0 +1,69 @@
+.editVcsRootPage {
+  float: left;
+  width: 70%;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+
+.vcsSettings .runnerFormTable {
+  margin-bottom: 2em;
+}
+
+#createProjectForm .connectionSuccessful {
+  color: #4da400;
+}
+
+#createProjectForm .connectionSuccessful .checkmark {
+  font-weight: bold;
+  font-size: 110%;
+}
+
+#createProjectForm .runnerFormTable.importSettings {
+  margin-top: 1em;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+#createProjectForm .runnerFormTable.importSettings td {
+  border-top: none;
+}
+
+#createProjectForm .runnerFormTable tr th, #createProjectForm .runnerFormTable tr td {
+  padding-left: 2px;
+}
+
+table.saveVcsRootOptions {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+table.saveVcsRootOptions td {
+  padding: 5px;
+}
+
+#sidebarAdmin {
+  width: 25%;
+}
+
+#duplicateVcsRootsDialog {
+  width: 50em;
+}
+
+table.duplicateVcsRootsTable tr td {
+  padding: 4px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.duplicateVcsRootsTable tr td.last {
+  border-bottom: none;
+}
+
+.listRepositoriesControls {
+  white-space: nowrap;
+}
+
+.listRepositoriesControls .tc-icon {
+  margin-top: 0.2em;
+}

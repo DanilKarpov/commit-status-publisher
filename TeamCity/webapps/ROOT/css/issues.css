@@ -1,0 +1,254 @@
+/* Issue popup */
+
+.issueDetailsPopup {
+  padding: 4px 4px 4px 0;
+  margin-bottom: 0.5em;
+}
+
+.issueDetailsPopup span {
+  margin-right: 1px;
+}
+
+.issueDetailsPopup .resolved {
+  color: #676E75 !important;
+}
+
+.issueDetailsPopup .resolved td:first-child {
+  text-decoration: line-through;
+}
+
+.issueDetailsPopup .main {
+  margin-bottom: 0.3em;
+}
+
+.issueDetailsPopup td:first-child {
+  padding-right: 21px;
+  white-space: nowrap;
+}
+
+.issueDetailsPopup .other {
+  border-collapse: collapse;
+}
+
+.issueDetailsPopup .other td {
+  text-align: center;
+  border: none;
+  border-left: solid 1px #D4D5D6;
+  border-right: solid 1px #D4D5D6;
+  min-width: 10em;
+  padding: 0 0.2em;
+}
+
+.issueDetailsPopup .other td:first-child {
+  padding: 0;
+}
+
+.issueDetailsPopup .other td:last-child {
+  border-right: none;
+}
+
+.issueDetailsPopup .type.feature {
+  color: #64992C;
+}
+
+.issueDetailsPopup .other .priority div {
+  color: #64992C;
+}
+
+.issueDetailsPopup .p0 div {
+  border: 1px solid #C00;
+  background: #FFE3E3;
+  color: #C00 !important;
+}
+
+.issueDetailsPopup .p1 div {
+  background: #FFE3E3;
+  color: #C00 !important;
+}
+
+.issueDetailsPopup .p2 div {
+  background: #F0F2F3;
+  color: #C00 !important;
+}
+
+.issueDetailsPopup .p3 div {
+  background: #EBF4DD;
+  color: #64992C;
+}
+
+/* Issue log */
+
+table.issues th {
+  text-align: left;
+}
+
+table.issues td {
+  padding: 0.5em 2px 0.3em 6px;
+  font-size: 90%;
+}
+
+table.issues tr td.status span,
+span.resolvedStatus {
+  padding: 3px 5px;
+}
+
+table.issues tr.fixed td.status span,
+span.resolvedStatus {
+  background-color: #F1F4F7;
+  font-weight: bold;
+  color: var(--ring-success-color);
+}
+
+span.simpleStatus {
+  background-color: #F1F4F7;
+  padding: 3px 5px;
+}
+
+table.issueLogFilter {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  width: 100%;
+  margin-bottom: 0.3em;
+  border-collapse: collapse;
+}
+
+table.issueLogFilter td {
+  padding: 4px;
+}
+
+table.issueLogFilter td.fromLabel,
+table.issueLogFilter td.recordsPerPage {
+  width: 13%;
+  white-space: nowrap;
+}
+
+table.issueLogFilter td .submitButton {
+  width: 5.5em;
+}
+
+table.issueLogFilter input {
+  width: 8em;
+}
+
+table.issueLogTable {
+  table-layout: auto;
+  background-color: var(--ring-content-background-color, #fff);
+  width: 100%;
+}
+
+table.issueLogTable td {
+  margin: 0;
+  padding: 0.3em 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.issueLogTable td.id {
+  width: 10%;
+  padding-left: 0.5em;
+}
+
+table.issueLogTable td.summary {
+  width: 50%;
+  padding-right: 5px;
+  padding-left: 25px;
+  font-weight: bold;
+}
+
+table.issueLogTable td.state {
+  width: 15%;
+}
+
+table.issueLogTable td .retrievingNote {
+  color: #737577;
+}
+
+table.providersTable {
+  margin-top: 1em;
+}
+
+table.providersTable th {
+  padding: .5em;
+  text-align: left;
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.providerSummary {
+  color: #737577;
+}
+
+table.editProviderTable th {
+  vertical-align: top;
+  width: 12em;
+}
+
+table.editProviderTable td,
+table.editProviderTable th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px dotted #CCC;
+}
+
+table.editProviderTable tr:last-child td,
+table.editProviderTable tr:last-child th {
+  border-bottom: none;
+}
+
+table.editProviderTable label.shortLabel {
+  display: inline-block;
+  width: 10em;
+  white-space: nowrap;
+}
+
+table.editProviderTable td span.error {
+  margin: 0;
+  padding: 0;
+}
+
+table.editProviderTable .textProperty,
+table.editProviderTable .textField {
+  width: 16em;
+  font-size: var(--ring-font-size, 14px);
+}
+
+.fieldExplanation {
+  display: block;
+  color: #737577;
+  font-size: 90%;
+}
+
+.testConnectionDialog {
+  width: 30em;
+}
+
+.testConnectionDialog table th {
+  text-align: left;
+}
+
+#issueDetails {
+  margin-top: 0.5em;
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+  white-space: normal;
+}
+
+#issueDetails .err,
+table.issueLogTable .err,
+#buildIssuesTable .err {
+  color: var(--ring-error-color);
+  font-weight: normal;
+}
+
+.editProviderTable {
+  width: 100%;
+}
+
+.editProviderTable .posRel {
+  padding-right: 0;
+}
+
+.editProviderTable input.textProperty {
+  width: 22em;
+}
+
+#providerType {
+  width: 21.6em;
+}

@@ -1,0 +1,65 @@
+<%--@elvariable id="project" type="jetbrains.buildServer.serverSide.SProject"--%>
+<div class="section">
+  <h2 class="noBorder">Project Report Tabs</h2>
+  <bs:smallNote>
+    Here you can define custom artifact-based tabs<bs:help file="Including+Third-Party+Reports+in+the+Build+Results"/> for the <bs:projectLink project="${project}">Project Home</bs:projectLink> page.
+  </bs:smallNote>
+  <c:if test="${not empty projectReportTabs}">
+    <c:set var="tabType" value="PROJECT_REPORT_TAB"/>
+    <l:tableWithHighlighting className="parametersTable" highlightImmediately="true">
+      <tr class="reportTabsHead">
+        <th>Tab Title</th>
+        <th>Get Artifacts From</th>
+        <th colspan="3" style="width:40%">Start Page</th>
+      </tr>
+      <c:forEach var="projectReportTab" items="${projectReportTabs}">
+
+        <tr>
+          <c:set var="editTab">
+            <c:if test="${project.readOnly}">return false;</c:if>
+            var target = Event.element(event); if (target.tagName == 'A' && target.innerHTML != 'Edit') return true;
+            <c:set var="showArchived" value="${projectReportTab.buildType != null && projectReportTab.buildType.project.archived}"/>
+            <c:set var="branchFilter" value="${projectReportTab.revisionRule.branch}"/>
+            <c:if test="${branchFilter == null}">
+              <c:set var="branchFilter" value=""/>
+            </c:if>
+            BS.ProjectReportTabDialog.show(
+            '${projectReportTab.id}',
+            '<bs:escapeForJs text="${projectReportTab.title}" forHTMLAttribute="true"/>',
+            '<bs:escapeForJs text="${projectReportTab.startPage}" forHTMLAttribute="true"/>',
+            '<bs:escapeForJs text="${projectReportTab.buildTypeExternalId}"/>',
+            '<bs:escapeForJs text="${projectReportTab.revisionRule.name}"/>',
+            '<bs:escapeForJs forHTMLAttribute="true"
+                             text="${projectReportTab.revisionRule.name eq 'buildTag' ?
+                                    projectReportTab.revisionRule.buildTag :
+                                    projectReportTab.revisionRule.revision}"/>'.escapeHTML(),
+            '<bs:escapeForJs text="${branchFilter}" forHTMLAttribute="true"/>',
+            <bs:escapeForJs text="${showArchived}"/>);
+          </c:set>
+          <td class="highlight" onclick="${editTab}">
+            <a href="<bs:projectUrl projectId='${projectReportTab.project.externalId}' tab="${projectReportTab.tabId}"/>"><c:out value="${projectReportTab.title}"/></a>
+          </td>
+          <td class="highlight"  onclick="${editTab}">
+            <c:choose>
+              <c:when test="${not empty projectReportTab.buildType}">
+                <bs:buildTypeLinkFull buildType="${projectReportTab.buildType}"/>
+              </c:when>
+              <c:otherwise>
+                Build configuration unavailable. External id: ${projectReportTab.buildTypeExternalId}
+              </c:otherwise>
+            </c:choose>
+            (<bs:revisionOfBuildLink revisionRule="${projectReportTab.revisionRule}" buildTypeId="${projectReportTab.buildTypeExternalId}"/>)</td>
+          <td class="highlight beforeActions" onclick="${editTab}"><c:out value="${projectReportTab.startPage}"/></td>
+          <c:if test="${not project.readOnly}">
+          <td class="edit highlight" onclick="${editTab}">
+            <a href="#" onclick="${editTab}; Event.stop(event)">Edit</a>
+          </td>
+          <td class="edit highlight">
+            <a href="#" onclick="BS.ReportTabsForm.deleteTab('${tabType}', '${projectReportTab.id}', '<bs:escapeForJs text="${project.externalId}"/>'); return false">Delete</a>
+          </td>
+          </c:if>
+        </tr>
+      </c:forEach>
+    </l:tableWithHighlighting>
+  </c:if>
+</div>

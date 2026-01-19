@@ -1,0 +1,284 @@
+HTML, BODY {
+  overflow: hidden !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* Header - filename, prev/next navigation, close button */
+#fileName {
+  background-color: #959ba4;
+  position: relative;
+  padding: 2px 0 3px 6px;
+  border-bottom: 1px solid var(--ring-content-background-color, #fff);
+  font-weight: bold;
+  color: var(--ring-text-color, #1f2326);
+
+  display: flex;
+  align-items: baseline;
+}
+
+#fileName .prevNextContainer {
+  position: relative;
+  top: 2px;
+  margin-right: 15px;
+  line-height: 1px;
+}
+
+#fileName .prevNextContainer .prevNextDisabled {
+  opacity: 0.5;
+}
+
+#fileName .prevNextContainer .prevNext {
+  margin: 0 0 0 4px;
+  padding: 0;
+  color: var(--ring-content-background-color, #fff);
+  font-size: 24px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+#fileName .prevNextContainer .prevNext:hover {
+  text-decoration: none;
+}
+
+#fileName .prevNextContainer .prevNext img {
+  vertical-align: middle;
+}
+
+#fileName .fileNamePopup {
+  color: var(--ring-content-background-color, #fff);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+/* Change description */
+#desc {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  position: relative;
+  padding: 5px 250px 5px 10px;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+#desc .buttonbar {
+  background: var(--ring-secondary-background-color, #f7f9fa);
+  position: absolute;
+  right: 0;
+  padding-right: 10px;
+}
+
+#desc .buttonbar .openInIDE {
+  margin-left: 1em;
+  padding-left: 15px;
+}
+
+#desc .buttonbar .openInIDE a,
+#desc .buttonbar .openInIDE a:hover {
+  color: var(--ring-text-color, #1f2326);
+}
+
+#desc .description {
+  max-height: 20em;
+  white-space: normal;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+}
+
+/* Toolbar - prev/next change, copy to clipboard */
+#toolbar {
+  height: 18px;
+
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+
+  background-image: -webkit-linear-gradient(top, var(--ring-secondary-background-color, #f7f9fa), var(--ring-line-color, #dfe5eb));
+  background-image: linear-gradient(to bottom, var(--ring-secondary-background-color, #f7f9fa), var(--ring-line-color, #dfe5eb));
+
+  margin: 0;
+  padding: 5px 0;
+  border-top: 1px solid var(--ring-content-background-color, #fff);
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  font-size: 90%;
+}
+
+#toolbar .clipboard-btn {
+  color: var(--ring-text-color, #1f2326);
+}
+
+#toolbar .column-before {
+  display: inline-block;
+  position: absolute;
+  vertical-align: middle;
+}
+
+#toolbar .column-before .clipboard-btn {
+  float: left;
+}
+
+#toolbar .column-before .legend {
+  float: right;
+  margin-right: 10px;
+}
+
+#toolbar .column-tools {
+  position: absolute;
+}
+
+#toolbar .column-tools .btn_mini {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 2px 5px;
+  color: #666;
+  font-size: 11px;
+}
+
+#toolbar .column-tools .previous {
+  float: left;
+}
+
+#toolbar .column-tools .next {
+  float: right;
+}
+
+#toolbar .column-after {
+  display: inline-block;
+  position: absolute;
+  vertical-align: middle;
+}
+
+#toolbar .column-after .clipboard-btn {
+  float: right;
+  margin-right: 10px;
+}
+
+#status {
+  text-align: center;
+}
+
+/* Two-column layout */
+#panels {
+  position: relative;
+  border-top: 1px solid var(--ring-content-background-color, #fff);
+}
+
+#dbefore {
+  overflow: auto;
+  position: absolute;
+}
+
+#tbefore {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dafter {
+  overflow: auto;
+  position: absolute;
+  left: 50%;
+  width: 50%;
+}
+
+#tafter {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#dbefore iframe,
+#dafter iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#dmap {
+  background-color: var(--ring-line-color, #dfe5eb);
+  position:absolute;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.error {
+  padding: 10px;
+  color: var(--ring-error-color) !important;
+  font-weight: bold;
+}
+
+.personalBefore {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+  float: right;
+  margin-right: 10px;
+  padding: 0 4px;
+}
+
+.changeL {
+  background-color: #fcc;
+  position: absolute;
+  left: 1px;
+  width: 25px;
+  cursor: pointer;
+  border: 1px solid var(--ring-error-color);
+  font-size: 1px;
+}
+
+.changeR {
+  background-color: #cfc;
+  position: absolute;
+  left: 27px;
+  width: 25px;
+  cursor: pointer;
+  border: 1px solid #4da400;
+  font-size: 1px;
+}
+
+.changeRemoved {
+  background-color: #fcc;
+}
+
+.changeAdded {
+  background-color: #cfc;
+}
+
+#mapWindow {
+  background: #F0F8FF;
+  position: absolute;
+  overflow: hidden;
+  width: 53px;
+  border: dotted 1px blue;
+}
+
+/* LISTING */
+.source {
+  background-color: var(--ring-content-background-color, #fff);
+  color: var(--ring-text-color, #1f2326);
+  margin: 0;
+}
+
+.source .list {
+  position: relative;
+  counter-reset: list;
+  margin: 0 0 1px 45px; /* 1px bottom margin seems to fix occasional Firefox scrolling */
+  padding: 0;
+  list-style: none;
+  font: 12px/1.5 Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace !important;
+  white-space: pre !important;
+}
+
+.source li:before {
+  content: counter(list);
+  counter-increment: list;
+  background-color: var(--ring-content-background-color, #fff);
+  position: absolute;
+  width: 40px;
+  margin-left: -55px;
+  color: #666;
+  text-align: right;
+}
+
+.theme-switcher {
+  font-weight: normal;
+  display: inline-block;
+  margin-left: auto;
+}

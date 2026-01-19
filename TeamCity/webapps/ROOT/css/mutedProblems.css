@@ -1,0 +1,7 @@
+td.testFailedInPart {
+  display: none;
+}
+
+.actionBar select {
+  width: 24em;
+}

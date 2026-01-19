@@ -1,0 +1,9 @@
+<tr class="spaceNote" id="${idProjectHint}" style="display: none">
+  <td colspan="2">
+    <div class="attentionComment">
+      A <strong>project connection</strong> is bound to the scope of exactly one Space project.<br/>
+      For this purpose an <em>organization connection</em>'s Space application is used to create a dedicated
+      sub application and to request the appropriate rights.
+    </div>
+  </td>
+</tr>

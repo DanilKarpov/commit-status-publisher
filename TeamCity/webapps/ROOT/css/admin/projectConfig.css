@@ -1,0 +1,60 @@
+#left {
+  float: left;
+  width: 67%;
+  margin-bottom: 1em;
+}
+
+#right {
+  float: right;
+  width: 25%;
+}
+
+.descr {
+  margin-bottom: 1.3em;
+}
+
+tr.project {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+tr.project td.edit {
+  vertical-align: top;
+}
+
+span.projectName {
+  padding-right: 0.5em;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+table.projectTable td.edit {
+  width: 5%;
+  padding-left: 1em;
+  text-align: left;
+}
+
+tr.descrRow {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.noBorder {
+  border: none;
+}
+
+tr.descrRow p {
+  margin: 0 0 0.5em 0;
+}
+
+.buildConfiguration {
+  text-indent: 2em;
+}
+
+.vcsRoots {
+  padding: 5px;
+}
+
+td.addBuildConfiguration p {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 2em;
+}

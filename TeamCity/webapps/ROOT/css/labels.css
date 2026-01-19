@@ -1,0 +1,26 @@
+.messagesHolder {
+  width: 60%;
+  margin-top: 0.5em;
+}
+
+div.labelVcsRootsTitle {
+  clear: both;
+  width: 7em;
+  padding-top: 1em;
+}
+
+.labelName {
+  clear: both;
+  float: left;
+  width: 7em;
+}
+
+ul.vcsRootsToLabel {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.vcsRootsToLabel li {
+  padding: 5px 0 0 0;
+}

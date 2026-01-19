@@ -1,0 +1,75 @@
+<bs:executeOnce id="editBuildFeaturesDialog">
+<c:url var="action" value="/admin/editBuildFeaturesList.html"/>
+<bs:modalDialog formId="buildFeatures" title="Add Build Feature" action="${action}"
+                closeCommand="BS.EditDsl.closeEditDsl('dialogDslButtons'); BS.BuildFeatureDialog.close()" saveCommand="BS.BuildFeatureDialog.save()">
+
+  <div class="fragmentEditDsl">
+    <div id="dslModeDialog"></div>
+  </div>
+  <div id="uiModeDialog">
+    <table class="runnerFormTable" style="width: 99%;">
+      <tr>
+        <td>
+          <select name="featureTypeSelector" id="featureTypeSelector" style="width: 96%;" onchange="BS.BuildFeatureDialog.onTypeChange(this)">
+          </select><forms:saving id="loadParamsProgress" className="progressRingInline"/>
+          <div class="error" id="errorBuildFeatureExists" style="margin-left: 0;"></div>
+          <select id="featureTypeOptionsData" style="display:none;">
+            <option value="">-- Please choose a build feature --</option>
+            <c:forEach items="${buildForm.buildFeaturesBean.availableBuildFeatures}" var="buildFeature">
+              <option value="${buildFeature.type}" data-feature-place="${buildFeature.placeToShow}"><c:out value="${buildFeature.displayName}"/></option>
+            </c:forEach>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <div id="featureParams"></div>
+  </div>
+
+
+
+  <div class="popupSaveButtonsBlock withDslButton" id="featureSaveButtonsBlock">
+    <forms:submit id="submitBuildFeatureId" label="Save"/>
+    <span id="editBuildFeatureAdditionalButtons" class="additionalButtonsContainer"></span>
+    <forms:cancel id="cancelBuildFeature" onclick="BS.EditDsl.closeEditDsl('dialogDslButtons'); BS.BuildFeatureDialog.close()"/>
+    <forms:saving id="saveFeatureProgress"/>
+    <input type="hidden" name="publicKey" id="publicKey" value="${buildForm.publicKey}"/>
+    <input type="hidden" name="id" value="${buildForm.settingsId}"/>
+    <input type="hidden" name="featureType" value=""/>
+    <input type="hidden" name="featureId" value=""/>
+    <input type="hidden" name="featurePlace" value="" />
+    <c:set var="prefix" value="${param['messagePrefix']}"/>
+    <input type="hidden" name="messagePrefix" value="<c:out value='${prefix}'/>" />
+    <authz:authorize projectId="${buildForm.project.projectId}" allPermissions="EDIT_PROJECT">
+      <input type="hidden" name="showDSL" id="showDSL" value=""/>
+      <input type="hidden" name="showDSLVersion" id="showDSLVersion" value=""/>
+      <input type="hidden" name="showDSLPortable" id="showDSLPortable" value=""/>
+      <div class="dialogDslButtons">
+        <div id="dialogDslButtons"></div>
+      </div>
+      <script type="application/javascript">
+        ReactUI.renderShowDslButton('dialogDslButtons', {
+          controlId: 'dialogDslButtons',
+          onShowDsl: function(){
+            ReactUI.renderFragmentDslEditor('dslModeDialog', {
+              currentZindex: BS.Hider._currentZindex(),
+              controlId: 'dialogDslButtons',
+              onFetch: function(version, portable) {
+                const featureType = $j('#build-feature-type-holder').data('feature-type');
+                const isCustomDslCallback = featureType == 'matrix';
+
+                if (isCustomDslCallback) {
+                  BS.BuildFeatureDialog.showCustomItemDslWithValues(version, portable, 'dialogDslButtons')
+                } else {
+                  BS.BuildFeatureDialog.showItemDslWithValues(version, portable, 'BS.BuildFeatureDialog', 'dialogDslButtons')
+                }
+              }
+            })
+          },
+          onHideDsl: BS.EditDsl.hideEditDslPanel,
+        })
+      </script>
+    </authz:authorize>
+  </div>
+  <script>$j("span#editBuildFeatureAdditionalButtons").empty();</script>
+</bs:modalDialog>
+</bs:executeOnce>

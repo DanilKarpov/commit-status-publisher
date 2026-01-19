@@ -1,0 +1,131 @@
+.agentStatisticsTable {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+  border: 0;
+  font: 70%/2 Verdana; /* Verdana is much more readable in small sizes */
+}
+
+.agentStatisticsTable .groupRow,
+.agentStatisticsTable .groupRow th,
+.agentStatisticsTable .groupCol,
+.agentStatisticsTable .groupCol {
+  background-color: var(--ring-line-color, #dfe5eb);
+  font-weight: bold;
+}
+
+.agentStatisticsTable th {
+  font-weight: normal;
+}
+
+.agentStatisticsTable th,
+.agentStatisticsTable td {
+  margin: 0;
+  padding: 0 2px 0 2px;
+  border: 1px solid #bbb;
+  vertical-align: middle;
+}
+
+.agentStatisticsTable td {
+  text-align: right;
+}
+
+.agentStatisticsTable th.head {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.agentStatisticsTable img.poolHandle,
+.agentStatisticsTable img.projectHandle {
+  cursor: pointer;
+  vertical-align: middle;
+  margin-bottom: 2px;
+}
+
+.agentStatisticsTable th.vsummary,
+.agentStatisticsTable th.hsummary {
+  text-align: right;
+}
+
+table.matrixBlockHandle td {
+  border: none;
+  padding: 0;
+}
+
+.agentStatisticsTableForm {
+  margin-top: 1em;
+}
+
+.agentStatisticsLegend .hasBuilds,
+.agentStatisticsTable .astS {
+  background-color: #ccffcc;
+}
+
+.agentStatisticsLegend .compatible,
+.agentStatisticsTable .astC {
+  background-color: #ffff99;
+}
+
+.agentStatisticsLegend .notCompatible,
+.agentStatisticsTable .astO {
+  background-color: var(--ring-content-background-color, #fff);
+}
+
+.agentStatisticsLegend .hasBuilds.group,
+.agentStatisticsTable .groupRow .astS,
+.agentStatisticsTable .groupCol.astS {
+  background-color: #bbeebb;
+}
+
+.agentStatisticsLegend .compatible.group,
+.agentStatisticsTable .groupRow .astC,
+.agentStatisticsTable .groupCol.astC {
+  background-color: #eeee88;
+}
+
+.agentStatisticsLegend .notCompatible.group,
+.agentStatisticsTable .groupRow .astO,
+.agentStatisticsTable .groupCol.astO {
+  background-color: #eeeeee;
+}
+
+.agentStatisticsTable .selected {
+  text-decoration: underline;
+}
+
+.agentStatisticsTable .collapseExpand {
+  margin: 3px;
+}
+
+.agentStatisticsTable .collapseExpand .separator {
+  padding: 0;
+}
+
+.agentStatisticsLegend {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+  border: 0;
+}
+
+.agentStatisticsLegend .cell {
+  width: 50px;
+  padding-right: 1em;
+  border: 0;
+}
+
+.agentStatisticsLegend .cell div {
+  border: 1px solid black;
+}
+
+#statsBuildPopup {
+  white-space: nowrap;
+}
+
+#statsBuildPopup span.note {
+  font-style: italic;
+}
+
+#statsBuildPopup span.dd {
+  font-weight: bold;
+}

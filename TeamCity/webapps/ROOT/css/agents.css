@@ -1,0 +1,293 @@
+/* Agents section layout */
+.agentsContent {
+  clear: both;
+}
+
+/*------------------------- All agents table */
+
+table.agents {
+  margin-bottom: 3em;
+}
+
+table.agents.borderBottom td {
+  border-color: var(--ring-line-color, #dfe5eb);
+}
+
+table.agents th {
+  padding: 2px 0 2px 0.5em;
+  cursor: default;
+}
+
+table.agents tr td {
+  background-color: var(--ring-content-background-color, #fff);
+  padding: 0.3em 0 0.3em 0.5em;
+  font-size: 90%;
+}
+
+
+/*------------ Inactive agents table */
+table.agents th.lastActivity,
+table.agents td.lastActivity {
+  min-width: 13em;
+  max-width: 13em;
+  width: 13em;
+}
+
+table.agents th.inactivityReason,
+table.agents td.inactivityReason {
+  min-width: 17em;
+  max-width: 17em;
+  width: 17em;
+  white-space: wrap;
+}
+
+/*------------ Active agents table */
+
+table.agents th.buildName,
+table.agents td.buildName {
+  width: 150px;
+  padding-right: .5em;
+}
+
+table.agents td.status {
+  white-space: normal;
+}
+
+table.agents td.branch {
+  width: 1em;
+}
+
+table.agents th.changesLink,
+table.agents td.changesLink {
+  text-align: right;
+}
+
+table.agents th.buildTypeName,
+table.agents td.buildTypeName {
+  min-width: 11em;
+  max-width: 11em;
+  width: 11em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+table.agents th.stopBuild,
+table.agents td.stopBuild {
+  width: 5em;
+  padding-right: .5em;
+  text-align: right;
+}
+
+table.agents th.duration,
+table.agents td.duration {
+  min-width: 10em;
+  max-width: 10em;
+  white-space: nowrap;
+  padding-right: .5em;
+  text-align: right;
+}
+
+
+table.agents th.buildAgentName,
+table.agents td.buildAgentName {
+  min-width: 21em;
+  width: 21em;
+}
+
+
+table.agents-grouped th.buildAgentName,
+table.agents-grouped td.buildAgentName {
+  min-width: 15em;
+  width: 15em;
+}
+
+table.agents td.buildAgentName {
+  white-space: nowrap;
+}
+
+.buildAgentName .tc-icon_switch {
+  margin-right: 16px;
+}
+
+table.agents td.poolHeader {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  padding: 0.4em 0 0.4em 0.5em;
+  width: 13em;
+}
+
+table.agents .firstCell {
+  width: 1.5em;
+}
+
+table.agents td.noBorder {
+  border: none;
+}
+
+td.poolHeader span.info {
+  color: var(--ring-icon-secondary-color, #999999);
+}
+
+#pool_actions_popup {
+  vertical-align: text-top;
+}
+
+/*---- end*/
+
+/* -------------------------------- Agent details */
+
+#agentSummary > div.first,
+#agentTypeSummary > div.first {
+  padding-top: 1em;
+}
+
+#agentSummary > div.last,
+#agentTypeSummary > div.last {
+  border-bottom: none;
+}
+
+/*------- status as a text is either green or red; status as a link is blue or blue with line-trough text decoration */
+
+#agentSummary .registered,
+#agentSummary .enabled,
+#agentSummary .authorized,
+table.agents .registered {
+  color: var(--ring-success-color);
+}
+
+.agent.disabled {
+  text-decoration: line-through;
+}
+
+/*end*/
+
+.normal {
+  color: var(--ring-text-color, #1f2326);
+}
+
+ul.agentSummary {
+  margin: 0;
+  padding: 0;
+}
+
+ul.agentSummary li {
+  list-style: none;
+  line-height: 2;
+}
+
+.agentSummary .action {
+  font-size: 100%;
+}
+
+/*------------------------- compatible agents table modifications */
+
+.agentsCompatibilityTable td.name,
+.agentsCompatibilityTable td.value {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.agentsCompatibilityTable td div.nothing {
+  margin-left: 2em;
+}
+
+.buildTypeCompatibility {
+  margin: 1px 5px 4px 0;
+}
+
+.buildTypeCompatibility .buildTypeName {
+  margin-left: 40px;
+}
+
+/*----------------------- two column table for the agent details*/
+.definitionTable {
+  width: 100%;
+}
+
+.definitionTable th {
+  width: 30%;
+  vertical-align: top;
+  font-weight: normal;
+  text-align: left;
+}
+
+.definitionTable th,
+.definitionTable td {
+  border-bottom: 1px dotted #ccc;
+  margin: 0;
+  padding: 5px;
+}
+
+/*--------------------------- Change Agent Status dialog message*/
+p.enableAgentWarning {
+  margin: 0 0 5px;
+}
+
+/*--------------------------- Select Configurations dialog*/
+
+table.configurationList {
+  width: 100%;
+  border-bottom: 2px solid var(--ring-line-color, #dfe5eb);
+  border-collapse: collapse;
+}
+
+table.configurationList th {
+  background-color: #909090;
+  padding: 2px;
+  color: var(--ring-content-background-color, #fff);
+  text-align: left;
+}
+
+table.configurationList .checkbox {
+  width: 3em;
+  padding-top: 0;
+  vertical-align: top;
+  text-align: center;
+}
+
+table.configurationList th.checkbox {
+  vertical-align: middle;
+}
+
+.configurationListContainer {
+  overflow: auto;
+  width: 100%;
+  height: auto;
+  max-height: 20em;
+  min-height: 5em;
+}
+
+.configurationListContainer table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-collapse: collapse;
+}
+
+.configurationListContainer table tr {
+  border-bottom: 2px solid white;
+}
+
+.configurationListContainer table td.checkbox {
+  padding-left: 2px;
+}
+
+table.overviewTypeTable td.buildTypeName + td.branch.hasBranch {
+  padding-left: 1em;
+}
+
+table.overviewTypeTable td.duration,
+table.overviewTypeTable td.stopBuild {
+  padding: 0.2em 0;
+  vertical-align: top;
+}
+
+table.agents div.right{
+  float: right;
+  min-width: 40px;
+  width: 30%;
+  text-align: right;
+}
+table.agents div.left{
+  margin-right: 44px;
+}

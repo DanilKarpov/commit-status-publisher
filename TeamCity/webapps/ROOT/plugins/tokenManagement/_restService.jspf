@@ -1,0 +1,84 @@
+<script type="text/javascript">
+  BS.TokenManagementRestService = {
+    fetchToken(projectId, fullTokenId) {
+      const url = new URL(window['base_uri'] + '/app${pathStoredToken}/' + encodeURIComponent(fullTokenId));
+      url.searchParams.append('projectId', projectId);
+
+      return this._doRequest(url, 'get').then((response) => response.responseJSON).catch((transport) => {
+        if (transport.status === 404) {
+          throw new Error('Token not found or unavailable to the project');
+        } else {
+          throw new Error('Error loading token');
+        }
+      });
+    },
+
+    fetchConnectionsForAcquiring(projectId, providerTypes) {
+      const url = new URL(window['base_uri'] + '/app${pathConnections}');
+      url.searchParams.append('projectId', projectId);
+      if (providerTypes) {
+        providerTypes.forEach(type => {
+          url.searchParams.append('type', type);
+        });
+      }
+
+      return this._doRequest(url, 'get').then((response) => response.responseJSON);
+    },
+
+    validateTokenName(name) {
+      const url = new URL(window['base_uri'] + '/app${pathStoredToken}/validate/name');
+      url.searchParams.append('name', name);
+
+      return this._doRequest(url, 'post').then((response) => response.responseJSON).catch((transport) => {
+        if (transport.status === 400) {
+          throw new Error(transport?.responseJSON?.errors.join(', ') ?? 'Token name is invalid');
+        }
+        throw new Error('Error validating token name');
+      }).then((result) => {
+        if (!result.ok) {
+          throw new Error(result.errors.join(', '));
+        }
+        return result;
+      });
+    },
+
+    fetchAllowedEntities(connection) {
+      if (!connection.provider.supportsAccessibleEntities) {
+        return Promise.resolve(null);
+      }
+
+      const url = new URL(window['base_uri'] + "/app/" +  connection.provider.accessibleEntitiesEndpoint + "/allowed");
+      url.searchParams.append('projectId', connection.projectId);
+      url.searchParams.append('connectionId', connection.id);
+      return this._doRequest(url, 'get').then((response) => response.responseJSON).catch((transport) => {
+        // HTTP 501 just means the endpoint doesn't support the entity type - not an error
+        if (transport.status !== 501) {
+          console.error("Error loading allowed entities for connection " + connection.id + ": " + transport.status);
+        }
+        return null;
+      });
+    },
+
+    fetchAccessibleEntitiesSettings(provider) {
+      const url = new URL(window['base_uri'] + "/app/" +  provider.accessibleEntitiesEndpoint + "/settings");
+      return this._doRequest(url, 'get').then((response) => response.responseJSON);
+    },
+
+    createEntityName(provider, value, source) {
+      const  url = new URL(window['base_uri'] + "/app/" +  provider.accessibleEntitiesEndpoint + "/entityName");
+      url.searchParams.append('value', value);
+      url.searchParams.append('source', source);
+      return this._doRequest(url, 'get').then((response) => response.responseJSON);
+    },
+
+    _doRequest(url, method) {
+      return new Promise((resolve, reject) => {
+        BS.ajaxRequest(url.toString(), {
+          method,
+          onSuccess: (response) => resolve(response),
+          onFailure: (transport) => reject(transport)
+        });
+      });
+    }
+  };
+</script>

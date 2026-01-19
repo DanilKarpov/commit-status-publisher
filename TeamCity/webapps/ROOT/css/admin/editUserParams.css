@@ -1,0 +1,79 @@
+@import url("params.css");
+
+div.editParamFormDialog .runnerFormTable td {
+  padding-right: 1.8em;
+}
+
+.editParameter {
+  padding-top: 1em;
+  padding-bottom: 2em;
+  padding-left: 2.5em;
+}
+
+label.editParameterLabel {
+  width: 5em;
+}
+
+div.showInheritedLink, div.hideInheritedLink {
+  margin-top: 1em;
+}
+
+.predefinedBlock {
+  margin: 5px 0 0 0;
+  padding-top: 5px;
+  font-size: 90%;
+}
+
+.predefinedBlock table {
+  margin-top: 5px;
+}
+
+div.predefinedBlock table td {
+  vertical-align: top;
+}
+
+#systemParams,
+#envParams {
+  margin-top: 10px;
+}
+
+.systemPropOption {
+  display: none;
+}
+
+#expandControl {
+  width: 31.5em;
+  text-align: right;
+}
+
+#expandControl a {
+  font-size: 85%;
+}
+
+#userParams {
+}
+
+td.buildTypeContent #userParams {
+  width: 100%;
+}
+
+table.parametersTable td.name,
+table.parametersTable th.name {
+  width: 30%;
+  padding-left: 1em;
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.parametersTable td.value,
+table.parametersTable th.value {
+  width: 50%;
+  padding-left: 1em;
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.parametersTable th.name,
+table.parametersTable th.value {
+  text-align: left;
+  font-weight: bold;
+  font-size: 90%;
+}

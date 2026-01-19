@@ -1,0 +1,45 @@
+#vcsRootsFilterForm {
+  margin: 0;
+}
+/*#projectVcsRoots {
+  margin-top: 0;
+}*/
+
+#projectVcsRoots th.usages {
+  width: 65px;
+}
+
+#projectVcsRoots .usageHl {
+  background: #fafcff;
+}
+#projectVcsRoots .vcsRoot.bold {
+  font-weight: bold;
+}
+#projectVcsRoots .smallNote {
+  margin-left: 5px;
+}
+
+#projectVcsRoots .usages > td {
+  border-top: 1px dotted #ccc;
+  border-right: none;
+  padding: 10px;
+}
+
+#projectVcsRoots .buildConfigurationLink {
+  margin-right: 10px;
+}
+
+#projectVcsRoots .templateUsages + div {
+  margin-top: 15px;
+}
+
+#projectVcsRoots .btUsages + div {
+  margin-top: 15px;
+}
+
+#projectVcsRoots .archived_project {
+  font-style: italic;
+  font-weight: 200;
+  color: #737577;
+  margin-left: 0.5em;
+}

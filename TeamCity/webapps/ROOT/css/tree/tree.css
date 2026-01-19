@@ -1,0 +1,178 @@
+/* Lazy tree selectors */
+.lazy-tree {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.lazy-tree a {
+  color: var(--ring-text-color, #1f2326);
+  white-space: nowrap;
+}
+
+.lazy-tree a:focus {
+  outline: thin dotted;
+}
+
+.lazy-tree,
+.lazy-tree .lazy-subtree {
+  padding-left: 0;
+}
+
+.lazy-tree .lazy-subtree {
+  margin-left: 16px;
+}
+
+.lazy-tree .last {
+  background-image: none;
+}
+
+.lazy-tree span.a > span.b::before {
+  vertical-align: -1px;
+}
+
+.lazy-tree .open > span.a,
+.lazy-tree .closed > span.a {
+  cursor: pointer;
+}
+
+.lazy-tree .open > span.a > span.b::before {
+  background-position: -177px 6px;
+}
+
+.lazy-tree .closed .lazy-subtree {
+  display: none;
+}
+
+.lazy-tree .closed > span.a > span.b::before {
+  background-position: -175px -14px;
+}
+
+.lazy-tree .folderIcon {
+  color: var(--ring-link-color);
+  margin-right: 2px;
+}
+
+.lazy-tree .fileIcon {
+  color: var(--ring-secondary-color);
+  margin-right: 2px;
+}
+
+/* TW-20880 */
+.lazy-tree .leaf.last > span.a,
+.lazy-tree .leaf.last > span.a > span.b {
+  display: block;
+}
+
+.lazy-tree .filesize {
+  margin-left: 0.5em;
+  color: var(--ring-text-color, #1f2326);
+  font-size: 80%;
+}
+
+.lazy-tree .emptyMessage {
+  font-style: italic;
+  color: var(--ring-secondary-color);
+}
+
+.lazy-tree .tree-error {
+  color: var(--ring-error-color);
+  padding-left: 16px;
+}
+
+/* File browse */
+
+.fileBrowse {
+  width: 70%;
+}
+
+.headMessage {
+  margin: 0.6em 0;
+}
+
+.headMessage div.downloadLink {
+  white-space: nowrap;
+}
+
+.headMessage div.downloadLink a.downloadLink {
+  float: none;
+}
+
+.fileBrowse .upload {
+  margin-top: 1em;
+}
+
+.fileBrowse .fileName {
+  font-weight: bold;
+}
+
+.fileBrowse .fileSize {
+  color: #737577;
+}
+
+.fileBrowse .fileLastModifiedTimestamp {
+  color: var(--ring-disabled-color, #999);
+  font-size: 80%;
+}
+
+.fileBrowse .fileOperations {
+  color: var(--ring-disabled-color, #999);
+  margin-left: 2em;
+  white-space: nowrap;
+}
+
+.fileBrowse .fileOperations a {
+  margin: 0 2px;
+}
+
+.fileBrowse .fileOperations a.downloadLink {
+  float: none;
+}
+
+.fileBrowse pre {
+  clear: both;
+}
+
+.uploadDialog input {
+  margin-left: 0.5em;
+}
+
+.uploadDialog .runnerFormTable .smallNote,
+#uploadError {
+  margin: 0.2em 0 0 0.6em;
+}
+
+.uploadDialog th {
+  text-align: left;
+}
+
+.uploadDialog #fileName,
+.uploadDialog #destination {
+  width: 25em;
+}
+
+.tree-full-width-click .a {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.tree-full-width-click span.a:hover {
+  background-color: #f2f9ff;
+}
+
+.tree-full-width-click span.a:hover a {
+  text-decoration-line: underline;
+}
+
+.lazy-tree .folder_zip {
+  padding-left: 1em;
+  color: var(--ring-text-color, #1f2326);
+  font-size: 80%;
+}
+
+.lazy-tree .folder_zip a {
+  color: var(--ring-text-color, #1f2326);
+  float: none;
+}

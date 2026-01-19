@@ -1,0 +1,50 @@
+.testMetadata__table {
+  border-bottom: 1px dotted #ccc;
+  margin: 0 0 20px;
+}
+
+.testMetadata__title {
+
+  margin-bottom: 5px;
+  font-size: var(--ring-font-size, 14px);
+  font-weight: bold;
+
+  text-align: left;
+}
+
+.testMetadata__row {
+  border-top: 1px dotted #ccc;
+}
+
+.testMetadata__row:hover {
+  background-color: #fafafa;
+}
+
+.testMetadata__name {
+  box-sizing: border-box;
+  padding: 5px 40px 5px 20px;
+
+  vertical-align: top;
+}
+
+.testMetadata__value {
+  padding: 5px 20px;
+  box-sizing: border-box;
+}
+
+.testMetadata__value > a {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.testMetadataImage,
+.testMetadataVideo {
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+  max-width: 30vw;
+}
+
+.testMetadataNumber {
+  padding-right: 5px;
+  font-weight: 500;
+}

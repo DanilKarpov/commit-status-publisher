@@ -1,0 +1,136 @@
+#editTriggerDialog {
+  width: 60em;
+}
+
+#dayOfWeek {
+  width: 9em;
+}
+
+#schedulingPolicy {
+  width: 15em;
+}
+
+#quietPeriodModeTable {
+  width: 100%;
+}
+#quietPeriodModeTable td {
+  padding: 2px 2px 2px 6px;
+}
+
+#checkIntervalWarning .smallNoteAttention {
+  margin-top: 5px;
+}
+
+.buildTriggersTable__first-column {
+  width: 30%;
+}
+
+.editTriggerDialog .error {
+  margin-left: 0;
+}
+
+#triggerNameSelector {
+  width: 95%;
+}
+
+.group-checkins-wrapper {
+  padding: 0.5em 0 0 1.5em;
+}
+
+.date-and-time-conditions ._label {
+  width: 9em;
+  min-width: 9em;
+  max-width: 9em;
+}
+
+.cron-policy-wrapper {
+  padding-right: 0;
+}
+
+.cron-field {
+  width: 13%;
+}
+
+.cron-policy-wrapper table.cron-fields-table {
+  width: 100%;
+  padding: 0;
+}
+
+.cron-field .disableBuildTypeParams {
+  width: 5em;
+}
+
+.cron-field .smallNote {
+  font-size: 85%;
+}
+
+td.cron-field {
+  padding-left: 2px;
+  padding-right: 4px;
+}
+
+.cron-field div.posRel {
+  padding-right: 0;
+  margin: 0;
+}
+
+#buildCustomization, #triggerParamsTable {
+  overflow: auto;
+  max-height: 500px;
+}
+
+#buildCustomization .buildParameters {
+  width: 100%;
+}
+
+#buildCustomization .buildParameters td {
+  vertical-align: top;
+  text-align: left;
+}
+
+#buildCustomization .buildParameters .paramName {
+  width: 25%;
+}
+
+#buildCustomization .buildParameters #selectedParametersHeader {
+  width: 25%;
+}
+
+#buildCustomization .buildParameters #selectedParametersHeader th {
+  padding-top: 2em;
+}
+
+#buildCustomization .buildParameters .paramName__label {
+  max-width: 20em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+#buildCustomization .buildParameters .paramName input {
+  height: 1.25em;
+}
+
+#buildCustomization .buildParameters .paramValue {
+  width: 65%;
+}
+
+#buildCustomization .buildParameters .paramValue input,
+#buildCustomization .buildParameters .paramValue textarea {
+  width: 100%;
+}
+
+#buildCustomization .buildParameters td.edit {
+  font-size: 90%;
+  white-space: nowrap;
+}
+
+#buildCustomization .buildParameters td.edit a {
+  display: inline-block;
+  margin-left: .5em;
+}
+
+#buildCustomization .buildParameters td.noBorder {
+  border-bottom: none;
+}
+

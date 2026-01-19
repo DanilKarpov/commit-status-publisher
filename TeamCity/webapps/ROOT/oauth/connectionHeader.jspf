@@ -1,0 +1,150 @@
+<%@ taglib prefix="forms" tagdir="/WEB-INF/tags/forms" %>
+<%@ taglib prefix="bs" tagdir="/WEB-INF/tags" %>
+
+<c:if test="${not empty oauthTestConnectionUrl}">
+  <script type="application/javascript">
+    var testConnectionSuccessInfo = "";
+
+  ConnectionProperties = OO.extend(BS.OAuthConnectionDialog, {
+    showTestConnection: function () {
+      testConnectionSuccessInfo = "";
+      $j("#testConnectionButton").show();
+    },
+
+    showTestConnectionWithSuccessMessage: function (successInfo) {
+      testConnectionSuccessInfo = successInfo;
+      $j("#testConnectionButton").show();
+    },
+
+      hideTestConnection: function () {
+        $j("#testConnectionButton").hide();
+      },
+
+      testConnection: function() {
+        const that = this;
+        const url = "${oauthTestConnectionUrl}";
+
+        BS.PasswordFormSaver.save(that, url, OO.extend(BS.SimpleListener, {
+          onBeginSave: function(form) {
+            form.clearErrors();
+            form.setSaving(true);
+            form.disable();
+          },
+
+          onCompleteSave: function (form, responseXML, err) {
+            var wereErrors = BS.XMLResponse.processErrors(responseXML, {
+              onTestConnectionFailedError: function(elem) {
+                BS.TestConnectionDialog.show(false, elem.firstChild.nodeValue, null);
+              }
+            }, BS.PluginPropertiesForm.propertiesErrorsHandler);
+
+            if (!wereErrors) {
+              var successInfo, preserveHtml;
+              if (testConnectionSuccessInfo) {
+                if (testConnectionSuccessInfo instanceof Function) {
+                  const info = testConnectionSuccessInfo.call();
+                  if (typeof info === 'string') {
+                    successInfo = info;
+                    preserveHtml = false;
+                  } else {
+                    successInfo = info.text;
+                    preserveHtml = info.preserveHtml;
+                  }
+                } else {
+                  successInfo = testConnectionSuccessInfo;
+                }
+              } else {
+                successInfo = "";
+              const warns = [];
+              const infos = [];
+              var that = this;
+              this._processMessages(responseXML, {
+                onWarning: function (elem) {
+                  warns.push(that._prepareMessagesToShow(elem.textContent));
+                },
+                onInfo: function (elem) {
+                  infos.push(that._decodeXml(elem.textContent));
+                }
+              });
+              if (warns.length > 0) {
+                successInfo += "Following WARNINGS detected during test connection:";
+                warns.forEach(val => successInfo = successInfo + '\n' + val);
+                preserveHtml = false
+              }
+              if (infos.length > 0) {
+                if (warns.length > 0) successInfo += '\n';
+                successInfo += "Please consider following:";
+                infos.forEach(val => successInfo = successInfo + '\n' + val);
+                preserveHtml = false
+              }}
+              BS.TestConnectionDialog.show(true, successInfo, null, preserveHtml);
+            }
+
+            form.setSaving(false);
+            form.enable();
+          },
+
+      _processMessages: function (responseXML, messageHandlers) {
+          if (!responseXML) return;
+
+          var parentElement = responseXML.documentElement;
+          if (parentElement == null) return;
+
+          this._handleMessages(parentElement, messageHandlers, "warning");
+          this._handleMessages(parentElement, messageHandlers, "info");
+        },
+
+        _prepareMessagesToShow(str) {
+          var splitedMessage = this._decodeXml(str).split(' ');
+          var result = "- ";
+          for (let i = 0; i < splitedMessage.length; i++) {
+            result = result + splitedMessage[i] + ' ';
+            if (i > 0 && i % 10 === 0) result += "\n   "
+          }
+          return result
+        },
+
+        _handleMessages: function(parentElement, messageHandlers, level) {
+          const multipleLevels = level + 's';
+          const msgsParent = parentElement.getElementsByTagName(multipleLevels);
+          const funcName = "on" + level.charAt(0).toUpperCase() + level.substring(1);
+          const handler = messageHandlers[funcName];
+          if (msgsParent && msgsParent.length > 0) {
+            const msgs = msgsParent[0].getElementsByTagName(level);
+            if (msgs) {
+              for (let i = 0; i < msgs.length; i++) {
+                handler(msgs[i])
+              }
+            }
+          }
+        },
+
+        _decodeXml(str) {
+          var txt = document.createElement("textarea");
+          txt.innerHTML = str;
+          return txt.value;
+        }
+      }));}
+    });
+
+    $j(document).ready(function() {
+      $j("#testConnectionButton").removeClass("btn_primary");
+      var placeholder = $j("span#editConnectionAdditionalButtons");
+      if(placeholder.length) {
+        placeholder.empty();
+        placeholder.append($j("span#oauthConnectionTestConnectionButton *"));
+      }
+      ConnectionProperties.hideTestConnection();
+    });
+  </script>
+
+  <span id="oauthConnectionTestConnectionButton">
+    <forms:submit id="testConnectionButton" className="testConnectionButton" type="button" label="Test connection" onclick="ConnectionProperties.testConnection();"/>
+  </span>
+
+  <bs:dialog dialogId="testConnectionDialog" title="Test Connection" closeCommand="BS.TestConnectionDialog.close();"
+             closeAttrs="showdiscardchangesmessage='false'">
+    <div id="testConnectionStatus"></div>
+    <div id="testConnectionDetails" class="mono"></div>
+  </bs:dialog>
+</c:if>

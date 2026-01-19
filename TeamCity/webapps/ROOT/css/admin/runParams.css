@@ -1,0 +1,13 @@
+input.textProperty {
+  margin: 0;
+  padding: 0;
+}
+
+div.paramSection {
+  margin-bottom: 1em;
+}
+
+span.unknownRunner {
+  padding-left: 1em;
+  color: var(--ring-error-color);
+}

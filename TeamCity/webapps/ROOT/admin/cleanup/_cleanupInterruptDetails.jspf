@@ -1,0 +1,25 @@
+<%@ include file="/include-internal.jsp" %>
+<%@ page import="jetbrains.buildServer.serverSide.cleanup.InterruptReason" %>
+
+<c:set var="IR_TIMEOUT" value="<%=InterruptReason.TIMEOUT%>"/>
+<c:set var="IR_KILLED" value="<%=InterruptReason.PROCESS_KILLED%>"/>
+<c:set var="IR_SYSTEM" value="<%=InterruptReason.STOPPED_BY_SYSTEM%>"/>
+<c:set var="IR_ERROR" value="<%=InterruptReason.CLEANUP_ERROR%>"/>
+
+<div class="attentionComment">
+  <bs:buildStatusIcon type="red-sign" className="warningIcon"/>
+  Last clean-up was interrupted
+  <c:choose>
+    <%--@elvariable id="interruptUser" type="jetbrains.buildServer.users.SUser"--%>
+    <c:when test="${interruptUser != null}">by <strong><c:out value="${interruptUser.descriptiveName}"/></strong>.</c:when>
+    <%--@elvariable id="interruptReason" type="jetbrains.buildServer.serverSide.cleanup.InterruptReason"--%>
+    <c:when test="${interruptReason == IR_TIMEOUT}">because of execution timeout.</c:when>
+    <c:when test="${interruptReason == IR_KILLED}">because server process was terminated.</c:when>
+    <c:when test="${interruptReason == IR_SYSTEM}">because server was shut down.</c:when>
+    <c:when test="${interruptReason == IR_ERROR}">due to an internal error. Please take a look at teamcity-cleanup.log.</c:when>
+  </c:choose>
+  <%--@elvariable id="additionalInfo" type="java.lang.String"--%>
+  <c:if test="${additionalInfo != null}">
+    ${additionalInfo}
+  </c:if>
+</div>

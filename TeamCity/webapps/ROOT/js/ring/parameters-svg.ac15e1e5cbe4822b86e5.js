@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([["parameters-svg"],{77365:function(e,l,n){n.r(l);var t=n(63696),r=n(62540);l.default=t.memo((function(e){return(0,r.jsx)("svg",{xmlns:"http://www.w3.org/2000/svg",width:16,height:16,fill:"none",role:"presentation",...e,children:(0,r.jsx)("path",{fill:"currentColor",fillRule:"evenodd",d:"M14 2a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1M1 5.7h11V4.3H1zm7 4.6V9a1 1 0 0 0-2 0v4a1 1 0 1 0 2 0v-1.3h7v-1.4zm-7 1.4h4v-1.4H1z",clipRule:"evenodd"})})}))}}]);
+//# sourceMappingURL=parameters-svg.ac15e1e5cbe4822b86e5.js.map

@@ -1,0 +1,177 @@
+.testSummaryPane {
+  background-color: #F0F0F0;
+  padding: 2px 5px;
+}
+
+table.mainHeader {
+  width: 100%;
+}
+
+.testSummaryPane span.successRate {
+  white-space: nowrap;
+}
+
+.testSummaryPane span.shortStat {
+  padding-right: .5em;
+}
+
+table.durationTable {
+  width: 100%;
+}
+
+table.durationTable tr td.midHeader {
+  padding-top: 5px;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.durationTable tr.headerRow {
+  line-height: 1em;
+  color: #707070;
+}
+
+table.durationTable tr.valueRow {
+  line-height: 1em;
+}
+
+h3.topHeader {
+  margin: 0 0 3px 0;
+}
+
+table.topTable {
+  width: 100%;
+}
+
+table.topTable tr {
+  vertical-align: top;
+}
+
+table.topTable > tbody > tr > td,
+table.topTable         > tr > td {
+  padding: 10px;
+}
+
+table.topTable tr td div.testDurationContents {
+  float: right;
+}
+
+.testNameHeader {
+  margin: 0 0 10px 0;
+}
+
+.testNameHeader .testIcons {
+  margin-left: 0;
+  min-width: auto;
+}
+
+.testNameHeader .testIcons > :only-child {
+  margin-left: 0;
+}
+
+.testNameHeader .testIcons .icon16 {
+  vertical-align: baseline;
+}
+
+.testNameHeader .icon16.copy2Clipboard {
+  vertical-align: text-top;
+}
+
+.testDetailsHeader {
+  margin-top: 1.2em;
+  font-size: var(--ring-font-size, 14px);
+  font-weight: normal;
+}
+
+#testStats {
+  margin-top: 0.5em;
+}
+
+.testDurationContents {
+  margin-top: .5em;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.testRunsStats, .testSuccessRateStats {
+  display: inline;
+}
+
+.testRunsStats {
+  padding-left: 1em;
+}
+
+.testDetailsHeader + * {
+  margin-bottom: 1.2em;
+}
+
+.testDetailsHeader .investigation {
+  display: inline-block;
+  width: 50%;
+}
+
+.testDetailsHeader .investigation {
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 16px;
+}
+
+.testDetailsHeader .mute {
+  padding-left: 2px;
+}
+
+.testDetailsHeader img {
+  margin: 0.1em 0.1em 0 0;
+  vertical-align: top;
+}
+
+table#investigation-section {
+  width: 100%;
+  padding-left: 15px;
+}
+
+table#investigation-section td.half {
+  width: 50%;
+  vertical-align: top;
+}
+
+table#investigation-section table th {
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+table#investigation-section table td,
+table#investigation-section table th {
+  text-align: left;
+}
+
+table#investigation-section + div.actions {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding: 5px 5px 5px 8px;
+  border-top: 1px solid #D6D6D6;
+}
+
+table#investigation-section + div.actions a + a {
+  margin-left: 1.5em;
+}
+
+.topTable .GraphContainer .graphContainer {
+  position: relative;
+  padding: 5px 10px 0 0;
+}
+
+.topTable .GraphContainer .agentsList {
+  position: relative;
+  width: 240px;
+  padding: 10px 5px 5px;
+  vertical-align: top;
+}
+
+.testHistoryHeader {
+  margin-top: 1em;
+}
+
+table.testList.historyList td.buildNumber {
+  text-align: left !important;
+}
+
+table.testList.historyList td:last-child {
+  max-width: 12em;
+}

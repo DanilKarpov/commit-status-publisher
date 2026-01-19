@@ -1,0 +1,21 @@
+#agent-chooser {
+  margin-top: 5px;
+}
+
+#agent-chooser label {
+  vertical-align: sub;
+  margin-right: 8px;
+}
+
+#agent-chooser select {
+  width: 240px;
+  vertical-align: middle;
+}
+
+#checkout-dir {
+  margin: 5px 0;
+}
+
+#agent-chooser + .attentionComment {
+  margin: 10px 0;
+}

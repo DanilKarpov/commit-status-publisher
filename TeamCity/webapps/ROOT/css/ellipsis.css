@@ -1,0 +1,26 @@
+.has-ellipsis {
+  overflow: hidden;
+  position: relative;
+  padding-right: 28px;
+  height: 1.5em;
+}
+
+.ellipsis-expander {
+  position: absolute;
+  top: 2px;
+  right: 0.4em;
+
+  width: 20px;
+  height: 1em;
+
+  background: #F3F3F3;
+  border: 1px solid #C8C8C8;
+  border-radius: 2px;
+  color: #C8C8C8;
+  text-align: center;
+}
+
+.ellipsis-expander:hover {
+  cursor: pointer;
+  background: #E3E3E3;
+}

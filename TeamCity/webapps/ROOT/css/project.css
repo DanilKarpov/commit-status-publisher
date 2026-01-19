@@ -1,0 +1,24 @@
+.projectTabContent {
+  margin-top: 10px;
+}
+
+#showFilter {
+  margin: 0.5em 0 1em;
+}
+
+.projectContent > .build.project-page > .projectHeader {
+  display: none;
+}
+
+.projectContent > .build.project-page > div > div {
+  margin-left: 0;
+}
+
+.project-page div.overviewTypeTableContainer {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.project-page .hideProject {
+  visibility: hidden;
+}

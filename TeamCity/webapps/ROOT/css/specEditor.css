@@ -1,0 +1,38 @@
+#resetAppearanceSettingsText {
+  font-size: 0.9em;
+  color: var(--ring-borders-color);
+  text-align: end;
+}
+
+#allowedValueTooltip {
+  margin-left: 173px;
+}
+
+.btn.allowedValues {
+  padding-left: 0;
+  display: block;
+  margin-left: 0;
+}
+
+.btn.smallNote.appearanceSettingsBtn {
+  margin-left: 0;
+  width: max-content;
+  font-size: 100%;
+}
+
+#appearanceSettingsRow th,
+#runCustomBuildSettingsRow th {
+  width: 100%;
+}
+
+label:has(input[name="prop:validationMode"]) {
+  margin-right: 5px;
+}
+
+.runnerFormTable.newSpecTable td:empty {
+  padding: 0;
+}
+
+.btn.appearanceSettingsBtn {
+  border: 0;
+}

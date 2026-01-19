@@ -1,0 +1,41 @@
+/*------------------------ styles for the quickLinks - like popups*/
+
+.quickLinksMenuPopup {
+  width: 22em;
+  padding: 0;
+  overflow-y: auto;
+  z-index: 30;
+  border-radius: var(--ring-border-radius-large);
+}
+
+.popupWithTitle {
+  padding: 0;
+  z-index: 30;
+}
+
+.popupWithTitle .popupWithTitleHeader {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  margin: 0;
+  padding: 4px 10px;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  font: 200 13px "Helvetica Neue", Calibri, Arial, sans-serif;
+}
+
+.popupWithTitle .closeWindow {
+  top: -2px;
+  margin: 0;
+}
+
+.quickLinksMenuPopup ul li {
+  list-style: none;
+}
+
+.quickLinksMenuPopup ul li a,
+.quickLinksMenuPopup ul li .commentText {
+  outline: none;
+}
+
+div.divider {
+  margin: .5em 0;
+  border-bottom: 1px solid #CFCFD0;
+}

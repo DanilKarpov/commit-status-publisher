@@ -1,0 +1,61 @@
+.progress {
+  background-color: #e6e6e6;
+  position: relative;
+  height: 1.3em;
+  line-height: 1.3em;
+  text-align: left;
+  width: 100%;
+  float: left;
+}
+
+.progress.chain {
+  height: 1.5em;
+  line-height: 1.5em;
+}
+
+.progress,
+.progressInner {
+  max-width: 14.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.progress,
+.progressInner.chain {
+  max-width: 14.5em;
+  margin: 0;
+  padding: 0;
+  height: 1.5em;
+  line-height: 1.5em;
+}
+
+.progress.long,
+.progressInner.long {
+  max-width: 31em;
+}
+
+.progressInner {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.progressInnerSuccessful {
+  background-color: #48b365;
+}
+
+.progressInnerFailed {
+  background-color: var(--ring-error-color);
+}
+
+.progressOvertime {
+  margin-left: 4px;
+}
+
+#agentsTable .progress {
+  width: 10em;
+  height: auto;
+}

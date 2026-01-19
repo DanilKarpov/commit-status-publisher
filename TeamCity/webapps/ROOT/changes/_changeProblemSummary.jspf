@@ -1,0 +1,66 @@
+<c:set var="compilationErrorCount" value="${fn:length(changeDetailsBean.compilationErrors)}"/>
+<c:set var="buildProblemsBean" value="${changeDetailsBean.buildProblemBean}"/>
+<c:set var="otherErrorsCount" value="${empty buildProblemsBean ? 0 : (buildProblemsBean.buildProblemsNumber - compilationErrorCount)}"/>
+<c:set var="test" value="${changeDetailsBean.test}"/>
+
+<c:set var="result"><c:if test="${compilationErrorCount gt 0}">
+  ${compilationErrorCount} compilation error<bs:s val="${compilationErrorCount}"/>
+</c:if></c:set>
+
+<c:set var="buildsText">${result}</c:set>
+<c:set var="buildsText">
+  <c:choose>
+    <c:when test="${otherErrorsCount == 0}">${buildsText}</c:when>
+    <c:when test="${not empty buildsText}">${buildsText},
+      <c:if test="${otherErrorsCount == 1}">
+        1 other build failure
+      </c:if>
+      <c:if test="${otherErrorsCount > 1}">
+        ${otherErrorsCount} other build failures
+      </c:if>
+    </c:when>
+    <c:otherwise>
+      <c:if test="${otherErrorsCount == 1}">
+        One build failure
+      </c:if>
+      <c:if test="${otherErrorsCount > 1}">
+        ${otherErrorsCount} build failures
+      </c:if>
+    </c:otherwise>
+  </c:choose>
+</c:set>
+
+<c:set var="testsText" value=""/>
+<c:if test="${test.hasFailedTests}">
+  <c:set var="testsText"><c:choose>
+    <c:when test="${test.newTestsNumber == 0}">${test.otherTestsNumber} test<bs:s
+        val="${test.otherTestsNumber}"/> failed (no new)</c:when>
+    <c:when test="${test.otherTestsNumber == 0}">${test.newTestsNumber} new test<bs:s val="${test.newTestsNumber}"/> failed</c:when>
+    <c:otherwise>${test.otherTestsNumber + test.newTestsNumber} test<bs:s
+        val="${test.otherTestsNumber}"/> failed (${test.newTestsNumber} new)</c:otherwise>
+  </c:choose></c:set>
+
+  <c:if test="${not empty result}"><c:set var="result" value="${result}, "/></c:if>
+  <c:set var="result" value="${result}${testsText}"/>
+</c:if>
+
+<%-- todo: Remove duplication --%>
+<c:choose>
+  <c:when test="${otherErrorsCount == 0}">${result}</c:when>
+  <c:when test="${not empty result}">${result},
+    <c:if test="${otherErrorsCount == 1}">
+      1 other build failure
+    </c:if>
+    <c:if test="${otherErrorsCount > 1}">
+      ${otherErrorsCount} other build failures
+    </c:if>
+  </c:when>
+  <c:otherwise>
+    <c:if test="${otherErrorsCount == 1}">
+      One build failure
+    </c:if>
+    <c:if test="${otherErrorsCount > 1}">
+      ${otherErrorsCount} build failures
+    </c:if>
+  </c:otherwise>
+</c:choose>

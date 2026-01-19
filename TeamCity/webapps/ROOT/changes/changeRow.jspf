@@ -1,0 +1,23 @@
+<%--@elvariable id="changeStatus" type="jetbrains.buildServer.vcs.ChangeStatus"--%>
+<c:set var="nodeId">ct_node_<bs:_csId changeStatus="${changeStatus}"/></c:set>
+
+<tr id="${nodeId}">
+  <%@ include file="singleChangeInfo.jspf" %>
+</tr>
+
+
+<!-- Here goes change details block: -->
+<c:set var="expanded" value="${fn:contains(treeState, nodeId)}"/>
+<c:set var="dispNone">${expanded ? '' : ' style="display: none;"'}</c:set>
+<tr id="details_${nodeId}">
+  <td colspan="${showUsername ? "6" : "5"}" id="expandedViewContainer_<bs:_csId changeStatus="${changeStatus}"/>" class="expanded_view_container" ${dispNone}>
+  <c:if test="${expanded}">
+    <jsp:include page="/changeExpandedView.html">
+      <jsp:param name="modId" value="${changeStatus.change.id}"/>
+      <jsp:param name="personal" value="${changeStatus.change.personal}"/>
+      <jsp:param name="projectId" value="${param.projectId}"/>
+    </jsp:include>
+  </c:if>
+  </td>
+</tr>
+

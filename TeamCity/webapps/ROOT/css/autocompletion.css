@@ -1,0 +1,55 @@
+/* jQuery UI autocomplete */
+.ui-autocomplete {
+  max-height: 39ex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font: 1em/1.5 "Helvetica Neue", Arial, sans-serif;
+}
+
+.ui-autocomplete-nothing {
+  margin-left: .8em;
+  padding-left: .2em;
+  font: italic 1em/1.5 "Helvetica Neue", Arial, sans-serif;
+}
+
+.ui-menu-separator {
+  font: italic bold 1em/1.5 "Helvetica Neue", Arial, sans-serif;
+}
+
+.ui-autocomplete-matched-part {
+  font-weight: bold;
+}
+
+.ui-autocomplete-meta-info {
+  float: right;
+  margin-left: 1em;
+  font-size: 80%;
+  font-style: italic;
+}
+
+.codemirror-autocomplete-item,
+.codemirror-autocomplete-separator ,
+.codemirror-autocomplete-nothing {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans,
+    Helvetica Neue, Arial, sans-serif;
+  line-height: 22px;
+  padding-bottom: 2px;
+}
+
+.codemirror-autocomplete-separator ,
+.codemirror-autocomplete-nothing.codemirror-autocomplete-nothing {
+  background: var(--ring-content-background-color, #fff);
+  color: var(--ring-text-color, #1f2326);
+  pointer-events: none;
+  margin: 0 -4px;
+}
+
+.codemirror-autocomplete-separator {
+  font-weight: bold;
+}
+
+.codemirror-autocomplete-nothing.codemirror-autocomplete-nothing {
+  font-style: italic;
+  padding: 0 8px;
+}

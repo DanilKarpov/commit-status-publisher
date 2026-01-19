@@ -1,0 +1,22 @@
+#vcsUsernames {
+  width: 60%;
+}
+
+#vcsSettingsTable {
+  width: 100%;
+}
+
+#vcsSettingsTable th.vcsRoot {
+  width: 70%;
+  padding-left: 1em;
+  text-align: left;
+}
+
+#vcsSettingsTable th.username {
+  padding-left: 1em;
+  text-align: left;
+}
+
+#vcsSettingsTable td {
+  vertical-align: top;
+}

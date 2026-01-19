@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([["WelcomePage"],{83910:function(e,s,a){a.r(s);var i=a(74862),n=a(56202),t=a(86005),u=a(84487),c=a(84195),l=a(49903),r=a(81384),p=a(62540);s.default=function({queries:e}){return(0,i.A)("TeamCity Pipelines"),(0,c.R)(e.hasPipelines)?(0,p.jsx)(t.A,{to:(0,l.$)(),replace:!0}):(0,r.X3)()?(0,p.jsx)(u.A,{}):(0,p.jsx)(t.A,{to:(0,n.MJ)(),replace:!0})}}}]);
+//# sourceMappingURL=WelcomePage.f8226aa2bdb4db7d155b.js.map

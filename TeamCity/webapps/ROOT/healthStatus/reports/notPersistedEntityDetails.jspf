@@ -1,0 +1,18 @@
+<c:set var="blockId" value="not_persisted_report_${entityType}_${item['entity'].externalId}"/>
+<a href="javascript:;" onclick="$j('#${blockId}').toggle();">details &raquo;</a>
+<div id="${blockId}" style="display: none">
+  <div>
+    <b>edited</b> <bs:date value="${item['editDate']}"/>
+  </div>
+  <div>
+    <b>persisted</b> <bs:date value="${item['persistDate']}"/>
+  </div>
+  <c:if test="${not empty item['editStackTrace']}">
+    <div>
+      <b>stackTrace</b>
+      <c:forEach var="methodCall" items="${item['editStackTrace']}">
+        <div style="margin-left: 1em;"><c:out value="${methodCall}"/></div>
+      </c:forEach>
+    </div>
+  </c:if>
+</div>

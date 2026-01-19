@@ -1,0 +1,255 @@
+#buildTypeStatusDiv {
+  margin-top: -2px;
+}
+
+#buildTypeStatusDiv h3 {
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+#buildTypeStatusDiv hr {
+  margin: 14px 0 0;
+  border: none;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+#buildTypeStatusDiv > div,
+.buildTypeHistory {
+  padding-top: 17px;
+}
+
+#buildTypeStatusDiv .overviewTypeTableContainer {
+  margin: 0;
+}
+
+#buildTypeStatusDiv .tableCaption {
+  margin: 0;
+}
+
+#buildTypeStatusDiv .responsible {
+  display: inline;
+}
+
+#buildTypeStatusDiv .takeResponsibility {
+  position: relative;
+  left: -1px;
+  margin-left: 24px;
+}
+
+#buildTypeStatusDiv .takeResponsibility:first-child {
+  display: inline;
+  margin-left: 0;
+}
+
+#buildTypeStatusDiv #branchName {
+  width: 20em;
+}
+
+.permalinks a {
+  margin: 0 1.5em 0 0;
+}
+
+.branch-header .branch {
+  min-width: 18em;
+  display: inline-block;
+  margin: 0 4px 4px;
+}
+
+/*-------------- run section on the viewType page*/
+
+table.running {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+table.running.overviewTypeTable tr td {
+  vertical-align: top;
+}
+
+td.buildNumber {
+  width: 6em;
+  padding-left: 1em;
+  text-align: left;
+}
+
+table.running.overviewTypeTable td.buildNumber {
+  padding-left: 0;
+}
+
+.running.overviewTypeTable .duration .date {
+  white-space: normal;
+}
+
+table.running.overviewTypeTable td.agentDetails {
+  padding-left: 1em;
+  width: 11em;
+}
+
+table.running.overviewTypeTable td.duration {
+  width: 9em;
+}
+
+table.running.overviewTypeTable td.stopBuild {
+  text-align: center;
+}
+
+form.pauseResume {
+  display: none;
+}
+
+/*------------ compatibility agents table ----------*/
+
+table.compatibilityList {
+  border-bottom: #ccc 1px solid;
+}
+
+table.compatibilityList tr.header td {
+  border-top: #ccc 1px solid;
+  border-bottom: #ccc 1px solid;
+}
+
+table.compatibilityList td {
+  padding: 2px 3px;
+}
+
+.successMessage {
+  clear: right;
+}
+
+div.divider {
+  margin: .5em 0;
+}
+
+table.running td.duration p {
+  font-size: 72%;
+}
+
+.permalinksList {
+  margin: 5px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*------------ styles for short history on build configuration page ----------*/
+
+#filterAboveTable {
+  float: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#filterByTags {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#historyFilter {
+  margin: 0;
+  padding: 0;
+}
+
+#historyTable #savingFilter {
+  display: none;
+  margin-left: 1em;
+}
+
+#historyTable .actionBar {
+  margin-bottom: 1em;
+}
+
+#historyTable .actionBar label.first {
+  width: 9em;
+  display: inline-block;
+}
+
+#historyTable .recentTitle {
+  width: 100%;
+}
+
+.historyFilterTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.historyFilterTable .column1 {
+  width: 27%;
+  white-space: nowrap;
+}
+
+.historyFilterTable .column2 {
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+.historyFilterTable .column3 {
+  width: 17%;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+.testDetails table.plain {
+  width: 60%;
+  margin: 10px 0 5px 10px;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  border-left: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.testDetails table.plain th {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding-left: .5em;
+  text-align: left;
+  font-weight: bold;
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.testDetails table.plain td {
+  padding-left: .5em;
+  text-align: left;
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.package {
+  color: #737577;
+  font-weight: normal;
+  font-family: arial, sans-serif;
+}
+
+table.historyList tr:last-child > td {
+  border-bottom: none;
+}
+
+#buildTypeStatusDiv .healthStatusWarning {
+  border: 1px solid #ffe000;
+  background-position: 5px 5px;
+  padding: 5px 5px 5px 25px;
+}
+
+.pendingChangesDiv {
+  display: inline-block;
+}
+
+.runningBuildsHeading + *,
+.noBuildsNote + * {
+  margin-top: 5px;
+  margin-left: 0;
+}
+
+.noBuildsNote {
+  color: #737577;
+}
+
+.noFinishedBuildsNote {
+  margin-top: 21px;
+}
+
+.buildTypeCurrentStatus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.buildTypeCurrentStatus > * {
+  margin-right: 16px;
+}

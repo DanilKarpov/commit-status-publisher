@@ -1,0 +1,49 @@
+/*------------------------ Styles for the running build info*/
+#runningLogStatus {
+  font-size: 100%;
+}
+
+.runningBuildStatus {
+  background-color: #f2f9ff;
+  float: left;
+  width: 69%;
+  border: 1px solid #B6D1ED;
+}
+
+span.stopBuild {
+  font-weight: normal;
+  font-size: 90%;
+}
+
+/*============================ Also running table ==============================*/
+
+#alsoRunning {
+  float: right;
+  width: 24%;
+  margin-left: 25px;
+  padding: 5px 5px 15px 20px;
+  font-size: 100%;
+  border: 1px solid #F0F6F3;
+}
+
+#alsoRunning h3 {
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+#alsoRunning ul {
+  margin: 0;
+  padding: 5px 5px 5px 0;
+  list-style: none;
+}
+
+#alsoRunning li {
+  margin-bottom: .3em;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#alsoRunning li p {
+  margin: 0 0 0 21px;
+  font-size: 85%;
+}

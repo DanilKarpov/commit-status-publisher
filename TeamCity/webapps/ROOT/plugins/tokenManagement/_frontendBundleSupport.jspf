@@ -1,0 +1,46 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="intprop" uri="/WEB-INF/functions/intprop" %>
+<%@ taglib prefix="forms" tagdir="/WEB-INF/tags/forms" %>
+
+<c:set var="context" value="${pageContext.request.contextPath}"/>
+<c:set var="defaultBundlePath" value="${context}/plugins/tokenManagement/js/"/>
+
+<c:set var="overrideBundleUrl" value="${intprop:getProperty(propertyBundleOverride, '')}" />
+
+<forms:saving id="bundleWaiter" style="float: none;"/>
+<span id="${idContentContainer}"></span>
+
+<c:set var="bundleUrl">
+  <c:choose>
+    <c:when test="${not empty overrideBundleUrl}">
+      <c:out value="${overrideBundleUrl}"/>
+    </c:when>
+    <c:otherwise>
+      <c:out value="${defaultBundlePath}"/>bundle.js
+    </c:otherwise>
+  </c:choose>
+</c:set>
+
+<!-- need to load indirectly as script tag with src doesn't work via BS.ajaxUpdate -->
+<script type="text/javascript">
+  ((url) => {
+    const scriptTag = document.createElement('script');
+    scriptTag.src = url;
+    scriptTag.onload = () => {
+      $('bundleWaiter').hide();
+    };
+    document.body.appendChild(scriptTag);
+  })('${bundleUrl}');
+
+  $('bundleWaiter').show();
+
+  $j(document).ready(function () {
+    setTimeout(() => {
+      const contentElement = document.getElementById(('${idContentContainer}'));
+      if (contentElement?.childNodes.length == 0) {
+        $('bundleWaiter').hide();
+        contentElement.innerHTML = 'Frontend bundle failed to load';
+      }
+    }, 5000);
+  });
+</script>

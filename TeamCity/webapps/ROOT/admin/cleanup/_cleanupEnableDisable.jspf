@@ -1,0 +1,17 @@
+<form id="cleanupDisableForm" action="<c:url value='/admin/cleanupPolicies.html'/>" method="post"
+      onsubmit="return BS.CleanupDisableForm.submit();">
+  <c:choose>
+    <c:when test="${cleanupPoliciesForm.cleanupEnabled}">
+      <span class="enabled">Enabled</span>
+      <authz:authorize allPermissions="CONFIGURE_SERVER_DATA_CLEANUP">
+        <input type="submit" class="btn btn_mini submitButton" style="float: none;" value="Disable" name="submitDisableCleanup"/>
+      </authz:authorize>
+    </c:when>
+    <c:otherwise>
+      <span class="disabled">Disabled</span>
+      <authz:authorize allPermissions="CONFIGURE_SERVER_DATA_CLEANUP">
+        <input type="submit" class="btn btn_mini submitButton" style="float: none;" value="Enable" name="submitEnableCleanup"/>
+      </authz:authorize>
+    </c:otherwise>
+  </c:choose>
+</form>

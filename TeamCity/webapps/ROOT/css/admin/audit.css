@@ -1,0 +1,38 @@
+/*----------- Filter pane styles */
+#auditLogFilterForm {
+  margin: 0;
+}
+
+.numberRows {
+  float: right;
+}
+
+#auditPermalink {
+  margin: 3px 10px 3px 0;
+  text-align: right;
+}
+
+/*----------- Audit table styles */
+
+table.auditLog {
+  font-size: 90%;
+}
+
+table.auditLog th,
+table.auditLog td {
+  padding: 3px 1em;
+}
+
+table.auditLog th {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  text-align: left;
+}
+
+table.auditLog td.date {
+  width: 7%;
+}
+
+table.auditLog td.user {
+  width: 15%;
+}

@@ -1,0 +1,439 @@
+.buildLogTable {
+  width: 100%;
+}
+/*--------------------- styles for the message that shows in the All messages view */
+.log .ts,
+.log .time,
+.log .ts_in {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.log .mark,
+.log .parent,
+.log .blockDescr {
+  font-style: normal;
+}
+
+.log.console_mod .mark,
+.log.console_mod .parent {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.console_mod .msg {
+  display: table-row;
+}
+
+.console_mod .mark,
+.console_mod .ts {
+  display: table-cell;
+}
+
+.console_mod .ts {
+  vertical-align: baseline;
+}
+
+/* Used by MessagesPrinter */
+.l0, .l1, .l2, .l3, .l4, .l5, .l6, .l7, .l8, .l9, .l10, .l11, .l12, .l13, .l14, .l15, .l16, .l17, .l18, .l19, .l20, .l21, .l22, .l23, .l24, .l25, .lDeep {
+  white-space: pre;
+  color: var(--ring-text-color, #1f2326);
+}
+
+/* Used by MessagesPrinter */
+
+.console_mod .l0,
+.console_mod .l1,
+.console_mod .l2,
+.console_mod .l3,
+.console_mod .l4,
+.console_mod .l5,
+.console_mod .l6,
+.console_mod .l7,
+.console_mod .l8,
+.console_mod .l9,
+.console_mod .l10,
+.console_mod .l11,
+.console_mod .l12,
+.console_mod .l13,
+.console_mod .l14,
+.console_mod .l15,
+.console_mod .l16,
+.console_mod .l17,
+.console_mod .l18,
+.console_mod .l19,
+.console_mod .l20,
+.console_mod .l21,
+.console_mod .l22,
+.console_mod .l23,
+.console_mod .l24,
+.console_mod .l25,
+.console_mod .lDeep {
+  white-space: normal;
+  color: #d9e6f2;
+}
+
+.buildResultsWrap .l0,
+.buildResultsWrap .l1,
+.buildResultsWrap .l2,
+.buildResultsWrap .l3,
+.buildResultsWrap .l4,
+.buildResultsWrap .l5,
+.buildResultsWrap .l6,
+.buildResultsWrap .l7,
+.buildResultsWrap .l8,
+.buildResultsWrap .l9,
+.buildResultsWrap .l10,
+.buildResultsWrap .l11,
+.buildResultsWrap .l12,
+.buildResultsWrap .l13,
+.buildResultsWrap .l14,
+.buildResultsWrap .l15,
+.buildResultsWrap .l16,
+.buildResultsWrap .l17,
+.buildResultsWrap .l18,
+.buildResultsWrap .l19,
+.buildResultsWrap .l20,
+.buildResultsWrap .l21,
+.buildResultsWrap .l22,
+.buildResultsWrap .l23,
+.buildResultsWrap .l24,
+.buildResultsWrap .l25,
+.buildResultsWrap .lDeep {
+  white-space: pre-wrap;
+}
+
+.multiline {
+  display: inline-block;
+  white-space: pre;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+}
+
+.buildResultsWrap .stacktrace {
+  white-space: pre-wrap;
+}
+
+.l0 .ts,
+.l1 .ts {
+  padding-right: 20px;
+}
+
+.l2 .ts {
+  padding-right: 40px;
+}
+
+.l3 .ts {
+  padding-right: 60px;
+}
+
+.l4 .ts {
+  padding-right: 80px;
+}
+
+.l5 .ts {
+  padding-right: 100px;
+}
+
+.l6 .ts {
+  padding-right: 120px;
+}
+
+.l7 .ts {
+  padding-right: 140px;
+}
+
+.l8 .ts {
+  padding-right: 160px;
+}
+
+.l9 .ts {
+  padding-right: 180px;
+}
+
+.l10 .ts {
+  padding-right: 200px;
+}
+
+.l11 .ts {
+  padding-right: 220px;
+}
+
+.l12 .ts {
+  padding-right: 240px;
+}
+
+.l13 .ts {
+  padding-right: 260px;
+}
+
+.l14 .ts {
+  padding-right: 280px;
+}
+
+.l15 .ts {
+  padding-right: 300px;
+}
+
+.l16 .ts {
+  padding-right: 320px;
+}
+
+.l17 .ts {
+  padding-right: 340px;
+}
+
+.l18 .ts {
+  padding-right: 360px;
+}
+
+.l19 .ts {
+  padding-right: 380px;
+}
+
+.l20 .ts {
+  padding-right: 400px;
+}
+
+.l21 .ts {
+  padding-right: 420px;
+}
+
+.l22 .ts {
+  padding-right: 440px;
+}
+
+.l23 .ts {
+  padding-right: 460px;
+}
+
+.l24 .ts {
+  padding-right: 480px;
+}
+
+.l25 .ts,
+.lDeep .ts {
+  padding-right: 500px;
+}
+
+/* Used by MessagesPrinter */
+.time {
+  padding-left: 0.5em;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+  color: #737577;
+}
+
+.progressMarkup {
+  color: silver;
+  background-color: #ffe4c4;
+}
+
+/*--------- styles for ANSI text effects ---*/
+.ansi.bold {
+  font-weight: bold;
+}
+
+.ansi.italic {
+  font-style: italic;
+}
+
+.ansi.blink {
+  /*  text-decoration: blink; -- not supported by modern browsers, blinking text is considered bad behavior  */
+}
+
+.ansi.underline {
+  text-decoration: underline;
+}
+
+.ansi.double-underline {
+  border-bottom: 1px solid;
+}
+
+.ansi.line-through {
+  text-decoration: line-through;
+}
+
+.ansi.overline {
+  text-decoration: overline;
+}
+
+.ansi.underline_line-through {
+  text-decoration: underline line-through;
+}
+
+.ansi.underline_overline {
+  text-decoration: underline overline;
+}
+
+.ansi.line-through_overline {
+  text-decoration: line-through overline;
+}
+
+.ansi.underline_line-through_overline {
+  text-decoration: underline line-through overline;
+}
+
+/*--------- styles for coloring named ANSI colors ---*/
+.ansi.black {
+  color:rgb(0, 0, 0)
+}
+.ansi.red {
+  color:rgb(205, 0, 0)
+}
+.ansi.green {
+  color:rgb(0, 205, 0)
+}
+.ansi.yellow {
+  color:rgb(205, 205, 0)
+}
+.ansi.blue {
+  color:rgb(0, 0, 238)
+}
+.ansi.magenta {
+  color:rgb(205, 0, 205)
+}
+.ansi.cyan {
+  color:rgb(0, 205, 205)
+}
+.ansi.white {
+  color:rgb(229, 229, 229)
+}
+
+.ansi.fg_intensive.black {
+  color:rgb(127, 127, 127)
+}
+.ansi.fg_intensive.red {
+  color:rgb(255, 0, 0)
+}
+.ansi.fg_intensive.green {
+  color:rgb(0, 255, 0)
+}
+.ansi.fg_intensive.yellow {
+  color:rgb(255, 255, 0)
+}
+.ansi.fg_intensive.blue {
+  color:rgb(92, 92, 255)
+}
+.ansi.fg_intensive.magenta {
+  color:rgb(255, 0, 255)
+}
+.ansi.fg_intensive.cyan {
+  color:rgb(0, 255, 255)
+}
+.ansi.fg_intensive.white {
+  color:rgb(255, 255, 255)
+}
+
+.ansi.bg_black {
+  background-color:rgb(0, 0, 0)
+}
+.ansi.bg_red {
+  background-color:rgb(205, 0, 0)
+}
+.ansi.bg_green {
+  background-color:rgb(0, 205, 0)
+}
+.ansi.bg_yellow {
+  background-color:rgb(205, 205, 0)
+}
+.ansi.bg_blue {
+  background-color:rgb(0, 0, 238)
+}
+.ansi.bg_magenta {
+  background-color:rgb(205, 0, 205)
+}
+.ansi.bg_cyan {
+  background-color:rgb(0, 205, 205)
+}
+.ansi.bg_white {
+  background-color:rgb(229, 229, 229)
+}
+
+.ansi.bg_intensive.bg_black {
+  background-color:rgb(127, 127, 127)
+}
+.ansi.bg_intensive.bg_red {
+  background-color:rgb(255, 0, 0)
+}
+.ansi.bg_intensive.bg_green {
+  background-color:rgb(0, 255, 0)
+}
+.ansi.bg_intensive.bg_yellow {
+  background-color:rgb(255, 255, 0)
+}
+.ansi.bg_intensive.bg_blue {
+  background-color:rgb(92, 92, 255)
+}
+.ansi.bg_intensive.bg_magenta {
+  background-color:rgb(255, 0, 255)
+}
+.ansi.bg_intensive.bg_cyan {
+  background-color:rgb(0, 255, 255)
+}
+.ansi.bg_intensive.bg_white {
+  background-color:rgb(255, 255, 255)
+}
+
+/*--------- general text styles --*/
+
+.log {
+  background-color: var(--ring-content-background-color, #fff);
+  margin-top: .5em;
+  font: 12px/1.4em Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+  padding: 0px 2px;
+}
+
+.log.console_mod {
+  background-color: #262626;
+  padding: 3px 3px;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0px;
+}
+
+.block {
+  margin: 0 0 0.5em 0;
+}
+
+.logReadingError {
+  color: var(--ring-error-color);
+  margin: 1em 0 0 0;
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+}
+
+/*Message statuses*/
+
+.log .internal_msg {
+  color: #737577;
+}
+
+.log .status_err {
+  color: var(--ring-error-color);
+}
+
+.log .status_warn {
+  color: var(--ring-warning-color);
+}
+
+.log.console_mod a {
+  color: #3D8AE6;
+}
+
+.log.console_mod .status_err {
+  color: #D72638;
+}
+
+.log.console_mod .status_warn {
+  color: #FDCA40;
+}
+
+#buildLogProgress {
+  float:left;
+  vertical-align: middle;
+  margin-top: 20px;
+}
+
+.log .mark {
+  padding: 1px;
+}

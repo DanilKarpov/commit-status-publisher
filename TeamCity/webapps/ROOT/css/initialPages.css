@@ -1,0 +1,189 @@
+/* Cross-browser clearfix */
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.initialPage,
+.agreementPage {
+  width: 400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+}
+
+.license-agreement-checkbox-wrapper {
+  margin: 1em 0;
+}
+
+.initialPage h1,
+.agreementPage h1,
+.initialPage #errorMessage,
+.loginDescription,
+.initialPage form {
+  margin: 0 0 1em;
+}
+
+.loginDescription {
+  color: #6f7275;
+  font-size: 105%;
+}
+
+#loginPage p.registerUser,
+#createAdminPage p.registerUser,
+#setupAdminPage p.registerUser {
+  margin: 1.5em 0 0;
+  padding-top: .2em;
+  font-weight: normal;
+}
+
+#loginPage .attentionComment {
+  position: relative;
+  padding-left: 2em;
+  margin: 0 0 1em;
+  display: inline-block;
+  text-align: left;
+}
+
+#loginPage .attentionComment:before {
+  position: absolute;
+  top: 0.6em;
+  left: 0.5em;
+}
+
+.initialPage form {
+  width: 20em;
+  margin: 0 auto 1em;
+  text-align: left;
+}
+
+.initialPage form label {
+  white-space: nowrap;
+}
+
+.initialPage form input.text,
+.initialPage form input.textField {
+  width: 100%;
+  padding: 1px;
+  margin: 0.2em 0 0.5em;
+  font-size: 14px;
+}
+
+.initialPage form input.text.errorField {
+  margin-bottom: 0;
+}
+
+.initialPage .error {
+  margin-top: 0;
+  margin-left: 0;
+  color: var(--ring-error-color);
+}
+
+.initialPage form input.text.errorField + .error {
+  margin-bottom: 0.4em;
+}
+
+.initialPage form label.rememberMe {
+  font-size: 100%;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 1em;
+  position: relative;
+}
+
+.progressRingCreateAdmin {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+}
+
+.initialPage .loginButton {
+  display: none;
+  margin-right: 1em;
+  width: 100%;
+}
+
+.ua-js .initialPage .loginButton {
+  display: inline;
+}
+
+.loader-cell {
+  position: absolute;
+  top: 0.3em;
+  left: 12.5em;
+}
+
+.version {
+  color: #6f7275;
+
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.remember-section {
+  padding-top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+#agreementPage,
+.agreementPage {
+  width: 700px;
+}
+
+.agreementPage {
+  height: auto;
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding-top: 1em;
+}
+
+.agreementPage form {
+  width: auto;
+}
+
+.agreement,
+.agreementForm {
+  width: 630px;
+}
+
+.agreement {
+  margin: 2em auto 1em;
+}
+
+.agreement > h2 { /* do not duplicate title */
+  display: none;
+}
+
+.agreementForm {
+  margin: auto;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.agreementForm form label {
+  vertical-align: bottom;
+  font-size: inherit;
+}
+
+.agreementForm .usage-stats-label {
+  white-space: normal;
+}
+
+.agreementForm .continueBlock {
+  margin-bottom: 0;
+  text-align: right;
+}
+#agreementPage .version {
+  display: none;
+}

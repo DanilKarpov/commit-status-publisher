@@ -1,0 +1,114 @@
+.rTree .open > .msg > .ts,
+.rTree .closed > .msg > .ts {
+  cursor: pointer;
+}
+
+.rTree .ts {
+  position: relative;
+}
+
+.rTree .handle {
+  position: absolute;
+  right: 2px;
+  bottom: 0;
+}
+
+.console_mod .handle {
+  bottom: 1px;
+}
+
+.rTree .open .handle {
+  background-position: -175px 3px;
+}
+
+.rTree .closed .handle {
+  background-position: -173px -16px;
+}
+
+.console_mod .open .handle {
+  background-position: -195px 3px;
+}
+
+.console_mod .closed .handle {
+  background-position: -213px -16px;
+}
+
+.rTree .leaf > .handle,
+.rTree .emptyOpen > .handle,
+.rTree .emptyClosed > .handle {
+  background: none;
+}
+
+.rTree .leaf:hover,
+.rTree:not(.console_mod) .leaf:hover > .msg:not(.focus) > .mark,
+.rTree .open:hover,
+.rTree .closed:hover,
+.rTree .withPopup,
+.rTree .hover .mark {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.rTree.console_mod .leaf:hover,
+.rTree.console_mod .open:hover,
+.rTree.console_mod .closed:hover,
+.rTree.console_mod .withPopup,
+.rTree.console_mod .hover .mark {
+  background-color: #404040;
+}
+
+.rTree .focus,
+.rTree .focus .mark {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+}
+
+.rTree.console_mod .focus,
+.rTree.console_mod .focus .mark {
+  background-color: #998;
+  width: 100%;
+}
+
+.rTree.console_mod .focus .time,
+.rTree.console_mod .focus .internal_msg {
+  color: var(--ring-text-color, #1f2326);
+}
+
+.rTree.console_mod .focus a {
+  color: #073D7D;
+}
+
+/* pC = popupContent */
+.rTree .pC {
+  display: none;
+}
+
+.messagePopup {
+  padding: 2px;
+}
+
+.messagePopup .messages {
+  margin: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+.buildLogPopup li {
+  line-height: 1.6;
+}
+
+.buildLogPopupLink {
+  white-space: nowrap;
+}
+
+.stickyBar > .actionBar {
+  margin: 0px;
+}
+
+.partialLogWarn {
+  background: var(--tc-classic-highlight-color, #ffc);
+  padding: 8px;
+}
+
+.continueLog {
+  padding-top: 8px;
+  padding-bottom: 16px;
+}

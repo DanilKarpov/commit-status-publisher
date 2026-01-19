@@ -1,0 +1,38 @@
+.presetDescription {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+.presetDescriptionCustom {
+  padding-left: 0;
+  margin: 1em 0;
+}
+
+.disabled {
+  color: #ccc;
+}
+
+label.disabled {
+  color: var(--ring-disabled-color, #999);
+}
+
+.running {
+  font-weight: bold;
+}
+
+.cancelling {
+  color: var(--ring-error-color);
+}
+
+.error-hl {
+  color: var(--ring-error-color);
+  font-weight: bold;
+}
+
+.error-details {
+  color: var(--ring-error-color)
+}
+
+.hint {
+  color: gray;
+}

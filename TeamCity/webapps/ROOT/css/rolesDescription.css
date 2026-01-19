@@ -1,0 +1,18 @@
+@import url("settingsTable.css");
+
+.container {
+  margin: 2em;
+}
+
+table.rolesDescription th.role {
+  width: 10%;
+  white-space: nowrap;
+}
+
+table.rolesDescription td.permissions ul {
+  margin-top: 0;
+}
+
+table.rolesDescription td.role {
+  font-weight: bold;
+}

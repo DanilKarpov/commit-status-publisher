@@ -1,0 +1,171 @@
+.runnerFormTable th {
+  width: 26%;
+}
+
+tr.tableHead {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+tr.tableHead th {
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+tr.defaultRule td {
+  padding-bottom: .5em;
+}
+
+tr.defaultRule td.project {
+  width: 45%;
+}
+
+div.editCleanupPoliciesPage {
+  background-color: var(--ring-content-background-color, #fff);
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+
+th.project {
+  width: 25%;
+}
+
+th.buildType {
+  width: 35%;
+}
+
+td.project,
+th.project,
+td.buildType,
+th.buildType {
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+  padding-left: 1em;
+  vertical-align: top;
+}
+
+td.description,
+th.description {
+  padding-left: 1em;
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+  vertical-align: top;
+}
+
+table.settings td.description {
+  border-right: none;
+}
+
+table.settings td.edit {
+  vertical-align: top;
+}
+
+th.dataToClean,
+td.dataToClean {
+  width: 12%;
+  padding-left: 1em;
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+th.project,
+th.buildType,
+th.dataToClean,
+th.description {
+  text-align: left;
+  font-size: 90%;
+}
+
+td.cannotBeEdited {
+  width: 15%;
+  text-align: center;
+}
+
+span.cannotBeEdited {
+  font-size: 90%;
+}
+
+/* Add margin-top to second and further h2 headers */
+h2.cleanUp {
+  margin-top: 1em;
+}
+
+#editPolicyDialog h2 {
+  margin-top: 0;
+  margin-bottom: 7px;
+  padding-top: 0;
+  font-size: 16px;
+}
+
+#editPolicyDialog .editPolicySection {
+  margin-bottom: 1em;
+}
+
+#editPolicyDialog .rule {
+  margin: 10px 0;
+  line-height: 2;
+}
+
+.editPolicySection label {
+  padding-right: 20px;
+}
+
+.cleanup-rule-wrapper {
+  display: table;
+}
+
+.cleanup-rule {
+  display: table-row;
+}
+
+.cleanup-rule__label,
+.cleanup-rule__wrapper {
+  display: table-cell;
+}
+
+.cleanup-rule__label {
+  vertical-align: top;
+  width: 8em;
+}
+
+.cleanup-rule__wrapper {
+  padding-bottom: 1em;
+}
+
+.artifact-patterns-textarea {
+  width: 28em;
+}
+
+div.radioDefault {
+  margin: 8px 0;
+}
+
+td.status {
+  text-align: right;
+}
+
+span.defaults {
+  font-style: italic;
+  color: silver;
+}
+
+div.levelDetails {
+  margin-top: -.7em;
+  padding: 0;
+  font-size: 90%;
+  color: #737577;
+}
+
+/*---- enabled/disabled */
+span.enabled {
+  color: #4da400;
+}
+
+span.disabled {
+  color: var(--ring-error-color);
+}
+
+span.cleanupRuleNote {
+  float: left;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+table.settings .diskUsage {
+  font-size: 11px;
+}

@@ -1,0 +1,23 @@
+table.historyList th.buildType,
+table.historyList td.buildType {
+  padding-left: 4px;
+}
+
+table.historyList th.branch {
+  padding-left: 0.7em;
+}
+
+table.historyList td.artifactsLink {
+  padding-right: 0.5em !important;
+}
+
+table.historyList td:last-child,
+table.historyList th:last-child {
+  text-align: right;
+  padding-right: 4px;
+  white-space: nowrap;
+}
+
+.buildTypeSelector {
+  float: right;
+}

@@ -1,0 +1,404 @@
+/* --------------- clouds table -- */
+div.right_info_pane {
+  clear: right;
+  float: right;
+  width: 25%;
+  margin-bottom: 5px;
+  padding: 7px;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.cloud-profiles-header ._inline-block+._inline-block {
+  margin-left: 1em;
+}
+
+p.profileHeader {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+  width: 80%;
+  margin-bottom: 0.5em;
+}
+
+div.right_info_pane .statusInfo {
+  padding-bottom: 4px;
+}
+
+div.cloudProfile {
+  width: 80%;
+}
+
+div.cloudProfileError {
+  margin-bottom: 8px;
+}
+
+div.cloudAdminProfile{
+  clear: both;
+}
+
+.projectContent div.cloudProfile {
+  width: 100%;
+}
+
+p.profileHeader span.profileRunning {
+  float: right;
+}
+
+div.cloudAdminProfile span.profileRunning {
+  float: right;
+  margin-right: 1em;
+}
+
+div.cloudProfileContent span.error {
+  margin-left: 0;
+}
+
+table.cloudSettings {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+
+  margin-top: 1em;
+  margin-bottom: 1ex;
+}
+
+.inlined table.cloudSettings {
+  margin: 0;
+  width: auto;
+  max-width: 650px;
+}
+
+.inlined table.cloudSettings tr.image{
+  /*display: none;*/
+  width: 50em;
+}
+
+
+table.cloudSettings tr.header {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+table.cloudSettings td, table.cloudSettings th {
+  padding: 3px 3px 3px 0.5em;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+  text-align: left;
+}
+
+table.cloudSettings td.edit {
+  text-align: center;
+}
+
+table.cloudSettings td.buttons {
+  width: 13%;
+  text-align: right;
+}
+
+table.cloudSettings td.buttons input {
+  width: 4em;
+}
+
+table.cloudSettings td.buttons div {
+  text-align: center;
+}
+
+table.cloudSettings tr.image,
+table.cloudSettings tr.adminHeader {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  margin-top: 3px;
+  font-weight: bold;
+}
+
+table.cloudSettings tr.instance,
+table.cloudSettings tr.noInstance {
+  font-weight: normal;
+}
+
+table.cloudSettings td.instanceName {
+  padding-left: 2em;
+}
+
+.instanceName .instanceName__icon {
+  display: inline-block;
+  width: 9px;
+  height: 16px;
+}
+
+.instanceName .instanceName__icon:before,
+.instanceName .instanceName__icon:after {
+  display: block;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: #a6a6a6;
+  box-shadow: 0 0 1px 0 #a6a6a6;
+  margin-left: 2px;
+}
+
+.instanceName .instanceName__icon:before {
+  margin-top: 4px;
+  margin-bottom: 1px;
+}
+
+.instanceName .instanceName__icon:after {
+  margin-top: 0;
+}
+
+.instanceName .instanceName__icon.red:before,
+.instanceName .instanceName__icon.yellow-red:before {
+  background-color: #f56a54;
+  box-shadow: 0 0 1px 0 #fccbc4;
+}
+
+.instanceName .instanceName__icon.green:after,
+.instanceName .instanceName__icon.yellow-green:after {
+  background-color: #36b75a;
+  box-shadow: 0 0 1px 0 #9bdbad;
+}
+
+.instanceName .instanceName__icon.yellow:before,
+.instanceName .instanceName__icon.yellow:after {
+  background-color: #ff8c00;
+  box-shadow: 0 0 1px 0 #ffd7ad;
+}
+
+.instanceName .instanceName__icon.yellow-green:before,
+.instanceName .instanceName__icon.yellow-red:after {
+  background-color: #ff8c00;
+  box-shadow: 0 0 1px 0 #ffd7ad;
+}
+
+.instanceLaunchedTime {
+  float: right;
+  margin-left: 16px;
+  margin-top: 2px;
+}
+
+table.cloudSettings td.instanceNameGrayed {
+  color: #737577;
+}
+
+table.cloudSettings td.instanceName span.selected {
+  text-decoration: underline;
+}
+
+span.cloud_error {
+  float: none;
+}
+
+table.cloudSettings td.noRightBorder {
+  border-right: none;
+}
+
+div#cloudErrorsPopup {
+  overflow: auto;
+  width: 30em;
+  max-height: 20em;
+}
+
+div#cloudErrorsPopup div.spacer {
+  width: 30em;
+}
+
+div#cloudErrorsPopupDetails {
+  padding-top: 5px;
+}
+
+div#cloudErrorsPopup div.cloudHeader {
+  clear: both;
+  font-weight: bold;
+}
+
+div.newProfileFormDialog {
+  margin-left: 8px;
+}
+
+div.newProfileFormDialog table .textProperty {
+  width: 23em;
+}
+
+div.newProfileFormDialog table select {
+  width: 23.4em;
+}
+
+div.newProfileFormDialog span.error,
+div.newProfileFormDialog span.smallNote {
+  margin-left: 0;
+}
+
+div.newProfileFormDialog table {
+  width: 100%
+}
+
+div.newProfileFormDialog table th {
+  vertical-align: top;
+  text-align: left;
+}
+
+div.newProfileFormDialog .runnerFormTable th label {
+  display: block;
+  width: 10em;
+  vertical-align: top;
+  text-align: left;
+}
+
+table.cloudSettings tr.image_details td dl {
+  margin: 0;
+  padding: 0;
+}
+
+table.cloudSettings tr.image_details td dt {
+  clear: both;
+  float: left;
+  min-width: 10em;
+  margin: 0;
+  padding: 0;
+}
+
+table.cloudSettings tr.image_details td dd {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+#terminateInstancesCheckbox {
+  margin-left: 1em;
+}
+
+table.parametersTable td.disabledProfile {
+  color:#737577;
+  font-style: italic;
+}
+
+table.parametersTable td.subprojectsName {
+  width: 420px;
+}
+
+#terminateConditionsTd div.terminateCondition {
+  margin-bottom: 4px;
+  min-height: 20px;
+}
+
+#terminateConditionsTd div.terminateCondition input[type='text'] {
+  line-height: 1em;
+}
+/*-------- end*/
+
+/* Page rework */
+
+.grid-type__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.grid-type__header-button,
+.grid-type__header-text {
+  display: inline-block;
+}
+
+.grid-type__header-text {
+  font-size: 20px;
+  padding-bottom: 24px;
+  margin: 0;
+}
+
+.grid-types-selector > h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.grid-types-selector > p {
+  margin-top: 0;
+}
+
+.grid-types-selector > p,
+.cloudProfile #noCloudProfilesInfo {
+  color: var(--ring-secondary-color, #737577);
+}
+
+.cloudProfile #noCloudProfilesInfo {
+  margin-top: 16px;
+}
+
+.grid-types-selector .type__item-description p {
+  font-size: 12px;
+  color: #737577;
+}
+
+.grid-type__header-button {
+  margin-left: auto;
+}
+
+.types__list {
+  display: grid;
+  grid-template-columns: repeat(3, 294px);
+  grid-auto-rows: 190px;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+
+.type__item {
+  border: solid var(--ring-line-color) 1px;
+  border-radius: 8px;
+  padding: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 32px) auto;
+
+  grid-template-areas:
+          'icon icon badge'
+          'name name name'
+          'description description description';
+
+  transition: background-color var(--ring-fast-ease);
+}
+
+.type__item:hover {
+  cursor: pointer;
+  background: var(--ring-hover-background-color, #EBF6FF);
+  border: 1px solid var(--ring-main-color, #0080E5);
+  transition: none;
+}
+
+.ring-ui-theme-dark .type__item:hover {
+  background: var(--ring-hover-background-color, #212D45);
+  border: 1px solid var(--ring-main-color, #3574F0)
+}
+
+.type__item-icon {
+  grid-area: icon;
+}
+
+.type__item-icon img {
+  height: 100%;
+}
+
+.type__item-name {
+  grid-area: name;
+  align-self: center;
+
+  margin: 0;
+
+  font-weight: 600;
+}
+
+.type__item-name p,
+.type__item-description p {
+  margin: 0;
+}
+
+.type__item-description {
+  grid-area: description;
+
+  margin: 0;
+  font-size: var(--ring-font-size-smaller);
+  line-height: 16px;
+  color: var(--ring-secondary-color);
+}
+
+.grid-types-selector {
+  margin-bottom: 32px;
+}

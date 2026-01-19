@@ -1,0 +1,64 @@
+.plugins h2 {
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+}
+
+.plugins .installMore {
+  margin: 1em 0 2em;
+}
+
+.plugins .shift {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.pluginMessageDetails {
+  width: 55em;
+}
+
+.pluginMessageBar {
+  margin: 0.2em 0 0 0;
+}
+
+.pluginMessageBar__error{
+  color: #d92f19;
+}
+
+.focusedPlugin {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+}
+
+#uploadPluginButton {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#pluginsList .parametersTable {
+  width: 100%;
+  border: none;
+}
+
+#pluginsList .parametersTable th,
+#pluginsList .parametersTable td {
+  padding: 0.6em 1em;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+#pluginsList .parametersTable td.noBorder {
+  border: none;
+}
+
+#pluginsList .parametersTable .plugin-notLoaded-row {
+  color: gray;
+}
+
+#pluginsList .parametersTable td .smallNote {
+  margin: 0;
+  padding: 0.2em 0;
+  line-height: 1.2;
+}
+
+#pluginsList .parametersTable td .current-version {
+  color: gray;
+  text-decoration: line-through;
+}

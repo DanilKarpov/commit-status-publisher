@@ -1,0 +1,45 @@
+<c:set var="warnSpanSuffix" value="_warn_storage"/>
+<c:set var="warningText" value="Changing this value can lead to configured tokens becoming unavailable."/>
+
+<style type="text/css">
+  span.token-storage-warning {
+    color: var(--ring-warning-color);
+  }
+</style>
+
+<script type="text/javascript">
+  BS.ConnectionStorageWarner = {
+    _originalParameterValues: new Map(),
+
+    handleParameterInput(parameter, newValue) {
+      const warnSpan = $(parameter + '${warnSpanSuffix}');
+      if (this._originalParameterValues.get(parameter) !== newValue) {
+        warnSpan.show();
+      } else {
+        warnSpan.hide();
+      }
+    },
+
+    appendWarnSpan(parameter, element) {
+      const warnSpan = document.createElement('span');
+      warnSpan.id = parameter + '${warnSpanSuffix}';
+      warnSpan.classList.add('smallNote', 'nowrap', 'token-storage-warning');
+      warnSpan.textContent = '${warningText}';
+      element.insertAdjacentElement('afterend', warnSpan);
+      warnSpan.hide();
+    },
+
+    registerForParameter(parameter) {
+      const element = $(parameter);
+      if (element && element.tagName === 'INPUT') {
+        this._originalParameterValues.set(parameter, element.value);
+
+        element.addEventListener('input', (event) => {
+          this.handleParameterInput(parameter, event.target.value);
+        });
+
+        this.appendWarnSpan(parameter, element);
+      }
+    }
+  }
+</script>

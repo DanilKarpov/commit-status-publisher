@@ -1,0 +1,104 @@
+.stage-status + #auto-refresh-note {
+  color: #bebebe;
+  margin-top: -1em;
+}
+
+#data-directory-location {
+  width: 100%;
+}
+
+#footer2 {
+  margin-top: 2em;
+  padding-top: .5em;
+  text-align: center;
+}
+
+#error-message {
+  margin-top: 0;
+}
+
+div.info-section {
+  margin-left: 2em;
+}
+
+div.info-section p {
+  margin: 0.3em 0;
+}
+
+.token-input {
+  padding-right: 1em;
+}
+
+.token-input input {
+  width: 100%;
+  margin-bottom: 0.25em;
+}
+
+.note {
+  font-size: 12px;
+  display: inline-block;
+}
+
+.error-message {
+  overflow: auto;
+}
+
+.error-message > .error {
+  white-space: pre-line;
+}
+
+.nojs-message {
+  padding-top: 0.5em;
+  font-weight: bolder;
+  color: var(--ring-error-color);
+}
+
+.exception-stack-trace {
+  overflow: auto;
+  max-height: 600px;
+  padding: 0 1em;
+  border: 1px solid var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.icon-refresh {
+  color: color(--ring-success-color);
+}
+
+.stages-list .icon-refresh {
+  margin-right: 5px;
+}
+
+.stage-status {
+  margin-top: 1.5em;
+}
+
+.stage-status .stage-status__icon {
+  vertical-align: text-top;
+}
+
+.stage-status .ring-loader-inline {
+  vertical-align: -2px;
+}
+
+.stage-status .stage-status__icon.stage-system-is-ready {
+  background-position: -20px -3px;
+}
+
+.stage-status .stage-status__description {
+  font-size: 18px;
+}
+
+.db-section, .refresh-button, .download-button {
+  padding: .5em 1em .5em 1em;
+  background-color: var(--ring-code-background-color);
+  position: relative;
+  left: -1em;
+}
+
+div.refresh-button, div.download-button {
+  padding-bottom: 8px;
+}
+
+div.db-manual-toggle {
+  margin-top: 1em;
+}

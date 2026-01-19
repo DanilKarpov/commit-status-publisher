@@ -1,0 +1,19 @@
+@import url("params.css");
+
+p.note {
+  padding-top: 0;
+}
+
+label.editRequirementLabel {
+  float: left;
+  width: 10em;
+}
+
+#inheritedParamName {
+  margin-left: 10em;
+  padding-left: 0;
+}
+
+#operatingSystemsOptions {
+  padding-top: 0.5rem;
+}

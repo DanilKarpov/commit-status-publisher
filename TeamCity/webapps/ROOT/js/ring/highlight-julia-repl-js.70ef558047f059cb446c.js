@@ -1,0 +1,2 @@
+(self.webpackChunk=self.webpackChunk||[]).push([["highlight-julia-repl-js"],{72633:function(e){e.exports=function(e){return{name:"Julia REPL",contains:[{className:"meta",begin:/^julia>/,relevance:10,starts:{end:/^(?![ ]{6})/,subLanguage:"julia"},aliases:["jldoctest"]}]}}}}]);
+//# sourceMappingURL=highlight-julia-repl-js.70ef558047f059cb446c.js.map

@@ -1,0 +1,38 @@
+.CodeMirror {
+  font: 12px/1.5 Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+  height: auto;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+/* Editor - brackets highlighting */
+div.CodeMirror span.CodeMirror-matchingbracket {
+  background-color: #AAD7FD;
+  color: inherit;
+}
+
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  background-color: #FFE3E3;
+  color: inherit;
+}
+
+/* Editor - selection */
+.CodeMirror-selected {
+  background: rgba(var(--ring-secondary-components), 0.2);
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+  background: rgba(var(--ring-secondary-components), 0.2);
+}
+
+.CodeMirror-focused pre.CodeMirror-cursor {
+  z-index: 1;
+}
+
+.CodeMirror-activeline-background {
+  background-color: var(--ring-hover-background-color, #ebf6ff);
+}

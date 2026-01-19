@@ -1,0 +1,377 @@
+#templateTabsContainer .tabs,
+#buildTypeTabsContainer .tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#templateTabsContainer .tabs li,
+#buildTypeTabsContainer .tabs li {
+  float: none;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0.2em 0 0.2em 20px;
+}
+
+.quickLinksMenuPopup #buildTypeTabsContainer .tabs,
+.quickLinksMenuPopup #templateTabsContainer .tabs {
+  margin: 5px;
+}
+
+.quickLinksMenuPopup #buildTypeTabsContainer .tabs li,
+.quickLinksMenuPopup #templateTabsContainer .tabs li {
+  padding: 3px 0 3px 20px;
+  margin: 2px 0;
+}
+
+.quickLinksMenuPopup #templateTabsContainer .tabs li:hover,
+.quickLinksMenuPopup #templateTabsContainer .tabs li:hover a,
+.quickLinksMenuPopup #buildTypeTabsContainer .tabs li:hover,
+.quickLinksMenuPopup #buildTypeTabsContainer .tabs li:hover a {
+  background-color: #3773C9;
+  color: var(--ring-content-background-color, #fff);
+  text-decoration-line: underline;
+}
+
+.quickLinksMenuPopup #templateTabsContainer .tabs li.selected,
+.quickLinksMenuPopup #buildTypeTabsContainer .tabs li.selected {
+  font-weight: normal;
+}
+
+.quickLinksMenuPopup #templateTabsContainer ul.tabs li.selected a.tabs,
+.quickLinksMenuPopup #buildTypeTabsContainer ul.tabs li.selected a.tabs {
+  color: var(--ring-content-background-color, #fff);
+}
+
+#templateTabsContainer .tabs li p,
+#buildTypeTabsContainer .tabs li p {
+  margin: 0;
+  padding: 0;
+}
+
+#templateTabsContainer  .tabs li:hover,
+#buildTypeTabsContainer .tabs li:hover {
+  background: var(--ring-hover-background-color);
+}
+
+#templateTabsContainer .tabs li.selected,
+#buildTypeTabsContainer .tabs li.selected {
+  background: var(--ring-hover-background-color);
+  font-weight: bold;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#templateTabsContainer .tabs li.selected a,
+#templateTabsContainer .tabs li.selected .tabCounter,
+#buildTypeTabsContainer .tabs li.selected a,
+#buildTypeTabsContainer .tabs li.selected .tabCounter {
+  color: #1564c2;
+  position: static;
+}
+
+.checkoutTypeWarning {
+  margin-top: 0;
+  margin-bottom: .8em;
+}
+
+/* Styles for build type VCS roots */
+table.actionTable {
+  width: 100%;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+table.actionTable th,
+table.actionTable td {
+  margin: 0;
+  padding: 2px 0;
+  vertical-align: top;
+}
+
+table.actionTable td.option {
+  width: 30%;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+table.actionTable td.selector {
+  width: 69%;
+}
+
+/* edit checkout rules dialog */
+#checkoutRulesVcsTree .vcsTreeHandle {
+  right: 0;
+  top: 0;
+}
+
+#checkoutRules {
+  width: 36.5em;
+}
+
+#vcsRootName {
+  padding-bottom: 0.6em;
+}
+
+#editCheckoutRulesFormDialog .completionIconWrapper {
+  display: inline-block;
+}
+
+.templateNote {
+  margin: 0 0 1em;
+  padding: 4px;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.undefinedParam {
+  color: var(--ring-error-color);
+}
+
+.inheritedParam {
+  color: #737577;
+  font-style: italic;
+}
+
+.inheritedParam .edit {
+  font-style: normal;
+}
+
+.protectedSetting {
+  color: var(--ring-disabled-color, #999);
+}
+
+tr.editBuildStepRow__placeholder td {
+  font-style: italic;
+}
+
+tr.editBuildStepRow td.stepNumber {
+  text-align: right;
+  border-right: none;
+  padding-right: 0px;
+  padding-left: 8px;
+  white-space: nowrap;
+}
+
+tr.editBuildStepRow td.stepName {
+  padding-left: 3px;
+  border-left: none;
+}
+
+td.stepName div.stepDescription {
+  display: none;
+}
+
+td.stepName div.stepName strong {
+  font-weight: normal;
+}
+
+td.stepDescription div.stepName {
+  display: none;
+}
+
+.stepConditions {
+  padding-left: 25px;
+  margin-top: 5px;
+}
+
+#inheritedParamName {
+  margin-left: 5.5em;
+}
+
+#availableParamsPopup {
+  background-color: var(--ring-content-background-color, #fff);
+  position: absolute;
+  display: none;
+  z-index: 30;
+  padding: 0;
+  border: 1px solid;
+  border-color: #ccc #666 #666 #ccc;
+  text-align: left;
+  overflow-y: auto;
+}
+
+#availableParamsPopup table {
+  width: 100%;
+  padding: 0;
+  border-collapse: collapse;
+  font-size: 85%;
+  border-top: 2px solid var(--ring-line-color, #dfe5eb);
+  border-bottom: 2px solid var(--ring-line-color, #dfe5eb);
+}
+
+#availableParamsPopup table td,
+#availableParamsPopup table th {
+  padding: 3px 3px 3px 5px;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+  text-align: left;
+}
+
+#availableParamsPopup table th.paramName {
+  width: 35%;
+  white-space: nowrap;
+}
+
+#availableParamsPopup table th.paramDescription {
+  width: 65%;
+}
+
+#availableParamsPopup div.separator {
+  height: 3px;
+}
+
+.buildStepsMenu table {
+  width: 100%;
+}
+
+.buildStepsMenu th {
+  background-color: var(--ring-line-color, #dfe5eb);
+  padding: 5px 5px 5px 10px;
+  text-align: left;
+}
+
+.buildStepsMenu td {
+  padding: 5px 5px 5px 10px;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+#autoCheckout,
+#customCheckout {
+  margin: 0.5em 0 0;
+}
+
+#checkoutType,
+#checkoutDirectoryMode {
+  width: 340px;
+}
+
+#checkoutDir {
+  width: 342px;
+}
+
+.buildStepsPopup {
+  z-index: 999 !important;
+}
+
+h3 {
+  margin: 0 0 1em;
+}
+
+.suggestedSettingsTitle {
+  margin-top: 2em;
+}
+
+.suggestedSettings {
+  margin-top: 1em;
+}
+
+#discoveryProgressContainer {
+  display: none;
+  margin-top: 1em;
+}
+
+#discoveredObjects {
+  display: none;
+}
+
+#buildTemplates {
+  max-height: 50em;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.rightButton {
+  float: right;
+}
+
+.buildTemplateRow {
+  background-color: #f1f4f7;
+  width: 100%;
+  margin: 0 0 3px;
+  padding: 2px 0;
+  border: 2px solid var(--ring-line-color, #dfe5eb);
+  cursor: move;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.buildTemplateRow .name {
+  padding: 0 0 0 30px;
+  overflow: hidden;
+  line-height: 24px;
+}
+
+.buildTemplateRow.draggable.tc-icon_draggable:before {
+  position: absolute;
+  top: 8px;
+  margin-left: 4px;
+}
+
+.popupDiv.popupDiv_has-triangle.firstBuildTooltip, .popupDiv.popupDiv_has-triangle.firstBuildTooltip::before {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+}
+
+.runFirstBuildTooltip {
+  padding-left: 12px;
+}
+
+
+.addParameterCondition {
+  margin-left: 5px;
+  margin-top: 2px;
+  display: inline-block;
+}
+
+
+.buildStepConditions {
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+.buildStepConditionsList {
+  border-left: 1px solid #e0e0e0;
+  display: table;
+  min-width: 400px;
+
+  margin-top: 5px;
+}
+
+.buildStepCondition {
+  line-height: 1.8;
+  cursor: pointer;
+
+  display: table-row;
+
+  box-sizing: border-box;
+}
+.buildStepCondition > * {
+  display: table-cell;
+}
+
+.buildStepCondition:hover {
+  background-color: #ffffcc;
+}
+.buildStepCondition__description {
+  padding-left: 15px;
+  min-width: 300px;
+}
+.buildStepCondition__edit, .buildStepCondition__delete {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.buildStepCondition__delete {
+  padding-left: 0;
+}
+
+.popupDiv.buildStepConditionsPopup {
+  min-width: 20em;
+}
+
+.triggerCustomParameters {
+  margin-top: 1em;
+}
+.triggerCustomParameters ul {
+  margin-top: 0;
+}

@@ -1,0 +1,11 @@
+.huge_log .hidden {
+  display: none;
+}
+
+.huge_log .show_all_holder {
+  margin-left: 1em;
+}
+
+.huge_log .help {
+  float: right;
+}

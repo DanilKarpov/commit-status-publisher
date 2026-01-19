@@ -1,0 +1,62 @@
+/*--------- visible projects dialog styles*/
+.projects_visibleFormDialog,
+.bt_visibleFormDialog {
+  width: 80%;
+  min-width: 50em;
+  max-width: 1000px;
+}
+
+.visible-objects-table {
+  width: 100%;
+  min-width: 48em;
+  margin-bottom: 6px;
+  table-layout: fixed;
+}
+
+.visible-objects__visible-wrapper,
+.visible-objects__hidden-wrapper {
+  width: 100%;
+  min-width:265px;
+  height: 300px;
+}
+
+.visible-objects__visible-wrapper {
+  height: 325px;
+}
+
+.visible-objects__visible-wrapper option:nth-of-type(2n),
+.visible-objects__hidden-wrapper option:nth-of-type(2n) {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.arrowButtons {
+  vertical-align: middle;
+  text-align: center;
+  padding-right: 12px;
+}
+
+.arrowButtons .btn {
+  width: 30px;
+  padding: 2px 3px;
+  margin: 0 auto 5px 0;
+  font-size: var(--ring-font-size, 14px);
+}
+
+.visibleProjects,
+.hiddenProjects {
+  width: 45%;
+  vertical-align: top;
+}
+
+.visibleProjects {
+  padding-right: 12px;
+}
+
+.projects_visibleFormDialog option.strong,
+.bt_visibleFormDialog option.strong {
+  font-weight: bold;
+}
+
+.projects_visibleFormDialog option.moved {
+  text-decoration: underline;
+}

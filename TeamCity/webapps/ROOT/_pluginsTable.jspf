@@ -1,0 +1,190 @@
+<%@ page import="jetbrains.buildServer.plugins.PluginAdditionalMessage" %>
+<c:set var="type_message" value="<%=PluginAdditionalMessage.Type.MESSAGE%>"/>
+<c:set var="type_warning" value="<%=PluginAdditionalMessage.Type.WARNING%>"/>
+<c:set var="type_not_loaded" value="<%=PluginAdditionalMessage.Type.NOT_LOADED_REASON%>"/>
+<c:set var="type_error" value="<%=PluginAdditionalMessage.Type.ERROR%>"/>
+
+  <thead><tr><td colspan="5" class="noBorder">${title}</td></tr></thead>
+
+  <thead>
+  <tr>
+    <th style="width:35%;">Plugin Name</th>
+    <th style="width:15%;">Version</th>
+    <th style="width:15%;">Vendor</th>
+    <c:set var="path_header_name" value="${pluginsType == 'updated' ? 'Changes' : 'Home Path'}"/>
+    <c:choose>
+      <c:when test="${afn:permissionGrantedGlobally('CHANGE_SERVER_SETTINGS') and editAllowedForNode}">
+        <th colspan="2"><c:out value="${path_header_name}" /></th>
+      </c:when>
+      <c:otherwise>
+        <th><c:out value="${path_header_name}" /></th>
+      </c:otherwise>
+    </c:choose>
+  </tr>
+  </thead>
+
+  <c:forEach var="plugin" items="${plugins}" varStatus="pluginsLoopStatus">
+    <tr id="plugin_${util:forJSIdentifier(plugin.pluginRoot)}" class="<c:if test="${plugin.notLoaded}">plugin-notLoaded-row</c:if>">
+      <td>
+        <div>
+          <c:if test="${plugin.modified}">
+            <c:set var="modifiedMessage">
+              <c:choose>
+                <c:when test="${plugin.uploaded}">
+                  Plugin was uploaded and will be automatically loaded after TeamCity server restart. <c:if
+                    test="${plugin.reloadable}">Use 'Enable...' action to enable the plugin without server restart.</c:if>
+                </c:when>
+                <c:when test="${plugin.deleted}">
+                  Plugin was deleted, the change will become effective after TeamCity server restart.
+                </c:when>
+                <c:when test="${plugin.overwritten}">
+                  Plugin was overwritten by the uploaded one. The new version will be loaded after TeamCity server restart <c:if
+                      test="${plugin.reloadable}">or use 'Reload...' action to reload the plugin without server restart</c:if>.
+                </c:when>
+                <c:when test="${plugin.disabledStateWasChanged}">
+                  Plugin was <c:if test="${plugin.disabled}">disabled</c:if><c:if test="${!plugin.disabled}">enabled</c:if>, the change will become effective after TeamCity server restart.
+                </c:when>
+              </c:choose>
+            </c:set>
+            <span onmouseover="BS.Tooltip.showMessageAtCursor(event, {shift:{x:5,y:10}}, '<bs:escapeForJs forHTMLAttribute="true" text="${modifiedMessage}"/>');"
+               onmouseout="BS.Tooltip.hidePopup();"
+            ><bs:buildStatusIcon type="red-sign" className="warningIcon"/></span>
+          </c:if>
+          <c:choose>
+            <c:when test="${plugin.notLoaded}">
+              <c:out value="${plugin.name}"/>
+            </c:when>
+            <c:otherwise>
+              <strong><c:out value="${plugin.name}"/></strong>
+            </c:otherwise>
+          </c:choose>
+          <c:if test="${not empty plugin.pluginUrl}">
+            <a href="<c:out value="${plugin.pluginUrl}"/>" target="_blank" rel="noreferrer" title="Open plugin website"><span class="tc-icon icon16 icon externalFileLink" style="vertical-align: middle"></span></a>
+          </c:if>
+          <c:if test="${not empty plugin.description}">
+            <div class="smallNote"><bs:out value="${plugin.description}"/></div>
+          </c:if>
+        </div>
+
+        <c:if test="${not empty plugin.messages}">
+          <c:forEach var="message" items="${plugin.messages}" varStatus="status">
+            <div class="smallNote pluginMessageBar pluginMessageBar__${message.type.name().toLowerCase()}">
+              <c:choose>
+                <c:when test="${message.type == type_not_loaded}">
+                  <span class="plugin-notLoaded">Not loaded (<c:out value="${message.message}"/>)</span>
+                </c:when>
+                <c:otherwise>
+                  <c:out value="${message.message}"/>
+                </c:otherwise>
+              </c:choose>
+              <c:if test="${message.helpFile != null}"><bs:help urlPrefix="${message.helpFile}" file=""/></c:if>
+              <c:if test="${message.error != null}">
+                <c:set var="detailsId" value="details:plugin_${util:forJSIdentifier(plugin.name)}_messages_popup:${status.index}"/>
+                <a href="#" onclick="BS.Plugins.toggleProblem('${detailsId}', this);return false;">details &raquo;</a>
+                <div class="popupDiv pluginMessageDetails" style="display:none;" id="${detailsId}">
+                  <div class="systemProblemsContainer">
+                    <div class="systemProblemHead"><c:out value="${message.message}"/>:</div>
+                    <div class="systemProblem">
+                      <div class="problemDetails mono custom-scroll">
+                        <l:br val="${util:stackTrace(message.error)}"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </c:if>
+            </div>
+          </c:forEach>
+        </c:if>
+      </td>
+      <td>
+        <c:choose>
+          <c:when test="${pluginsType == 'updated'}">
+            <c:out value="${plugin.updateVersion}"/> (<span class="current-version"><c:out value="${plugin.version}"/></span>)
+          </c:when>
+          <c:otherwise>
+            <c:out value="${plugin.version}"/>
+          </c:otherwise>
+        </c:choose>
+      </td>
+      <td>
+        <c:choose>
+          <c:when test="${empty plugin.vendorUrl}">
+            <c:out value="${plugin.vendorName}"/>
+          </c:when>
+          <c:otherwise>
+            <a href="<c:out value="${plugin.vendorUrl}"/>" target="_blank" rel="noreferrer" title="Visit vendor site"><c:out value="${plugin.vendorName}"/></a>
+          </c:otherwise>
+        </c:choose>
+      </td>
+      <td class="plugin-root">
+        <c:choose>
+          <c:when test="${pluginsType == 'updated'}">
+            <c:out value="${plugin.releaseNotes}" escapeXml="false" />
+          </c:when>
+          <c:otherwise>
+            <bs:makeBreakable text="${plugin.pluginRoot}" regex="[\\\\/]"/>
+          </c:otherwise>
+        </c:choose>
+      </td>
+      <c:if test="${afn:permissionGrantedGlobally('CHANGE_SERVER_SETTINGS') and editAllowedForNode}">
+        <c:set var="actionName">
+          <c:choose>
+            <c:when test="${plugin.reloadable && plugin.notLoaded || plugin.disabled}">Enable</c:when>
+            <c:otherwise>
+              <c:choose>
+                <c:when test="${plugin.reloadable}">Disable and unload</c:when>
+                <c:otherwise>Disable</c:otherwise>
+              </c:choose>
+            </c:otherwise>
+          </c:choose>
+        </c:set>
+        <td class="edit">
+          <c:choose>
+            <c:when test="${pluginsType == 'updated'}">
+              <a href="#" onclick="return BS.Plugins.updatePlugin('${util:forJS(plugin.name, true, true)}', '${util:forJS(plugin.updateVersion, true, true)}', '${util:forJS(plugin.version, true, true)}', '${util:forJS(plugin.downloadUrl, true, true)}')" title="Update plugin">Update</a>
+            </c:when>
+            <c:when test="${deleteAllowed}">
+              <bs:actionsPopup controlId="pA_${pluginsType}_${pluginsLoopStatus.index}"
+                               popup_options="shift: {x: -150, y: 20}, className: 'quickLinksMenuPopup'">
+                    <jsp:attribute name="content">
+                      <div>
+                        <ul class="menuList">
+                          <c:if test="${plugin.readyForReload}">
+                            <l:li>
+                              <a href="#" onclick="return BS.Plugins.reloadPluginToNewVersion('${util:forJS(plugin.pluginName, true, true)}', '${util:forJS(plugin.name, true, true)}', '${plugin.UUID}', '<bs:escapeForJs text="${plugin.newVersionToReload.originalPluginRoot}"/>')"
+                                 title="Reload plugin to latest version">Reload...</a>
+                            </l:li>
+                          </c:if>
+                          <l:li>
+                            <a href="#"
+                               onclick="return BS.Plugins.toggleEnabledStatus('${util:forJS(plugin.pluginName, true, true)}', '${util:forJS(plugin.name, true, true)}', '${plugin.UUID}', ${plugin.reloadable ? plugin.notLoaded : plugin.disabled}, ${plugin.reloadable})"
+                               title="<c:out value="${actionName}"/> plugin"><c:out value="${actionName}"/>...</a>
+                          </l:li>
+                          <l:li>
+                            <c:choose>
+                              <c:when test="${plugin.deleted}">
+                                <a style="color:gray" title="Plugin was deleted, the change will become effective after TeamCity server restart.">Delete</a>
+                              </c:when>
+                              <c:otherwise>
+                                <a href="#" onclick="return BS.Plugins.deletePlugin('${util:forJS(plugin.name, true, true)}', '${plugin.UUID}')" title="Delete plugin">Delete...</a>
+                              </c:otherwise>
+                            </c:choose>
+                          </l:li>
+                        </ul>
+                      </div>
+                    </jsp:attribute>
+                <jsp:body></jsp:body>
+              </bs:actionsPopup>
+            </c:when>
+            <c:otherwise>
+              <a href="#" onclick="return BS.Plugins.toggleEnabledStatus('${util:forJS(plugin.pluginName, true, true)}', '${util:forJS(plugin.name, true, true)}', '<bs:escapeForJs
+                  text="${plugin.UUID}"/>', ${plugin.reloadable ? plugin.notLoaded : plugin.disabled}, ${plugin.reloadable})"
+                 title="<c:out value="${actionName}"/> plugin"><c:out value="${actionName}"/>...</a>
+            </c:otherwise>
+          </c:choose>
+        </td>
+      </c:if>
+    </tr>
+  </c:forEach>
+  </tbody>

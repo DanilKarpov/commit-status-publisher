@@ -1,0 +1,508 @@
+.build {
+  margin: 0 0 0.5em 0;
+  padding: 0;
+}
+
+.build .projectHeader {
+  margin: 0;
+  padding: 2px 3px;
+  min-height: 28px;
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  cursor: pointer;
+}
+
+.build .build > .projectHeader {
+  margin-top: 5px;
+  background: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.build .build {
+  margin-bottom: 0.2em;
+}
+
+.projectHeaderTable {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0;
+  color: var(--ring-text-color, #1f2326);
+  font-size: 130%;
+  font-weight: normal;
+}
+
+.projectHeaderTable .handle {
+  vertical-align: -3px;
+}
+
+.projectHeaderTable .projectName {
+  padding-right: 1em;
+  padding-top: 5px;
+}
+
+.projectHeaderTable .branches {
+  width: 11em;
+  padding-right:10px;
+}
+
+.projectHeaderTable .projectStatus {
+  border: 1px solid transparent;
+  width: 5em;
+  padding-right: 2em;
+  font-size: 75%;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.projectHeaderTable .projectStatus img {
+  vertical-align: text-bottom;
+  margin-right: 2px;
+}
+
+.projectHeaderTable .project-icon {
+  font-size: 82%;
+}
+
+.build .projectHeader.exp .projectStatus > span {
+  display: none;
+}
+
+.projectHeader:not(.exp) .branches {
+  display: none;
+}
+
+.projectHeaderTable .projectStatus.err {
+  width: 5.5em;
+  padding-right: 1em;
+  text-align: left;
+}
+
+.projectHeaderTable .projectStatus.failing,
+.projectHeaderTable .projectStatus.err {
+  color: var(--ring-error-color);
+}
+
+.projectHeaderTable .projectStatus.successful {
+  width: 7em;
+  color: var(--ring-success-color);
+}
+
+.projectHeaderTable .hideProject {
+  width: 8.6em;
+  font-size: 75%;
+  text-align: right;
+  color: #AAA;
+}
+
+.projectHeaderTable a,
+.projectHeaderTable a:hover,
+.projectHeaderTable a:visited {
+  color: var(--ring-text-color, #1f2326);
+}
+
+.projectHeaderTable a.hideProject {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+  color: #B2B2B2;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+}
+
+.projectHeaderTable a.hideProject:hover {
+  color: #1564C2;
+}
+
+.projectHeaderTable .projectDescription {
+  font-size: 15px;
+  margin-left: 0.3em;
+  color: #737577;
+  font-weight: 200;
+}
+
+/* Fixes a strange WebKit issue where a hovered link in the description becomes bold */
+.projectHeaderTable .projectDescription a,
+.projectHeaderTable .projectDescription a:hover {
+  font-weight: 200;
+}
+
+.projectHeaderTable .pc {
+  display: inline;
+  vertical-align: baseline;
+  padding-bottom: 0;
+}
+
+.overview-page .branchContainer .ufd {
+  background-color: #F9FBFC;
+}
+
+.overview-page .branchContainer .ufd input {
+  font-weight: normal;
+  width: 144px;
+}
+
+.overview-page .branchContainer .ufd button {
+  width: 15px;
+}
+
+.overview-page .branchNameSelector {
+  width: 160px;
+}
+
+.bt-separator {
+  height: 5px;
+  margin-left: 2em;
+  border-top: 1px dotted #DEDEDE;
+}
+
+.tableCaption {
+  position: relative;
+  margin: 0 29px;
+  padding: 5px 0 5px 25px;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.tableCaption span.handle {
+  position: absolute;
+  top: 9px;
+  left: 5px;
+}
+
+.tableCaption .relative {
+  /* Separate class to fix glitches in IE7 */
+  position: relative;
+  float: right;
+  width: 1px;
+}
+
+.tableCaption .close-bt {
+  position: absolute;
+  top: 2px;
+  right: -23px;
+  width: 16px;
+  height: 16px;
+  color: #DADADA;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.tableCaption .close-bt:hover {
+  color: #B2B2B2;
+}
+
+.tableCaption .close-bt:focus,
+.tableCaption .close-bt:active {
+  outline: none;
+}
+
+.tableCaption:first-child {
+  border-top: none;
+}
+
+.empty-project-text {
+  margin: 5px 0 0;
+  color: #737577;
+}
+
+.empty-project-text + .create-build-type-buttons {
+  margin-top: 1em;
+}
+
+.tableCaption table.runTable {
+  float: right;
+  margin: 1px 0 0;
+  border-collapse: collapse;
+  min-width: 456px;
+}
+
+.tableCaption table.runTable td {
+  padding: 0;
+}
+
+.pendingMessage > .highlightChanges {
+  display: inline-block;
+  line-height: normal;
+}
+
+.tableCaption table.runTable td.runningStatus {
+  padding-left: 8px;
+  padding-right: 12px;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.tableCaption table.runTable td.runningStatus span.pc {
+  padding-right: 0;
+}
+
+.tableCaption table.runTable td.runButton {
+  width: 86px;
+}
+
+.tableCaption > span.pc.btPopup {
+  min-width: 18em;
+  display: inline-block;
+}
+
+/********* Toggle visibility of Running text on overview page **********/
+
+.tableCaption.exp table.runTable td.runningStatus span.runningStatus {
+  display: none;
+}
+.tableCaption.exp .optionalQueuedBuildWord {
+  display: inline;
+}
+
+.tableCaption table.runTable td.runButton {
+  vertical-align: top;
+  text-align: right;
+}
+
+.tableCaption a.buildTypeName {
+  position: relative;
+  top: 1px;
+  margin: 0 0 0 2px;
+  padding: 0 2px 0 20px;
+  font-size: 130%;
+  color: var(--ring-text-color, #1f2326);
+}
+
+.tableCaption img {
+  vertical-align: text-bottom;
+}
+
+.tableCaption .addMessage.responsibility,
+.tableCaption .addMessage.paused {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.tableCaption .addMessage.responsibility a {
+  text-decoration-line: none;
+  color: #737577;
+}
+
+.tableCaption .addMessage.responsibility a:hover .text {
+  text-decoration-line: underline;
+}
+
+.tableCaption .addMessage.responsibility a .responsibilityIcon {
+  margin-right: 5px;
+}
+
+.tableCaption .addMessage.paused a {
+  color: #737577;
+}
+
+.tableCaption.exp .lastBuilt {
+  display: none;
+}
+
+.tableCaption .problemsSummary .summaryLink {
+  color: var(--ring-secondary-color);
+}
+
+.tableCaption .problemsSummary .summaryLink:hover {
+  text-decoration: none;
+  border-bottom: 1px solid var(--ring-disabled-color, #999);
+}
+
+.lt1200 .tableCaption .problemsSummary .problemDetails {
+  display: none;
+}
+
+.buildTypeBranches .tableCaption {
+  margin: 0;
+}
+
+div.overviewTypeTableContainer {
+  margin: 0 29px;
+}
+
+.buildTypeBranches div.overviewTypeTableContainer {
+  margin: 0;
+}
+
+.buildTypeBranchesHeader {
+  margin: 5px 0;
+}
+
+table.overviewTypeTable {
+  background-color: var(--ring-content-background-color, #fff);
+  width: 100%;
+  margin: 0 0 0.4em;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+table.overviewTypeTable td {
+  margin: 0;
+  padding: 0.2em 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.overviewTypeTable td.branch {
+  width: 4em;
+}
+
+table.overviewTypeTable td.status {
+  padding-right: 1em;
+}
+
+table.overviewTypeTable td.branch.hasBranch {
+  width: 8.5em;
+  padding-right: 0.5em;
+}
+
+.overview-page table.overviewTypeTable td.branch.hasBranch,
+.project-page table.overviewTypeTable td.branch.hasBranch {
+  padding-left: 2em;
+}
+
+table.overviewTypeTable td.buildNumber {
+  padding-right: 1.3em;
+  white-space: nowrap;
+  width: 6.5em;
+}
+
+table.overviewTypeTable td.duration {
+  width: 15em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  white-space: nowrap;
+  text-align: right;
+}
+
+td.duration span.progressDuration {
+  color: #737577;
+}
+
+table.overviewTypeTable td.artifactsLink {
+  padding-right: 0;
+  width: 7.2em !important;
+}
+
+table.overviewTypeTable td.changesLink {
+  width: 12em;
+  padding-left: 5px;
+}
+
+td.stopBuild,
+table.overviewTypeTable td.stopBuild {
+  width: 5em;
+  text-align: right;
+}
+
+table.overviewTypeTable td.artifacts.artifacts {
+  width: 56px;
+  overflow: visible;
+}
+
+table.overviewTypeTable td.line .hr {
+  background-color: #bfcfe2;
+  overflow: hidden;
+  height: 1px;
+  margin: 0 10px 0 25px;
+  padding: 0;
+  font-size: 0;
+  border-top: solid 2px var(--ring-content-background-color, #fff);
+}
+
+#runningBuildsPopup {
+  min-width: 800px;
+  max-width: 800px;
+  padding-top: 0.4em;
+  overflow-x: auto;
+}
+
+.gt1000.lt1200 #runningBuildsPopup {
+  max-width: 1000px;
+}
+
+.gt1200 #runningBuildsPopup {
+  max-width: 1200px;
+}
+
+#runningBuildsPopup .overviewTypeTable {
+  margin-bottom: 0.2em;
+}
+
+#runningBuildsPopup .artifactsLink {
+  padding-left: 0.5em;
+}
+
+#runningBuildsPopup .lastFinished {
+  display: none;
+}
+
+.popupDiv.flatView {
+  padding: 0;
+  border: 1px solid #D6D6D6;
+}
+
+.popupDiv.flatView .list {
+  padding: 5px 5px 5px 8px;
+}
+
+.popupDiv.flatView .list > .entry {
+  clear: both;
+  padding: 2px 2px 2px 0;
+}
+
+.popupDiv.flatView .list > .entry a.right {
+  float: right;
+  margin-left: 1em;
+}
+
+.popupDiv.flatView .action-bar {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding: 5px 5px 5px 8px;
+  border-top: 1px solid #D6D6D6;
+}
+
+table.separatedWithLine {
+  border-collapse: collapse;
+}
+
+table.separatedWithLine td {
+  border-bottom: 1px solid #e7edf3;
+}
+
+table.separatedWithLine tr:last-child td {
+  border-bottom: none;
+}
+
+table.separatedWithLine > tr:only-child td,
+table.separatedWithLine > tbody > tr:only-child td {
+  border-top: 1px solid #e7edf3;
+  border-bottom: 1px solid #e7edf3;
+}
+
+#changesTable thead td {
+  padding: 0;
+}
+
+/*
+ * @media screen and (max-device-width: 480px) = iPhone < 4
+ * @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 960px) = iPhone >= 4
+ * @media screen and (min-device-width: 768px) and (max-device-width: 1024px) = iPad
+*/
+@media screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 960px), screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .tableCaption {
+    padding: 12px 0;
+  }
+
+  .tableCaption table.runTable {
+    position: relative;
+    top: -5px;
+  }
+}

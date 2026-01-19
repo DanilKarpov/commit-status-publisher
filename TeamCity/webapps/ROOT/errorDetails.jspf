@@ -1,0 +1,75 @@
+<%@ include file="/include-internal-tag.jsp" %>
+<%@ page import="java.io.ByteArrayOutputStream" %>
+<%@ page import="java.io.PrintStream" %>
+<%@ page import="jetbrains.buildServer.serverSide.TeamCityProperties" %>
+<%@ page import="jetbrains.buildServer.util.Dates" %>
+<%@ page import="jetbrains.buildServer.version.ServerVersionHolder" %>
+<%@ page import="jetbrains.buildServer.web.util.WebUtil" %>
+
+<c:set var="exc">
+  <%=WebUtil.escapeXml(exception != null && exception.toString() != null ? exception.toString() : "none available")%>
+</c:set>
+
+<authz:authorize allPermissions="CHANGE_SERVER_SETTINGS">
+  <jsp:attribute name="ifAccessGranted">
+    <c:set var="granted" value="true"/>
+  </jsp:attribute>
+  <jsp:attribute name="ifAccessDenied">
+    <c:set var="granted" value="false"/>
+  </jsp:attribute>
+</authz:authorize>
+
+<c:if test="${granted}">
+  <div class="errorMessage">
+    Error: <c:out value="${exc}"/>
+  </div>
+  <br/>
+</c:if>
+<div>
+  Server time: <%=Dates.formatDate(Dates.now(), "yyyy-MM-dd HH:mm:ss")%>
+</div>
+<div>
+  TeamCity: <%=ServerVersionHolder.getVersion().getDisplayVersion()%> (build <%=ServerVersionHolder.getVersion().getBuildNumber()%>)
+</div>
+<c:set var="showExtraEnvDetails" value='<%= TeamCityProperties.getBoolean("teamcity.web.runtimeError.showExtraEnvDetails") %>'/>
+<c:if test="${showExtraEnvDetails}">
+  <div>
+    Operating system: <%=System.getProperty("os.name")%> (<%=System.getProperty("os.version")%>, <%=System.getProperty("os.arch")%>)
+  </div>
+  <div>
+    Java: <%=System.getProperty("java.runtime.version")%> (<%=System.getProperty("java.vm.vendor")%>)
+  </div>
+  <div>
+    Servlet container: <%=application.getServerInfo()%>
+  </div>
+</c:if>
+<br/>
+
+<c:set var="showStacktrace" value='<%= TeamCityProperties.getBooleanOrTrue("teamcity.web.runtimeError.showStacktrace") %>'/>
+<c:choose><c:when test="${showStacktrace && granted}">
+  <%
+    ByteArrayOutputStream bas = new ByteArrayOutputStream();
+    bas.write("Trace: ".getBytes());
+    PrintStream s = new PrintStream(bas);
+    Throwable old;
+    do {
+      old = exception;
+      if (old != null) {
+        old.printStackTrace(s);
+      }
+      if (exception instanceof JspException) {
+        exception = exception.getCause();
+      }
+    }
+    while (exception != null && old != exception);
+    bas.close();
+    s.close();
+  %>
+
+  <a id="stackTraceLink" href="#" onclick="$('stackTrace').show(); $('stackTraceLink').hide(); return false">Show stacktrace</a>
+
+  <pre id="stackTrace" style="display: none" class="stackTrace"><%=WebUtil.escapeXml(bas.toString())%></pre>
+</c:when>
+<c:otherwise>
+  <p>Contact server administrators to check TeamCity server log for the error details.</p>
+</c:otherwise></c:choose>

@@ -1,0 +1,20 @@
+<c:choose>
+
+  <c:when test="${empty lastVri or lastVri.id != vri.id}">
+    <%@ include file="outputVriRows.jspf" %>
+    <c:set var="firstTd" value="${nameTd}"/>
+    <c:set var="otherRows" value=""/>
+    <c:set var="rowCount" value="${1}"/>
+  </c:when>
+
+  <c:when test="${lastVri.id == vri.id}">
+    <c:set var="otherRows">
+      ${otherRows}
+      <tr>${nameTd}</tr>
+    </c:set>
+    <c:set var="rowCount" value="${rowCount + 1}"/>
+  </c:when>
+
+</c:choose>
+
+<c:set var="lastVri" value="${vri}"/>

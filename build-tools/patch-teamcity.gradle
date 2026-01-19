@@ -1,0 +1,45 @@
+allprojects {
+  repositories {
+    exclusiveContent {
+      forRepository {
+        maven {
+          url 'https://download.jetbrains.com/teamcity-repository'
+          metadataSources {
+            mavenPom()
+            artifact()
+          }
+        }
+      }
+      filter { includeGroupByRegex 'org\\.jetbrains\\.teamcity(\\..*)?' }
+    }
+    mavenCentral()
+  }
+
+  configurations.all {
+    resolutionStrategy {
+      dependencySubstitution.all { sub ->
+        if (sub.requested instanceof ModuleComponentSelector) {
+          def r = (ModuleComponentSelector) sub.requested
+          if (r.group?.startsWith('org.jetbrains.teamcity')) {
+            def v = r.version ?: ''
+            def m = (v =~ /^(\d{4}\.\d{2})(?:\..*)?$/)
+            if (m.matches()) {
+              def target = "${r.group}:${r.module}:${m.group(1)}"
+              sub.useTarget(target)
+            }
+          }
+        }
+      }
+
+      eachDependency { details ->
+        if (details.requested.group?.startsWith('org.jetbrains.teamcity')) {
+          def v = details.requested.version ?: ''
+          def m = (v =~ /^(\d{4}\.\d{2})(?:\..*)?$/)
+          if (m.matches()) {
+            details.useVersion(m.group(1))
+          }
+        }
+      }
+    }
+  }
+}

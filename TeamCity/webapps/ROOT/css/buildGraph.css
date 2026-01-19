@@ -1,0 +1,274 @@
+/*
+ * Copyright 2000-2024 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.GraphContainer {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.GraphContainer.highlighted {
+  background-color: #f2f2f2;
+  box-shadow: 0 0 0 16px #f2f2f2;
+}
+
+.GraphContainer td.graphContainer {
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+.GraphContainer form {
+  margin: 0;
+  padding: 0;
+}
+
+.GraphContainer select {
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.agentsFilter .all_none {
+  margin-left: 5px;
+  font-size: .85em;
+}
+
+.agentsFilterInner {
+  overflow: auto;
+  margin-bottom: 5px;
+  padding: 0 3px;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.graphHeader .actionDiv {
+  float: left;
+}
+
+.GraphContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.modalDialogBody .GraphContainer table {
+  width: 100%;
+  border: none;
+}
+
+.GraphContainer .agentsFilterTable {
+  border: none;
+}
+
+.GraphContainer .agentsFilterTable .agentCheckbox {
+  display: none;
+}
+
+.ua-ie8-below .GraphContainer .agentsFilterTable .agentCheckbox {
+  display: inline-block;
+}
+
+.GraphContainer .agentsFilterTable label.name {
+  overflow-wrap: break-word;
+  cursor: pointer;
+}
+
+.GraphContainer .agentsFilterTable .color-bullet {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px 0 0;
+  border-radius: 10px;
+  background-color: #008021;
+}
+
+.color-bullet:after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--ring-content-background-color, #fff);
+  display: block;
+  border-radius: 8px;
+  margin: 1px 0 0 1px;
+}
+
+.agentCheckbox:checked ~ .color-bullet:after  {
+  display: none;
+}
+
+.ua-ie8-below .agentCheckbox[checked='checked'] ~ .color-bullet:after {
+  display: none;
+}
+
+.GraphContainer .agentsList {
+  position: relative;
+  padding: 5px;
+  vertical-align: top;
+  width: 240px;
+}
+
+.GraphContainer .agentsList .posRel {
+  width: 240px;
+}
+
+.GraphContainer .agentsList .personalBuildFilter,
+.GraphContainer .agentsList .personalBuildFilter a {
+  cursor: default;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.GraphContainer .agentsList .agentsFilter {
+  width: 240px;
+}
+
+.GraphContainer .agentsList .averageFilter {
+  width: 240px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.GraphContainer .agentsList .rangeFilter {
+  margin-right: 10px;
+}
+
+.GraphContainer .agentsList .statusFilter {
+  white-space: nowrap;
+}
+
+.GraphContainer .chartHolder {
+  position: relative;
+  margin: 0 5px;
+}
+
+.GraphContainer .agentsListHelp {
+  float: right;
+  white-space: nowrap;
+}
+
+.GraphContainer .actionsHolder .unsaved {
+  margin-right: 16px;
+  color:  #737577;
+  padding-top: 2px;
+  font: 11px;
+}
+
+.GraphContainer .graphSettingsPopup .btn.saveDefaults {
+  display: none;
+}
+
+.editable .GraphContainer .graphSettingsPopup .btn.saveDefaults {
+  display: inline;
+  float: right;
+}
+
+.GraphContainer .actionsHolder a.helpIcon {
+  background-size: 16px;
+  padding-right: 34px;
+}
+
+.GraphContainer .actionsHolder > .actionIconWrapper {
+  margin-left: 8px;
+}
+
+.graphHeader {
+  height: 20px;
+  border-collapse: collapse;
+}
+
+.GraphContainer .graphHeader {
+  margin: 0 5px;
+  border: none;
+}
+
+.graphHeader td {
+  padding: 0;
+}
+
+.graphHeader .graphConfigLink {
+  width: 15%;
+  white-space: nowrap;
+}
+
+.graphConfigLink {
+  margin-left: 28px;
+}
+
+.graphHeader .graphName {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.graphHeader .graphName .headerContainer {
+  display: inline-block;
+  font-size: 115%;
+  font-weight: normal;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.graphHeader .graphCsvLink {
+  text-align: right;
+  width: 10%;
+}
+
+.graphCsvLink .graphCsvLinkInner {
+  position: relative;
+}
+
+.graphSettingsPopup .popupInput {
+  margin-bottom: 10px;
+}
+
+.graphSettingsPopup .popupInputField input {
+  width: 100%;
+}
+
+.popupDiv .contentWrapper {
+  margin: 10px;
+}
+
+a.resetLink {
+  font-size: .85em;
+}
+
+.agentsList .posRel {
+  padding-right: 20px;
+}
+
+.agentsList .showLink {
+  background: url('../img/arrowDown.png?v=197325') no-repeat;
+  padding-left: 14px;
+  height: 14px;
+}
+
+.agentsList .hideLink {
+  background: url('../img/arrowUp.png?v=197325') no-repeat;
+  padding-left: 14px;
+  height: 14px;
+  margin-right: 5px;
+  float:left;
+}
+
+.graphSettingsPopup .smallNote {
+  margin-left: 0;
+  text-align: right;
+}
+
+.chartHolder .no_data_label {
+  text-align: center;
+  position: relative;
+  top: 46%;
+  margin-left: 27px;
+  z-index: 1;
+}

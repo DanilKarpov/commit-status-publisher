@@ -1,0 +1,9 @@
+<tr class="spaceNote" id="${idOrganizationHint}" style="display: none">
+  <td colspan="2">
+    <div class="attentionComment">
+      An <strong>organization connection</strong> is associated with a Space organization.
+      It can be used as a common root connection to create subsequent <em>project connections</em>.<br/>
+      The creation of a dedicated Space application with the appropriate rights will be automatically requested for this purpose.
+    </div>
+  </td>
+</tr>

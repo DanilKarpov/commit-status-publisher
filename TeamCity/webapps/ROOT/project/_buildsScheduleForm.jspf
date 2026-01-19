@@ -1,0 +1,52 @@
+<%@include file="/include-internal.jsp" %>
+<c:url var="controllerUrl" value="/buildSchedule.html"/>
+
+<form action="${controllerUrl}" method="post" onsubmit="return BS.BuildsScheduleForm.submitForm();" id="buildScheduleOptions">
+
+  <c:if test="${fn:length(projects) ge 2}">
+    <span class="nowrap">
+      <label class="firstLabel" for="filterProjectId">Show for project: </label>
+      <bs:projectsFilter projectBeans="${projects}"
+                         selectedProjectExternalId="${form.filterProjectId}"
+                         id="filterProjectId"
+                         name="filterProjectId"
+                         onchange="BS.BuildsScheduleForm.submitForm();">
+      </bs:projectsFilter>
+    </span>
+  </c:if>
+
+  <span class="nowrap">
+    <label for="scheduleDate">Date: </label>
+    <forms:textField name="scheduleDate" value="${form.scheduleDate}" noAutoComplete="true" className="short actionInput"/>
+  </span>
+
+  <c:if test="${not form.hasAdvancedOptions}">
+    <button type="button" class="btn btn_mini actionBarAdvancedToggle" onclick="return BS.BuildsScheduleForm.toggleAdvanced(this);">Advanced options</button>
+  </c:if>
+  <forms:saving id="buildScheduleOptions_progress" className="progressRingInline" savingTitle="Refreshing builds schedule"/>
+
+  <div class="actionBarAdvanced<c:if test="${not form.hasAdvancedOptions}"> hidden</c:if>" id="advanced-fields">
+    <div class="nowrap">
+      <forms:checkbox name="showDisabled" id="showDisabled" onclick="BS.BuildsScheduleForm.submitForm();" checked="${form.showDisabled}"/>
+      <label for="showDisabled">Show disabled triggers</label>
+    </div>
+
+    <div class="nowrap">
+      <forms:checkbox name="showPaused" id="showPaused" onclick="BS.BuildsScheduleForm.submitForm();" checked="${form.showPaused}"/>
+      <label for="showPaused">Show paused build configurations</label>
+    </div>
+
+    <div class="nowrap" id="isSameDateFilter">
+      <forms:checkbox name="showOnlyUpcoming" id="showOnlyUpcoming" onclick="BS.BuildsScheduleForm.submitForm();"
+                      checked="${form.showOnlyUpcoming}"/>
+      <label for="showOnlyUpcoming">Show only upcoming builds</label>
+    </div>
+
+    <div class="nowrap">
+      <forms:checkbox name="hideOnlyPending" id="hideOnlyPending" onclick="BS.BuildsScheduleForm.submitForm();"
+                      checked="${form.hideOnlyPending}"/>
+      <label for="hideOnlyPending">Hide triggers with 'Trigger only if there are pending changes' option enabled</label>
+    </div>
+  </div>
+
+</form>

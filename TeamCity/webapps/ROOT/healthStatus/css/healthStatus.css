@@ -1,0 +1,133 @@
+.inplaceHealthStatusItem {
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 20px 28px;
+  border-bottom: 1px dotted #CCC;
+  clear: both;
+}
+
+i.itemSeverity {
+  color: #0085FF;
+  margin: auto;
+}
+
+i.itemSeverity.tc-icon {
+  margin-left: 0.3em;
+}
+
+i.itemSeverity.icon-info, i.itemSeverity.icon-lightbulb {
+  width: 1em;
+}
+
+.inplaceHealthStatusItem .itemSeverity,
+.inplaceHealthStatusItem .buildStatusIcon {
+  position: absolute;
+  left: 10px;
+}
+
+.inplaceHealthStatusItem .itemSeverity {
+  top: 10px;
+}
+
+.inplaceHealthStatusItem .buildStatusIcon {
+  top: 12px;
+}
+
+.inplaceHealthStatusItem.last {
+  border-bottom: none;
+}
+
+.inplaceItemsList + .viewAll {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding: 5px 5px 5px 8px;
+  border-top: 1px solid #D6D6D6;
+}
+
+.inplaceHealthStatusItem .hideLink {
+  float: right;
+  margin-left: 30px;
+}
+
+.suggestionItem .suggestionAction {
+  margin-top: .5em;
+}
+
+
+/* health icons */
+
+.healthItemIndicator {
+  padding: 1px 2px 3px;
+  box-sizing: content-box;
+  min-width: 20px;
+  text-align: center;
+}
+
+.healthItemIndicator .itemSeverity {
+  margin: 0 4px;
+}
+
+.healthItemIndicator .dropdownIcon {
+  vertical-align: -5px;
+}
+
+.healthItemIndicator > span.error, .healthItemIndicator > span.warning, .healthItemIndicator > span.info, .healthItemIndicator > span.primary {
+  padding-right: 6px;
+}
+
+.healthItemIndicatorContainer span.error {
+  display: inline;
+  margin-left: 0;
+}
+
+.healthItemIndicatorContainer span.warning {
+  display: inline;
+  margin-left: 0;
+  color: var(--ring-warning-color);
+}
+
+.healthItemIndicatorContainer span.info {
+  display: inline;
+  margin-left: 0;
+  color: #1564c2;
+}
+
+.healthItemIndicatorContainer span.primary {
+  display: inline;
+  margin-left: 0;
+  color: var(--ring-text-color);
+}
+
+.healthItemIndicatorContainer {
+  display: inline;
+}
+
+.breadcrumbHealthIndicators {
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#restPageTitle .breadcrumbHealthIndicators{
+  display: inline-block;
+  padding: 0;
+  margin-left: 10px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+#restPageTitle .healthItemIndicatorContainer{
+  display: inline-block;
+  padding: 0;
+}
+
+li.breadcrumbHealthIndicators .healthItemIndicator {
+  font-size: 14px;
+  line-height: 14px;
+  vertical-align: text-bottom;
+}
+
+.healthItem-sakura {
+  margin: 4px 0;
+}

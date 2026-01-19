@@ -1,0 +1,141 @@
+.policyChooser {
+  display: inline-block;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  width: 35em;
+}
+
+.messagesHolder {
+  margin-top: 1em;
+  display: inline-block;
+}
+
+.assignAction {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.agentsCompatibilityTable {
+  width: 100%;
+}
+
+.executorsCompatibilityTable.agentsCompatibilityTable {
+  margin-bottom: 24px;
+}
+
+.agentsCompatibilityTable th {
+  text-align: left;
+  border-bottom: 1px solid var(--ring-disabled-color, #999);
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+.agentsCompatibilityTable .project-handle .buildTypeNameWithHandle {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.agentsCompatibilityTable td.compatible,
+.agentsCompatibilityTable th.compatible,
+.agentsCompatibilityTable td.incompatible,
+.agentsCompatibilityTable th.incompatible {
+  padding: 5px 5px 5px 10px;
+  font-size: 100%;
+  vertical-align: top;
+}
+
+.agentsCompatibilityTable th.compatible {
+  width: 38%;
+}
+
+.agentsCompatibilityTable th.empty,
+.agentsCompatibilityTable td.empty {
+  width: 20px;
+  border: none;
+  background: none;
+}
+
+.agentsCompatibilityTable span.handle {
+  vertical-align: text-bottom;
+  width: auto;
+  padding-left: 18px;
+}
+
+.agentsCompatibilityTable td.incompatible.selected div.incompatible {
+  margin-left: 35px;
+}
+
+.agentsCompatibilityTable div.content + div.project-handle {
+  margin-top: 0.3em;
+}
+
+.agentsCompatibilityTable .custom-checkbox {
+  position: relative;
+}
+
+div.incompatible {
+  display: flex;
+  padding-left: 26px;
+}
+div.incompatible:last-child {
+  margin-bottom: 10px;
+}
+
+div.incompatible div.details {
+  display: inline-block;
+  margin: 0;
+}
+
+div.incompatible div.details.name {
+  min-width: 10em;
+  margin-right: 2em;
+  vertical-align: top;
+}
+
+div.incompatible div.details.value ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+div.incompatible .warn {
+  padding-left: 5px;
+  color: var(--ring-error-color);
+}
+
+div.incompatible .mono {
+  font-size: 12px;
+}
+
+div.compatibilityDetailsToolbar {
+  padding: 5px 0 10px 0;
+  display: flex;
+}
+
+div.compatibilityDetailsToolbar > * {
+  margin-right: 15px;
+}
+
+.compatibilityDetailsToolbar__hideOption {
+  flex: 1 1 auto;
+}
+
+#compatibleDivider {
+  background: var(--tc-classic-highlight-color, #ffc);
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  margin: 0 0 0.5em 0;
+}
+
+#removeSelected {
+  text-align: left;
+  margin-top: 1ex;
+}
+
+#poolDetails {
+  float: right;
+}
+
+.agentComment {
+  margin: 0 2px;
+}

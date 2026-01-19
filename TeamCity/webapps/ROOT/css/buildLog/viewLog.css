@@ -1,0 +1,104 @@
+/*----------- Major layout issues ---*/
+#container {
+  margin-top: 10px;
+}
+
+/*----------- Build details collapsable block ---*/
+.buildDataDetails {
+  display: none;
+  margin-bottom: .4em;
+}
+
+/*----------- next/previous build paging styles ---*/
+
+span.shortHistory {
+  float: right;
+  margin: 5px 0 0 0;
+  padding: 0;
+}
+
+.logPaging, .nextPrevPaging {
+  margin: 0 0 0 0;
+}
+
+.logPaging td, .nextPrevPaging td {
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+.logPaging td strong, .nextPrevPaging td strong{
+  font-weight: 900;
+  font-size: 130%;
+}
+
+.logPaging td a:hover {
+  text-decoration-line: none;
+}
+
+.logPaging td a:hover strong {
+  text-decoration-line: underline;
+}
+
+.logPagingEmpty, .nextPrevPaging {
+  margin: 0;
+  padding: 0;
+}
+
+/*---------- end*/
+
+td.title {
+  font-weight: bold;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", Consolas, "Courier New", Courier, monospace;
+  white-space: pre;
+}
+
+#buildTags,
+#buildTagsInner {
+  display: inline;
+}
+
+#buildTags form {
+  display: inline;
+}
+
+#providedArtifacts,
+#downloadedArtifacts {
+  width: 100%;
+  margin-top: 1em;
+}
+
+.dependenciesTable {
+  width: 100%;
+  padding: 0;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+.dependenciesTable td {
+  margin-top: 10px;
+  padding: 10px 0 2px 4px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table td.buildInfo {
+  width: 35em;
+}
+
+div.artifactsTree {
+  margin: 0;
+  padding: 0;
+}
+
+div.artifactsTree .tree {
+  margin: 0;
+  padding-top: 3px;
+}
+
+/*------------ short build history TD*/
+.tabsTable td.besideContent {
+  width: 25em;
+  text-align: right;
+  vertical-align: top;
+}

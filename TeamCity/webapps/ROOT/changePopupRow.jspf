@@ -1,0 +1,51 @@
+<%@ taglib prefix="bs" tagdir="/WEB-INF/tags"
+  %><%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<c:choose>
+  <%--@elvariable id="change" type="jetbrains.buildServer.serverSide.ChangeDescriptor"--%>
+<c:when test="${changefn:isArtifactDependencyModification(change)}">
+  <c:forEach items="${change.associatedData['CHANGED_DEPENDENCIES_ATTR']}" var="artChange">
+  <c:set var="sourceBuild" value="${artChange.associatedData['NEW_BUILD_ATTR']}"/>
+    <tr class="artifactChange hidden">
+      <bs:buildRow build="${sourceBuild}" contextProject="${contextProject}" showStatus="true" showBuildTypeName="true"/>
+      <td>&nbsp;</td>
+      <td class="files">
+        <c:set var="filesNum" value="${fn:length(changes.build.downloadedArtifacts.artifacts[sourceBuild])}"/>
+        <bs:popupControl showPopupCommand="BS.DependentArtifactsPopup.showPopup(this, ${changes.build.buildId}, ${sourceBuild.buildId}, 'downloadedFrom')"
+                         hidePopupCommand="BS.DependentArtifactsPopup.hidePopup()"
+                         stopHidingPopupCommand="BS.DependentArtifactsPopup.stopHidingPopup()"
+                         controlId="artifacts:${sourceBuild.buildId}">${filesNum} file<bs:s val="${filesNum}"/></bs:popupControl>
+      </td>
+    </tr>
+  </c:forEach>
+</c:when>
+<c:otherwise>
+  <c:set var="tooltip">Changed <bs:date  value="${change.date}"/>, <bs:date smart="true" value="${change.date}"/>.<br/>VCS revision: ${change.relatedVcsChange.displayVersion}</c:set>
+  <tr>
+    <td <bs:tooltipAttrs text="${tooltip}"/>>
+      <bs:date smart="2" value="${change.date}"/>
+    </td>
+    <th>
+      <c:choose>
+        <c:when test="${fn:length(change.description) > 0}">
+          <bs:out value="${change.description}" resolverContext="${resolverContext}"/>
+        </c:when>
+        <c:otherwise>&lt;No comment></c:otherwise>
+      </c:choose>
+    </th>
+    <td class="user">
+    <c:if test="${change.relatedVcsChange.personal}"><bs:personalChangesIcon1 mod="${change.relatedVcsChange}"/></c:if><bs:changeCommitters modification="${change.relatedVcsChange}"/>
+    </td>
+    <td class="files">
+      <c:if test="${changefn:isSnapshotDependencyModification(change)}"><bs:snapDepChangeLink snapDepLink="${changefn:getSnapDepLink(change)}"/></c:if>
+      <c:choose>
+            <c:when test="${not empty changes.build}">
+              <bs:changedFilesLink modification="${change.relatedVcsChange}" build="${changes.build}"/>
+            </c:when>
+            <c:otherwise>
+              <bs:changedFilesLink modification="${change.relatedVcsChange}" buildType="${changes.ownerBuildType}"/>
+        </c:otherwise>
+      </c:choose>
+    </td>
+  </tr>
+</c:otherwise>
+</c:choose>

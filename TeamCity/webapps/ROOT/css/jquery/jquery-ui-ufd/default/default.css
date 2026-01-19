@@ -1,0 +1,140 @@
+.ufd.default {
+  height: 20px;
+  background-color: #B5B8C8; /* http://blog.toolman.geek.nz/2009/12/annoying-ie6-bug-of-day.html */
+  border: 1px solid #B5B8C8;
+}
+
+.ufd.default input {
+  height: 18px;
+  line-height: 18px !important;
+  padding: 1px 3px;
+  border: 0;
+  border-radius: 0;
+}
+
+.ufd.default input.disabled {
+  background-image: none;
+  color: #777;
+  background-color: var(--ring-line-color, #dfe5eb) !important;
+}
+
+.ufd.default button {
+  width: 16px;
+  height: 21px;
+  background: url(icon.png) no-repeat 0 -2px;
+  background-size: 68px 24px;
+  margin-left: 1px;
+  border-radius: unset;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 200 / 100), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .ufd.default button {
+    background-image: url(icon@2x.png);
+  }
+}
+  .ufd.default button.hover {
+  background-position: -17px -2px;
+}
+
+.ufd.default button.mouseDown {
+  background-position: -34px -2px;
+}
+
+.ufd.default button.disabled {
+  background-position: -51px -2px !important;
+}
+
+#ufd-container .default div.list-scroll {
+  border: 1px solid #B5B8C8;
+  background-color: var(--ring-content-background-color, #fff);
+}
+
+#ufd-container .default li {
+  padding-left: 5px;
+  background-color: var(--ring-content-background-color, #fff);
+}
+
+#ufd-container .default li em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+#ufd-container .default li.active {
+  background-color: #3773C9;
+  color: var(--ring-content-background-color, #fff);
+}
+
+#ufd-container .default li.unfilterable.active {
+  background: var(--ring-content-background-color, #fff);
+  color: #444;
+}
+
+#ufd-container .default li.optgroup {
+  font-weight: bold;
+}
+
+#ufd-container .default li.option {
+  padding-left: 15px;
+}
+
+#ufd-container .default li.nogroup {
+  padding-left: 5px;
+}
+
+#ufd-container .default li.optgroup.subtle {
+  color: #737577;
+  font-style: italic;
+}
+
+#ufd-container .default li.optgroup.user-depth-0 { padding-left: 0; }
+#ufd-container .default li.optgroup.user-depth-1 { padding-left: 15px; }
+#ufd-container .default li.optgroup.user-depth-2 { padding-left: 30px; }
+#ufd-container .default li.optgroup.user-depth-3 { padding-left: 45px; }
+#ufd-container .default li.optgroup.user-depth-4 { padding-left: 60px; }
+#ufd-container .default li.optgroup.user-depth-5 { padding-left: 75px; }
+#ufd-container .default li.optgroup.user-depth-6 { padding-left: 90px; }
+#ufd-container .default li.optgroup.user-depth-7 { padding-left: 105px; }
+#ufd-container .default li.optgroup.user-depth-8 { padding-left: 120px; }
+#ufd-container .default li.optgroup.user-depth-9 { padding-left: 135px; }
+#ufd-container .default li.optgroup.user-depth-10 { padding-left: 150px; }
+#ufd-container .default li.optgroup.user-depth-11 { padding-left: 165px; }
+
+#ufd-container .default li.option.user-depth-0 { padding-left: 0; }
+#ufd-container .default li.option.user-depth-1 { padding-left: 15px; }
+#ufd-container .default li.option.user-depth-2 { padding-left: 30px; }
+#ufd-container .default li.option.user-depth-3 { padding-left: 45px; }
+#ufd-container .default li.option.user-depth-4 { padding-left: 60px; }
+#ufd-container .default li.option.user-depth-5 { padding-left: 75px; }
+#ufd-container .default li.option.user-depth-6 { padding-left: 90px; }
+#ufd-container .default li.option.user-depth-7 { padding-left: 105px; }
+#ufd-container .default li.option.user-depth-8 { padding-left: 120px; }
+#ufd-container .default li.option.user-depth-9 { padding-left: 135px; }
+#ufd-container .default li.option.user-depth-10 { padding-left: 150px; }
+#ufd-container .default li.option.user-depth-11 { padding-left: 165px; }
+
+div.multi-select {
+  overflow-y: scroll;
+  border: 1px solid #cfcfcf;
+  background: var(--ring-content-background-color, #fff);
+  padding: 0.2em;
+}
+
+.multi-select .disabled {
+  color: #727272;
+}
+.multi-select .group {
+  font-weight: bold;
+}
+
+.multi-select .user-depth-0 { padding-left: 0; }
+.multi-select .user-depth-1 { padding-left: 20px; }
+.multi-select .user-depth-2 { padding-left: 40px; }
+.multi-select .user-depth-3 { padding-left: 60px; }
+.multi-select .user-depth-4 { padding-left: 80px; }
+.multi-select .user-depth-5 { padding-left: 100px; }
+.multi-select .user-depth-6 { padding-left: 120px; }
+.multi-select .user-depth-7 { padding-left: 140px; }
+.multi-select .user-depth-8 { padding-left: 160px; }
+.multi-select .user-depth-9 { padding-left: 180px; }
+.multi-select .user-depth-10 { padding-left: 200px; }
+.multi-select .user-depth-11 { padding-left: 220px; }

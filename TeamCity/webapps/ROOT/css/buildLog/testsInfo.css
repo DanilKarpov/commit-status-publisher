@@ -1,0 +1,227 @@
+#testsInfo {
+  margin-top: 10px;
+}
+
+.testsGeneral {
+  min-height: 1.5em;
+  margin: 1em 0;
+}
+
+.btSelector {
+  width: 16em;
+  margin-bottom: 0.5em;
+}
+
+a.permaLink {
+  float: right;
+  margin-left: 2em;
+}
+
+a.backLink {
+  background-color: #1564C2;
+  padding: 2px 4px;
+  color: var(--ring-secondary-background-color, #f7f9fa);
+}
+
+a.backLink:hover {
+  color: var(--ring-content-background-color, #fff);
+}
+
+.testCountBlock label {
+  display: inline-block;
+  margin-left: 1.5em;
+  margin-bottom: 2px;
+}
+
+.testCountBlock input {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+div.divSection {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#filterText {
+  margin-right: .5em;
+  width: 10em;
+}
+
+#groupTestRunsByName1 {
+  margin-right: 0.8em;
+}
+
+.testCountBlock {
+  float: right;
+  margin: 4px 0;
+}
+
+.actionBar {
+  margin-bottom: 1em;
+}
+
+span.labelBlock,
+label.labelBlock {
+  display: inline-block;
+  width: 7em;
+}
+
+.foundText {
+  float: right;
+}
+
+.newFailuresOnly {
+  margin-left: 2em;
+}
+
+/**  Test list styles */
+
+table.testList {
+  margin-top: 1em;
+}
+
+table.testList th {
+  text-align: left;
+  white-space: nowrap;
+}
+
+table.testList th.thFirstCell {
+  width: 80px;
+}
+
+table.testList th.emptyCell {
+  background: var(--ring-content-background-color, #fff) none;
+  width: 2px;
+  padding: 0;
+  border: none;
+}
+
+table.testList .test-status {
+  width: 5.8em;
+  padding-left: 20px;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+table.testList td.nameT {
+  /* To make "new" icon closer to test name */
+  padding-left: 4px;
+}
+
+
+table.testList .failedNewTst td.nameT {
+  font-weight: bold;
+}
+
+table.dark th.buildInfoHeader {
+  padding-left: 1em;
+}
+
+table.testList td.test-status a.failure {
+  padding: 2px;
+  color: var(--ring-error-color);
+  text-decoration-line: underline;
+}
+
+table.testList td.test-status a.failure:hover {
+  background-color: var(--ring-error-color);
+  color: var(--ring-content-background-color, #fff);
+  text-decoration: none;
+}
+
+table.testList td.test-status a.muted {
+  padding: 2px;
+  color: #aaaaaa;
+  text-decoration-line: underline;
+}
+
+.metadataHandle {
+  display: none;
+}
+
+.metadataHandle--present {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.testMetadataPopup {
+  padding: 5px 10px 0;
+}
+
+.invocationCount {
+  font-size: 90%;
+  color: #aaaaaa;
+}
+
+table.testList td.test-status a.muted:hover {
+  background-color: #ccc;
+  color: #333;
+  text-decoration: none;
+}
+
+table.testList td.duration {
+  padding-right: 10px;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.graphPlace {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+table.testList th.tests,
+table.testList td.tests {
+  width: 8%;
+  padding-left: 2em;
+  white-space: nowrap;
+  text-align: left;
+}
+
+table.testList th.duration {
+  width: 40px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+table.testList .orderNum {
+  width: 8%;
+  padding-right: .5em;
+  text-align: right;
+}
+
+table.testList .startDate {
+  padding-right: 5px !important;
+}
+
+table.testList .buildNumber {
+  padding-left: 1.5em !important;
+}
+
+.groupHeader1 td {
+  background-color: var(--ring-line-color, #dfe5eb);
+  padding-left: 1em;
+}
+
+.groupHeader2 td {
+  background-color: var(--ring-line-color, #dfe5eb);
+  padding-left: 3em;
+}
+
+table.testList .groupHeader1 td.duration,
+table.testList .groupHeader2 td.duration {
+  padding-right: 30px;
+}
+
+#testsInfo span.pc,
+#testsInfo span.pc.testNamePopup,
+#testsInfo span.pc.newTestFailure {
+  background-image: none;
+  padding-left: 0;
+}
+
+.nameT .testNamePopup {
+  white-space: normal;
+}

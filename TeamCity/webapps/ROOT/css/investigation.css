@@ -1,0 +1,368 @@
+.responsible span.responsibilityMessage {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+  display: inline-block;
+}
+
+.responsible .commentIcon {
+  margin-left: 4px;
+  width: 12px;
+}
+
+/*
+
+       ALSO see statusChangeLink.css
+
+*/
+
+/* Build type investigate dialog */
+
+#investigationFormDialog {
+  width: 575px;
+}
+
+#investigationFormDialog .list table {
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+}
+
+#investigationFormDialog .list table td {
+  vertical-align: top;
+}
+
+#investigationFormDialog .list table td.bt {
+  width: 165px;
+}
+
+#investigationFormDialog .list table td:last-child {
+  text-align: right;
+}
+
+#investigationFormDialog .list table td:last-child span {
+  left: 0;
+  padding: 0;
+}
+
+#investigationFormDialog .right {
+  float: right;
+}
+
+#investigationFormDialog .configurations {
+  padding-top: 4px;
+}
+
+#investigationFormDialog #bt-responsible,
+#investigationFormDialog #bt-investigation-warning,
+#reactui-investigate {
+  width: 410px;
+}
+
+#investigationFormDialog table.inner th {
+  width: 65px;
+}
+
+#investigationFormDialog #bt-remove-investigation {
+  width: 341px;
+}
+
+#investigationFormDialog #bt-comment {
+  width: 100%;
+}
+
+#bt-investigation-warning > div.attentionComment,
+#test-investigation-warning > div.attentionComment {
+  margin: 0.5em 0 0;
+  padding-right: 0.5em;
+}
+
+#investigationFormDialog h3.dialogTitle span {
+  padding: 0 0 0 20px;
+}
+
+#investigationFormDialog div.dialogBody {
+  margin: 1em 0;
+}
+
+/* Investigations page */
+
+select.wideUserDropDown {
+  width: 24em;
+}
+
+#responsibilitiesTable h2 {
+  margin: 0.5em 0 0 10px;
+}
+
+#responsibilitiesTable td {
+  vertical-align: top;
+}
+
+#responsibilitiesTable .testFailedInPart {
+  padding: 0 0 0 1em;
+}
+
+#responsibilitiesTable .testNamePart {
+  width: 45%;
+}
+.gt1200 #responsibilitiesTable .testNamePart {
+  width: 43%;
+}
+
+#responsibilitiesTable .details {
+  width: 40%;
+}
+
+#responsibilitiesTable .actions {
+  width: 15em;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.testDetailsShown .details .testActionsLinks {
+  display: none;
+}
+
+/* Bottom toolbar */
+
+.bulk-operations-toolbar {
+  text-align: center;
+}
+
+.bulk-operations-toolbar .bulk-operation-cancel {
+  margin-left: 1em;
+}
+
+/* Investigate/Mute dialog */
+
+.modalDialog.muteTestsFormDialog.wideDialog {
+  width: 735px; /* The internal inputs are in pixel, so it's safer to have pixels here as well. */
+}
+
+.investigation-dialog .modifiedParam {
+  background-color: var(--tc-classic-highlight-color, #ffc) !important;
+}
+
+.investigation-dialog .list {
+  overflow: auto;
+  max-height: 120px;
+  margin: .5em .3em 0;
+}
+
+.investigation-dialog .blockHeader {
+  background: var(--ring-secondary-background-color, #f7f9fa);
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  padding: 0 0.3em;
+  border-top: 1px dotted #CCC;
+  border-bottom: 1px dotted #CCC;
+  border-right: none;
+  cursor: default;
+  font: normal 1em/1.5em "Helvetica Neue", Arial, sans-serif;
+}
+
+.investigation-dialog .collapsible-section {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.investigation-dialog .reset {
+  display: none;
+  float: right;
+  font-weight: normal;
+}
+
+.investigation-dialog h3 input, .investigation-dialog #commentOrScopeChanged {
+  display: none;
+}
+
+.investigation-dialog table.inner th {
+  width: 70px;
+}
+
+.investigation-dialog .project-info {
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #dedede;
+}
+
+.investigation-dialog .relatedProjects {
+  list-style: circle;
+  overflow-y: scroll;
+  max-height: 150px;
+  padding: 0 20px;
+}
+
+.investigation-dialog .popupSaveButtonsBlock {
+  height: auto;
+}
+
+.investigate-no-permission {
+  display: block;
+  margin: 5px 0;
+}
+
+table.investigate-params th {
+  width: 130px;
+  line-height: 26px;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: baseline;
+}
+
+table.investigate-params td {
+  padding: 0;
+  vertical-align: baseline;
+}
+
+table.investigate-params .inner select {
+  width: 490px;
+}
+
+table.mute-params {
+  margin-top: 0.5em;
+}
+
+table.mute-params th {
+  width: 120px;
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.mute-params td textarea {
+  width: 100%;
+}
+
+table.mute-params td input[type=text],
+table.investigate-params td input[type=text] {
+  width: 558px;
+}
+
+table.mute-params td select,
+table.investigate-params td select {
+  width: 564px;
+}
+
+table.mute-params table.inner {
+  width: 100%;
+  margin-top: 3px;
+}
+
+table.mute-params table.inner td {
+  text-align: right;
+}
+
+table.mute-params .inner input[type=text] {
+  width: 440px;
+}
+
+table.mute-params .inner select {
+  width: 487px;
+}
+
+div.hr {
+  height: 1px;
+  margin-top: 0.8em;
+  margin-bottom: 0.5em;
+  border: none;
+  border-top: 1px solid #aaaaaa;
+}
+
+.do-mute {
+  margin-top: 1em;
+  margin-left: 12px;
+}
+
+#mute-in-bt-list {
+  overflow: auto;
+  max-height: 200px;
+  padding: 3px 5px;
+  position: relative;
+}
+
+#muted-tests {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#muted-tests td {
+  padding: 0.3em 0.6em;
+}
+
+#mute-dialog-container .error-msg {
+  color: var(--ring-error-color);
+}
+
+/* Popups */
+
+div.name-value {
+  padding: 4px;
+}
+
+div.name-value + div.name-value {
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  padding-top: 0;
+}
+
+div.name-value > table {
+  width: 100%;
+  max-width: 36em;
+}
+
+div.name-value > table + table {
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+div.name-value > table th {
+  padding-right: 0.4em;
+}
+
+div.name-value > table th,
+div.name-value > table td {
+  vertical-align: top;
+  text-align: left;
+  white-space: nowrap;
+}
+
+div.name-value > table th {
+  width: 40%;
+}
+
+div.name-value > table td.resp-comment,
+div.name-value > table td.mute-comment {
+  white-space: normal;
+  font-style: italic;
+}
+
+div.name-value + div.actions {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding: 5px 5px 5px 8px;
+  border-top: 1px solid #D6D6D6;
+}
+
+div.name-value > div.flakyReason {
+  font-weight: bold;
+}
+
+div.name-value > ul.flakyReason {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 1em;
+}
+
+table.projectHierarchy.buildTypesRespTable td.build_type_name, table.projectHierarchy.buildTypesRespTable td.project_name {
+  width: 50%;
+}
+
+table.projectHierarchy.buildTypesRespTable td.actions {
+  width: 15%;
+}
+
+.buildTypeProblemText {
+  color: var(--ring-error-color);
+}
+
+.investigationDetails {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

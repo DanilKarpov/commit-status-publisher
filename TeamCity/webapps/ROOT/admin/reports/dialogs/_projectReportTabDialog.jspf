@@ -1,0 +1,98 @@
+<%--@elvariable id="reportTabsForm" type="jetbrains.buildServer.controllers.admin.reportTabs.EditReportTabsForm"--%>
+<%--@elvariable id="project" type="jetbrains.buildServer.serverSide.SProject"--%>
+
+<bs:modalDialog formId="editProjectReportTab" title="${title}" action="${action}" dialogClass="modalDialog_large"
+                saveCommand="BS.ProjectReportTabDialog.save();"
+                closeCommand="BS.ProjectReportTabDialog.close();">
+  <input name="tabType" type="hidden" value="PROJECT_REPORT_TAB"/>
+  <table class="editTabSettingsTable">
+    <tr>
+      <th><label for="tabTitle">Tab Title:<l:star/></label></th>
+      <td>
+        <forms:textField maxlength="100" className="longField" name="tabTitle"/>
+        <span class="error" id="error_projectTabTitle"></span>
+      </td>
+    </tr>
+    <tr id="artifactsRow">
+      <th><label for="buildTypeId">Get artifacts from:<l:star/></label></th>
+      <td>
+        <select hidden name="buildTypeId" id="buildTypeId">
+          <c:forEach items="${reportTabsForm.buildTypes}" var="bean">
+            <c:forEach var="buildType" items="${bean.buildTypes}">
+              <option value="${buildType.externalId}"></option>
+            </c:forEach>
+          </c:forEach>
+        </select>
+        <div id="buildTypeIdSelect"></div>
+        <script>
+          {
+            const select = document.getElementById('buildTypeId');
+            ReactUI.renderConnected(document.getElementById('buildTypeIdSelect'), ReactUI.ProjectBuildTypeSelect, {
+              expandAll: true,
+              includedBuildTypes: [...select.options].map(option => option.value),
+              selected: {nodeType: 'bt', id: select.value},
+              onSelect(item) {
+                select.value = item.id;
+                BS.ProjectReportTabDialog.updateFieldVisibility();
+              }
+            });
+          }
+        </script>
+        <forms:select name="archivedBuildTypes" id="archivedBuildTypes" style="display:none"></forms:select>
+        <span class="error" id="error_buildTypeId"></span>
+        <bs:smallNote>Build configuration that produces artifact with the report</bs:smallNote>
+      </td>
+    </tr>
+
+    <tr id="revisionRulesRow">
+      <th></th>
+      <td>
+        <select id="revisionRules" class="longField"
+                onchange="BS.ProjectReportTabDialog.updateFieldVisibility(); BS.VisibilityHandlers.updateVisibility('editProjectReportTab');">
+          <forms:buildAnchorOptions/>
+        </select>
+        <div id="buildNumberField" class="buildNumberPattern">
+          <div><label for="buildNumberPattern">Build number:<l:star/></label></div>
+          <forms:textField name="buildNumberPattern" maxlength="100" className="longField"/><bs:help file="ConfiguringGeneralSettings-BuildNumberFormat"/>
+          <span class="error" id="error_buildNumberPattern"></span>
+        </div>
+        <div id="buildTagField" class="buildNumberPattern">
+          <div><label for="buildTag">Build tag:<l:star/></label></div>
+          <forms:textField name="buildTag" maxlength="100" className="longField"/>
+          <div id="buildTagList" class="longField">Available tags: <span id="buildTagListSpan"></span></div>
+          <span class="error" id="error_buildTag"></span>
+        </div>
+        <div id="buildBranchField" class="buildNumberPattern">
+          <div><label for="buildBranchFilter">Build branch filter:</label></div>
+          <forms:textField name="buildBranchFilter" expandable="true" className="longField" value=""/>
+          <bs:smallNote>
+            Newline-delimited set of rules in the form of +|-:logical branch name (with an optional * placeholder).<bs:help file="Branch Filter"/><br/>
+          </bs:smallNote>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <th><label for="tabStartPage">Start page:</label></th>
+      <td>
+        <forms:textField className="longField projectReportTabParam js_dynamicSource" name="tabStartPage" id="projectTabStartPage"/>
+        <bs:smallNote>Relative path from the root of build's artifacts to a start page of the generated report.</bs:smallNote>
+        <bs:smallNote>To reference a file from an archive, use the <b>[path-to-archive]![relative-path]</b> syntax.</bs:smallNote>
+      </td>
+    </tr>
+
+  </table>
+  <div class="saveButtonsBlock">
+    <forms:submit name="editReportTab" label="Save"/>
+    <forms:cancel onclick="BS.ProjectReportTabDialog.close()"/>
+    <input type="hidden" name="projectId" value="${project.externalId}"/>
+    <forms:saving id="saving_projectReportTab"/>
+  </div>
+  <div id="artifactsTreePopup" class="popupDiv artifactsTreePopup"></div>
+</bs:modalDialog>
+
+<script type="text/javascript">
+  $j(document).ready(function() {
+    BS.AvailableParams.attachPopups('projectId=${project.externalId}', 'projectReportTabParam');
+  });
+</script>

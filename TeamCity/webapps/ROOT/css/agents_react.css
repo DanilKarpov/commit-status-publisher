@@ -1,0 +1,55 @@
+.agentsBlock{
+  height: 100%;
+}
+.commentText{
+  margin-left: 10px;
+}
+
+.agentPoolBox{
+  margin-bottom: 15px;
+}
+
+.agentBlockHandle {
+  cursor: pointer;
+}
+
+.agentPoolNameAsGroupHeader,
+a.agentPoolNameAsGroupHeader:hover {
+  color: var(--ring-text-color, #1f2326);
+}
+
+.agentsToolbar{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.toolbar{
+  margin: 10px 0 10px 0;
+}
+
+#agentsList #loader{
+  height: 52px;
+  margin: 10px 0 10px 0;
+  vertical-align: middle;
+}
+
+#panel{
+  display: block;
+  width: 100%;
+}
+
+#leftPanel{
+  display: inline-block;
+  width: 70%;
+}
+
+#rightPanel{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 29.5%;
+  text-align: right;
+}
+
+#sorter{
+  display: inline-block;
+}

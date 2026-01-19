@@ -1,0 +1,23 @@
+<%@ page import="jetbrains.buildServer.serverSide.DeprecationType" %>
+
+<c:forEach items="${runTypes}" var="runTypeInfo">
+  <c:if test="${fn:indexOf(runTypeInfo.displayName, 'obsolete runner') == -1 or runTypeInfo.key == buildForm.buildRunnerBean.runTypeInfoKey}">
+    <c:choose>
+      <c:when test="${runTypeInfo.deprecationType == DeprecationType.EXTERNAL}">
+        <forms:option value="${runTypeInfo.key}" selected="${runTypeInfo.key == buildForm.buildRunnerBean.runTypeInfoKey}">
+          <c:out value="${runTypeInfo.displayName} (external)"/>
+        </forms:option>
+      </c:when>
+      <c:when test="${empty runTypeInfo.deprecationReason}">
+        <forms:option value="${runTypeInfo.key}" selected="${runTypeInfo.key == buildForm.buildRunnerBean.runTypeInfoKey}">
+          <c:out value="${runTypeInfo.displayName}"/>
+        </forms:option>
+      </c:when>
+      <c:otherwise>
+        <forms:option value="${runTypeInfo.key}" selected="${runTypeInfo.key == buildForm.buildRunnerBean.runTypeInfoKey}" className="deprecated">
+          <c:out value="${runTypeInfo.displayName} (deprecated)"/>
+        </forms:option>
+      </c:otherwise>
+    </c:choose>
+  </c:if>
+</c:forEach>

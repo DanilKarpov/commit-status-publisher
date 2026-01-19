@@ -1,0 +1,447 @@
+/*------------ Styles for the upper part of the page */
+.attentionCommentNotifier {
+  width: 53em;
+  margin: 0.5em 0 1em 0;
+  font-size: 100%;
+}
+
+div.notifierSettings .submitButton {
+  margin: 3px 0 0;
+  vertical-align: top;
+}
+
+/*---------- Styles for the Notification Rules part of the page*/
+div#notificationRulesPage {
+  width: 100%;
+}
+
+#notificationRulesPage h2 {
+  margin: 0;
+  border-bottom: none;
+}
+
+table.eventsTable {
+  border: none;
+}
+
+table.eventsTable tr {
+  border: none;
+}
+
+table.eventsTable td {
+  border: none;
+  padding-bottom: 0.3em;
+}
+
+table.eventsTable td.buildFailed {
+  padding-bottom: 0;
+}
+
+table.eventsTable td.eventOption {
+  padding-left: 1.5em;
+}
+
+div.rulesWrapper {
+  background-color: var(--ring-content-background-color, #fff);
+  padding: 0 0 15px;
+}
+
+div.rulesWrapper p {
+  margin: 0;
+  padding: 0;
+}
+
+table.rulesTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 0;
+  padding: 0;
+}
+
+.notificationRule .rulesTable {
+  width: calc(100% - 20px);
+  margin-left: 20px;
+}
+
+table.rulesTable tr.header {
+  font-weight: bold;
+  color: var(--ring-content-background-color, #fff);
+}
+
+table.rulesTable tr.header th, table.rulesTable tr.header td {
+  padding: 2px 6px;
+}
+
+table.rulesTable td {
+  vertical-align: top;
+}
+
+table.rulesTable tr.header th.dragHandle {
+  width: 1%;
+  padding: 0;
+}
+
+table.rulesTable th.dragHandle {
+  background-image: none;
+  padding-left: 4px;
+}
+
+table.rulesTable td.moveTop,
+table.rulesTable th.moveTop {
+  width: 1%;
+  padding-right: 5px;
+  padding-left: 3px;
+}
+
+table.rulesTable td.builds,
+table.rulesTable th.builds {
+  text-align: left;
+}
+
+table.rulesTable td.condition,
+table.rulesTable th.condition {
+  width: 35%;
+  text-align: left;
+}
+
+table.rulesTable th.edit,
+table.rulesTable td.edit {
+  width: 3em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  font-weight: normal;
+  text-align: center;
+  font-size: 100%;
+}
+
+table.rulesTable td.remove,
+table.rulesTable th.remove {
+  width: 3em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  font-weight: normal;
+  text-align: center;
+}
+
+ul.elementList {
+  margin: 0;
+  padding-left: 0;
+}
+
+ul.elementList li {
+  list-style: none;
+}
+
+.notificationsNotSent {
+  margin: 0;
+  color: #737577;
+}
+
+ul.notificatorsList {
+  margin-top: 0;
+  margin-left: 0;
+  padding-top: 0;
+  padding-left: 2px;
+}
+
+ul.notificatorsList li {
+  list-style: none;
+}
+
+.watchTypeRule{
+  margin: 0 4px 0 0;
+  padding: 0;
+  clear: both;
+  margin-bottom: 0.5em;
+}
+
+.notifierSettings {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  width: 45em;
+  margin: 1em 0 0;
+  padding: 1em;
+}
+
+.notifierSettingControls {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0 6px 0 0;
+}
+
+.notifierSettingControls__label {
+  font-weight: bold;
+  padding-right: 6px;
+}
+
+p.notificationRulesMessage {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+#notificationRuleForm {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  min-width: 860px;
+  padding: 1%;
+  border-top: 3px solid var(--ring-line-color, #dfe5eb);
+}
+
+/*----------- styles for the edit/create notification rule panel*/
+
+.panelsContainer {
+  min-width: 860px;
+  overflow: auto;
+  padding-left: 1px;
+}
+
+.panelsContainer .leftPanel {
+  float: left;
+  margin-right: 5em;
+}
+
+.panelsContainer .rightPanel {
+  float: left;
+}
+
+.leftPanel h3,
+.rightPanel h3 {
+  margin-top: 0;
+}
+
+.projectSelector,
+.branchFilter,
+.configurationSelector
+{
+  width: 32em;
+  margin-bottom: 0.5em;
+  margin-left: 1.5em;
+}
+
+.branchFilter {
+  margin-top: 0.5em;
+}
+
+.configurationSelector .inplaceFiltered label {
+  white-space: nowrap;
+}
+
+.branchFilter {
+  position: relative;
+  padding-left: 18px;
+}
+
+.branchFilter:before {
+  position: absolute;
+  left: 0;
+}
+
+.branchFilter .helpIconWrapper {
+  position: absolute;
+  top: 0;
+  left: 10em;
+}
+
+.projectSelector select {
+  width: 100%;
+}
+
+.configurationSelector select {
+  width: 100%;
+}
+
+table.eventsTable td.endOfGroup {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.eventsTable td.startOfGroup {
+  padding-top: 0.5em;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+div.draggableEditingRow,
+div.draggableChangedRow {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+  margin: 3px 0;
+  padding-top: 2px;
+  padding-bottom: 4px;
+
+  border: 2px solid var(--ring-line-color, #dfe5eb);
+}
+
+div.draggable a {
+  cursor: pointer;
+}
+
+.notifierChooser {
+  margin-bottom: 1em;
+}
+
+table.readOnlyRules {
+  width: 80%;
+  margin: 0.5em 0;
+  padding: 0;
+  border-collapse: collapse;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.readOnlyRules td,
+table.readOnlyRules th {
+  padding: 2px 2px 2px 4px;
+  vertical-align: top;
+  text-align: left;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.sidebarNote {
+  background: var(--ring-content-background-color, #fff);
+  clear: both;
+  float: right;
+  position: relative;
+  width: 15%;
+  padding: 0.2em 0.5em 0.2em 1em;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+  z-index: 2;
+}
+
+.sidebarNote .helpIcon {
+  float: right;
+  position: relative;
+  top: .5em;
+}
+
+#notificationRulesRows .projectHierarchy .project_description,
+.readOnlyRules .projectHierarchy .project_description{
+  display: none;
+}
+
+.readOnlyRules .projectHierarchy td {
+  border: none;
+}
+
+ul.additionalFilters {
+  margin: 0;
+  padding: 0;
+}
+
+ul.additionalFilters li {
+  padding: 0;
+  list-style: none;
+}
+
+ul.additionalFilters li div {
+  padding-left: 0.5em;
+}
+
+.readOnlyRules .projectHierarchy td,
+#notificationRulesRows .rulesTable .projectHierarchy td {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: normal;
+}
+
+.readOnlyRules .projectHierarchy .build_type td,
+.readOnlyRules .projectHierarchy .project td,
+#notificationRulesRows .rulesTable .projectHierarchy .build_type td,
+#notificationRulesRows .rulesTable .projectHierarchy .project td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.additionalFiltersBlock,
+.additionalFiltersBlock {
+  line-height: normal;
+  padding-left: 14px;
+  margin-top: 0px;
+  margin-bottom: 8px;
+  list-style: none;
+}
+
+.additionalFiltersBlock li,
+.additionalFiltersBlock li {
+  padding-top: 4px;
+}
+
+#notificationRulesRows .rulesTable .projectHierarchy .emptyProject .handle,
+.readOnlyRules .projectHierarchy .emptyProject .handle {
+  background-image: none;
+}
+
+#notificationRulesRows .rulesTable .projectHierarchy .no_build_types,
+.readOnlyRules .projectHierarchy .no_build_types {
+  display: none;
+}
+
+.readOnlyRules .userChangesFilter .smallNote,
+#notificationRuleForm .userChangesFilter .smallNote {
+  margin-left: 1.8em;
+}
+
+#notificationRuleForm .posRel {
+  padding-right: 0.2em;
+}
+
+#notificationRuleForm .branchesPopupHandle {
+  right: -1em;
+}
+
+table.projectHierarchy {
+  margin-bottom: 0.5em;
+}
+
+table.rulesTable .projectHierarchy tr.project, table.rulesTable .projectHierarchy tr.build_type {
+  border-bottom: none;
+}
+
+#notificationRulesRows div.notificationRule {
+  margin: 0;
+  padding: 2px;
+  line-height: 24px;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+  overflow: hidden;
+}
+
+table.inheritedRulesTable {
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.inheritedRulesTable tr.header th.group {
+  width: 15%;
+  text-align: left;
+}
+
+table.inheritedRulesTable td {
+  padding: 4px;
+}
+
+table.inheritedRulesTable td.watchedBuilds, table.inheritedRulesTable td.events, table.inheritedRulesTable td.group {
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+table.inheritedRulesTable td.group {
+  border-right: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+div.settingsBlock {
+  border-bottom: none;
+}
+
+div.group-description {
+  color: #737577;
+}
+
+#notificationRulesPage .settingsBlock .settingsBlockTitle{
+  margin-top: 1em;
+}
+
+#userNotificationsStateContent .popupBody {
+  padding: 0.5em;
+}
+
+#userNotificationsStateContent ul {
+  margin: 0px;
+}
+
+#notificationRulesRows .dark.rulesTable{
+  margin-top: -25px;
+}

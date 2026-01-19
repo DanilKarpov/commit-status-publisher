@@ -1,0 +1,92 @@
+<%@ page import="jetbrains.buildServer.tokenManagement.TokenManagementConstants" %>
+<%@ page import="jetbrains.buildServer.serverSide.oauth.TokenIntentType" %>
+<%@ page import="jetbrains.buildServer.serverSide.oauth.OAuthConstants" %>
+<%@ page import="jetbrains.buildServer.tokenManagement.rest.data.TokenOwnership" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:set var="propertyBundleOverride" value="<%=TokenManagementConstants.PROP_BUNDLE_OVERRIDE%>"/>
+<c:set var="propertySupportTokenPermissions" value="<%=OAuthConstants.FEATURE_TOGGLE_TOKEN_MGMT_SUPPORT_TOKEN_PERMS%>"/>
+<c:set var="propertyAllowShowAllTokens" value="<%=OAuthConstants.FEATURE_TOGGLE_TOKEN_MGMT_ALLOW_SHOW_ALL_TOKENS%>"/>
+
+<c:set var="idContentContainer" value="tokenManagementContentContainer"/>
+<c:set var="idTokenLoadWaiter" value="tokenLoadWaiter"/>
+<c:set var="idInfoNoToken" value="infoNoToken"/>
+<c:set var="idInfoTokenError" value="infoTokenError"/>
+<c:set var="idInfoTokenConfigured" value="infoTokenConfigured"/>
+<c:set var="idTokenName" value="tokenName"/>
+<c:set var="idTokenIssuer" value="tokenIssuer"/>
+<c:set var="idTokenConnection" value="tokenConnection"/>
+<c:set var="idTokenInputSection" value="tokenInputSection"/>
+<c:set var="idTokenIdInput" value="tokenIdInput"/>
+<c:set var="idActionButtons" value="tokenEditActionButtons"/>
+<c:set var="idCopyButton" value="copyTokenIdButton"/>
+<c:set var="idConfirmEditButton" value="confirmEditButton"/>
+<c:set var="idCancelEditButton" value="cancelEditButton"/>
+<c:set var="idErrorMessage" value="tokenControlsErrorMessage"/>
+<c:set var="idFormErrorMessage" value="tokenFormErrorMessage"/>
+<c:set var="idWarningIcon" value="tokenControlsWarningIcon"/>
+<c:set var="idFormWarningIcon" value="tokenFormWarningIcon"/>
+<c:set var="idNewTokenForm" value="newTokenForm"/>
+<c:set var="idNewTokenFormDialog" value="${idNewTokenForm}Dialog"/>
+<c:set var="idTokenDialogSaveButton" value="tokenDialogSaveButton"/>
+<c:set var="idTokenDialogCancelButton" value="tokenDialogCancelButton"/>
+<c:set var="idTokenDialogWaiter" value="tokenDialogWaiter"/>
+<c:set var="idTokenNameInput" value="tokenNameInput"/>
+<c:set var="idTokenConnectionInput" value="tokenConnectionInput"/>
+<c:set var="idTokenConnectionWaiter" value="tokenConnectionWaiter"/>
+<c:set var="idTokenIntentRadioGroup" value="tokenIntentRadioGroup"/>
+<c:set var="idTokenIntentRadioFullAccess" value="tokenIntentRadioFullAccess"/>
+<c:set var="idTokenIntentRadioGroupReadAccess" value="tokenIntentRadioGroupReadAccess"/>
+<c:set var="idTokenIntentRadioWriteStatus" value="tokenIntentRadioWriteStatus"/>
+<c:set var="idTokenProjectScopeSelect" value="tokenProjectScopeSelect"/>
+<c:set var="idTokenNameValidationWaiter" value="tokenNameValidationWaiter"/>
+<c:set var="idEmbeddedButtonCell" value="embeddedButtonCell"/>
+<c:set var="idNewtokenDialogButtons" value="newtokenDialogButtons"/>
+<c:set var="idEmbeddedHeader" value="embeddedHeader"/>
+<c:set var="idFirstNewTokenFormRow" value="firstNewTokenFormRow"/>
+<c:set var="idInlineGenerateSection" value="inlineGenerateSection"/>
+<c:set var="idInlineReadOnlySection" value="inlineReadOnlySection"/>
+<c:set var="idAccessibleEntitiesInput" value="accessibleEntitiesInput"/>
+<c:set var="idAccessibleEntitiesLabel" value="accessibleEntitiesLabel"/>
+<c:set var="idAccessibleEntitiesHint" value="accessibleEntitiesHint"/>
+<c:set var="idScopeExpansionWarning" value="scopeExpansionWarning"/>
+
+<c:set var="classPersonalTokenInfo" value="personalTokenInfo"/>
+<c:set var="classNonPersonalTokenInfo" value="nonPersonalTokenInfo"/>
+<c:set var="classTokenActionButton" value="tokenActionButton"/>
+<c:set var="classTokenActionCloseButton" value="tokenActionCloseButton"/>
+<c:set var="classTokenGeneratebutton" value="tokenGenerateButton"/>
+<c:set var="classTokenDialogButton" value="tokenDialogButton"/>
+<c:set var="classNewTokenFormRow" value="newTokenFormRow"/>
+<c:set var="classEmbeddedRow" value="embeddedRow"/>
+<c:set var="classEmbeddedButtonsBlock" value="embeddedButtonsBlock"/>
+<c:set var="classEmbeddedSpacer" value="embeddedSpacer"/>
+<c:set var="classNoBorder" value="tokenControlsNoBorder"/>
+<c:set var="classTokenIntentSection" value="tokenIntentSection"/>
+<c:set var="classTokenGenerateWrapper" value="tokenGenerateWrapper"/>
+<c:set var="classNewTokenFormHeading" value="newTokenFormHeading"/>
+<c:set var="classAccessibleEntitiesSection" value="accessibleEntitiesSection"/>
+<c:set var="classWarningText" value="tokenControlsWarningText"/>
+<c:set var="classFormErrorRow" value="newTokenFormErrorRow"/>
+
+<c:set var="controlModeInfo" value="info"/>
+<c:set var="controlModeError" value="error"/>
+<c:set var="controlModeEmpty" value="empty"/>
+
+<c:set var="componentListTokens" value="LIST_TOKENS"/>
+
+<c:set var="pathStoredToken" value="<%=TokenManagementConstants.PATH_STORED_TOKEN_CONTROLLER%>"/>
+<c:set var="pathConnections" value="<%=TokenManagementConstants.PATH_CONNECTIONS_CONTROLLER%>"/>
+
+<c:set var="tokensTabName" value="<%=TokenManagementConstants.TAB_PARAM_NAME%>"/>
+
+<c:set var="messageTokenNameRequired" value="Token name is required."/>
+<c:set var="messageConnectionRequired" value="A connection must be selected."/>
+<c:set var="messageNoConnections" value="There are no suitable connections to generate a token."/>
+
+<c:set var="intentRepoFull" value="<%=TokenIntentType.REPO_FULL%>"/>
+<c:set var="intentRepoGroupsRead" value="<%=TokenIntentType.REPO_GROUPS_READ%>"/>
+<c:set var="intentPublishStatus" value="<%=TokenIntentType.PUBLISH_STATUS%>"/>
+
+<c:set var="tokenOwnerShipPersonal" value="<%=TokenOwnership.PERSONAL%>"/>
+<c:set var="tokenOwnerShipNonPersonal" value="<%=TokenOwnership.NON_PERSONAL%>"/>

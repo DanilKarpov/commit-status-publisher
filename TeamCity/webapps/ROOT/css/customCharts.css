@@ -1,0 +1,213 @@
+/*
+ * Copyright 2000-2024 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.customChart .editToggle {
+  float: right;
+}
+
+.editChartDialog .editChart {
+  width: 100%;
+  height: 150px;
+}
+
+#editChartDialog {
+  width: 506px;
+}
+
+.editChartDialog .modalDialogBody {
+  padding: 16px;
+}
+
+.editChartDialog .dialogTitle {
+  display: inline-block;
+  width: 95%;
+}
+
+.editChartDialog .sourceProject {
+  text-align: right;
+  margin-right: 16px;
+}
+
+.editChartDialog .sourceProject .projectExtId {
+  vertical-align: initial;
+}
+
+.editChartDialog .tabContent .fullSize {
+  width: 240px;
+}
+
+.editChartDialog .tabContent .smallNote {
+  margin-left: 0;
+}
+
+#manualVtChooserInput {
+  width: 210px;
+}
+
+#manualAddValueType {
+  padding-bottom: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.editChartDialog .tabContent .group:first {
+  margin-top: 5px;
+}
+
+.editChartDialog .tabContent .group:last {
+  margin-bottom: 16px;
+}
+
+.editChartDialog .error {
+  margin: 0
+}
+
+.editChartDialog .status {
+  margin-top: 8px;
+  text-align: right;
+  margin-right: 32px;
+  margin-bottom: 8px;
+}
+
+#chartsOrderList {
+  overflow: auto;
+  max-height: 400px;
+}
+
+#chartsOrderList .draggable {
+  padding-left: 34px;
+  font-weight: bold;
+}
+
+.editChartDialog .tabContent .group {
+  margin-bottom: 29px;
+  white-space: nowrap;
+}
+
+.editChartDialog .tabContent .group .header {
+  font-weight: bold;
+}
+
+.editChartDialog .tabContent .group .title {
+  display: inline-block;
+  margin-right: 4px;
+  width: 210px;
+}
+
+.editChartDialog .tabContent input[type=text] {
+  padding-left: 3px
+}
+
+.editChartDialog .editValueTypes .valueType {
+  white-space: nowrap;
+  padding: 0.4em;
+  margin-left: -0.4em;
+  margin-right: -0.4em;
+}
+
+.editChartDialog .editValueTypes .valueType:hover {
+  cursor: move;
+  background-color: #f1f4f7;
+}
+
+.editChartDialog .editValueTypes .valueTypeChooser {
+  margin-top: 8px;
+}
+
+.editChartDialog .buttons {
+  padding-top: 16px;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.editChartDialog .buttons .deleteChartXml {
+  margin-right: 12px;
+  float: right;
+  color: #a90f1a;
+}
+
+.editChartDialog .editValueTypes .valueTypeHeader .key,
+.editChartDialog .editValueTypes .valueTypeHeader .description {
+  display: inline-block;
+  width: 210px;
+  margin-right: 8px;
+  vertical-align: bottom;
+  font-weight: normal;
+}
+
+.editChartDialog .editValueTypes .valueType.pattern .key .patternNote {
+  margin-right: 4px;
+}
+
+.editChartDialog .editValueTypes .valueType .key {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.editChartDialog .editValueTypes .valueType .sourceBuildTypeNote {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  margin-right: 16px;
+}
+
+.editChartDialog .editValueTypes .valueType .removeValueType:hover {
+  color: #5989A4;
+}
+
+.editChartDialog .editValueTypes .valueType .removeValueType {
+  color: #CCCCCC;
+  margin-left: 3px;
+  font-size: 16px;
+}
+
+.editChartDialog .editValueTypes .valueType .title {
+  display: inline-block;
+}
+
+.editChartDialog .editValueTypes .vtChooser .key,
+.editChartDialog .editValueTypes .valueType .key {
+  display: inline-block;
+  width: 210px;
+  margin-right: 4px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.addChartButtonHolder .icon-caret-down {
+  margin-left: 7px;
+  color: var(--ring-disabled-color, #999);
+  font-size: 11px;
+}
+
+#editChartDialogTitle a.helpIcon {
+  margin-left: 3px;
+}
+
+.buildTypeChooser .btLink {
+  margin-left: 218px;
+  display: block;
+}
+
+.editChartDialog .configurationChartProjectChooserNote {
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+#buildTypeChooserSelect {
+  display: inline-block;
+  max-width: 240px;
+}

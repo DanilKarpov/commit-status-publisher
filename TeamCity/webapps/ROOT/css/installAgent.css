@@ -1,0 +1,25 @@
+/*--------------------- styles for the Install Agents / close link */
+
+#installAgents {
+  width: 25em;
+}
+
+#installAgents .contentWrapper {
+  padding: 10px;
+}
+
+#installAgents ul {
+  list-style: none;
+  margin-top: 0;
+  margin-left: 8px;
+  padding-left: 0;
+}
+
+#installAgents ul li {
+  margin-bottom: 8px;
+}
+
+#installAgents p {
+  margin-bottom: 0;
+}
+

@@ -1,0 +1,259 @@
+table.modificationBuilds {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+table.modificationBuilds tr td {
+  border-bottom: none;
+  padding-top: 2px;
+}
+
+table.modificationBuilds tr.buildTypeProblem {
+  padding-left: .5em;
+  border-bottom: #dbdbdb 1px solid;
+  vertical-align: top;
+}
+
+table.modificationBuilds tr.nosplit{
+  border-bottom: none !important;
+}
+
+table.modificationBuilds tr.nosplit td.buildTypeName{
+  border-bottom: #dbdbdb 1px solid;
+}
+
+table.modificationBuilds tr td {
+  vertical-align: top;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+
+.modificationBuilds .buildTypeProblem div.rightright {
+  float: right;
+  text-align: right;
+}
+
+.modificationBuilds .buildTypeProblem div.right span.date {
+  display: inline-block;
+  width: 8em;
+  margin-left: 2em;
+}
+
+.modificationBuilds .buildTypeProblem div.right span.highlightChanges {
+  left: 0;
+}
+
+.modificationBuilds .respCell {
+  max-width: 1px;
+  padding: 5px 5px;
+}
+
+.modificationBuilds .problemCell {
+  width: 75%;
+}
+
+.modificationBuilds.hasBranches .branch {
+  display: inline-block;
+  padding-right: 0.5em;
+}
+
+table.statusTable {
+  margin-bottom: 10px;
+}
+
+.statusTable td {
+  padding-bottom: .75em;
+  padding-left: .5em;
+  vertical-align: top;
+}
+
+.statusTable .changeComment {
+  font-weight: bold;
+}
+
+.statusTable .caption {
+  width: 8%;
+  white-space: nowrap;
+}
+
+.statusTable .caption.right {
+  padding-right: .5em;
+  text-align: right;
+}
+
+.statusTable .progress {
+  background-color: #f3f3f3;
+  border: 1px solid #f9f9f9 ;
+}
+
+tr.header td {
+  vertical-align: top;
+}
+
+tr.header td div {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding: 0 .5em .2em .5em;
+  line-height: 2.2em;
+}
+
+tr.header td.first div {
+  width: 90%;
+}
+
+#helperSection {
+  float: right;
+  position: relative;
+  top: -1px;
+  padding: .3em 10px;
+}
+
+.changeHeader {
+  display: none;
+}
+
+#helperSection .changeHeader {
+  display: block;
+}
+
+td.pendingRow {
+  padding: 3px;
+  border-bottom: 1px solid #E7E7E7;
+}
+
+.newTestsInfo,
+.noNewTests {
+  clear: both;
+  margin: 10px 10px 0;
+}
+
+div.vcsModificationTabContainer .vcsModificationFilesList {
+  max-width: 85%;
+}
+
+div.vcsModificationTabContainer .vcsModificationFilesList table.changedFiles td.fileTD {
+  white-space: normal;
+}
+
+/* Style for highlighting the current root if modification was detected in several roots */
+span.currentVcsRoot {
+  font-weight: bold;
+}
+
+p#oldTests {
+  margin-top: .5em;
+}
+
+.hideSuccessfulBlock {
+  margin: 10px 10px 0 5px;
+}
+
+.label{
+  color: #737577;
+}
+
+.edit-icon {
+  margin-left: 4px;
+  position: relative;
+  top: 1px;
+  color: var(--ring-text-color, #1f2326);
+}
+.edit-icon:hover {
+  text-decoration: none;
+}
+
+.sectionContent > table.changedFiles, .vcsModificationFilesList > table.changedFiles {
+  margin-top: 0;
+  margin-left: 0;
+  font-size: 100%; /* override value in filePopup.css*/
+}
+
+table.modificationBuilds .project_description, table.modificationBuilds .build_type_description {
+  display: block;
+  padding-left: 0;
+}
+
+table.modificationBuilds td.notTriggered {
+  font-style: italic;
+}
+
+table.modificationBuilds tr td.build_type_name, table.modificationBuilds tr td.buildTypeName {
+  width: 20%;
+}
+
+table.modificationBuilds tr td.build_type_name span.pc, table.modificationBuilds tr td.buildTypeName span.pc {
+  color: #737577;
+  white-space: normal;
+}
+
+table.modificationBuilds a.buildTypeName {
+  color: var(--ring-text-color, #1f2326);
+}
+
+table.modificationBuilds a.buildTypeName:hover {
+  color: #0F5B99;
+}
+
+table.modificationBuilds tr td.buildNumber {
+  white-space: nowrap;
+  width: 10%;
+}
+
+table.modificationBuilds tr td.branch {
+  width: 10%;
+  padding-right: 1em;
+}
+
+table.modificationBuilds td.status {
+  width: 30%;
+  white-space: normal;
+}
+
+table.modificationBuilds tr td.changesLink {
+  text-align: right;
+  padding-right: 2em;
+  width: 12%;
+}
+
+table.modificationBuilds tr td.artifactsLink {
+  text-align: left;
+  white-space: nowrap;
+  width: 6%;
+}
+
+table.modificationBuilds tr td.startDate {
+  white-space: normal;
+  width: 115px;
+  text-align: left;
+}
+
+table.modificationBuilds tr td.duration {
+  text-align: right;
+  width: 4%;
+  white-space: nowrap;
+  font-size: 95%;
+  color: #737577;
+}
+
+table.modificationBuilds tr td.stopBuild {
+  text-align: left;
+}
+
+table.modificationBuilds tr td.stopBuild .stopBuildReact {
+  left: 0;
+}
+
+table.modificationBuilds tr td.stopBuild .stopBuildReact button {
+  padding-right: 0;
+}
+
+table.modificationBuilds td.estimate {
+  width: 60%;
+  white-space: normal;
+  padding-left: 0.5em; /* should be the same as for status */
+}
+
+table.modificationBuilds td.artifacts.artifacts {
+  padding-top: 4px;
+  width: 52px;
+}

@@ -1,0 +1,141 @@
+<%--@elvariable id="tokenConnection" type="java.lang.String"--%>
+<%--@elvariable id="tokenUsername" type="java.lang.String"--%>
+<%--@elvariable id="tokenUser" type="java.lang.String"--%>
+
+<c:set var="connectionName" value="${empty tokenConnection ? 'unknown' : tokenConnection}"/>
+<c:set var="user" value="${empty tokenUser ? '' : tokenUser}"/>
+<c:set var="username" value="${empty tokenUsername ? '' : tokenUsername}"/>
+
+<script type="text/javascript">
+  calculateTokenIdFragment = function(tokenId) {
+    if (tokenId) {
+      var fragmentStart = tokenId.lastIndexOf(":") + 1;
+      return tokenId.substring(fragmentStart, fragmentStart + 7);
+    }
+    return "";
+  };
+
+  BS.AuthTypeTokenSupport = {
+
+    tokenUser: '<bs:forJs>${user}</bs:forJs>',
+    tokenUsername: '<bs:forJs>${username}</bs:forJs>',
+    isConnectionAvailable: <bs:forJs>${!empty tokenConnection}</bs:forJs>,
+    tokenConnectionName: '<bs:forJs>${connectionName}</bs:forJs>',
+
+    connections: {},
+
+    updateTokenMessage: function () {
+      // token controls are installed, we don't need the message logic
+      if (BS.TokenControlParams) {
+        return;
+      }
+
+      const tokenValue = $('tokenId').value;
+      if (tokenValue === null || tokenValue.trim().length == 0) {
+        $('message_no_token').show();
+        $('message_we_have_token').hide();
+      } else {
+        const userInfo = !this.tokenUser ? '' : 'for <strong> ' + this.buildUserInfo().escapeHTML() + '<strong>';
+
+        var tokenInfo = '';
+        if(this.isConnectionAvailable) {
+          tokenInfo = 'Currently configured access token was issued ' + userInfo + ' via <strong>' + this.tokenConnectionName.escapeHTML() + '</strong>.';
+
+        } else {
+          tokenInfo = 'Issued token is unavailable';
+        }
+
+        $('message_no_token').hide();
+        $('message_we_have_token').innerHTML = tokenInfo;
+        $('message_we_have_token').title = "tokenId: " + calculateTokenIdFragment(tokenValue);
+        $('message_we_have_token').show();
+      }
+      $j('#error_tokenId').empty();
+    },
+
+    tokenCallback: (it) => {
+      $('tokenId').value = it.tokenId;
+
+      BS.AuthTypeTokenSupport.tokenUser = it['teamcityName'];
+      BS.AuthTypeTokenSupport.tokenUsername = it['teamcityUsername'];
+      let connectionDisplayName = BS.AuthTypeTokenSupport.connections[it.connectionId];
+      BS.AuthTypeTokenSupport.isConnectionAvailable = BS.AuthTypeTokenSupport.isAvailable(connectionDisplayName);
+      BS.AuthTypeTokenSupport.tokenConnectionName = BS.AuthTypeTokenSupport.nvl(connectionDisplayName);
+
+      BS.AuthTypeTokenSupport.updateTokenMessage();
+    },
+
+    buildUserInfo: function () {
+      if (this.tokenUser == null) return null;
+      return this.tokenUsername + (this.tokenUser ? ' (' + this.tokenUser + ')' : '');
+    },
+
+    isAvailable: function (val) {
+      return !(!val || val.trim().length == 0);
+    },
+
+    nvl: function (val) {
+      return this.isAvailable(val) ? val : 'unknown';
+    },
+
+    disableStoredTokenWhenNoRootSelected: function(vcsRootSelectId, authTypeSelectId, neighborElementId) {
+      const vcsRootId = $(vcsRootSelectId).value;
+      const sel = $j('#' + authTypeSelectId);
+      const storedTokenOption = sel.find("option[value='storedToken']");
+      if (vcsRootId && vcsRootId.length > 0) {
+        storedTokenOption.attr('disabled', false);
+        this.hideStoredTokenDisabledInfo(vcsRootSelectId);
+      } else {
+        if (sel.val() === 'storedToken') {
+          sel.val('vcsRoot').change();
+        }
+        storedTokenOption.attr('disabled', 'disabled');
+        this.showStoredTokenDisabledInfo(vcsRootSelectId, neighborElementId);
+      }
+      sel.ufd("changeOptions");
+    },
+
+    showStoredTokenDisabledInfo: function (selectId, neighborId) {
+      const infoSpan = $j('<span/>')
+      .attr('id', 'info_' + selectId)
+      .text('GitHub App access token authentication type is disabled. A VCS root must be selected to use that authentication type.')
+      .addClass('smallNote');
+      $j('#' + neighborId).after(infoSpan);
+    },
+
+    hideStoredTokenDisabledInfo: function (selectId) {
+      $j('#info_' + selectId).remove();
+    }
+  };
+
+  BS.AuthTypeTokenSupport.updateTokenMessage();
+</script>
+
+<style type="text/css">
+  .token-connection {
+    clear: right;
+    padding-top: 0.25em;
+    width: 60%;
+  }
+
+  .token-connection-diplay-name {
+    float: left;
+    margin-left: 1em;
+  }
+
+  .token-control {
+    float: right;
+  }
+
+  .token-connection-button {
+    font-style: normal;
+  }
+
+  .access-token-note {
+    font-style: italic;
+  }
+
+  .connection-note {
+    clear: right;
+  }
+</style>

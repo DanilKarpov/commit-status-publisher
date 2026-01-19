@@ -1,0 +1,251 @@
+#buildQueue {
+  border: none;
+  text-align: left;
+}
+
+.queueWrapper {
+  margin-top: 1em;
+}
+
+.queueWrapper p {
+  margin: 0;
+  padding: 0;
+}
+
+.queueActionMessages {
+  float: left;
+  width: 80%;
+  margin-bottom: .5em;
+}
+
+.queueActionMessages .messagesHolder {
+  margin: 0 0 0 1em;
+}
+
+.queueActionMessages .messagesHolder #dataSaved {
+  padding: 3px;
+}
+
+.queueActions {
+  float: right;
+  margin-bottom: .5em;
+}
+
+table.buildQueueTable .foreignPersonalBuild {
+  color: #aaa;
+}
+
+table.buildQueueTable .foreignPersonalBuild .remove a.red {
+  color: #f99;
+}
+
+table.buildQueueTable .foreignPersonalBuild .canRunOn a {
+  color: #b0c4de;
+}
+
+table.buildQueueTable .notDraggable {
+  margin: 3px 0;
+  padding: 2px 0 4px;
+  border: 2px solid var(--ring-line-color, #dfe5eb);
+  cursor: default;
+}
+
+table.buildQueueTable tr.selected td{
+  border-top: 2px solid darkorange;
+  border-bottom: 2px solid darkorange;
+}
+
+table.buildQueueTable tr.selected td:first-child{
+  border-left: 2px solid darkorange !important;
+}
+
+table.buildQueueTable tr.selected td:last-child{
+  border-right: 2px solid darkorange;
+}
+
+#removeFromQueueDialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#queuedBuildsPopup {
+  width: 900px;
+  margin: 0;
+  padding: 0 0.5em 0.3em 0.5em;
+}
+
+#queuedBuildsPopup .buildQueueTable .remove {
+  white-space: nowrap;
+  padding-right: 0.5em;
+}
+
+#queuedBuildsPopup .buildQueueTable td.remaining {
+  width: 120px;
+  padding-right: 20px;
+}
+
+#queuedBuildsPopup .buildQueueTable .triggeredBy {
+  min-width: 170px;
+}
+
+#queuedBuildsPopup .buildQueueTable .canRunOn {
+  width: 120px;
+}
+
+#queuedBuildsPopup .buildQueueTable .remove {
+  width: 70px;
+}
+
+/*we don't wont to select items in queue popup*/
+#queuedBuildsPopup table.buildQueueTable tr.selected td{
+  border-top: 2px solid var(--ring-line-color, #dfe5eb);
+  border-bottom: 2px solid var(--ring-line-color, #dfe5eb);
+}
+
+#queuedBuildsPopup table.buildQueueTable tr.selected td:first-child{
+  border-left: 2px solid var(--ring-line-color, #dfe5eb) !important;
+}
+
+#queuedBuildsPopup table.buildQueueTable tr.selected td:last-child{
+  border-right: 2px solid var(--ring-line-color, #dfe5eb);
+}
+
+.triggeredBy__content {
+  white-space: normal;
+}
+
+
+.icon-long-arrow-up{
+  color:#59a869;
+  cursor: pointer;
+}
+
+.icon-long-arrow-down{
+  color: #db5860;
+  cursor: pointer;
+}
+
+
+table.buildQueueTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 2px;
+  overflow-y: auto; /* to prevent scrolled jquery-ui sortable positioning bug in FF */
+}
+
+table.buildQueueTable thead tr th {
+  background-color: var(--ring-icon-secondary-color, #999999);
+  padding: 3px 0px 3px 4px;
+  font-weight: bold;
+  color: var(--ring-content-background-color, #fff);
+  white-space: nowrap;
+}
+
+table.buildQueueTable thead tr th.canDrag {
+  width: 24px;
+}
+
+table.buildQueueTable thead tr th.canMove {
+  width: 24px;
+}
+
+table.buildQueueTable tr td.remaining {
+  max-width: 100px;
+}
+
+table.buildQueueTable tr td.moveTop {
+  width: 16px;
+}
+
+table.buildQueueTable tr td.orderNum {
+  width: 4%;
+  white-space: nowrap
+}
+
+table.buildQueueTable tr td.remove {
+  text-align: right;
+  cursor: default;
+}
+
+table.buildQueueTable tr th.selection,
+table.buildQueueTable tr td.selection {
+  width: 14px;
+  cursor: default;
+}
+
+table.buildQueueTable tbody tr td {
+  padding: 4px;
+  background-color: #f1f4f7;
+  border-top: 2px solid var(--ring-line-color, #dfe5eb);
+  border-bottom: 2px solid var(--ring-line-color, #dfe5eb);
+}
+
+.buildQueueTable tr.draggable {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+table.buildQueueTable tbody tr.draggable td:first-child {
+  vertical-align: text-bottom;
+  outline: none;
+  min-width: 16px;
+  cursor: move;
+  border-left: 2px solid var(--ring-line-color, #dfe5eb);
+
+  vertical-align: middle;
+}
+
+table.buildQueueTable tbody tr.draggable td:first-child:before {
+  margin-bottom: -2px;
+}
+
+table.buildQueueTable tbody tr td:last-child {
+  border-right: 2px solid var(--ring-line-color, #dfe5eb);
+}
+
+.draggable a {
+  cursor: pointer;
+}
+
+.comment-icon-mixin_right:after {
+  width: 16px;
+  height: 12px;
+  margin-left: 2px;
+}
+
+.configurationName {
+  color: #737577;
+}
+
+.configurationName a.buildTypeName {
+  color: var(--ring-text-color, #1f2326);
+}
+
+.configurationName a.buildTypeName:hover {
+  color: #0F5B99;
+}
+
+#showMoreQueuedBuilds {
+  position: relative;
+  width: 30%;
+  margin: 10px auto;
+}
+
+.showMoreQueuedBuildsLink {
+  display: block;
+  text-align: center;
+}
+
+.showMoreQueuedBuildsProgress {
+  position: absolute;
+  top: 21%;
+  right: 10px;
+}
+
+
+.queueExperimentalUI {
+  float: left;
+  margin-left: 8px;
+}

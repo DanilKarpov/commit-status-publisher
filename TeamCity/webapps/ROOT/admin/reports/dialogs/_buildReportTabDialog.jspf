@@ -1,0 +1,37 @@
+<%--@elvariable id="title" type="java.lang.String"--%>
+<%--@elvariable id="project" type="jetbrains.buildServer.serverSide.SProject"--%>
+<bs:modalDialog formId="editBuildReportTab" title="${title}" action="${action}"
+                dialogClass="modalDialog_large"
+                saveCommand="BS.BuildReportTabDialog.save();"
+                closeCommand="BS.BuildReportTabDialog.close();">
+  <input name="tabType" type="hidden" value="BUILD_REPORT_TAB"/>
+  <table class="editTabSettingsTable">
+    <tr>
+      <th><label for="tabTitle">Tab Title:<l:star/></label></th>
+      <td>
+        <forms:textField maxlength="100" className="longField" name="tabTitle"/>
+        <span class="error" id="error_buildTabTitle"></span>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="tabStartPage">Start page:</label></th>
+      <td>
+        <forms:textField className="longField buildReportTabParam" name="tabStartPage"/>
+        <bs:smallNote>Relative path from the root of build's artifacts to a start page of the generated report.</bs:smallNote>
+        <bs:smallNote>To reference a file from an archive, use the <b>[path-to-archive]![relative-path]</b> syntax.</bs:smallNote>
+      </td>
+    </tr>
+  </table>
+  <div class="saveButtonsBlock">
+    <forms:submit name="editReportTab" label="Save"/>
+    <forms:cancel onclick="BS.BuildReportTabDialog.close()"/>
+    <input type="hidden" name="projectId" value="${project.externalId}"/>
+    <forms:saving id="saving_buildReportTab"/>
+  </div>
+</bs:modalDialog>
+
+<script type="text/javascript">
+  $j(document).ready(function() {
+    BS.AvailableParams.attachPopups('projectId=${project.externalId}', 'buildReportTabParam');
+  });
+</script>

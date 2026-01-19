@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([["Rules"],{79968:function(e,r,s){s.r(r),s.d(r,{default:function(){return l}});var u=s(92516),n=s(20938),t=s(33033),c=s(62540);function l({queries:e,props:r}){const{projectsRest:s=null}=(0,u.usePreloadedQuery)(n.y,e.readOnlyProjects);return(0,c.jsx)(t.A,{readOnlyProjectsKey:s,...r})}}}]);
+//# sourceMappingURL=Rules.77f2ef881e8f06e556c9.js.map

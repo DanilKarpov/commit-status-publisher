@@ -1,0 +1,469 @@
+#allChains .pager-title {
+  margin: 0;
+}
+
+.buildChainBlock {
+  margin: 1em 0;
+}
+
+.buildChainBlock .blockHeader {
+  margin-bottom: .5em;
+  font-weight: normal;
+  background-position: 5px 8px;
+}
+
+.chainProblems .blockHeader {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.buildChainBlock .buildChainHeader {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.buildChainHeader td {
+  padding: 2px 0 0 0;
+  vertical-align: top;
+  font-size: 90%;
+}
+
+.buildChainHeader td.chainStatus {
+  vertical-align: middle;
+}
+
+.buildChainHeader td.chainStatus {
+  width: 2em;
+  padding-left: 6px;
+}
+
+.buildChainHeader td.buildConfName {
+  width: 20%;
+  padding: 2px 0 2px 4px;
+}
+
+.buildChainHeader td.buildConfName.notTriggered {
+  width: auto;
+}
+
+.buildChainHeader td.branch {
+  width: 1px;
+  padding-right: 0;
+}
+
+.buildChainHeader td.branch.hasBranch {
+  padding-right: 1em;
+}
+
+.buildChainHeader td.lastBuildNumber {
+  width: 10%;
+  padding-right: 1em;
+  white-space: nowrap;
+}
+
+.buildChainHeader td.chainStatusText {
+}
+
+.buildChainHeader td.chainStartTime {
+  width: 13%;
+  text-align: right;
+}
+
+.buildChainHeader td.chainChanges {
+  width: 13%;
+  text-align: right;
+  padding-right: 2em;
+}
+
+.buildChainHeader td.openChainInNewWindow {
+  width: 2em;
+  text-align: right;
+}
+
+.buildChainHeader td.openChainInNewWindow a {
+  text-decoration: none;
+}
+
+.singleBuildChain {
+  margin: 1em;
+}
+
+.nodeInfo {
+  padding: 4px 2px 4px 0;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.depNode .groupTitle {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding: 2px 3px 4px 6px;
+  margin: -3px -2px 4px -7px;
+  border-radius: 3px 3px 0 0;
+  display: flex;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+}
+
+.depNode .groupTitle .projectOrBuildTypeIcon {
+  margin-left: 0;
+}
+
+.nodeInfo.last {
+  padding-bottom: 0;
+}
+
+.nodeInfo.first {
+  padding-top: 0;
+  border-top: none;
+}
+
+.nodeInfo.selectedNode {
+  border: 2px solid darkorange;
+  border-radius: 4px;
+  padding-left: 6px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin: -2px -4px 0 -8px;
+}
+
+.layeredGraph .depNode.selectedNode {
+  border: 2px solid darkorange;
+  border-radius: 4px;
+}
+
+.nodeInfo.selectedNode.last {
+  margin: -2px -4px -4px -8px;
+}
+
+.nodeInfo.selectedNode.last.first {
+  margin: -4px -4px -4px -8px;
+}
+
+tr.modification-row.highlight, .nodeInfo.highlight {
+  background-color: #ffffcc;
+}
+
+.nodeInfo.highlight {
+  padding-left: 5px;
+  margin-left: -5px;
+}
+
+.nodeInfo.selectedNode.highlight {
+  padding-left: 6px;
+  margin-left: -8px;
+}
+
+.promoteOrRerun {
+  float:right;
+  position: relative;
+}
+
+.stop_and_progress {
+  white-space: nowrap;
+}
+
+.promoteOrRerun .stopBuild {
+  display: inline-block;
+  color: #CACACA;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 16px;
+  margin-right: -2px;
+}
+
+.promoteOrRerun .stopBuildReact {
+  position: absolute;
+  right: -5px;
+  top: -4px;
+}
+
+.stopBuildReact {
+  display: inline-block;
+}
+
+.promoteOrRerun .tc-icon {
+  vertical-align: middle;
+}
+
+a.groupLink {
+  display: inline-block;
+  color: #737577;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 16px;
+  margin-right: -2px;
+}
+
+div.groupTitle.compositeBuild .caption i {
+  margin-left: 4px;
+}
+
+.layeredGraph .depNode.unrelatedNodes {
+  border: 1px dashed #aaa;
+  color: #aaa;
+}
+
+.nodeInfo.groupedDeployBuild {
+  margin-left: -7px;
+  padding-left: 7px;
+  margin-right: -2px;
+  padding-right: 2px;
+  margin-bottom: -2px;
+  padding-bottom: 2px;
+}
+
+.nodeInfo.groupedDeployBuild.last {
+  margin-bottom: -3px;
+  padding-bottom: 3px;
+}
+
+div.groupTitle div.caption {
+  display: inline-block;
+  width: 93%;
+}
+
+div.ungroupLink {
+  display: inline-block;
+  width: 7%;
+}
+
+div.ungroupLink a {
+  color: var(--ring-text-color, #1f2326);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+div.ungroupLink a span.ungroupBox1 {
+  position: absolute;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+  background-color: var(--ring-line-color, #dfe5eb);
+  top: 4px;
+  right: 10px;
+  width: 7px;
+  height: 7px;
+  z-index: 5;
+}
+
+div.ungroupLink a span.ungroupBox2 {
+  position: absolute;
+  border: 1px solid #bbb;
+  background-color: #bbb;
+  top: 8px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  z-index: 10;
+}
+
+a.groupLink:hover {
+  color: #777;
+}
+
+.promoteOrRerun .stopBuild:hover {
+  color: #a2a2a2;
+}
+
+.ungroupedInfo {
+  font-size: 90%;
+  margin-bottom: 2px;
+}
+
+.ungroupedInfo table {
+  width: 100%;
+}
+
+.ungroupedInfo td {
+  vertical-align: top;
+}
+
+.ungroupedInfo td.label {
+  width: 11em;
+  color: var(--ring-text-color, #1f2326);
+}
+
+.ungroupedInfo .excludedBuildType, .ungroupedInfo .excludedProject {
+  color: #777;
+  padding: 0 3px 0 3px;
+  border-radius: 4px;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.ungroupedInfo .excludedBuildType.hidden, .ungroupedInfo .excludedProject.hidden {
+  display: none;
+}
+
+.buildConfSettings {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.buildConfSettings .settingInfo {
+  font-size: 90%;
+}
+
+.buildConfSettings .settingInfo i.tc-icon {
+  padding-right: 4px;
+}
+
+.buildConf.compact {
+  margin-right: 20px;
+}
+
+.buildConf_withOutPadding.compact {
+  margin-right: 0;
+}
+
+.buildConf .branchName {
+  font-size: 9px;
+}
+
+.buildConf .branch.default .branchName {
+  font-size: 9px;
+}
+
+.buildChainBuild {
+  margin-right: -16px;
+}
+
+.buildConf_withOutPadding .buildChainBuild {
+  margin-right: 0;
+}
+
+@supports (-moz-transform: translate(0, 0)) {
+  .buildChainBuild {
+    margin-right: 4px;
+  }
+}
+
+.buildChainBuild div.branch {
+  display: table-row;
+  line-height: 20px;
+}
+
+.buildChainBuild .hasBranch {
+  display: inline-block;
+  width: 160px;
+}
+
+.buildChainBuild .buildNumber {
+  width: auto;
+  padding-left: 0;
+  padding-right: .5em;
+  display: inline-block;
+  vertical-align: -3px;
+}
+
+.buildChainBuild .changes {
+  min-width: 10em;
+}
+
+.buildChainBuild .changesLink {
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.buildChainBuild .changes .changesLink.noChanges {
+  display: none;
+}
+
+.buildChainBuild .status {
+  padding-left: 0;
+}
+
+.buildChainBuild .status .oneLineStatus {
+  max-width: calc(100% - 45px);
+}
+
+.buildConf.compact .status,
+.buildConf.compact .resultsLink,
+.buildConf.compact .queueLink {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.buildChainBuild .progress_holder {
+  font-size: 9px;
+  width: 112px;
+  height: 19px;
+  display: inline-block;
+}
+
+.buildChainBuild .progress_holder .progress {
+  width: 120px;
+}
+
+.buildChainBuild .progress_holder .progress, .buildChainBuild .progress_holder .progressInner {
+  display: inline-block;
+  height: 1.3em;
+  max-width: 100%;
+}
+
+.buildChainBuild .progress_holder .date, .buildChainBuild .progress_holder span.progressOvertime {
+  display: none;
+}
+
+.buildChainBuild .artifactsLink {
+  height: 24px;
+  width: auto;
+  margin-left: -8px;
+}
+
+.buildChainBuild i.tc-icon_download {
+  margin-left: -2px; /* otherwise it does not align properly with status icon */
+}
+
+.buildChainBuild .promoteOrRerun .stopBuild {
+  width: 1px;
+}
+
+.chainBuilds, .chainChanges, .chainProblems {
+  clear: both;
+  padding-top: .5em;
+  max-width: 1600px;
+}
+
+.chainBuilds {
+  min-width: 100%;
+  max-width: none;
+  display: inline-block;
+}
+
+.chainOptions {
+  margin-bottom: .5em;
+  position: sticky;
+  display: inline-block;
+  max-width: 100vw;
+}
+
+.body .chainOptions {
+  left: 16px;
+}
+
+.chainOptions .chainOptions__option {
+  display: inline-block;
+  margin: 0 2em 4px 0;
+  padding: 4px 6px 0 0;
+  border-left: 1px solid var(--ring-content-background-color, #fff);
+  border-right: 1px solid var(--ring-content-background-color, #fff);
+  background-color: var(--ring-content-background-color, #fff);
+}
+
+.chainOptions__option .progressRing {
+  position: absolute;
+  right: -18px;
+  top: 3px;
+}
+
+div.smallNote {
+  margin-left: 0;
+  margin-bottom: .5em;
+}

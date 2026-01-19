@@ -1,0 +1,1098 @@
+/*
+ * Copyright 2000-2024 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*-------------- error styles */
+#errorMessage {
+  display: none;
+  margin-top: 15px;
+  color: #a90f1a;
+  font-weight: bold;
+}
+
+.errorField {
+  border: 2px solid #a90f1a;
+}
+
+.errorMessage {
+  color: #a90f1a;
+}
+
+div.error,
+span.error {
+  display: block;
+  margin-top: 0;
+  margin-left: 12.6em;
+  color: #a90f1a;
+}
+
+.noJavaScriptEnabledMessage {
+  color: #a90f1a;
+}
+
+/*--- general elements */
+
+#sidebarAdmin {
+  background-color: var(--ring-content-background-color, #fff);
+  float: right;
+  width: 240px;
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+div.divider {
+  margin: 0 0 1em 0;
+  border-bottom: 1px solid #CFCFD0;
+}
+
+h3.title {
+  background-color: #F3F4F8;
+  height: 100%;
+  margin: 15px 0 10px 0;
+  padding: .1em 1em;
+  font-weight: bold;
+  color: #26272B;
+  border-bottom: #E6E7EB solid 2px;
+}
+
+/*------------- Useful links part of the Sidebar */
+.usefulLinks {
+  width: 100%;
+  margin: 10px 0 0 0;
+  border-collapse: collapse;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.usefulLinks td {
+  padding: .5em 0.5em 0.5em 0;
+  line-height: 1.2;
+}
+
+.usefulLinks td.homepage img {
+  float: left;
+}
+
+.usefulLinks td.homepage a {
+  display: block;
+  margin-left: 22px;
+}
+
+.usefulLinks td.button {
+  width: 50px;
+  vertical-align: top;
+}
+
+.usefulLinks td.descr {
+  font-size: 90%;
+}
+
+.usefulLinks td.descr span.smallNote {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.usefulLinks ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.usefulLinks li {
+  margin-bottom: .5em;
+}
+
+.usefulLinks .inline {
+  display: inline-block;
+}
+
+/*--------- end of useful links*/
+
+label.rightLabel {
+  margin-left: 0;
+}
+label.fixedLabel {
+  width: 60px;
+  display: inline-block;
+}
+
+.textField {
+  width: 200px;
+  margin-left: 0;
+  padding-left: 0.1em;
+}
+
+input.smallField,
+textarea.smallField {
+  width: 8em;
+}
+select.smallField {
+  width: 7.6em;
+}
+
+input.mediumField,
+textarea.mediumField {
+  width: 20em;
+}
+select.mediumField {
+  width: 19.6em;
+}
+
+div.longField,
+input.longField,
+textarea.longField {
+  width: 31em;
+  margin: 0;
+  padding-left: 0.1em;
+}
+select.longField {
+  width: 30.6em;
+}
+
+.modalDialog div.longField,
+.modalDialog input.longField,
+.modalDialog textarea.longField,
+.modalDialog .smallNote {
+  width: 28em;
+}
+.modalDialog select.longField {
+  width: 27.6em;
+}
+
+.modalDialog_small div.longField,
+.modalDialog_small input.longField,
+.modalDialog_small textarea.longField {
+  width: 26em;
+}
+.modalDialog_small select.longField {
+  width: 25.6em;
+}
+
+.textProperty.textProperty_max-width {
+  width: 100%;
+}
+
+input.but {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  padding-left: 0.1em;
+}
+
+.addNew {
+  white-space: nowrap;
+}
+
+span.mandatoryAsterix {
+  color: #db5860;
+  font-size: 90%;
+}
+
+.grayNote,
+.smallNote,
+.smallNoteAttention {
+  max-width: 640px;
+  color: #737577;
+  font-size: 90%;
+}
+
+.section .grayNote {
+  max-width: none;
+}
+
+.smallNote,
+.smallNoteAttention {
+  margin-top: 0;
+  margin-left: 14.2em;
+  padding-top: 0;
+}
+
+.smallNote kbd,
+.smallNoteAttention kbd {
+  font-size: 12px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.smallNoteAttention {
+  margin-left: 0;
+  padding-left: 0;
+  line-height: 1.5em;
+}
+
+.checkboxSectionUnderInput {
+  padding-top: 10px;
+}
+
+/*---------- Profile styles and User List styles*/
+div.modifiedMessage {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 64px;
+  right: 0;
+
+  padding: 0;
+
+  text-align: center;
+  color: var(--ring-text-color, #1f2326);
+  z-index: 6;
+
+  opacity: 0.9;
+}
+
+.modifiedMessage .messageBody {
+  background-color: var(--tc-classic-highlight-color, #ffc);
+  margin: 0;
+  padding: .5em 0;
+  border: 1px solid #8a8d7f;
+}
+
+.modifiedMessage .messageText {
+  position: relative;
+  top: 2px;
+}
+
+.modifiedMessage .bulk-operations {
+  font-weight: normal;
+}
+
+.modifiedMessage input {
+  min-width: 4em;
+  margin-top: 0.1em;
+  margin-left: 1.5em;
+  vertical-align: middle;
+}
+
+p.notificatorType {
+  margin-top: 1em;
+  margin-bottom: -1.5em;
+  font-weight: bold;
+}
+
+p.notificatorType input,
+p.administratorStatus input {
+  float: left;
+  margin-right: 0.5em;
+  margin-left: 0;
+}
+
+p.administratorStatus {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+p.createMoreUsers {
+  width: 70%;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  padding: 0 0 0 27px;
+}
+
+p.createMoreUsers input {
+  float: left;
+  margin-right: 0.5em;
+}
+
+label.right {
+  width: 6.5em;
+  margin-left: 1.5em;
+}
+
+#licenseInfo {
+  width: auto;
+  background-color: var(--ring-content-background-color, #fff);
+}
+
+#licenseInfo .groupBox {
+  margin-top: 0;
+  padding-bottom: 30px;
+}
+
+div.selectUserText {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 90%;
+}
+
+#licenseInfo .submitButton {
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+.licenseStatus {
+  margin: 0;
+  padding: 0;
+}
+
+#licenseInfo .usersSelector {
+  width: 19em;
+  margin: 0 5px;
+}
+
+/*----------------- Save or Cancel block*/
+.saveButtonsBlock,
+.popupSaveButtonsBlock {
+  height: 32px;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  zoom: 1;
+}
+
+.saveButtonsBlock.withDslButton,
+.popupSaveButtonsBlock.withDslButton {
+  display: flex;
+  align-items: center;
+}
+
+.saveButtonsBlock_noborder {
+  border: none;
+  padding-top: 0;
+}
+
+.saveButtonsBlock {
+  margin-bottom: 1em;
+}
+
+.popupSaveButtonsBlock {
+  margin-top: 1em;
+  white-space: nowrap;
+}
+
+/* Cross-browser clearfix */
+.saveButtonsBlock:before,
+.saveButtonsBlock:after,
+.popupSaveButtonsBlock:before,
+.popupSaveButtonsBlock:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.saveButtonsBlock:after,
+.popupSaveButtonsBlock:after {
+  clear: both;
+}
+
+.saveButtonsBlock input,
+.saveButtonsBlock a,
+.popupSaveButtonsBlock input,
+.popupSaveButtonsBlock a {
+  vertical-align: middle;
+}
+
+.saveButtonsBlock .btn,
+.popupSaveButtonsBlock .btn {
+  margin-left: 0;
+  margin-right: 1em;
+}
+
+.saveButtonsBlock.saveButtonsBlockCentered {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  border-top: none;
+  text-align: center;
+}
+
+.saveButtonsBlock.saveButtonsBlockCentered .btn {
+  margin: 0 1em;
+}
+
+.saveButtonsBlock.saveButtonsBlockRight {
+  margin-top: 0;
+  border-top: none;
+  text-align: right;
+}
+
+.saveButtonsBlock.saveButtonsBlockRight .btn {
+  margin: 0 0 0 1em;
+}
+
+.icon-magic {
+  color: var(--ring-link-color);
+}
+
+.icon-refresh.icon-spin {
+  width: auto;
+  height: auto;
+  -moz-animation-duration: 1.5s;
+  -o-animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
+.progressRingDefault {
+  float: right;
+  position: relative;
+  top: 1px;
+}
+
+.progressRingSubmitBlock {
+  float: none;
+}
+
+.progressRingInline {
+  float: none;
+  margin-left: 5px;
+}
+
+.progressRing.ring-loader-inline {
+  margin-left: 0;
+}
+
+.saveButtonsBlock .progressRing,
+.popupSaveButtonsBlock .progressRing {
+  float: none;
+}
+
+a.cancel,
+.btn.cancel {
+  margin-right: 1em;
+}
+
+.submitButton {
+  margin-right: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.shortButton {
+  width: 5.5em;
+}
+
+/*---------- Modal dialogs*/
+#overlappingDiv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--ring-text-color, #1f2326);
+  opacity: 0.1;
+}
+
+.modalDialog {
+  background-color: var(--ring-content-background-color, #fff);
+
+  display: none;
+  position: absolute;
+  width: 42em;
+  min-height: 4em;
+  margin: 0;
+  border: 1px solid;
+  border-color: #CCC #666 #666 #CCC;
+  border-color: rgba(0,0,0,0.2);
+
+  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+
+  z-index: 100;
+}
+
+.modalDialog_small {
+  width: 32em;
+}
+
+.modalDialog_large {
+  width: 52em;
+}
+
+.modalDialogFixed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: min-content;
+}
+
+.modalDialog .dialogHeader {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  position: relative;
+  padding: 0;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.modalDialog .dialogHandle {
+  padding: 12px;
+  cursor: move;
+}
+
+
+.modalDialog .dialogTitle {
+  display: flex;
+  align-items: baseline;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  padding-bottom: 1px;
+  margin-right: 16px;
+}
+
+.modalDialog .dialogTitle > span {
+  min-width: 0;
+}
+
+.modalDialog .dialogTitle .addNew {
+  background: none;
+  padding: 0;
+}
+
+.modalDialog .titleBuildNumber {
+  font: inherit;
+}
+
+.closeWindow {
+  float: right;
+  position: relative;
+  top: -1px;
+  margin: 12px 12px 0 0;
+}
+
+.removeItemLink {
+  display: inline-block;
+  text-align: center;
+  color: #C0C0C0;
+  font-size: 16px;
+  padding: 0 10px 0 0;
+}
+
+.removeItemLink:hover {
+  text-decoration: none;
+  color: #A0A0A0;
+}
+
+.closeWindowLink,
+.closeWindowLink:hover {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #B2B2B2;
+  font-size: 16px;
+}
+
+.modalDialog h3 {
+  margin: 0;
+  font: 200 16px "Helvetica Neue", Calibri, Arial, sans-serif;
+}
+
+.modalDialogBody {
+  padding: 12px;
+  overflow: auto;
+  max-height: 90vh;
+}
+
+.modalDialogBody_nopaddings {
+  padding: 0;
+}
+
+.parameterWrapper {
+  display: flex;
+  padding-bottom: 5px;
+}
+
+/*--------------------- table layout for the project form, build type forms */
+.runnerFormTable {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.runnerFormTable th,
+.runnerFormTable td {
+  margin: 0;
+  padding: 8px;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.runnerFormTable tr:first-child th,
+.runnerFormTable tr:first-child td {
+  border-top: none;
+}
+
+.newSpecTable.runnerFormTable tr:first-child th,
+.newSpecTable.runnerFormTable tr:first-child td {
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.newSpecTable.runnerFormTable .posRel,
+.newSpecTable.remoteParameter .posRel,
+.runnerFormTable.remoteParameter .posRel {
+  display: block;
+  width: 100%;
+  padding-right: 0;
+}
+
+.newSpecTable.remoteParameter input[type=text],
+.newSpecTable.remoteParameter textarea,
+.newSpecTable.remoteParameter select,
+.newSpecTable.runnerFormTable input[type=text],
+.newSpecTable.runnerFormTable textarea,
+.newSpecTable.runnerFormTable select,
+.runnerFormTable.remoteParameter input[type=text],
+.runnerFormTable.remoteParameter textarea,
+.runnerFormTable.remoteParameter select {
+  width: 100%;
+}
+
+.newSpecTable.runnerFormTable th.formHeader {
+  width: 26%;
+}
+
+
+.newSpecTable .posRel {
+  display: block;
+  padding: 0;
+}
+
+.runnerFormTable th.formHeader {
+  width: 20%;
+}
+
+
+.runnerFormTable td.at_top {
+  vertical-align: top;
+}
+
+.runnerFormTable .overridenParam > td {
+  font-weight: 600;
+}
+
+.overridenParam .paramValue span {
+  margin-right: 5px;
+}
+
+.runnerFormTable th.noBorder,
+.runnerFormTable td.noBorder {
+  border-top: none;
+}
+
+.runnerFormTable th {
+  width: 26%;
+  vertical-align: top;
+  text-align: left;
+}
+
+.userDefinedParametersTable th,
+.newSpecTable th,
+.remoteParameter th {
+  min-width: 150px;
+  width: 150px;
+}
+
+#editBuildTypeForm #runnerParams .runnerFormTable {
+  margin-left: -8px;
+}
+
+#editBuildTypeForm .runnerFormTable th {
+  width: 1%;
+  min-width: 180px;
+}
+
+.runnerFormTable span.smallNote,
+.runnerFormTable td select {
+  margin: 0;
+  padding: 0;
+}
+
+.runnerFormTable tr.groupingTitle td {
+  background-color: var(--ring-secondary-background-color, #f7f9fa);
+  padding: .1em 0 .1em 8px;
+  border-top: 1px solid var(--ring-line-color, #dfe5eb);
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.runnerFormTable td.forkModeOptions .forkModeOption {
+  margin: 10px 0;
+}
+
+.runnerFormTable td span.smallNote,
+.runnerFormTable td span.error {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.runnerFormTable .smallNote.smallNote_hidden {
+  display: none;
+}
+
+.runnerFormTable td span.smallNoteAttention {
+  display: block;
+  margin: 0;
+}
+
+.runnerFormTable .labelAfterControl {
+  margin-left: 2px;
+}
+
+.createFormContainer .runnerFormTable,
+#createTemplateForm .runnerFormTable {
+  table-layout: fixed;
+}
+
+/*------------------ styles for the Test Connection dialog*/
+.testConnectionFailed,
+.testConnectionSuccess,
+.testConnectionNeutral {
+  margin-bottom: .5em;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.testConnectionFailed {
+  color: #a90f1a;
+}
+
+.testConnectionSuccess {
+  color: #0c7523;
+}
+
+#testConnectionDetails {
+  overflow-x: auto;
+  padding: 5px;
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+  font-size: 12px;
+  width: 564px;
+}
+
+textarea.expandable {
+  resize: both;
+  overflow: auto;
+  padding: 0;
+}
+
+/*------------------ Advanced settings */
+
+.advancedSettingsToggle {
+  margin: 1em 0;
+  color: #b25c00;
+}
+
+.advancedSettingsToggle a {
+  margin-left: .5em;
+  color: #b25c00;
+}
+
+.advancedSettingHighlight th {
+  color: #b25c00;
+}
+
+.advancedSetting {
+  background-color: var(--ring-content-background-color, #fff);
+  -webkit-transition: background-color 500ms;
+  transition: background-color 500ms;
+}
+
+.strongHighlight {
+  background-color: #fffccf;
+}
+
+tr.valueChanged,
+div.valueChanged {
+  border-left: 3px solid #FFE181;
+}
+
+a.resetLink {
+  margin-left: 0.5em;
+}
+
+div.textOptionWrapper {
+  position: relative;
+  white-space: nowrap;
+  padding-right: 40px;
+}
+
+.textOptionWrapper .textOptionLinksContainer {
+  position: absolute;
+  top: 0px;
+}
+
+div.textOptionWrapper a.resetLink, div.textOptionWrapper span.inheritedParam {
+  padding-left: 2px;
+}
+
+.agentTree,
+.vcsTreeHandle {
+  cursor: pointer;
+  vertical-align: top;
+  margin-top: 0.1em;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.headerNote {
+  margin: 4px 0 8px 0;
+  padding: .5em 0 .5em 1em;
+  background: var(--ring-hover-background-color);
+  line-height: 2em;
+}
+
+.headerNote .basedOn {
+  float: left;
+}
+
+.editVcsSettingsDialog .vcsUserNames {
+  width: 30em;
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: auto;
+}
+
+.editVcsSettingsDialog .vcsUserNamesNote {
+  margin-left: 9em;
+}
+
+.editAccessTokenFormDialog {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+  width: 50em;
+}
+
+.editAccessTokenFormDialog .input-wrapper {
+  width: 32em;
+}
+
+#accessTokenScoped,#accessTokenProjects {
+  width: 30em;
+}
+
+.editAccessTokenFormDialog .error {
+  display: none;
+  width: 100%;
+  white-space: nowrap;
+  margin-left: 0;
+}
+
+#accessTokenPermissionsTr .input-wrapper {
+  width: 30em;
+  padding-top: 1em;
+}
+
+
+.editAccessTokenFormDialog th, .editAccessTokenFormDialog tr {
+  margin: 0;
+  padding: 8px;
+}
+
+.editAccessTokenFormDialog tr:first-child th,
+.editAccessTokenFormDialog tr:first-child td {
+  border-top: none;
+}
+
+.editAccessTokenFormDialog th.noBorder,
+.editAccessTokenFormDialog td.noBorder {
+  border-top: none;
+}
+
+.editAccessTokenFormDialog th {
+  vertical-align: top;
+  text-align: left;
+}
+
+.editAccessTokenFormDialog .mono {
+  word-wrap: break-word;
+  width: 27em;
+}
+
+#select_accessTokenExpirationTimeUnit {
+  padding: 2px;
+}
+
+#permissionFormContainerInputWrapper {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.permissionGroupList {
+  list-style: none;
+  padding-left: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.permissionList {
+  list-style: none;
+  padding-top: 4px;
+  padding-left: 1.5em;
+}
+
+.permissionGroupItem {
+  padding-top: 5px;
+  border-bottom: 1px solid var(--ring-line-color, #dfe5eb);
+  padding-bottom: 5px;
+}
+
+.permissionCheckboxItem {
+  margin-bottom: 1em;
+}
+
+.userProfileTable .noRightBorder {
+  border-right: none;
+}
+
+.userProfileTable .noLeftBorder {
+  border-left: none;
+}
+
+.draggable {
+  margin: 3px 0;
+  padding: 2px;
+  line-height: 24px;
+  border: 2px solid var(--ring-line-color, #dfe5eb);
+  cursor: move;
+  overflow: hidden;
+}
+
+.reorderDialog .resetOrder {
+  float: right;
+  margin-right: 0;
+}
+
+.reorderDialog #sortableList {
+  max-height: 350px;
+  overflow: auto;
+}
+
+#sortableList .tc-icon_draggable:before {
+  margin-right: 4px;
+  margin-bottom: -2px;
+}
+
+.editProjectPage .editCustomOrder {
+  display: inline;
+  float: right;
+}
+
+.buildConfigurationsTableHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subProjectsTableHeader {
+  width: 100%;
+}
+
+.branchesContainer ul.itemsList, .projectDataContainer ul.itemsList {
+  margin: 0.5em 0 0 0;
+  max-height: 15em;
+  padding: 0;
+  overflow: auto;
+  min-width: 20em;
+}
+
+.branchesContainer ul.itemsList li, .projectDataContainer ul.itemsList li {
+  padding: 0 .5em 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.branchesContainer select.itemsList, .projectDataContainer select.itemsList {
+  min-width: 20em;
+}
+
+.branchesPopupHandle,
+.branchFilterHelperHandle,
+.projectDataPopupHandle {
+  cursor: pointer;
+}
+
+.branchFilterHelperHandle,
+.branchesPopupHandle {
+  display: inline-block;
+  position: absolute;
+  top: 0.35em;
+}
+
+.posRel .branchesPopupHandle {
+  right: 0;
+}
+
+.posRel .branchFilterHelperHandle {
+  right: 0;
+}
+
+#watchTypeBuildTypeSettings .branchesPopupHandle {
+  margin-left: 4px;
+}
+
+.dialogDslButtons {
+  margin-left: auto;
+}
+
+.fragmentEditDsl {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  background-color: var(--ring-content-background-color, #fff);
+  left: -200vw;
+  box-sizing: border-box;
+  border-right: 20px solid var(--ring-content-background-color, #fff);
+  border-left: 20px solid var(--ring-content-background-color, #fff);
+  overflow-y: scroll;
+}
+
+.dsl_active {
+  left: 0;
+}
+
+.dsl_inactive {
+  position: absolute;
+  left: -200vw;
+  width: 100%;
+  top: 0;
+}
+
+.wrapToggle {
+  position: absolute;
+  right: 4px;
+  top: 2px;
+}
+
+.wrapToggle .actionIcon,
+.wrapToggle:focus .actionIcon {
+  color: var(--ring-secondary-color);
+}
+
+.wrapToggleOn .actionIcon,
+.wrapToggleOn:focus .actionIcon {
+  color: var(--ring-link-color);
+}
+
+.codeHighlightTD {
+  max-width: 0;
+}
+
+.codeMirrorWrapper {
+  display: block;
+}
+
+.codeMirrorWrapper .CodeMirror-scroll {
+  min-height: 80px;
+  max-height: 320px;
+}
+
+.agentTreeSelectedPathDiv {
+  margin-top: 10px;
+  margin-left: 4px;
+}
+
+.agentTreeSelectedPath {
+  font-family: monospace;
+}

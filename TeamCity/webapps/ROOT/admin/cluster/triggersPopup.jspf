@@ -1,0 +1,21 @@
+<div id="triggersInfoPopupContent" class="popupDiv">
+  <c:if test="${balancingInProgress}">
+    <div>
+      <bs:buildStatusIcon type="red-sign" className="warningIcon"/>TeamCity is rebalancing the build triggers among the nodes
+    </div>
+  </c:if>
+  <table class="settings runnerFormTable">
+    <tr>
+      <th class="name">Node ID</th>
+      <th class="name">Trigger type</th>
+      <th class="name">Number of active triggers</th>
+    </tr>
+    <c:forEach items="${triggersStats}" var="info" varStatus="pos">
+      <tr>
+        <td><bs:escapeForJs text="${info.responsibleNodeId}" forHTMLAttribute="true"/></td>
+        <td><bs:escapeForJs text="${info.triggerDisplayName}" forHTMLAttribute="true"/></td>
+        <td>${info.triggersCount}</td>
+      </tr>
+    </c:forEach>
+  </table>
+</div>

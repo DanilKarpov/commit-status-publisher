@@ -1,0 +1,157 @@
+/*--------------- create project page styles*/
+.disabledConfigurationSection {
+  margin-top: 10px;
+}
+
+/*--------------- edit project page styles*/
+div.editProjectPage {
+  margin: 0;
+  padding: 0;
+}
+
+.editProjectPage #configurations td.name,
+.editProjectPage #configurations  th.name {
+  width: 50%;
+}
+
+.editProjectPage th.usages {
+  width: 7%;
+}
+
+ul.vcsPluginsList {
+  list-style: none;
+  margin-left: 0;
+  padding: 0.7em 0 0 0;
+}
+
+ul.vcsPluginsList li {
+  background: url("../../img/add.png?v=197325") no-repeat center left;
+  display: inline;
+  margin: 0 0.9em 0 0;
+  padding-left: 1em;
+}
+
+ul.vcsPluginsList li a {
+  white-space: nowrap;
+  padding: 0 0 0 5px;
+  font-weight: bold;
+}
+
+div.unusedVcsRoots {
+  padding-top: 0.5em;
+}
+
+/*--------------- versioned settings */
+
+table.synchronizationMode {
+  margin: 1em 0;
+  width: 100%;
+}
+
+table.synchronizationMode td {
+  padding: 4px;
+}
+
+#versionedSettingsEnabledSection > td {
+  padding-left: 24px;
+}
+
+#buildSettingsModeHelpBlock {
+  padding-top: 0px;
+}
+
+#buildSettingsModeHelpBlock > div {
+  width: 50em;
+}
+
+#buildSettingsModeNote {
+
+}
+
+#versionedSettingSaveRow td {
+  padding-top: 10px;
+}
+
+div.parentProjectNote {
+  margin-top: 1em;
+}
+/*--------------- sidebar tabs */
+.admin-sidebar.project-sidebar.compact {
+  background: none;
+  padding-top: 8px;
+}
+
+.project-sidebar .admin-menu__bg {
+  background: none;
+  box-shadow: none;
+}
+
+#projectTabsContainer .item {
+  float: none;
+  border: none;
+  background: none;
+  padding: 0;
+  width: calc(100% - 24px);
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+#projectTabsContainer .item:hover {
+  background: var(--ring-tag-background-color);
+}
+
+#projectTabsContainer .item.active {
+  background: var(--ring-selected-background-color);
+  box-shadow: none;
+}
+
+#projectTabsContainer .item a {
+  padding: 2px 0 2px 4px;
+  color: var(--ring-text-color, #1f2326);
+  display: flex;
+  justify-content: space-between;
+}
+
+#projectTabsContainer .item a:hover {
+  text-decoration-line: none;
+}
+
+#projectTabsContainer .item.active a,
+#projectTabsContainer .item.active .tabCounter {
+  position: static;
+}
+
+#projectTabsContainer .tabCounter {
+  margin-right: 8px;
+}
+
+#projectTabsContainer .category {
+  margin-top: 16px;
+  padding: 2px 0 2px 16px;
+  font-weight: var(--ring-font-weight-bold);
+  line-height: var(--ring-line-height-lowest);
+}
+
+.editProjectPage #sortableList {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.editProjectPage #sortableList .draggable {
+  font-weight: bold;
+  padding-left: 32px;
+}
+
+#subprojects td.draggable {
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+  background-color: var(--ring-content-background-color, #fff);
+}
+
+#subprojects td.reorderHandle,
+#subprojects th.reorderHandle {
+  border-right: none;
+}
+
+#subprojects th.name {
+  border-left: none;
+}

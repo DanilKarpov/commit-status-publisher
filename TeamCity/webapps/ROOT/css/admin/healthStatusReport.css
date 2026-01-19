@@ -1,0 +1,171 @@
+#reportsLayout {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#reportsLayout td {
+  vertical-align: top;
+}
+
+#reportsLayout td.categories {
+  width: 360px;
+}
+
+#reportsLayout td.selected-category {
+  padding-left: 20px;
+}
+
+.category-list {
+  border: 1px solid var(--ring-line-color, #dfe5eb);
+}
+
+.category-list .item {
+  padding: 10px;
+  min-height: 60px;
+  border-bottom: 1px dotted #CCC;
+}
+
+.category-list .item:hover {
+  cursor: pointer;
+  background: var(--tc-classic-highlight-color, #ffc);
+}
+
+.category-list .item .found {
+  font-size: 90%;
+}
+
+i.itemSeverity {
+  color: #0085FF;
+  margin-right: 4px;
+}
+
+.itemSeverity.tc-icon {
+  margin-right: 0;
+}
+
+.category-list .item.active {
+  background: var(--ring-background-color);
+}
+
+.category-list .item.active .name a {
+  font-weight: bold;
+  color: var(--ring-text-color, #1f2326);
+}
+
+.healthStatusItem ul {
+  list-style-position: inside;
+  margin: 1em 0;
+}
+
+.healthStatusItem:has(>div[data-health-report-react-markdown-container]) {
+  display: flex;
+  align-items: baseline;
+}
+
+.healthStatusHide {
+  width: 7rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+table.healthItemsTable {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.healthItemsTable tr.beforeHiddenItems td {
+  border: none;
+}
+
+table.healthItemsTable .hiddenItem .healthStatusItem {
+  color: var(--ring-disabled-color, #999);
+}
+
+table.healthItemsTable .hiddenItem .healthStatusItem a {
+  opacity: 0.7;
+}
+
+table.healthItemsTable td {
+  padding: 10px;
+  border-top: 1px dotted #CCC;
+  vertical-align: top;
+}
+
+table.healthItemsTable tr:last-child {
+  border-bottom: 1px dotted #CCC;
+}
+
+table.healthItemsTable td .itemSeverity {
+  display: block;
+  float: left;
+  clear: both;
+  width: 1.5em;
+
+  margin-top: 0;
+  margin-right: 3px;
+}
+
+table.failedToStart {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+table.failedToStart td {
+  border: none;
+  padding: 3px;
+  margin: 0;
+}
+
+table.failedToStart td.buildTypeName {
+  width: 30%;
+}
+
+div.vcsError {
+  padding: 3px;
+}
+
+table.reportsTable {
+  width: 100%;
+}
+
+table.reportsTable td {
+  vertical-align: top;
+}
+
+table.cleanCheckout {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+table.cleanCheckout td {
+  border-top: none;
+  border-right: none;
+}
+
+table.cleanCheckout td.sourceBt {
+  width: 30%;
+}
+
+.full-health-item {
+  display: none;
+}
+
+.healthItemsTable .full-health-item {
+  display: block;
+}
+
+table.healthItemsTable table.health-report-mini-table th {
+  border: none;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+table.healthItemsTable table.health-report-mini-table td {
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 1em;
+}
